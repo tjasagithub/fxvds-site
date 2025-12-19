@@ -5,8 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import Logo from '@/components/logo';
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -24,17 +22,17 @@ const Hero = () => {
   return (
     <section id="home" className="relative h-[100dvh] w-full overflow-hidden">
       <div
-        className="absolute inset-0 z-0 transition-transform duration-100 ease-out"
-        style={{
-          transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0001})`,
-        }}
+        className="absolute inset-0 z-0"
       >
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-100 ease-out"
+            style={{
+              transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0001})`,
+            }}
             quality={90}
             priority
             data-ai-hint={heroImage.imageHint}
