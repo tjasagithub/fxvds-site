@@ -1,7 +1,5 @@
-'use server';
 
-import { config } from 'dotenv';
-config();
+'use server';
 
 import { z } from 'zod';
 import { Resend } from 'resend';
