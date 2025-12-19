@@ -29,7 +29,10 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
       
-      const sections = navLinks.map(link => document.getElementById(link.href.substring(1)));
+      const sections = navLinks.map(link => {
+        const id = link.href.substring(1);
+        return id ? document.getElementById(id) : null;
+      });
       let currentSection = 'home';
 
       sections.forEach(section => {
@@ -72,10 +75,7 @@ const Header = () => {
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" passHref>
-          <span className={cn(
-            'transition-all duration-300',
-            !isScrolled ? 'absolute top-24' : 'relative top-0'
-          )}>
+          <span>
             <Logo className="h-10 w-40" />
           </span>
         </Link>
