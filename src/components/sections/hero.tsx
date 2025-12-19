@@ -30,7 +30,7 @@ const Hero = () => {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover object-right"
+            className="object-contain object-right"
             style={{
               transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0001})`,
             }}
