@@ -91,14 +91,14 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
   
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-2xl p-0 flex flex-col">
-        <DialogHeader className="p-6 pb-4 sticky top-0 bg-card/80 backdrop-blur-xl z-10">
+      <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-2xl p-0">
+        <DialogHeader className="p-6 pb-4 sticky top-0 bg-card/80 backdrop-blur-xl z-10 shrink-0">
           <DialogTitle className="text-2xl font-bold font-headline text-white text-center">
             Select your setup
           </DialogTitle>
         </DialogHeader>
 
-        <ScrollArea className="flex-grow">
+        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 pt-2">
             {/* Left Side */}
             <div>
@@ -184,9 +184,9 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
 
             </div>
           </div>
-        </ScrollArea>
+        </div>
 
-        <DialogFooter className="flex flex-col sm:flex-col gap-4 p-6 pt-4 sticky bottom-0 bg-card/80 backdrop-blur-xl z-10">
+        <DialogFooter className="flex flex-col sm:flex-col gap-4 p-6 pt-4 sticky bottom-0 bg-card/80 backdrop-blur-xl z-10 shrink-0">
            <div className="flex flex-col w-full">
              <Button type="button" onClick={handleContinue} size="lg">
                 Start your free trial now
