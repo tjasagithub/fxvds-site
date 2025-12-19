@@ -100,10 +100,10 @@ const Hero = () => {
       
       <div className="relative z-20 pb-12">
         <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-xl mx-auto grid grid-cols-3 gap-4 text-center">
+            <div className="max-w-xl grid grid-cols-3 gap-8 text-left">
               {highlights.map((highlight) => (
-                <div key={highlight.title} className="flex flex-col items-center gap-2">
-                  <highlight.icon className="h-7 w-7 text-primary" />
+                <div key={highlight.title} className="flex items-center gap-3">
+                  <highlight.icon className="h-7 w-7 text-primary shrink-0" />
                   <div>
                     <p className="text-sm font-semibold text-white">{highlight.title}</p>
                     <p className="text-xs text-gray-400">{highlight.subtitle}</p>
