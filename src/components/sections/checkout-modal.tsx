@@ -91,7 +91,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
   
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-2xl p-0">
+      <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-2xl p-0 flex flex-col max-h-[85dvh]">
         <DialogHeader className="p-6 pb-4 sticky top-0 bg-card/80 backdrop-blur-xl z-10 shrink-0">
           <DialogTitle className="text-2xl font-bold font-headline text-white text-center">
             Select your setup
