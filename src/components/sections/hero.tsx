@@ -46,10 +46,8 @@ const Hero = () => {
 
       <div className="relative z-20 flex h-full items-center">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-xl text-left">
-            <div className="mb-6">
-              <Logo className="h-10 w-40" />
-            </div>
+          <div className="max-w-xl text-left pt-32">
+            
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
               High-Performance Forex VDS
             </p>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Logo from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -41,6 +41,8 @@ const Header = () => {
         }
       });
 
+      if(window.scrollY < 200) currentSection = 'home';
+
       setActiveSection(currentSection);
     };
 
@@ -69,8 +71,13 @@ const Header = () => {
       isScrolled ? 'bg-black/60 backdrop-blur-md shadow-lg' : 'bg-transparent'
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="#home">
-          <Logo className="h-8 w-32" />
+        <Link href="/" passHref>
+          <span className={cn(
+            'transition-all duration-300',
+            !isScrolled ? 'absolute top-24' : 'relative top-0'
+          )}>
+            <Logo className="h-10 w-40" />
+          </span>
         </Link>
         <nav className="hidden items-center space-x-8 md:flex">
           {navLinks.map((link) => (
