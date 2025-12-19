@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Zap, ShieldCheck, Trophy, LockKeyhole, Terminal, Rocket, CheckCircle } from 'lucide-react';
+import { Zap, ShieldCheck, Trophy, LockKeyhole, Terminal, Rocket, Users, CheckCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 type FeatureCard = {
@@ -42,7 +42,7 @@ const features: FeatureCard[] = [
 ];
 
 const stats = [
-  "Optimized Network Routing",
+  "Optimised for High-Volume Copy Trading",
   "Enterprise-Grade Hardware",
   "99.99% Uptime SLA"
 ];
@@ -72,15 +72,24 @@ const WhyFxvds = () => {
             </Card>
           ))}
         </div>
-        <div className="mt-24 max-w-4xl mx-auto">
-           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-              {stats.map((stat, index) => (
-                 <div key={index} className="flex items-center justify-center gap-3">
-                    <CheckCircle className="h-6 w-6 text-primary" />
-                    <span className="font-semibold text-white">{stat}</span>
-                 </div>
-              ))}
-           </div>
+        <div className="mt-24 max-w-5xl mx-auto p-8 rounded-lg bg-card/50 border border-border/70">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                  <Users className="h-8 w-8 text-primary" />
+                  <h3 className="text-xl font-semibold text-white">Optimised for High-Volume Copy Trading</h3>
+              </div>
+              <p className="text-gray-400">Designed to handle trading software with hundreds of copy-trading followers, ensuring stable performance, fast order replication, and consistent execution even under heavy load. Ideal for professional signal providers and mirrored trading environments.</p>
+            </div>
+            <div className="flex flex-col justify-center space-y-4">
+                {stats.slice(1).map((stat, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                        <CheckCircle className="h-6 w-6 text-primary shrink-0" />
+                        <span className="font-semibold text-white">{stat}</span>
+                    </div>
+                ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
