@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bull",
+      "description": "A cinematic rendering of a bull made of abstract, technological shapes, symbolizing power and the financial market.",
+      "imageUrl": "https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/Bull%201.webp",
+      "imageHint": "bull finance"
+    },
+    {
+      "id": "logo",
+      "description": "FXVDS company logo.",
+      "imageUrl": "https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/logo_1.webp",
+      "imageHint": "logo abstract"
+    }
+  ]
 }
