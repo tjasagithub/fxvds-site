@@ -31,7 +31,7 @@ const Pricing = () => {
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">Choose Your Power</h2>
           <p className="mt-4 text-lg text-gray-400">
-            Simple, transparent pricing. No hidden fees. Upgrade or cancel anytime.
+            Simple, transparent pricing. No hidden fees. Upgrade or downgrade anytime.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
