@@ -1,3 +1,6 @@
+import { config } from 'dotenv';
+config();
+
 import {appRoute} from '@genkit-ai/next';
 import '@/ai/genkit';
 import {vdsRecommendationFlow} from '@/ai/flows/ai-powered-vds-recommendation';
