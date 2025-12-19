@@ -1,4 +1,4 @@
-import { Telegram, Mail, Send } from 'lucide-react';
+import { Send, Mail } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContactForm } from './contact-form';
 
@@ -16,7 +16,7 @@ const Contact = () => {
             </div>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
-                <Telegram className="h-6 w-6 text-primary" />
+                <Send className="h-6 w-6 text-primary" />
                 <span className="text-gray-300">Telegram: <a href="https://t.me/fxvds_support" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:underline">@fxvds_support</a></span>
               </div>
               <div className="flex items-center gap-4">

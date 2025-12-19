@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Zap, ShieldCheck, Trophy, Vpn, Terminal, Rocket, CheckCircle } from 'lucide-react';
+import { Zap, ShieldCheck, Trophy, LockKeyhole, Terminal, Rocket, CheckCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 type FeatureCard = {
@@ -25,7 +25,7 @@ const features: FeatureCard[] = [
     description: 'Founded by traders, for traders. We understand your needs.',
   },
   {
-    icon: Vpn,
+    icon: LockKeyhole,
     title: 'Secure VPN Tunnel Connection',
     description: 'Each VDS is isolated on its own encrypted network.',
   },
