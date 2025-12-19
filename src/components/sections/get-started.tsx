@@ -10,7 +10,7 @@ const steps: Step[] = [
   },
   {
     title: 'We Prepare Everything',
-    description: 'Once your order is confirmed, our team provisions and configures your server. Your secure login details are delivered straight to your email within 24–72 hours.',
+    description: 'We build and configure your server, and send your secure login details by email within 24–72 hours.',
   },
   {
     title: 'Start Trading',
