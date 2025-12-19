@@ -53,7 +53,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     const { name, email, message } = validatedFields.data;
 
     await resend.emails.send({
-      from: 'onboarding@resend.dev', // Safe, default "from" address
+      from: 'FXVDS <onboarding@resend.dev>',
       to: 'info@fxvds.com',
       reply_to: email, // Set the user's email as the reply-to address
       subject: `New message from FXVDS contact form: ${name}`,
