@@ -13,8 +13,6 @@ const contactSchema = z.object({
   honeypot: z.string().optional(),
 });
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function submitContactForm(prevState: any, formData: FormData) {
   const validatedFields = contactSchema.safeParse({
     name: formData.get('name'),
@@ -43,6 +41,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   }
   
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { name, email, message } = validatedFields.data;
 
     await resend.emails.send({
