@@ -31,12 +31,8 @@ const faqs = [
     answer: 'Absolutely. Our VDS is designed for 24/7 operation, making it ideal for running automated trading strategies, Expert Advisors (EAs), and trading bots without interruption, even when your personal computer is off.',
   },
   {
-    question: 'Is FXVDS suitable for copy trading with many followers?',
-    answer: 'Yes. FXVDS is optimized for high-load trading environments and is well suited for copy trading setups with hundreds of followers. Dedicated resources ensure consistent execution speed and stable performance even during peak market activity.',
-  },
-  {
-    question: 'Is FXVDS recommended for AntonNel Mirror Trading Manager?',
-    answer: 'Yes. FXVDS is highly recommended for users running AntonNel Mirror Trading Manager. The platform provides the stability, dedicated CPU resources, and 24/7 uptime required for reliable trade replication across multiple connected accounts.',
+    question: 'Is FXVDS suitable for professional copy trading and trade mirroring software?',
+    answer: 'Yes. FXVDS is highly recommended for users running professional copy trading and trade mirroring solutions, including Anton Nel Mirror Trading Manager software and similar platforms. Dedicated CPU resources, stable performance, and 24/7 uptime ensure reliable trade replication across hundreds of connected follower accounts.',
   },
   {
     question: 'Why is a VDS important for mirror trading software?',
