@@ -6,7 +6,7 @@ const Logo = ({ className = 'h-8' }: { className?: string }) => {
   if (!logoImage) return null;
 
   return (
-    <div className={`relative w-auto ${className}`}>
+    <div className={`relative ${className}`}>
       <Image
         src={logoImage.imageUrl}
         alt={logoImage.description}

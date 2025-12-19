@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '@/components/logo';
 import { Button } from '@/components/ui/button';
@@ -74,10 +75,8 @@ const Header = () => {
       isScrolled ? 'bg-black/60 backdrop-blur-md shadow-lg' : 'bg-transparent'
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" passHref>
-          <span onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <Logo className="h-10 w-40" />
-          </span>
+        <Link href="/" aria-label="FXVDS Home" className="shrink-0" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <Logo className="h-8 w-32" />
         </Link>
         <nav className="hidden items-center space-x-8 md:flex">
           {navLinks.map((link) => (
@@ -100,7 +99,9 @@ const Header = () => {
             <SheetContent side="right" className="bg-background/90 border-l-border/50 backdrop-blur-lg">
               <div className="flex h-full flex-col p-6">
                 <div className="mb-8 flex items-center justify-between">
+                  <Link href="/" aria-label="FXVDS Home" className="shrink-0" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
                     <Logo className="h-8 w-32" />
+                  </Link>
                 </div>
                 <nav className="flex flex-col space-y-6">
                   {navLinks.map((link) => (
