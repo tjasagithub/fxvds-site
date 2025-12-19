@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -25,9 +26,9 @@ const plans: { name: PlanName; price: string; features: string[] }[] = [
 ];
 
 const Pricing = () => {
-  const [selectedPlan, setSelectedPlan] = useState<PlanName>('Medium');
+  const [activePlan, setActivePlan] = useState<PlanName>('Medium');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalPlan, setModalPlan] = useState<PlanName | null>(null);
+  const [modalPlan, setModalPlan] = useState<PlanName>('Medium');
 
   const handleGetStartedClick = (planName: PlanName) => {
     setModalPlan(planName);
@@ -45,11 +46,11 @@ const Pricing = () => {
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan) => {
-            const isSelected = selectedPlan === plan.name;
+            const isSelected = activePlan === plan.name;
             return (
               <Card
                 key={plan.name}
-                onClick={() => setSelectedPlan(plan.name)}
+                onClick={() => setActivePlan(plan.name)}
                 className={cn(
                   'flex flex-col border-border/70 bg-card/50 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 cursor-pointer',
                   isSelected && 'border-primary/50 shadow-2xl shadow-primary/20 relative'
@@ -94,13 +95,13 @@ const Pricing = () => {
           </p>
         </div>
       </div>
-      {modalPlan && (
-        <CheckoutModal
-          isOpen={isModalOpen}
-          onOpenChange={setIsModalOpen}
-          selectedPlan={modalPlan}
-        />
-      )}
+      
+      <CheckoutModal
+        isOpen={isModalOpen}
+        onOpenChange={setIsModalOpen}
+        initialPlan={modalPlan}
+      />
+      
     </section>
   );
 };
