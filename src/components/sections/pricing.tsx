@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { CheckoutModal, PlanName } from './checkout-modal';
 
-const plans = [
+const plans: { name: PlanName; price: string; features: string[] }[] = [
   {
     name: 'Small',
     price: '€30',
@@ -25,7 +25,14 @@ const plans = [
 ];
 
 const Pricing = () => {
-  const [selectedPlan, setSelectedPlan] = useState('Medium');
+  const [selectedPlan, setSelectedPlan] = useState<PlanName>('Medium');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalPlan, setModalPlan] = useState<PlanName | null>(null);
+
+  const handleGetStartedClick = (planName: PlanName) => {
+    setModalPlan(planName);
+    setIsModalOpen(true);
+  };
 
   return (
     <section id="pricing" className="py-20 md:py-32 bg-background">
@@ -66,8 +73,15 @@ const Pricing = () => {
                   </ul>
                 </CardContent>
                 <CardFooter className="relative">
-                  <Button asChild className="w-full" variant={isSelected ? 'default' : 'outline'}>
-                    <Link href="#">Get Started</Link>
+                  <Button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleGetStartedClick(plan.name)
+                    }}
+                    className="w-full" 
+                    variant={isSelected ? 'default' : 'outline'}
+                  >
+                    Get Started
                   </Button>
                 </CardFooter>
               </Card>
@@ -76,10 +90,17 @@ const Pricing = () => {
         </div>
         <div className="mt-12 text-center text-gray-400">
           <p>
-            Need more power or a custom setup? Just <Link href="#contact" className="text-primary hover:underline">send us a message</Link>.
+            Need more power or a custom setup? Just <a href="#contact" className="text-primary hover:underline">send us a message</a>.
           </p>
         </div>
       </div>
+      {modalPlan && (
+        <CheckoutModal
+          isOpen={isModalOpen}
+          onOpenChange={setIsModalOpen}
+          selectedPlan={modalPlan}
+        />
+      )}
     </section>
   );
 };
