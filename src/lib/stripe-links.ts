@@ -1,21 +1,21 @@
 
 export const stripeLinks = {
   small: {
-    base: 'SMALL_BASE_URL',
-    backup: 'SMALL_BACKUP_URL',
-    ip: 'SMALL_IP_URL',
-    backup_ip: 'SMALL_BACKUP_IP_URL',
+    base: 'https://buy.stripe.com/14A6oG8bM4j7epX2jj04801',
+    backup: 'https://buy.stripe.com/5kQcN4gIi2aZdlT1ff04802',
+    ip: 'https://buy.stripe.com/dRm00iajU7vjdlTf6504803',
+    backup_ip: 'https://buy.stripe.com/14A00ibnY7vj4Pnga904804',
   },
   medium: {
-    base: 'MEDIUM_BASE_URL',
-    backup: 'MEDIUM_BACKUP_URL',
-    ip: 'MEDIUM_IP_URL',
-    backup_ip: 'MEDIUM_BACKUP_IP_URL',
+    base: 'https://buy.stripe.com/9B6fZg1NocPD81zga904805',
+    backup: 'https://buy.stripe.com/9B6fZgajU5nb4Pnf6504806',
+    ip: 'https://buy.stripe.com/dRm14mdw65nb0z72jj04807',
+    backup_ip: 'https://buy.stripe.com/5kQcN4dw66rf81z2jj04808',
   },
   large: {
-    base: 'LARGE_BASE_URL',
-    backup: 'LARGE_BACKUP_URL',
-    ip: 'LARGE_IP_URL',
-    backup_ip: 'LARGE_BACKUP_IP_URL',
+    base: 'https://buy.stripe.com/5kQdR89fQ4j71Db1ff04809',
+    backup: 'https://buy.stripe.com/14AdR8dw6cPD95D7DD0480a',
+    ip: 'https://buy.stripe.com/6oU6oG77I6rf1Db1ff0480b',
+    backup_ip: 'https://buy.stripe.com/fZufZg63EdTH95D4rr0480c',
   },
 };
