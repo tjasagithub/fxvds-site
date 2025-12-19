@@ -14,6 +14,7 @@ const contactSchema = z.object({
 });
 
 export async function submitContactForm(prevState: any, formData: FormData) {
+  // Validate form fields
   const validatedFields = contactSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
@@ -29,25 +30,34 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     };
   }
 
-  // Honeypot check
+  // Honeypot check for bots
   if (validatedFields.data.honeypot) {
-    // Silently fail for bots
-    console.log('Honeypot field filled, likely a bot.');
+    console.log('Honeypot field filled, likely a bot. Silently succeeding.');
     return {
       message: 'Thank you for your message! We will get back to you soon.',
       errors: undefined,
       isSuccess: true,
     };
   }
-  
+
+  // Check for RESEND_API_KEY
+  if (!process.env.RESEND_API_KEY) {
+    console.error('Resend API Key is missing.');
+    return {
+      message: 'Email service is not configured. Please contact support.',
+      errors: undefined,
+      isSuccess: false,
+    };
+  }
+
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { name, email, message } = validatedFields.data;
 
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'onboarding@resend.dev', // Safe, default "from" address
       to: 'info@fxvds.com',
-      reply_to: email,
+      reply_to: email, // Set the user's email as the reply-to address
       subject: `New message from FXVDS contact form: ${name}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
@@ -66,7 +76,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     };
 
   } catch (error) {
-    console.error('Failed to send email via Resend:', error);
+    console.error("Resend error:", error); // Log the detailed error to the server console
     return {
       errors: undefined,
       message: 'Message failed to send. Please try again or email info@fxvds.com.',
