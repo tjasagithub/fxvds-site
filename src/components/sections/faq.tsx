@@ -7,6 +7,10 @@ import {
 
 const faqs = [
   {
+    question: 'What is a Forex VDS?',
+    answer: 'A Forex Virtual Dedicated Server (VDS) is a private server optimized for trading. It runs 24/7, independent of your own computer, providing a stable, high-speed environment to run your trading platforms and automated strategies (Expert Advisors) without interruptions.',
+  },
+  {
     question: 'What’s the difference between a VDS and a VPS?',
     answer: 'A Virtual Dedicated Server (VDS) provides dedicated resources (CPU, RAM) from a physical server, offering more stable performance than a Virtual Private Server (VPS), which shares resources among multiple users. For trading, VDS is superior as it prevents performance degradation from other users\' activities.',
   },
