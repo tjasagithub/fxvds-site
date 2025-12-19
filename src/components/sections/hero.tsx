@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -29,7 +30,7 @@ const Hero = () => {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover"
+            className="object-cover object-right"
             style={{
               transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0001})`,
             }}
@@ -44,7 +45,7 @@ const Hero = () => {
 
       <div className="relative z-20 flex h-full items-center">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-xl text-left pt-32">
+          <div className="max-w-xl text-left">
             
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
               High-Performance Forex VDS
