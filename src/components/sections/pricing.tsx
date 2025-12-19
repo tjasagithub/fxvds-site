@@ -68,6 +68,11 @@ const Pricing = () => {
             </Card>
           ))}
         </div>
+        <div className="mt-12 text-center text-gray-400">
+          <p>
+            Need more power or a custom setup? Just <Link href="#contact" className="text-primary hover:underline">send us a message</Link>.
+          </p>
+        </div>
       </div>
     </section>
   );
