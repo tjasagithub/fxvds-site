@@ -19,7 +19,8 @@ const VDSRecommendationInputSchema = z.object({
     .describe('The user\'s preferred trading platforms (e.g., MT4, MT5, cTrader).'),
   riskTolerance: z
     .string()
-    .describe('The user\'s risk tolerance level (e.g., low, medium, high).'),
+    .optional()
+    .describe('The user\'s risk tolerance level (e.g., low, medium, high). This is less important, focus on activity and platforms.'),
 });
 export type VDSRecommendationInput = z.infer<typeof VDSRecommendationInputSchema>;
 
@@ -39,13 +40,12 @@ const prompt = ai.definePrompt({
   output: {schema: VDSRecommendationOutputSchema},
   prompt: `You are an expert in recommending VDS plans for forex traders.
 
-  Based on the user's trading activity, platform preferences, and risk tolerance, recommend the most suitable VDS plan (Small, Medium, or Large).
+  Based on the user's trading activity and platform preferences, recommend the most suitable VDS plan (Small, Medium, or Large).
 
   Explain your reasoning for the recommendation.
 
   Trading Activity: {{{tradingActivity}}}
   Platform Preferences: {{{platformPreferences}}}
-  Risk Tolerance: {{{riskTolerance}}}
 
   Your recommendation should be concise and easy to understand.
 `,

@@ -8,7 +8,7 @@ import { getVDSRecommendation } from '@/ai/flows/ai-powered-vds-recommendation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Bot, Loader2, Sparkles } from 'lucide-react';
@@ -17,13 +17,11 @@ const VDSRecommendationInputSchema = z.object({
   tradingActivity: z
     .string()
     .min(10, 'Please describe your trading activity in more detail.')
-    .describe('The user\'s trading activity, including instruments traded, frequency, and average trade size.'),
+    .describe("The user's trading activity, including instruments traded, frequency, and average trade size."),
   platformPreferences: z
-    .string({ required_error: 'Please select your preferred platform.'})
-    .describe('The user\'s preferred trading platforms (e.g., MT4, MT5, cTrader).'),
-  riskTolerance: z
-    .string({ required_error: 'Please select your risk tolerance.'})
-    .describe('The user\'s risk tolerance level (e.g., low, medium, high).'),
+    .string()
+    .min(2, 'Please enter your preferred platform(s).')
+    .describe("The user's preferred trading platforms (e.g., MT4, MT5, cTrader)."),
 });
 
 type VDSRecommendationInput = z.infer<typeof VDSRecommendationInputSchema>;
@@ -43,6 +41,7 @@ const AiRecommender = () => {
     resolver: zodResolver(VDSRecommendationInputSchema),
     defaultValues: {
       tradingActivity: '',
+      platformPreferences: '',
     },
   });
 
@@ -52,7 +51,9 @@ const AiRecommender = () => {
     setError(null);
 
     try {
-      const result = await getVDSRecommendation(data);
+      // The AI flow expects a riskTolerance field, but we removed it from the form.
+      // We'll pass a default/neutral value to satisfy the schema without impacting the recommendation logic.
+      const result = await getVDSRecommendation({ ...data, riskTolerance: 'medium' });
       if(result) {
         setRecommendation(result);
       } else {
@@ -96,10 +97,10 @@ const AiRecommender = () => {
                     name="tradingActivity"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Trading Activity</FormLabel>
+                        <FormLabel>Trading Patterns</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="e.g., I trade EUR/USD and Gold, running 2-3 EAs on 5 charts, with a focus on scalping."
+                            placeholder="e.g. High-frequency scalping on EUR/USD, running 5 EAs simultaneously during London and NY sessions."
                             className="min-h-[100px]"
                             {...field}
                           />
@@ -113,42 +114,13 @@ const AiRecommender = () => {
                     name="platformPreferences"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Platform Preference</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a platform" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="MT4">MT4</SelectItem>
-                            <SelectItem value="MT5">MT5</SelectItem>
-                            <SelectItem value="cTrader">cTrader</SelectItem>
-                            <SelectItem value="Multiple/Other">Multiple/Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="riskTolerance"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Risk Tolerance / EA Aggressiveness</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a level" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="low">Low</SelectItem>
-                            <SelectItem value="medium">Medium</SelectItem>
-                            <SelectItem value="high">High</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <FormLabel>Trading Platforms</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="e.g. MetaTrader 5, cTrader"
+                            {...field}
+                          />
+                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
