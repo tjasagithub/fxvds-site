@@ -67,11 +67,11 @@ const WhyFxvds = () => {
           </p>
         </div>
 
-        <div className="mt-16 max-w-5xl mx-auto p-4 rounded-lg bg-card/50 border border-border/70">
+        <div className="mt-16 max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {stats.map((stat, index) => (
-                    <div key={index} className="flex items-center gap-4 p-4 rounded-lg">
-                        <stat.icon className="h-8 w-8 text-primary shrink-0" />
+                    <div key={index} className="flex flex-col items-center text-center gap-4">
+                        <stat.icon className="h-10 w-10 text-primary" />
                         <span className="font-semibold text-white text-base">{stat.text}</span>
                     </div>
                 ))}
