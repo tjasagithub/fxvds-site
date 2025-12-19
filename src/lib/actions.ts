@@ -52,8 +52,8 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { name, email, message } = validatedFields.data;
 
-    await resend.emails.send({
-      from: 'FXVDS <onboarding@resend.dev>',
+    const data = await resend.emails.send({
+      from: 'no-reply@fxvds.com',
       to: 'info@fxvds.com',
       reply_to: email, // Set the user's email as the reply-to address
       subject: `New message from FXVDS contact form: ${name}`,
@@ -67,6 +67,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
       `,
     });
 
+    console.log("Resend success response:", data);
     return { 
         message: 'Message sent. We’ll get back to you shortly.',
         errors: undefined,
