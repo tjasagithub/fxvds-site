@@ -45,7 +45,7 @@ const Hero = () => {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-bull');
 
   return (
-    <section id="home" className="relative h-[100dvh] w-full overflow-hidden">
+    <section id="home" className="relative h-[100dvh] w-full overflow-hidden flex flex-col">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -71,21 +71,9 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent" />
 
-      <div className="relative z-20 flex h-full items-center">
+      <div className="relative z-20 flex flex-1 items-center">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-xl text-left">
-
-            <div className="mb-12 grid grid-cols-3 gap-4 text-center">
-              {highlights.map((highlight) => (
-                <div key={highlight.title} className="flex flex-col items-center gap-2">
-                  <highlight.icon className="h-7 w-7 text-primary" />
-                  <div>
-                    <p className="text-sm font-semibold text-white">{highlight.title}</p>
-                    <p className="text-xs text-gray-400">{highlight.subtitle}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
             
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
               High-Performance Forex VDS
@@ -109,6 +97,23 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <div className="relative z-20 pb-12">
+        <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-xl mx-auto grid grid-cols-3 gap-4 text-center">
+              {highlights.map((highlight) => (
+                <div key={highlight.title} className="flex flex-col items-center gap-2">
+                  <highlight.icon className="h-7 w-7 text-primary" />
+                  <div>
+                    <p className="text-sm font-semibold text-white">{highlight.title}</p>
+                    <p className="text-xs text-gray-400">{highlight.subtitle}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+        </div>
+      </div>
+
     </section>
   );
 };
