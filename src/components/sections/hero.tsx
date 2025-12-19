@@ -29,7 +29,7 @@ const Hero = () => {
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover transition-transform duration-100 ease-out"
+            className="object-cover"
             style={{
               transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0001})`,
             }}

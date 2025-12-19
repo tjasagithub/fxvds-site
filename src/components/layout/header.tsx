@@ -75,7 +75,7 @@ const Header = () => {
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" passHref>
-          <span>
+          <span onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <Logo className="h-10 w-40" />
           </span>
         </Link>
