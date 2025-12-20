@@ -16,7 +16,7 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { stripeLinks } from '@/lib/stripe-links';
 import { cn } from '@/lib/utils';
-import { Cpu, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { Cpu, CheckCircle2, ShieldCheck, Zap, X } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export type PlanName = 'Small' | 'Medium' | 'Large';
@@ -92,7 +92,13 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-2xl p-0 flex flex-col max-h-[90dvh] overflow-hidden">
-        <DialogHeader className="p-6 pb-4 sticky top-0 bg-card/80 backdrop-blur-xl z-10 shrink-0">
+        
+        <DialogClose className="absolute right-3 top-3 z-50 rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white h-11 w-11 flex items-center justify-center">
+            <X className="h-5 w-5" />
+            <span className="sr-only">Close</span>
+        </DialogClose>
+        
+        <DialogHeader className="p-6 pb-4 shrink-0">
           <DialogTitle className="text-2xl font-bold font-headline text-white text-center">
             Select your setup
           </DialogTitle>
@@ -186,7 +192,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
           </div>
         </div>
 
-        <DialogFooter className="flex flex-col sm:flex-col gap-4 p-6 pt-4 sticky bottom-0 bg-card/80 backdrop-blur-xl z-10 shrink-0">
+        <DialogFooter className="flex flex-col sm:flex-col gap-4 p-6 pt-4 shrink-0 bg-card/80">
            <div className="flex flex-col w-full">
              <Button type="button" onClick={handleContinue} size="lg">
                 Start your free trial now
