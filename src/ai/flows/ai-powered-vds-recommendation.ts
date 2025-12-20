@@ -38,16 +38,22 @@ const prompt = ai.definePrompt({
   name: 'vdsRecommendationPrompt',
   input: {schema: VDSRecommendationInputSchema},
   output: {schema: VDSRecommendationOutputSchema},
-  prompt: `You are an expert in recommending VDS plans for forex traders.
+  prompt: `You are an expert in recommending VDS plans for forex traders. Your recommendation must be based on the following strict rules:
 
-  Based on the user's trading activity and platform preferences, recommend the most suitable VDS plan (Small, Medium, or Large).
+1.  **Small Plan**: Recommend if the user mentions running 3 or fewer Expert Advisors (EAs).
+2.  **Medium Plan**: Recommend if the user mentions running between 4 and 10 EAs.
+3.  **Large Plan**: Recommend if the user either:
+    a. Mentions running more than 10 EAs.
+    b. Mentions using "Mirror Trading Manager", "copy trading", "trade mirroring", or similar professional software, regardless of the EA count.
 
-  Explain your reasoning for the recommendation.
+- Always recommend the smallest sufficient plan according to these rules.
+- If the user's input is unclear, make a reasonable estimate of the EA count.
+- Keep your reasoning concise (2-4 sentences).
+- If you recommend the Large plan because of mirroring software, explain that these tools require higher stability and resources.
 
-  Trading Activity: {{{tradingActivity}}}
-  Platform Preferences: {{{platformPreferences}}}
-
-  Your recommendation should be concise and easy to understand.
+User Input:
+Trading Activity: {{{tradingActivity}}}
+Platform Preferences: {{{platformPreferences}}}
 `,
 });
 
