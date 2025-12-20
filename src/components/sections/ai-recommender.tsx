@@ -116,7 +116,7 @@ const AiRecommender = () => {
                         <FormLabel>Trading Patterns</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="e.g. High-frequency scalping on EUR/USD, running 5 EAs simultaneously during London and NY sessions, or managing multiple accounts via a Mirror Trading Manager."
+                            placeholder="e.g. High-frequency scalping on EUR/USD, running 5 EAs simultaneously during London and NY sessions, or managing multiple accounts."
                             className="min-h-[100px]"
                             {...field}
                           />
@@ -133,7 +133,7 @@ const AiRecommender = () => {
                         <FormLabel>Trading Platforms</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="e.g. MetaTrader 5, cTrader"
+                            placeholder="e.g. MetaTrader 5, cTrader, Mirror Trading Manager"
                             {...field}
                           />
                         </FormControl>
