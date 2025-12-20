@@ -27,10 +27,7 @@ const faqs = [
     answer: (
       <>
         <p>
-          Yes — and this is where the VPN truly matters. With FXVDS, access to your server is protected not only by login credentials, but also by a private VPN tunnel.
-        </p>
-        <p>
-          That means even if someone somehow obtains your username and password, they still cannot access your server unless they are connected through the VPN.
+          Yes — and this is where the VPN truly matters. With FXVDS, access to your server is protected not only by login credentials, but also by a private VPN tunnel. That means even if someone somehow obtains your username and password, they still cannot access your server unless they are connected through the VPN.
         </p>
       </>
     ),
@@ -50,18 +47,23 @@ const faqs = [
   },
   {
     question: 'Why are FXVDS servers so affordable?',
-    answer:
-      'We own and operate our own hardware and have optimized our infrastructure specifically for forex trading. By eliminating unnecessary overhead and focusing only on performance that matters, we are able to offer institutional-grade power at a competitive price. All FXVDS servers are located in Germany, ensuring reliable infrastructure, strong data protection standards, and low-latency connections for European traders.',
+    answer: (
+      <>
+        <p className="mb-4">
+          We own and operate our own hardware and have optimized our infrastructure specifically for forex trading. By eliminating unnecessary overhead and focusing only on performance that matters, we are able to offer institutional-grade power at a competitive price.
+        </p>
+        <p>
+          All FXVDS servers are located in Germany, ensuring reliable infrastructure, strong data protection standards, and low-latency connections for European traders.
+        </p>
+      </>
+    )
   },
   {
     question: 'Does server location matter?',
     answer: (
       <>
         <p className="mb-4">
-          Yes — but not as much as many providers claim.
-        </p>
-        <p className="mb-4">
-          Server performance is far more important than simply being “close” to a broker. If a server is underpowered or unstable, trade execution will be slow regardless of its location. High-frequency CPUs, fast memory, and a stable infrastructure have a much greater impact on execution speed than distance alone.
+          Yes — but not as much as many providers claim. Server performance is far more important than simply being “close” to a broker. If a server is underpowered or unstable, trade execution will be slow regardless of its location. High-frequency CPUs, fast memory, and a stable infrastructure have a much greater impact on execution speed than distance alone.
         </p>
         <p>
           That said, FXVDS servers are located in Germany, offering an excellent balance of performance, reliability, and low-latency connections to major European trading infrastructure — at some of the most competitive prices available for dedicated trading servers.
