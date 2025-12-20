@@ -53,8 +53,47 @@ const LegalPage = () => {
 
           <section id="terms-of-service" className="mb-24 scroll-mt-24">
             <h2 className="text-4xl font-bold font-headline text-white mb-8 border-b border-border/50 pb-4">Terms of Service</h2>
-            <div className="space-y-6 text-gray-300">
-              <p>Terms of Service content goes here.</p>
+            <div className="space-y-6 text-gray-300 prose prose-invert prose-p:text-gray-300 prose-a:text-primary prose-strong:text-white">
+              <p>Welcome to FXVDS. These Terms of Service ("Terms") govern your use of our website, products, and services (collectively, the "Services"). By using our Services, you agree to these Terms.</p>
+              
+              <h3 className="text-2xl font-semibold text-white mt-8">1. Service Description</h3>
+              <p>FXVDS provides virtual dedicated servers (VDS) for hosting trading software such as MetaTrader (MT4/MT5). FXVDS does not provide financial services, investment advice, or brokerage services.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">2. Eligibility</h3>
+              <p>Users must be at least 18 years old to use our Services.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">3. Account Registration</h3>
+              <p>You agree to provide accurate and complete information when creating an account and to keep your login credentials secure. You are responsible for all activities that occur under your account.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">4. Payments and Billing</h3>
+              <p>Payments for our Services are processed via Stripe. By providing a payment method, you authorize us to charge you for the selected subscription plan. Subscriptions renew automatically at the end of each billing cycle unless cancelled.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">5. Free Trial</h3>
+              <p>If a free trial is offered, it will automatically convert to a paid subscription at the end of the trial period unless you cancel it beforehand. You are responsible for canceling your trial to avoid charges.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">6. Cancellations</h3>
+              <p>You may cancel your subscription at any time. Your service will remain active until the end of the current billing period. We do not offer refunds for partial months or unused service.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">7. Dedicated IPs & Add-Ons</h3>
+              <p>Optional add-ons, such as Dedicated IPs and Daily Backups, are billed monthly as part of your subscription. Backups are provided on a best-effort basis only if the add-on has been purchased.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">8. Service Availability</h3>
+              <p>FXVDS aims for maximum uptime but does not guarantee uninterrupted service. Scheduled maintenance, network issues, or other unforeseen events may cause temporary outages.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">9. Data & Backups</h3>
+              <p>You are solely responsible for your data. FXVDS does not automatically back up user data unless the Daily Backup add-on is purchased. Even with the add-on, we recommend you maintain your own backups.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">10. Limitation of Liability</h3>
+              <p>FXVDS is not liable for any financial losses, trading losses, data loss, or other consequential damages arising from the use of our Services. We do not guarantee the performance or reliability of any third-party trading software.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">11. Changes to the Service</h3>
+              <p>We reserve the right to modify or discontinue our Services at any time, with or without notice.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">12. Changes to Terms</h3>
+              <p>We may update these Terms from time to time. Your continued use of the Services after any changes constitutes your acceptance of the new Terms.</p>
+
+              <h3 className="text-2xl font-semibold text-white mt-8">13. Contact</h3>
+              <p>For any questions about these Terms, please contact us at <a href="mailto:info@fxvds.com">info@fxvds.com</a>.</p>
             </div>
           </section>
 
