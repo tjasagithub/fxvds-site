@@ -36,6 +36,9 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  env: {
+    NEXT_PUBLIC_GEMINI_API_KEY_SET: !!process.env.GEMINI_API_KEY ? 'true' : 'false',
+  }
 };
 
 export default nextConfig;

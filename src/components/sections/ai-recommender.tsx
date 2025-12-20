@@ -31,6 +31,10 @@ type VDSRecommendationOutput = {
   reasoning: string;
 };
 
+// This variable will be set at build time on the server.
+const isApiKeySet = process.env.NEXT_PUBLIC_GEMINI_API_KEY_SET === 'true';
+
+
 const AiRecommender = () => {
   const [recommendation, setRecommendation] = useState<VDSRecommendationOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -49,6 +53,18 @@ const AiRecommender = () => {
     setIsLoading(true);
     setRecommendation(null);
     setError(null);
+
+    if (!isApiKeySet) {
+      const apiKeyError = "The AI recommender is not configured. Please contact support.";
+      setError(apiKeyError);
+       toast({
+        variant: 'destructive',
+        title: 'Feature Not Available',
+        description: apiKeyError,
+      });
+      setIsLoading(false);
+      return;
+    }
 
     try {
       // The AI flow expects a riskTolerance field, but we removed it from the form.
