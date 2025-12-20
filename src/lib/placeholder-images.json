@@ -7,6 +7,12 @@
       "imageHint": "bull finance"
     },
     {
+      "id": "hero-bull-mobile",
+      "description": "A cinematic rendering of a bull made of abstract, technological shapes, optimized for mobile.",
+      "imageUrl": "https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/Bull%201%20-%20resized%20mobile.webp",
+      "imageHint": "bull finance"
+    },
+    {
       "id": "logo",
       "description": "FXVDS company logo.",
       "imageUrl": "https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/logo_1.webp",

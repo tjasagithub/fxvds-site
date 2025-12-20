@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { CalendarDays, Zap, Lock } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const highlights: {
   icon: LucideIcon;
@@ -33,6 +34,7 @@ const highlights: {
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +44,8 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-bull');
+  const heroImageId = isMobile ? 'hero-bull-mobile' : 'hero-bull';
+  const heroImage = PlaceHolderImages.find((img) => img.id === heroImageId);
 
   return (
     <section id="home" className="relative h-[100dvh] w-full overflow-hidden flex flex-col">
