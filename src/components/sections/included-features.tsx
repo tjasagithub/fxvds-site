@@ -23,7 +23,7 @@ const features: Feature[] = [
   { icon: PlayCircle, title: 'MT4 / MT5 auto-startup tools' },
   { icon: Users, title: 'Any broker, any Expert Advisor' },
   { icon: Network, title: 'Static IP address' },
-  { icon: GaugeCircle, title: '1 Gbit/s ultra-fast connection' },
+  { icon: GaugeCircle, title: '1 Gbit/s high-speed connection' },
   { icon: Lock, title: 'Protected remote access' },
   { icon: MapPin, title: 'Server location: Germany' },
 ];
