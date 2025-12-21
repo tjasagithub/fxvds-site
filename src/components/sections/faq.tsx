@@ -27,7 +27,7 @@ const faqs = [
     answer: (
       <>
         <p>
-          Yes — and this is where the VPN truly matters. With FXVDS, access to your server is protected not only by login credentials, but also by a private VPN tunnel. That means even if someone somehow obtains your username and password, they still cannot access your server unless they are connected through the VPN.
+          Yes — and this is where secure access really matters. With FXVDS, access to your server is protected by strong authentication and restricted network controls. This significantly reduces the risk of unauthorized access, even if login credentials were exposed.
         </p>
       </>
     ),
