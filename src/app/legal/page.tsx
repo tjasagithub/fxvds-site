@@ -125,21 +125,24 @@ const LegalPage = () => {
           </section>
 
           <section id="impressum" className="mb-16 scroll-mt-24">
-            <h2 className="text-4xl font-bold font-headline text-white mb-8 border-b border-border/50 pb-4">Impressum</h2>
+            <h2 className="text-4xl font-bold font-headline text-white mb-8 border-b border-border/50 pb-4">Impressum / Legal Notice</h2>
             <div className="space-y-6 text-gray-300 prose prose-invert prose-p:text-gray-300 prose-a:text-primary prose-strong:text-white">
                 <p>Information according to § 5 TMG.</p>
                 
                 <p><strong>Company Description:</strong><br/>
-                We offer professional traders high-performance virtual dedicated servers (VDS) to guarantee reliable, low-latency execution for their trading platforms and automated strategies. Our infrastructure is specifically designed to meet the demands of forex trading, including high-frequency trading and the use of expert advisors.</p>
+                FXVDS provides high-performance virtual dedicated servers (VDS) for traders and software hosting.<br/>
+                FXVDS does not provide financial services, investment advice, or brokerage services.</p>
                 
-                <p><strong>Responsible for the content:</strong><br/>
-                info@fxvds.com</p>
+                <p><strong>Responsible for content:</strong><br/>
+                FXVDS<br/>
+                Email: <a href="mailto:info@fxvds.com">info@fxvds.com</a><br/>
+                Website: <a href="https://fxvds.com" target="_blank" rel="noopener noreferrer">https://fxvds.com</a></p>
 
                 <h3 className="text-2xl font-semibold text-white mt-8">Liability for links</h3>
-                <p>Our offer contains links to external websites of third parties, on whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the contents of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal contents were not recognizable at the time of linking. However, a permanent control of the contents of the linked pages is not reasonable without concrete evidence of a violation of the law. If we become aware of any legal infringements, we will remove such links immediately.</p>
+                <p>Our website may contain links to external third-party websites. We have no influence over the content of those external websites and therefore cannot assume any liability for their content. The respective provider or operator of the linked pages is always responsible for their content. At the time of linking, the linked pages were checked for possible legal violations. If we become aware of any legal infringements, such links will be removed immediately.</p>
 
                 <h3 className="text-2xl font-semibold text-white mt-8">Copyright</h3>
-                <p>The contents and works on these pages created by the site operators are subject to German copyright law. The reproduction, editing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. If we become aware of any infringements, we will remove such content immediately.</p>
+                <p>All content and works published on this website, including text, graphics, and layout, are protected by copyright law. Any reproduction, editing, distribution, or use beyond the limits of copyright law requires prior written consent. Downloads and copies of this website are permitted for private, non-commercial use only.</p>
             </div>
           </section>
           
