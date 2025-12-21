@@ -142,7 +142,8 @@ const Hero = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-xl text-left">
             
-            <div className="mb-8 p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/20 shadow-lg max-w-md animate-in fade-in-50 duration-700">
+            <div className="relative mb-8 p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/20 shadow-lg max-w-md animate-in fade-in-50 duration-700">
+                
                 <h2 className="text-xl font-bold text-white flex items-center">
                     <SantaHatIcon />
                     Santa’s Trading Boost
