@@ -50,10 +50,10 @@ const faqs = [
     answer: (
       <>
         <p className="mb-4">
-          We own and operate our own hardware and have optimized our infrastructure specifically for forex trading. By eliminating unnecessary overhead and focusing only on performance that matters, we are able to offer institutional-grade power at a competitive price.
+          We operate high-performance server infrastructure optimized specifically for forex trading. By focusing on performance that truly matters and avoiding unnecessary overhead, we are able to deliver reliable, institutional-grade environments at a competitive price.
         </p>
         <p>
-          All FXVDS servers are located in Germany, ensuring reliable infrastructure, strong data protection standards, and low-latency connections for European traders.
+          All FXVDS servers are located in Germany, benefiting from robust infrastructure, strong data protection standards, and low-latency connections for European traders.
         </p>
       </>
     )
