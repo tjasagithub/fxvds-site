@@ -98,25 +98,29 @@ const LegalPage = () => {
           </section>
 
           <section id="cookies" className="mb-24 scroll-mt-24">
-            <h2 className="text-4xl font-bold font-headline text-white mb-8 border-b border-border/50 pb-4">Cookies</h2>
-             <div className="space-y-6 text-gray-300 prose prose-invert prose-p:text-gray-300 prose-a:text-primary prose-strong:text-white">
-                <p>To make this site work properly, we sometimes place small data files called cookies on your device. Most big websites do this too.</p>
+            <h2 className="text-4xl font-bold font-headline text-white mb-8 border-b border-border/50 pb-4">Cookie Policy</h2>
+            <div className="space-y-6 text-gray-300 prose prose-invert prose-p:text-gray-300 prose-a:text-primary prose-strong:text-white">
+                <p>To make this site work properly, we sometimes place small data files called cookies on your device. Most big websites do this too. This policy explains what cookies are and how we use them.</p>
 
-                <h3 className="text-2xl font-semibold text-white mt-8">What are cookies?</h3>
-                <p>A cookie is a small text file that a website saves on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, font size and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another.</p>
-
-                <h3 className="text-2xl font-semibold text-white mt-8">How do we use cookies?</h3>
-                <p>We use cookies to:</p>
+                <h3 className="text-2xl font-semibold text-white mt-8">1. What are cookies?</h3>
+                <p>A cookie is a small text file that a website saves on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another.</p>
+                <p>The cookie-related information is not used to personally identify you, and the data is fully under our control. These cookies are not used for any purpose other than those described here.</p>
+                
+                <h3 className="text-2xl font-semibold text-white mt-8">2. How we use cookies</h3>
+                <p>We use cookies to enhance your browsing experience by:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                    <li>Remember your preferences</li>
-                    <li>Operate our shopping cart</li>
-                    <li>Collect anonymous statistics to improve our website's functionality</li>
+                    <li><strong>Necessary Cookies:</strong> These are essential for you to browse the website and use its features, such as accessing secure areas of the site. Disabling these cookies may affect site functionality.</li>
+                    <li><strong>Functionality Cookies:</strong> These cookies allow the website to remember choices you have made in the past, like what language you prefer or your user name for automatic login.</li>
+                    <li><strong>Performance/Analytics Cookies:</strong> We use these cookies to collect information about how you use our website, such as which pages you visited and which links you clicked on. This information is aggregated and anonymized and is used to improve our website's functionality.</li>
                 </ul>
-                <p>Enabling these cookies is not strictly necessary for the website to work but it will provide you with a better browsing experience. You can delete or block these cookies, but if you do that some features of this site may not work as intended.</p>
-                <p>The cookie-related information is not used to identify you personally and the pattern data is fully under our control. These cookies are not used for any purpose other than those described here.</p>
+                <p>Enabling these cookies is not strictly necessary for the website to work but it will provide you with a better browsing experience.</p>
+                
+                <h3 className="text-2xl font-semibold text-white mt-8">3. How to control cookies</h3>
+                <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.</p>
+                <p>For more details, see <a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer">aboutcookies.org</a>.</p>
 
-                <h3 className="text-2xl font-semibold text-white mt-8">How to control cookies</h3>
-                <p>You can control and/or delete cookies as you wish – for details, see aboutcookies.org. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.</p>
+                <h3 className="text-2xl font-semibold text-white mt-8">4. Changes to this policy</h3>
+                <p>We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page. You are advised to review this Cookie Policy periodically for any changes.</p>
             </div>
           </section>
 
@@ -153,5 +157,3 @@ const LegalPage = () => {
 };
 
 export default LegalPage;
-
-    
