@@ -7,21 +7,39 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { cn } from '@/lib/utils';
 import { CheckoutModal, PlanName } from './checkout-modal';
 
-const plans: { name: PlanName; price: string; features: string[] }[] = [
+const plans: { name: PlanName; price: string; features: { text: string; highlighted: boolean }[] }[] = [
   {
     name: 'Small',
     price: '€30',
-    features: ['2-core CPU', '4 GB RAM', '3.6 GHz per core', '60 GB NVMe SSD', '1 Gbit/s high-speed connection'],
+    features: [
+      { text: '2-core CPU', highlighted: true },
+      { text: '4 GB RAM', highlighted: true },
+      { text: '3.6 GHz per core', highlighted: false },
+      { text: '60 GB NVMe SSD', highlighted: false },
+      { text: '1 Gbit/s high-speed connection', highlighted: false },
+    ],
   },
   {
     name: 'Medium',
     price: '€60',
-    features: ['4-core CPU', '8 GB RAM', '3.6 GHz per core', '60 GB NVMe SSD', '1 Gbit/s high-speed connection'],
+    features: [
+        { text: '4-core CPU', highlighted: true },
+        { text: '8 GB RAM', highlighted: true },
+        { text: '3.6 GHz per core', highlighted: false },
+        { text: '60 GB NVMe SSD', highlighted: false },
+        { text: '1 Gbit/s high-speed connection', highlighted: false },
+    ],
   },
   {
     name: 'Large',
     price: '€90',
-    features: ['8-core CPU', '16 GB RAM', '3.6 GHz per core', '60 GB NVMe SSD', '1 Gbit/s high-speed connection'],
+    features: [
+        { text: '8-core CPU', highlighted: true },
+        { text: '16 GB RAM', highlighted: true },
+        { text: '3.6 GHz per core', highlighted: false },
+        { text: '60 GB NVMe SSD', highlighted: false },
+        { text: '1 Gbit/s high-speed connection', highlighted: false },
+    ],
   },
 ];
 
@@ -69,7 +87,9 @@ const Pricing = () => {
                 <CardContent className="flex-grow text-center relative">
                   <ul className="space-y-3 text-gray-300">
                     {plan.features.map((feature) => (
-                      <li key={feature}>{feature}</li>
+                      <li key={feature.text} className={cn(feature.highlighted ? "font-bold text-white" : "text-gray-400")}>
+                        {feature.text}
+                      </li>
                     ))}
                   </ul>
                 </CardContent>
