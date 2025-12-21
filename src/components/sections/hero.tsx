@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -35,41 +35,90 @@ const highlights: {
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
   const isMobile = useIsMobile();
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(motionQuery.matches);
+
+    const handleChange = () => {
+      setPrefersReducedMotion(motionQuery.matches);
+    };
+
+    motionQuery.addEventListener('change', handleChange);
+    return () => motionQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    const currentRef = heroRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || prefersReducedMotion) {
+      return;
+    }
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isVisible, prefersReducedMotion]);
 
   const heroImageId = isMobile ? 'hero-bull-mobile' : 'hero-bull';
   const heroImage = PlaceHolderImages.find((img) => img.id === heroImageId);
+  
+  const parallaxStyle = prefersReducedMotion ? {} : {
+    transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
+  };
+
+  const imageScaleStyle = prefersReducedMotion ? {} : {
+    transform: `scale(${1 + scrollY * 0.0001})`,
+  };
 
   return (
-    <section id="home" className="relative h-[100dvh] w-full overflow-hidden flex flex-col">
+    <section id="home" ref={heroRef} className="relative h-[100dvh] w-full overflow-hidden flex flex-col">
       <div
         className="absolute inset-0 z-0"
-        style={{
-          transform: `translateY(${scrollY * 0.3}px)`,
-        }}
+        style={parallaxStyle}
       >
         {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover object-[70%_50%]"
-            style={{
-              transform: `scale(${1 + scrollY * 0.0001})`,
-              filter: 'brightness(0.7)',
-            }}
-            quality={90}
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
+          <div style={{ willChange: 'transform' }} className="h-full w-full">
+            <Image
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
+              fill
+              className="object-cover object-[70%_50%]"
+              style={imageScaleStyle}
+              quality={90}
+              priority
+              data-ai-hint={heroImage.imageHint}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </div>
         )}
+         <div className="absolute inset-0 bg-black/30" />
       </div>
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent" />

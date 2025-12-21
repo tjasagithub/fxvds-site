@@ -1,14 +1,19 @@
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Hero from '@/components/sections/hero';
-import Pricing from '@/components/sections/pricing';
-import IncludedFeatures from '@/components/sections/included-features';
-import WhyFxvds from '@/components/sections/why-fxvds';
-import GetStarted from '@/components/sections/get-started';
-import Cta from '@/components/sections/cta';
-import Faq from '@/components/sections/faq';
-import Contact from '@/components/sections/contact';
-import AiRecommender from '@/components/sections/ai-recommender';
+import React, { Suspense } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
+
+const Pricing = React.lazy(() => import('@/components/sections/pricing'));
+const IncludedFeatures = React.lazy(() => import('@/components/sections/included-features'));
+const WhyFxvds = React.lazy(() => import('@/components/sections/why-fxvds'));
+const AiRecommender = React.lazy(() => import('@/components/sections/ai-recommender'));
+const GetStarted = React.lazy(() => import('@/components/sections/get-started'));
+const Cta = React.lazy(() => import('@/components/sections/cta'));
+const Faq = React.lazy(() => import('@/components/sections/faq'));
+const Contact = React.lazy(() => import('@/components/sections/contact'));
+
+const SectionSkeleton = () => <Skeleton className="h-96 w-full" />;
 
 export default function Home() {
   return (
@@ -16,14 +21,30 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Pricing />
-        <IncludedFeatures />
-        <WhyFxvds />
-        <AiRecommender />
-        <GetStarted />
-        <Cta />
-        <Faq />
-        <Contact />
+        <Suspense fallback={<SectionSkeleton />}>
+          <Pricing />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <IncludedFeatures />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <WhyFxvds />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <AiRecommender />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <GetStarted />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <Cta />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <Faq />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
     </div>
