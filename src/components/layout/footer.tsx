@@ -16,9 +16,9 @@ const Footer = () => {
           <div className="col-span-1">
             <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link href="#why-us" className="text-sm text-gray-400 hover:text-white transition-colors">About</Link></li>
-              <li><Link href="#pricing" className="text-sm text-gray-400 hover:text-white transition-colors">Plans & Pricing</Link></li>
-              <li><Link href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/#why-us" className="text-sm text-gray-400 hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/#pricing" className="text-sm text-gray-400 hover:text-white transition-colors">Plans & Pricing</Link></li>
+              <li><Link href="/#contact" className="text-sm text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div className="col-span-1">
