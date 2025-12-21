@@ -22,9 +22,11 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-span-1">
-            <h3 className="font-semibold text-white mb-4">
-              Legal
-            </h3>
+            <Link href="/legal">
+                <h3 className="font-semibold text-white mb-4 hover:text-primary transition-colors">
+                Legal
+                </h3>
+            </Link>
             <ul className="space-y-2">
               <li><Link href="/legal#privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/legal#terms-of-service" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</Link></li>
