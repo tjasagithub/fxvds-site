@@ -152,6 +152,15 @@ const LegalPage = () => {
             </Link>
           </div>
 
+          <div className="mt-24 pt-16 border-t border-border/50 text-sm text-gray-400">
+            <h3 className="font-semibold text-white mb-4">Legal Information</h3>
+            <p>FXVDS is a brand operated by T.art UG (haftungsbeschränkt)</p>
+            <p className="mt-2">Registered Address:<br />Obentrautstraße 45, 10963 Berlin, Germany</p>
+            <p className="mt-2">Register Court: Amtsgericht Charlottenburg<br />Commercial Register Number: HRB 262157 B</p>
+            <p className="mt-2">Contact: <a href="mailto:info@fxvds.com" className="text-primary hover:underline">info@fxvds.com</a><br />
+            Website: <a href="https://fxvds.com" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">https://fxvds.com</a></p>
+          </div>
+
         </div>
       </main>
       <Footer />
