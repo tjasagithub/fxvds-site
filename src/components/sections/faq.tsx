@@ -18,7 +18,7 @@ const faqs = [
       'A Virtual Dedicated Server (VDS) provides dedicated resources (CPU, RAM) from a physical server, offering more stable performance than a Virtual Private Server (VPS), which shares resources among multiple users. For trading, VDS is superior as it prevents performance degradation from other users’ activities.',
   },
   {
-    question: 'Okay, now I know what VDS and VPS mean… but what is a VPN then?',
+    question: 'VDS and VPS make sense — but what exactly is a VPN, and do I need one?',
     answer:
       'A VPN (Virtual Private Network) is an encrypted security layer that creates a private connection between you and your VDS. It protects your data, trading activity, and server access from external threats — even on unsecured networks.',
   },
