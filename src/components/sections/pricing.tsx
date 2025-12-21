@@ -78,10 +78,10 @@ const Pricing = () => {
                   <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary/50 to-primary/80 opacity-50 blur-lg" />
                 )}
                 <CardHeader className="text-center relative">
-                  <CardTitle className="text-2xl font-bold text-white">{plan.name}</CardTitle>
-                  <CardDescription className="text-4xl font-extrabold text-white mt-4">
+                  <CardTitle className="text-3xl font-bold text-white">{plan.name}</CardTitle>
+                  <CardDescription className="text-3xl font-bold text-white/90 mt-2">
                     {plan.price}
-                    <span className="text-base font-medium text-gray-400"> / month</span>
+                    <span className="text-sm font-medium text-gray-400"> / month</span>
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow text-center relative">
