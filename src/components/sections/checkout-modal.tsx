@@ -16,7 +16,7 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { stripeLinks } from '@/lib/stripe-links';
 import { cn } from '@/lib/utils';
-import { CheckCircle2, X } from 'lucide-react';
+import { CheckCircle2, X, Gift } from 'lucide-react';
 
 export type PlanName = 'Small' | 'Medium' | 'Large';
 
@@ -115,6 +115,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
   const backupsPrice = hasDailyBackups ? 10 : 0;
   const ipPrice = hasDedicatedIp ? 10 : 0;
   const totalPrice = currentPlanData.price + backupsPrice + ipPrice;
+  const firstMonthPrice = (currentPlanData.price / 2) + backupsPrice + ipPrice;
   
   const SpecItem = ({ label, value }: { label: string; value: string }) => (
     <li className="flex items-start gap-3">
@@ -128,7 +129,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-2xl p-0 flex flex-col max-h-[90dvh] overflow-hidden">
+      <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-3xl p-0 flex flex-col max-h-[90dvh] overflow-hidden">
         
         <DialogClose className="absolute right-3 top-3 z-50 rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white h-11 w-11 flex items-center justify-center">
             <X className="h-5 w-5" />
@@ -137,7 +138,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
         
         <DialogHeader className="p-6 pb-4 shrink-0">
           <DialogTitle className="text-2xl font-bold font-headline text-white text-center">
-            Select your setup
+            Finalize Your Holiday Offer
           </DialogTitle>
         </DialogHeader>
 
@@ -151,7 +152,10 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
                     key={plan}
                     variant={selectedPlan === plan ? 'default' : 'ghost'}
                     onClick={() => setSelectedPlan(plan)}
-                    className={cn("flex-1 transition-all", selectedPlan === plan ? 'bg-primary text-primary-foreground' : 'text-gray-400 hover:bg-black/30 hover:text-white')}
+                    className={cn(
+                      "flex-1 transition-all", 
+                      selectedPlan === plan ? 'bg-gradient-to-r from-red-600/80 via-primary to-yellow-400/80 text-primary-foreground shadow-md' : 'text-gray-400 hover:bg-black/30 hover:text-white'
+                    )}
                   >
                     {plan}
                   </Button>
@@ -209,20 +213,31 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
                   </div>
               </div>
 
-              <Separator className="bg-border/50 my-6" />
-
-              <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-gray-400">Plan: {selectedPlan} VDS</span> <span>€{currentPlanData.price}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">Backups:</span> <span>{hasDailyBackups ? '€10' : '—'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">Dedicated IP:</span> <span>{hasDedicatedIp ? '€10' : '—'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">Setup fee:</span> <span>€0</span></div>
+              <div className="mt-4 p-4 rounded-lg bg-gradient-to-br from-yellow-400/10 via-red-500/10 to-yellow-400/10 border border-primary/20 shadow-inner">
+                <h3 className="font-bold text-white flex items-center gap-2"><Gift className="text-primary"/>Holiday Special Applied</h3>
+                <ul className="text-sm text-gray-300 mt-2 space-y-1 list-disc list-inside">
+                    <li>7-day free trial — no charge today</li>
+                    <li>50% off your first month</li>
+                    <li className="text-xs text-gray-400">Discount applied automatically at Stripe checkout.</li>
+                </ul>
               </div>
 
               <Separator className="bg-border/50 my-4" />
 
+              <div className="space-y-2 text-sm">
+                  <div className="flex justify-between"><span className="text-gray-400">Plan: {selectedPlan} VDS</span> <span>€{currentPlanData.price.toFixed(2)}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">Backups:</span> <span>{hasDailyBackups ? '€10.00' : '—'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">Dedicated IP:</span> <span>{hasDedicatedIp ? '€10.00' : '—'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">Setup fee:</span> <span>€0.00</span></div>
+                  <div className="flex justify-between text-red-400"><span className="text-red-400">First Month Discount:</span> <span className='font-bold'>-€{(currentPlanData.price / 2).toFixed(2)}</span></div>
+              </div>
+
+              <Separator className="bg-border/50 my-3" />
+
               <div className="space-y-2">
-                  <div className="flex justify-between font-bold"><span className="text-white">Monthly:</span> <span className="text-white">€{totalPrice}</span></div>
-                  <div className="flex justify-between font-bold text-primary"><span className="text-primary">Due today:</span> <span className="text-primary">€0</span></div>
+                  <div className="flex justify-between font-bold text-primary"><span className="text-primary">Due today:</span> <span className="text-primary">€0.00</span></div>
+                  <div className="flex justify-between font-bold"><span className="text-white">First month total:</span> <span className="text-white">€{firstMonthPrice.toFixed(2)}</span></div>
+                  <div className="flex justify-between text-sm"><span className="text-gray-400">Recurring total:</span> <span className="text-gray-400">€{totalPrice.toFixed(2)} / month</span></div>
               </div>
 
             </div>
@@ -232,7 +247,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
         <DialogFooter className="flex flex-col sm:flex-col gap-4 p-6 pt-4 shrink-0 bg-card/80">
            <div className="flex flex-col w-full">
              <Button type="button" onClick={handleContinue} size="lg">
-                Start your free trial now
+                Claim Holiday Offer
               </Button>
             {errorMessage && <p className="text-sm text-destructive mt-2 text-center">{errorMessage}</p>}
           </div>

@@ -56,3 +56,28 @@
     scroll-behavior: smooth;
   }
 }
+
+/* Snowfall styles */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.snowflake {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 40;
+  opacity: 0;
+}

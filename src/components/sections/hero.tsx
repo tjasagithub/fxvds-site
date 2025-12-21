@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { CalendarDays, Zap, Lock } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import Snowfall from '@/components/ui/snowfall';
 
 const highlights: {
   icon: LucideIcon;
@@ -32,57 +33,70 @@ const highlights: {
   },
 ];
 
+const SantaHatIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    className="h-8 w-8 inline-block mr-2"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+  >
+    <path
+      d="M32.9,64.8c0,0-19.4,3.2-19.4,19.4c0,10.6,8.7,19.3,19.4,19.3s19.4-8.7,19.4-19.3 C52.3,68,32.9,64.8,32.9,64.8z"
+      fill="#FFF"
+      stroke="#FFF"
+    />
+    <path
+      d="M 95,35 C 95,35 95,35.3 95,36 C 95,49.2 84,60 71,60 C 60,60 55,51 55,51 C 55,51 60,49 63,46 C 66,43 70,36 70,36 C 70,36 40,25 25,35 C 10,45 20,65 20,65 L 45,65"
+      stroke="#E53935"
+      fill="transparent"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
   const isMobile = useIsMobile();
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isSnowVisible, setIsSnowVisible] = useState(false);
 
   useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(motionQuery.matches);
-
-    const handleChange = () => {
-      setPrefersReducedMotion(motionQuery.matches);
-    };
-
+    const handleChange = () => setPrefersReducedMotion(motionQuery.matches);
     motionQuery.addEventListener('change', handleChange);
-    return () => motionQuery.removeEventListener('change', handleChange);
-  }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0 }
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    }, { threshold: 0 });
 
     const currentRef = heroRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible || prefersReducedMotion) {
-      return;
-    }
+    if (currentRef) observer.observe(currentRef);
 
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (isVisible) setScrollY(window.scrollY);
+
+      const pricingSection = document.getElementById('pricing');
+      if (pricingSection) {
+        const rect = pricingSection.getBoundingClientRect();
+        setIsSnowVisible(rect.bottom > 0);
+      }
     };
     
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isVisible, prefersReducedMotion]);
+    
+    return () => {
+      motionQuery.removeEventListener('change', handleChange);
+      if (currentRef) observer.unobserve(currentRef);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isVisible]);
 
   const heroImageId = isMobile ? 'hero-bull-mobile' : 'hero-bull';
   const heroImage = PlaceHolderImages.find((img) => img.id === heroImageId);
@@ -92,11 +106,12 @@ const Hero = () => {
   };
 
   const imageScaleStyle = prefersReducedMotion ? {} : {
-    transform: `scale(${1 + scrollY * 0.0001})`,
+    transform: `scale(${1 + scrollY * 0.0001}) translateZ(0)`,
   };
 
   return (
     <section id="home" ref={heroRef} className="relative h-[100dvh] w-full overflow-hidden flex flex-col">
+       {isSnowVisible && <Snowfall />}
       <div
         className="absolute inset-0 z-0"
         style={parallaxStyle}
@@ -127,9 +142,18 @@ const Hero = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-xl text-left">
             
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
-              High-Performance Forex VDS
-            </p>
+            <div className="mb-8 p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/20 shadow-lg max-w-md animate-in fade-in-50 duration-700">
+                <h2 className="text-xl font-bold text-white flex items-center">
+                    <SantaHatIcon />
+                    Santa’s Trading Boost
+                </h2>
+                <p className="text-primary font-semibold text-lg mt-2">7 days free trial + 50% off the first month</p>
+                <div className="text-xs text-gray-400 mt-2 space-y-1">
+                    <p>Use code: <code className="font-mono bg-white/10 px-1 py-0.5 rounded">HOLIDAY50</code></p>
+                    <p>Valid until January 3rd</p>
+                </div>
+            </div>
+
             <h1 className="mb-6 font-headline text-5xl font-extrabold tracking-tight text-white md:text-7xl">
               Trade without limits.
               <br />
