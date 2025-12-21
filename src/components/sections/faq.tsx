@@ -74,7 +74,7 @@ const faqs = [
   {
     question: 'What’s the difference between a Static IP and a Dedicated IP address?',
     answer:
-      'A static IP is an address that does not change, which is important for brokers who may require a consistent IP for security. A dedicated IP is an address used only by you. All our plans include a static IP, and because your VDS is isolated, it functions as your dedicated IP.',
+      'A Static IP is a fixed address that does not change, which is important for brokers who may require a consistent IP for security. All our plans include a static IP. A Dedicated IP is an address used exclusively by you, ensuring it is not shared with any other users. This is available as an optional add-on.',
   },
   {
     question: 'Is FXVDS suitable for professional copy trading and trade mirroring software?',
