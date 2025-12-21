@@ -11,17 +11,17 @@ const plans: { name: PlanName; price: string; features: string[] }[] = [
   {
     name: 'Small',
     price: '€30',
-    features: ['2-core CPU', '4 GB RAM'],
+    features: ['2-core CPU', '4 GB RAM', '3.6 GHz per core', '60 GB NVMe SSD', '1 Gbit/s ultra-fast connection'],
   },
   {
     name: 'Medium',
     price: '€60',
-    features: ['4-core CPU', '8 GB RAM'],
+    features: ['4-core CPU', '8 GB RAM', '3.6 GHz per core', '60 GB NVMe SSD', '1 Gbit/s ultra-fast connection'],
   },
   {
     name: 'Large',
     price: '€90',
-    features: ['8-core CPU', '16 GB RAM'],
+    features: ['8-core CPU', '16 GB RAM', '3.6 GHz per core', '60 GB NVMe SSD', '1 Gbit/s ultra-fast connection'],
   },
 ];
 
