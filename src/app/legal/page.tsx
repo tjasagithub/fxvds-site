@@ -56,43 +56,43 @@ const LegalPage = () => {
             <div className="space-y-6 text-gray-300 prose prose-invert prose-p:text-gray-300 prose-a:text-primary prose-strong:text-white">
               <p>Welcome to FXVDS. These Terms of Service ("Terms") govern your use of our website, products, and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
               
-              <h3 className="text-2xl font-semibold text-white mt-8">1. Service Description</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Service Description</h3>
               <p>FXVDS provides virtual dedicated servers (VDS) and related infrastructure for the purpose of hosting third-party trading software, such as MetaTrader (MT4/MT5). FXVDS does not provide financial services, investment advice, brokerage services, or trading software.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">2. Eligibility</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Eligibility</h3>
               <p>You must be at least 18 years old and have the legal capacity to enter into a binding agreement to use our Services.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">3. Account Registration</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Account Registration</h3>
               <p>You agree to provide accurate and complete information when creating an account and to keep your login credentials secure. You are solely responsible for all activities that occur under your account.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">4. Payments and Billing</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Payments and Billing</h3>
               <p>Payments for our Services are processed via our third-party payment processor, Stripe. By providing a payment method, you authorize us to charge you for the selected subscription plan. Subscriptions automatically renew at the end of each billing cycle unless cancelled by you.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">5. Free Trial</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Free Trial</h3>
               <p>If a free trial is offered, it will automatically convert to a paid subscription at the end of the trial period unless you cancel it beforehand. You are responsible for canceling your trial to avoid incurring charges.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">6. Cancellations</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Cancellations</h3>
               <p>You may cancel your subscription at any time through your account dashboard. Your Service will remain active until the end of the current billing period. We do not offer refunds or credits for partial months or unused service.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">7. Dedicated IPs & Add-Ons</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Dedicated IPs & Add-Ons</h3>
               <p>Optional add-ons, such as Dedicated IPs and Daily Backups, are billed monthly as part of your subscription. Backups are provided on a best-effort basis and only if the add-on has been purchased and is active.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">8. Service Availability</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Service Availability</h3>
               <p>FXVDS aims for maximum uptime but does not guarantee uninterrupted or error-free service. Scheduled maintenance, network issues, or other unforeseen events may cause temporary outages.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">9. Data & Backups</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Data & Backups</h3>
               <p>You are solely responsible for your data. FXVDS does not automatically back up user data unless the Daily Backup add-on is purchased. Even with this add-on, we strongly recommend you maintain your own separate backups.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">10. Limitation of Liability</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Limitation of Liability</h3>
               <p>To the fullest extent permitted by law, FXVDS is not liable for any financial losses, trading losses, data loss, or other direct or consequential damages arising from the use or inability to use our Services. We do not guarantee the performance or reliability of any third-party trading software installed on the VDS.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">11. Changes to the Service</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Changes to the Service</h3>
               <p>We reserve the right to modify, suspend, or discontinue our Services at any time, with or without notice. Prices for all Services are subject to change with 30 days notice from us.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">12. Changes to Terms</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Changes to Terms</h3>
               <p>We may update these Terms from time to time. Your continued use of the Services after any changes constitutes your acceptance of the new Terms. It is your responsibility to review these Terms periodically.</p>
 
-              <h3 className="text-2xl font-semibold text-white mt-8">13. Contact</h3>
+              <h3 className="text-2xl font-semibold text-white mt-8">Contact</h3>
               <p>For any questions about these Terms, please contact us at <a href="mailto:info@fxvds.com">info@fxvds.com</a>.</p>
             </div>
           </section>
@@ -102,11 +102,11 @@ const LegalPage = () => {
             <div className="space-y-6 text-gray-300 prose prose-invert prose-p:text-gray-300 prose-a:text-primary prose-strong:text-white">
                 <p>To make this site work properly, we sometimes place small data files called cookies on your device. Most big websites do this too. This policy explains what cookies are and how we use them.</p>
 
-                <h3 className="text-2xl font-semibold text-white mt-8">1. What are cookies?</h3>
+                <h3 className="text-2xl font-semibold text-white mt-8">What are cookies?</h3>
                 <p>A cookie is a small text file that a website saves on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another.</p>
                 <p>The cookie-related information is not used to personally identify you, and the data is fully under our control. These cookies are not used for any purpose other than those described here.</p>
                 
-                <h3 className="text-2xl font-semibold text-white mt-8">2. How we use cookies</h3>
+                <h3 className="text-2xl font-semibold text-white mt-8">How we use cookies</h3>
                 <p>We use cookies to enhance your browsing experience by:</p>
                 <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Necessary Cookies:</strong> These are essential for you to browse the website and use its features, such as accessing secure areas of the site. Disabling these cookies may affect site functionality.</li>
@@ -115,11 +115,11 @@ const LegalPage = () => {
                 </ul>
                 <p>Enabling these cookies is not strictly necessary for the website to work but it will provide you with a better browsing experience.</p>
                 
-                <h3 className="text-2xl font-semibold text-white mt-8">3. How to control cookies</h3>
+                <h3 className="text-2xl font-semibold text-white mt-8">How to control cookies</h3>
                 <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.</p>
                 <p>For more details, see <a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer">aboutcookies.org</a>.</p>
 
-                <h3 className="text-2xl font-semibold text-white mt-8">4. Changes to this policy</h3>
+                <h3 className="text-2xl font-semibold text-white mt-8">Changes to this policy</h3>
                 <p>We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page. You are advised to review this Cookie Policy periodically for any changes.</p>
             </div>
           </section>
