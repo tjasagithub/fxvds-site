@@ -18,7 +18,7 @@ type Feature = {
 
 const features: Feature[] = [
   { icon: Cpu, title: '3.6 GHz per core' },
-  { icon: HardDrive, title: '42 GB NVMe SSD' },
+  { icon: HardDrive, title: '60 GB NVMe SSD' },
   { icon: Server, title: 'Windows Server 2025 OS' },
   { icon: PlayCircle, title: 'MT4 / MT5 auto-startup tools' },
   { icon: Users, title: 'Any broker, any Expert Advisor' },
