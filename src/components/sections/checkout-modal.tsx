@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -16,28 +16,55 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { stripeLinks } from '@/lib/stripe-links';
 import { cn } from '@/lib/utils';
-import { Cpu, CheckCircle2, ShieldCheck, Zap, X } from 'lucide-react';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { CheckCircle2, X } from 'lucide-react';
 
 export type PlanName = 'Small' | 'Medium' | 'Large';
 
 type PlanDetails = {
   price: number;
-  specs: string[];
+  specs: {
+    cpu: string;
+    ram: string;
+    storage: string;
+    network: string;
+    os: string;
+    security: string;
+  };
 };
 
 const planData: Record<PlanName, PlanDetails> = {
   Small: {
     price: 30,
-    specs: ['2-core CPU', '4 GB RAM', 'Windows Server 2025', '1 Gbit/s', 'Secure VPN'],
+    specs: {
+        cpu: '2-core CPU @ 3.6 GHz per core',
+        ram: '4 GB RAM',
+        storage: '60 GB NVMe SSD',
+        network: '1 Gbit/s',
+        os: 'Windows Server 2025',
+        security: 'Protected remote access (VPN)',
+    }
   },
   Medium: {
     price: 60,
-    specs: ['4-core CPU', '8 GB RAM', 'Windows Server 2025', '1 Gbit/s', 'Secure VPN'],
+    specs: {
+        cpu: '4-core CPU @ 3.6 GHz per core',
+        ram: '8 GB RAM',
+        storage: '60 GB NVMe SSD',
+        network: '1 Gbit/s',
+        os: 'Windows Server 2025',
+        security: 'Protected remote access (VPN)',
+    }
   },
   Large: {
     price: 90,
-    specs: ['8-core CPU', '16 GB RAM', 'Windows Server 2025', '1 Gbit/s', 'Secure VPN'],
+    specs: {
+        cpu: '8-core CPU @ 3.6 GHz per core',
+        ram: '16 GB RAM',
+        storage: '60 GB NVMe SSD',
+        network: '1 Gbit/s',
+        os: 'Windows Server 2025',
+        security: 'Protected remote access (VPN)',
+    }
   },
 };
 
@@ -89,6 +116,16 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
   const ipPrice = hasDedicatedIp ? 10 : 0;
   const totalPrice = currentPlanData.price + backupsPrice + ipPrice;
   
+  const SpecItem = ({ label, value }: { label: string; value: string }) => (
+    <li className="flex items-start gap-3">
+        <CheckCircle2 className="h-4 w-4 text-primary/80 mt-0.5 shrink-0" />
+        <div>
+            <span className="font-medium text-white">{label}:</span>
+            <span className="text-gray-300 ml-1">{value}</span>
+        </div>
+    </li>
+  );
+
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-2xl p-0 flex flex-col max-h-[90dvh] overflow-hidden">
@@ -132,13 +169,13 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
               
               <Separator className="bg-border/50 my-4" />
               
-              <ul className="space-y-2 text-sm text-gray-300">
-                  {currentPlanData.specs.map(spec => (
-                      <li key={spec} className="flex items-center gap-3">
-                          <CheckCircle2 className="h-4 w-4 text-primary/80" />
-                          <span>{spec}</span>
-                      </li>
-                  ))}
+              <ul className="space-y-3 text-sm">
+                <SpecItem label="CPU" value={currentPlanData.specs.cpu} />
+                <SpecItem label="RAM" value={currentPlanData.specs.ram} />
+                <SpecItem label="Storage" value={currentPlanData.specs.storage} />
+                <SpecItem label="Network" value={currentPlanData.specs.network} />
+                <SpecItem label="Operating System" value={currentPlanData.specs.os} />
+                <SpecItem label="Access & Security" value={currentPlanData.specs.security} />
               </ul>
             </div>
 
