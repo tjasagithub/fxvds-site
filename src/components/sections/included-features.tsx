@@ -16,10 +16,10 @@ type Feature = {
 
 const features: Feature[] = [
   { icon: Server, title: 'Windows Server 2025 OS' },
+  { icon: Lock, title: 'Protected remote access' },
+  { icon: Network, title: 'Static IP address' },
   { icon: PlayCircle, title: 'MT4 / MT5 auto-startup tools' },
   { icon: Users, title: 'Any broker, any Expert Advisor' },
-  { icon: Network, title: 'Static IP address' },
-  { icon: Lock, title: 'Protected remote access' },
   { icon: MapPin, title: 'Server location: Germany' },
 ];
 
