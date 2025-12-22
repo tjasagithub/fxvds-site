@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -88,6 +89,10 @@ const AiRecommender = () => {
       setIsLoading(false);
     }
   };
+  
+  const formattedPlan = recommendation?.recommendedPlan.toLowerCase().includes('plan') 
+    ? recommendation.recommendedPlan 
+    : `${recommendation?.recommendedPlan} Plan`;
 
   return (
     <section id="ai-recommender" className="py-20 md:py-32 bg-background">
@@ -167,7 +172,7 @@ const AiRecommender = () => {
             {!isLoading && recommendation && (
               <div className="text-left w-full animate-in fade-in duration-500">
                 <h3 className="text-lg font-semibold text-gray-300">Our Recommendation:</h3>
-                <p className="text-4xl font-bold text-primary my-2">{recommendation.recommendedPlan} Plan</p>
+                <p className="text-4xl font-bold text-primary my-2">{formattedPlan}</p>
                 <p className="text-gray-400">{recommendation.reasoning}</p>
               </div>
             )}
