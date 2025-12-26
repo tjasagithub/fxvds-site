@@ -1,8 +1,17 @@
 import { Send, Mail } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContactForm } from './contact-form';
+import Link from 'next/link';
 
 const Contact = () => {
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactForm = document.getElementById('contact');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="contact" className="py-20 md:py-32 bg-gradient-to-t from-background to-blue-950/20">
       <div className="container mx-auto px-4 md:px-6">
@@ -10,9 +19,14 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="space-y-3">
               <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">Get in Touch</h2>
-              <p className="text-lg text-gray-400">
-                Have questions or need a custom solution? Our team is here to help.
-              </p>
+              <div className="space-y-4">
+                <a href="#contact" onClick={handleScrollToContact} className="text-lg text-gray-400 block cursor-pointer hover:underline">
+                  Need more power or a custom setup? Send us a message and we’ll tailor the right solution for your trading.
+                </a>
+                <a href="https://t.me/fxvds_support" target="_blank" rel="noopener noreferrer" className="block text-primary font-semibold hover:underline">
+                  Using Anton Nel Mirror Trading Manager? Drop us a message for a special discount.
+                </a>
+              </div>
             </div>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
