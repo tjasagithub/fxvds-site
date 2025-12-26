@@ -16,7 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.png?v=1" type="image/png" />
+        <link rel="icon" href="/favicon.png?v=7" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.png?v=7" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
