@@ -4,9 +4,9 @@
 import Link from 'next/link';
 import type { getDictionary } from '@/lib/get-dictionary';
 
-type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
+type Dictionary = Pick<Awaited<ReturnType<typeof getDictionary>>, 'legal' | 'footer'>;
 
-export default function LegalPageContent({ dictionary }: { dictionary: Dictionary }) {
+export default function LegalPageContent({ dictionary }: { dictionary: Dictionary | null }) {
     if (!dictionary) {
         return (
            <div className="flex flex-col min-h-dvh bg-background text-foreground">
@@ -15,7 +15,7 @@ export default function LegalPageContent({ dictionary }: { dictionary: Dictionar
         )
       }
     
-    const { legal } = dictionary;
+    const { legal, footer } = dictionary;
 
     return (
         <main className="flex-1 py-20 md:py-32">
@@ -153,11 +153,11 @@ export default function LegalPageContent({ dictionary }: { dictionary: Dictionar
           </div>
 
           <div className="mt-24 pt-16 border-t border-border/50 text-sm text-gray-400">
-            <h3 className="font-semibold text-white mb-4">{dictionary.footer.legalInfoTitle}</h3>
-            <p>{dictionary.footer.brandInfo}</p>
-            <p className="mt-2">{dictionary.footer.addressTitle}<br />Obentrautstraße 45, 10963 Berlin, Germany</p>
-            <p className="mt-2">{dictionary.footer.courtTitle}: Amtsgericht Charlottenburg<br />{dictionary.footer.registerNumberTitle}: HRB 262157 B</p>
-            <p className="mt-2">{dictionary.footer.contactTitle}: <a href="mailto:info@fxvds.com" className="text-primary hover:underline">info@fxvds.com</a><br />
+            <h3 className="font-semibold text-white mb-4">{footer.legalInfoTitle}</h3>
+            <p>{footer.brandInfo}</p>
+            <p className="mt-2">{footer.addressTitle}<br />Obentrautstraße 45, 10963 Berlin, Germany</p>
+            <p className="mt-2">{footer.courtTitle}: Amtsgericht Charlottenburg<br />{footer.registerNumberTitle}: HRB 262157 B</p>
+            <p className="mt-2">{footer.contactTitle}: <a href="mailto:info@fxvds.com" className="text-primary hover:underline">info@fxvds.com</a><br />
             Website: <a href="https://fxvds.com" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">https://fxvds.com</a></p>
           </div>
 

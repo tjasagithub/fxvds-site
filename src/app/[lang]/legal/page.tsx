@@ -11,7 +11,7 @@ const LegalPage = async ({ params: { lang } }: { params: { lang: Locale } }) => 
   return (
     <div className="flex flex-col min-h-dvh bg-background text-foreground">
       <Header lang={lang} dictionary={dictionary.header} />
-      <LegalPageContent dictionary={dictionary} />
+      <LegalPageContent dictionary={{ legal: dictionary.legal, footer: dictionary.footer }} />
       <Footer lang={lang} dictionary={dictionary.footer} />
     </div>
   );
