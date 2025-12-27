@@ -159,7 +159,7 @@ const LegalPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
                 Email: <a href="mailto:info@fxvds.com">info@fxvds.com</a><br/>
                 Website: <a href="https://fxvds.com" target="_blank" rel="noopener noreferrer">https://fxvds.com</a></p>
 
-                <h3 className="text-2xl font-semibold text-white mt-8">{dictionary.impressum liabilityLinksTitle}</h3>
+                <h3 className="text-2xl font-semibold text-white mt-8">{dictionary.impressum.liabilityLinksTitle}</h3>
                 <p>{dictionary.impressum.liabilityLinksText}</p>
 
                 <h3 className="text-2xl font-semibold text-white mt-8">{dictionary.impressum.copyrightTitle}</h3>
@@ -190,3 +190,5 @@ const LegalPage = ({ params: { lang } }: { params: { lang: Locale } }) => {
 };
 
 export default LegalPage;
+
+    
