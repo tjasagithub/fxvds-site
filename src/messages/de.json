@@ -180,6 +180,11 @@
       "failed": "Empfehlungen sind vorübergehend nicht verfügbar. Bitte vergleichen Sie die Pläne oben.",
       "failedTitle": "KI-Empfehlung fehlgeschlagen",
       "failedDescription": "Bitte versuchen Sie es später erneut oder wählen Sie manuell einen Plan."
+    },
+    "plans": {
+      "small": "Small-Plan",
+      "medium": "Medium-Plan",
+      "large": "Large-Plan"
     }
   },
   "getStarted": {
@@ -286,7 +291,7 @@
       "thirdPartyDisclosureTitle": "Weitergabe an Dritte",
       "thirdPartyDisclosureText": "Wir verkaufen, handeln oder übertragen Ihre persönlich identifizierbaren Informationen nicht an Dritte.",
       "thirdPartyLinksTitle": "Links von Drittanbietern",
-      "thirdPartyLinksText": "Wir bieten auf unserer Website keine Produkte или Dienstleistungen von Drittanbietern an.",
+      "thirdPartyLinksText": "Wir bieten auf unserer Website keine Produkte oder Dienstleistungen von Drittanbietern an.",
       "gdprTitle": "DSGVO",
       "gdprText": "Wenn Sie in der Europäischen Union ansässig sind, haben Sie das Recht, auf die von uns über Sie gespeicherten personenbezogenen Daten zuzugreifen, sie an einen neuen Dienst zu übertragen und zu verlangen, dass Ihre personenbezogenen Daten korrigiert, aktualisiert oder gelöscht werden. Wenn Sie diese Rechte ausüben möchten, kontaktieren Sie uns bitte."
     },

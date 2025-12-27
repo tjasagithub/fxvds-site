@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { Locale } from '@/i18n.config';
 
 const VDSRecommendationInputSchema = z.object({
   tradingActivity: z
@@ -21,12 +22,13 @@ const VDSRecommendationInputSchema = z.object({
     .string()
     .optional()
     .describe('The user\'s risk tolerance level (e.g., low, medium, high). This is less important, focus on activity and platforms.'),
+  lang: z.custom<Locale>().describe('The language for the response (e.g., "en", "de").'),
 });
 export type VDSRecommendationInput = z.infer<typeof VDSRecommendationInputSchema>;
 
 const VDSRecommendationOutputSchema = z.object({
-  recommendedPlan: z.string().describe('The recommended VDS plan for the user.'),
-  reasoning: z.string().describe('The reasoning behind the recommendation.'),
+  recommendedPlan: z.enum(['Small', 'Medium', 'Large']).describe('The key of the recommended VDS plan for the user (Small, Medium, or Large).'),
+  reasoning: z.string().describe('The reasoning behind the recommendation, in the requested language.'),
 });
 export type VDSRecommendationOutput = z.infer<typeof VDSRecommendationOutputSchema>;
 
@@ -40,22 +42,26 @@ const prompt = ai.definePrompt({
   output: {schema: VDSRecommendationOutputSchema},
   prompt: `You are an expert in recommending VDS plans for forex traders. Your recommendation must be based on the following strict rules:
 
-- **Large Plan**: You MUST recommend the Large Plan if the user mentions any of the following, regardless of other factors:
+- **Large Plan**: You MUST recommend the "Large" plan if the user mentions any of the following, regardless of other factors:
     - "Mirror Trading Manager", "trade mirroring", "copy trading"
     - "managing multiple accounts" or similar phrases.
     - More than 9 EAs.
 
-- **Medium Plan**: Recommend if the user mentions running between 3 and 9 EAs and does NOT mention any of the Large Plan criteria.
+- **Medium Plan**: Recommend "Medium" if the user mentions running between 3 and 9 EAs and does NOT mention any of the Large Plan criteria.
 
-- **Small Plan**: Recommend if the user mentions running fewer than 3 EAs and does NOT mention any of the Large or Medium Plan criteria.
+- **Small Plan**: Recommend "Small" if the user mentions running fewer than 3 EAs and does NOT mention any of the Large or Medium Plan criteria.
 
 - **Priority**: The "Large Plan" criteria (especially managing multiple accounts or mirroring) override all other rules.
+
+- **Output Language**: Your entire output, especially the "reasoning", MUST be in the requested language: {{{lang}}}.
+- **Output Plan Key**: The 'recommendedPlan' field must be ONLY one of 'Small', 'Medium', or 'Large'.
 
 - **Reasoning**: Your explanation should be concise (2-4 sentences) and professional. If recommending the Large Plan due to mirroring or multi-account management, state that these activities require higher stability and dedicated resources. Do not mention the internal rules or thresholds.
 
 User Input:
 Trading Activity: {{{tradingActivity}}}
 Platform Preferences: {{{platformPreferences}}}
+Language: {{{lang}}}
 `,
 });
 

@@ -36,7 +36,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           <WhyFxvds dictionary={dictionary.whyFxvds} />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
-          <AiRecommender dictionary={dictionary.aiRecommender} />
+          <AiRecommender dictionary={dictionary.aiRecommender} lang={lang} />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
           <GetStarted dictionary={dictionary.getStarted} />
@@ -48,7 +48,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           <Faq dictionary={dictionary.faq} />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
-          <Contact dictionary={dictionary.contact} />
+          <Contact dictionary={dictionary.contact} lang={lang} />
         </Suspense>
       </main>
       <Footer lang={lang} dictionary={dictionary.footer} />

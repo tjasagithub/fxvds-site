@@ -14,11 +14,13 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Bot, Loader2, Sparkles } from 'lucide-react';
 import { getDictionary } from '@/lib/get-dictionary';
+import { Locale } from '@/i18n.config';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['aiRecommender'];
+type PlanName = 'Small' | 'Medium' | 'Large';
 
-const AiRecommender = ({ dictionary }: { dictionary: Dictionary }) => {
-  const [recommendation, setRecommendation] = useState<{ recommendedPlan: string; reasoning: string } | null>(null);
+const AiRecommender = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) => {
+  const [recommendation, setRecommendation] = useState<{ recommendedPlan: PlanName; reasoning: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
@@ -63,9 +65,9 @@ const AiRecommender = ({ dictionary }: { dictionary: Dictionary }) => {
     }
 
     try {
-      const result = await getVDSRecommendation({ ...data, riskTolerance: 'medium' });
+      const result = await getVDSRecommendation({ ...data, riskTolerance: 'medium', lang });
       if(result) {
-        setRecommendation(result);
+        setRecommendation(result as { recommendedPlan: PlanName; reasoning: string });
       } else {
         throw new Error("Empty response from AI");
       }
@@ -83,9 +85,11 @@ const AiRecommender = ({ dictionary }: { dictionary: Dictionary }) => {
     }
   };
   
-  const formattedPlan = recommendation?.recommendedPlan.toLowerCase().includes('plan') || recommendation?.recommendedPlan.toLowerCase().includes('plan')
-    ? recommendation.recommendedPlan 
-    : `${recommendation?.recommendedPlan} Plan`;
+  const getPlanDisplayName = (planKey: PlanName | undefined) => {
+    if (!planKey) return '';
+    const planName = planKey.toLowerCase() as 'small' | 'medium' | 'large';
+    return dictionary.plans[planName] || planKey;
+  }
 
   return (
     <section id="ai-recommender" className="py-20 md:py-32 bg-background">
@@ -165,7 +169,7 @@ const AiRecommender = ({ dictionary }: { dictionary: Dictionary }) => {
             {!isLoading && recommendation && (
               <div className="text-left w-full animate-in fade-in duration-500">
                 <h3 className="text-lg font-semibold text-gray-300">{dictionary.result.title}</h3>
-                <p className="text-4xl font-bold text-primary my-2">{formattedPlan}</p>
+                <p className="text-4xl font-bold text-primary my-2">{getPlanDisplayName(recommendation.recommendedPlan)}</p>
                 <p className="text-gray-400">{recommendation.reasoning}</p>
               </div>
             )}

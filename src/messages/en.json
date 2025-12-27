@@ -180,6 +180,11 @@
       "failed": "Recommendations are temporarily unavailable. Please compare plans above.",
       "failedTitle": "AI Recommendation Failed",
       "failedDescription": "Please try again later or select a plan manually."
+    },
+    "plans": {
+      "small": "Small Plan",
+      "medium": "Medium Plan",
+      "large": "Large Plan"
     }
   },
   "getStarted": {
