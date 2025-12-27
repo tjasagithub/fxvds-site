@@ -1,31 +1,18 @@
-type Step = {
-  title: string;
-  description: string;
-};
 
-const steps: Step[] = [
-  {
-    title: 'Choose Your Plan',
-    description: 'Select the VDS plan that best fits your trading needs.',
-  },
-  {
-    title: 'We Prepare Everything',
-    description: 'We build and configure your server, and send your secure login details by email within 24–72 hours.',
-  },
-  {
-    title: 'Start Trading',
-    description: 'Connect to your VDS through a secure connection, install your trading platforms, and trade with confidence — 24/7.',
-  },
-];
+import { getDictionary } from '@/lib/get-dictionary';
 
-const GetStarted = () => {
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>['getStarted'];
+
+const GetStarted = ({ dictionary }: { dictionary: Dictionary }) => {
+  const steps = dictionary.steps;
+
   return (
     <section id="get-started" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">Get Started in 3 Simple Steps</h2>
+          <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">{dictionary.title}</h2>
           <p className="mt-4 text-lg text-gray-400">
-            Launch your professional trading environment with FXVDS — simple, guided, and built for reliability.
+            {dictionary.subtitle}
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">

@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useActionState, useEffect, useRef } from 'react';
@@ -8,6 +9,14 @@ import { Button } from '@/components/ui/button';
 import { submitContactForm } from '@/lib/actions';
 import { Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { getDictionary } from '@/lib/get-dictionary';
+
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>['contact']['form'];
+
+type Props = {
+  dictionary: Dictionary;
+  lang: string;
+}
 
 const initialState = {
   message: "",
@@ -15,18 +24,18 @@ const initialState = {
   isSuccess: false,
 };
 
-function SubmitButton() {
+function SubmitButton({dictionary}: {dictionary: Dictionary}) {
   const { pending } = useFormStatus();
 
   return (
     <Button type="submit" className="w-full" disabled={pending}>
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
-      Send Message
+      {dictionary.button}
     </Button>
   );
 }
 
-export function ContactForm() {
+export function ContactForm({ dictionary, lang }: Props) {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
 
@@ -37,18 +46,21 @@ export function ContactForm() {
   }, [state.isSuccess]);
 
   return (
-    <form ref={formRef} action={formAction} className="space-y-4">
+    <form ref={formRef} action={(formData) => {
+        formData.append('lang', lang);
+        formAction(formData);
+    }} className="space-y-4">
       <div className="space-y-4">
         <div>
-          <Input type="text" id="name" name="name" placeholder="Name" required />
+          <Input type="text" id="name" name="name" placeholder={dictionary.namePlaceholder} required />
           {state.errors?.name && <p className="text-sm text-destructive mt-1">{state.errors.name[0]}</p>}
         </div>
         <div>
-          <Input type="email" id="email" name="email" placeholder="Email" required />
+          <Input type="email" id="email" name="email" placeholder={dictionary.emailPlaceholder} required />
           {state.errors?.email && <p className="text-sm text-destructive mt-1">{state.errors.email[0]}</p>}
         </div>
         <div>
-          <Textarea id="message" name="message" placeholder="Message" required />
+          <Textarea id="message" name="message" placeholder={dictionary.messagePlaceholder} required />
           {state.errors?.message && <p className="text-sm text-destructive mt-1">{state.errors.message[0]}</p>}
         </div>
         {/* Honeypot field */}
@@ -57,7 +69,7 @@ export function ContactForm() {
             <input type="text" id="company" name="company" tabIndex={-1} autoComplete="off" />
         </div>
       </div>
-      <SubmitButton />
+      <SubmitButton dictionary={dictionary} />
        {state.message && !isPending && (
         <div className={cn(
           "flex items-center gap-2 text-sm mt-2",

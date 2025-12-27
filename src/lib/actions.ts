@@ -3,15 +3,21 @@
 
 import { z } from 'zod';
 import { Resend } from 'resend';
-
-const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Invalid email address.'),
-  message: z.string().min(10, 'Message must be at least 10 characters.'),
-  honeypot: z.string().optional(),
-});
+import { getDictionary } from './get-dictionary';
+import { Locale } from '@/i18n.config';
 
 export async function submitContactForm(prevState: any, formData: FormData) {
+  const lang = (formData.get('lang') || 'en') as Locale;
+  const dictionary = await getDictionary(lang);
+  const validationMessages = dictionary.contact.form.validation;
+
+  const contactSchema = z.object({
+    name: z.string().min(2, validationMessages.name),
+    email: z.string().email(validationMessages.email),
+    message: z.string().min(10, validationMessages.message),
+    honeypot: z.string().optional(),
+  });
+
   // Validate form fields
   const validatedFields = contactSchema.safeParse({
     name: formData.get('name'),
@@ -23,7 +29,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Please correct the errors and try again.',
+      message: validationMessages.error,
       isSuccess: false,
     };
   }
@@ -32,7 +38,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   if (validatedFields.data.honeypot) {
     console.log('Honeypot field filled, likely a bot. Silently succeeding.');
     return {
-      message: 'Thank you for your message! We will get back to you soon.',
+      message: validationMessages.success,
       errors: undefined,
       isSuccess: true,
     };
@@ -42,7 +48,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   if (!process.env.RESEND_API_KEY) {
     console.error('Resend API Key is missing.');
     return {
-      message: 'Email service is not configured. Please contact support.',
+      message: validationMessages.notConfigured,
       errors: undefined,
       isSuccess: false,
     };
@@ -69,7 +75,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
 
     console.log("Resend success response:", data);
     return { 
-        message: 'Message sent. We’ll get back to you shortly.',
+        message: validationMessages.success,
         errors: undefined,
         isSuccess: true,
     };
@@ -78,7 +84,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     console.error("Resend error:", error); // Log the detailed error to the server console
     return {
       errors: undefined,
-      message: 'Message failed to send. Please try again or email info@fxvds.com.',
+      message: validationMessages.failure,
       isSuccess: false,
     };
   }

@@ -7,47 +7,32 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { cn } from '@/lib/utils';
 import { CheckoutModal, PlanName } from './checkout-modal';
 import { Gift } from 'lucide-react';
+import { getDictionary } from '@/lib/get-dictionary';
 
-const plans: { name: PlanName; price: string; features: { text: string; highlighted: boolean }[] }[] = [
-  {
-    name: 'Small',
-    price: '€30',
-    features: [
-      { text: '2-core CPU', highlighted: true },
-      { text: '4 GB RAM', highlighted: true },
-      { text: '3.6 GHz per core', highlighted: false },
-      { text: '60 GB NVMe SSD', highlighted: false },
-      { text: '1 Gbit/s high-speed connection', highlighted: false },
-    ],
-  },
-  {
-    name: 'Medium',
-    price: '€60',
-    features: [
-        { text: '4-core CPU', highlighted: true },
-        { text: '8 GB RAM', highlighted: true },
-        { text: '3.6 GHz per core', highlighted: false },
-        { text: '60 GB NVMe SSD', highlighted: false },
-        { text: '1 Gbit/s high-speed connection', highlighted: false },
-    ],
-  },
-  {
-    name: 'Large',
-    price: '€90',
-    features: [
-        { text: '8-core CPU', highlighted: true },
-        { text: '16 GB RAM', highlighted: true },
-        { text: '3.6 GHz per core', highlighted: false },
-        { text: '60 GB NVMe SSD', highlighted: false },
-        { text: '1-Gbit/s high-speed connection', highlighted: false },
-    ],
-  },
-];
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>['pricing'];
 
-const Pricing = () => {
+const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
   const [activePlan, setActivePlan] = useState<PlanName>('Medium');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalPlan, setModalPlan] = useState<PlanName>('Medium');
+
+  const plans = [
+    {
+      name: 'Small' as PlanName,
+      price: '€30',
+      features: dictionary.small.features,
+    },
+    {
+      name: 'Medium' as PlanName,
+      price: '€60',
+      features: dictionary.medium.features,
+    },
+    {
+      name: 'Large' as PlanName,
+      price: '€90',
+      features: dictionary.large.features,
+    },
+  ];
 
   const handleGetStartedClick = (planName: PlanName) => {
     setModalPlan(planName);
@@ -58,9 +43,9 @@ const Pricing = () => {
     <section id="pricing" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">Choose Your Power</h2>
+          <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">{dictionary.title}</h2>
           <p className="mt-4 text-lg text-gray-400">
-            Simple, transparent pricing. No hidden fees. Upgrade or downgrade anytime.
+            {dictionary.subtitle}
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -91,7 +76,7 @@ const Pricing = () => {
                   <CardTitle className="text-3xl font-bold text-white">{plan.name}</CardTitle>
                   <CardDescription className="text-3xl font-bold text-white/90 mt-2">
                     {plan.price}
-                    <span className="text-sm font-medium text-gray-400"> / month</span>
+                    <span className="text-sm font-medium text-gray-400"> / {dictionary.perMonth}</span>
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow text-center relative">
@@ -112,7 +97,7 @@ const Pricing = () => {
                     className="w-full" 
                     variant={isSelected ? 'default' : 'outline'}
                   >
-                    Claim Holiday Offer
+                    {dictionary.cta}
                   </Button>
                 </CardFooter>
               </Card>
@@ -120,9 +105,7 @@ const Pricing = () => {
           })}
         </div>
         <div className="mt-12 text-center text-gray-400">
-          <p>
-            Need more power or a custom setup? Just <a href="#contact" className="text-primary hover:underline">send us a message</a>.
-          </p>
+           <p dangerouslySetInnerHTML={{ __html: dictionary.customSetup.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
         </div>
       </div>
       
@@ -130,6 +113,7 @@ const Pricing = () => {
         isOpen={isModalOpen}
         onOpenChange={setIsModalOpen}
         initialPlan={modalPlan}
+        dictionary={dictionary.checkout}
       />
       
     </section>

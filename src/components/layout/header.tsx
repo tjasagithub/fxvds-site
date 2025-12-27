@@ -1,7 +1,7 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from '@/components/logo';
@@ -13,21 +13,26 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { Locale } from '@/i18n.config';
+import { getDictionary } from '@/lib/get-dictionary';
+import LanguageSwitcher from './language-switcher';
 
-const navLinks = [
-  { name: 'Home', href: '/#home' },
-  { name: 'Choose Your Power', href: '/#pricing' },
-  { name: 'Why Choose Us', href: '/#why-us' },
-  { name: 'FAQ', href: '/#faq' },
-  { name: 'Contact', href: '/#contact' },
-];
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>['header'];
 
-const Header = () => {
+const Header = ({ lang, dictionary }: { lang: Locale, dictionary: Dictionary }) => {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
+  const isHomePage = pathname === `/${lang}` || (lang === 'en' && pathname === '/');
+
+  const navLinks = [
+    { name: dictionary.nav.home, href: `/${lang}/#home` },
+    { name: dictionary.nav.pricing, href: `/${lang}/#pricing` },
+    { name: dictionary.nav.whyUs, href: `/${lang}/#why-us` },
+    { name: dictionary.nav.faq, href: `/${lang}/#faq` },
+    { name: dictionary.nav.contact, href: `/${lang}/#contact` },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +44,7 @@ const Header = () => {
       }
 
       const sections = navLinks.map(link => {
-        const id = link.href.substring(2); // remove '/#'
+        const id = link.href.split('#')[1];
         return id ? document.getElementById(id) : null;
       });
       let currentSection = 'home';
@@ -60,17 +65,17 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage]);
+  }, [isHomePage, navLinks]);
 
   const NavLink = ({ href, name, id }: { href: string; name: string; id: string }) => (
     <Link href={href} passHref>
       <span
         onClick={(e) => {
           setIsMobileMenuOpen(false);
-          if (href.startsWith('/#')) {
+          if (href.includes('#')) {
             if (isHomePage) {
               e.preventDefault();
-              const targetId = href.substring(2);
+              const targetId = href.split('#')[1];
               const targetElement = document.getElementById(targetId);
               if (targetElement) {
                 window.scrollTo({
@@ -78,6 +83,8 @@ const Header = () => {
                   behavior: 'smooth'
                 });
               }
+            } else {
+               window.location.href = href;
             }
           }
         }}
@@ -98,42 +105,44 @@ const Header = () => {
       isScrolled ? 'bg-black/60 backdrop-blur-md shadow-lg' : 'bg-transparent'
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" aria-label="FXVDS Home" className="shrink-0">
+        <Link href={`/${lang}`} aria-label="FXVDS Home" className="shrink-0">
           <Logo className="h-8 w-32" />
         </Link>
-        <nav className="hidden items-center space-x-8 md:flex">
+        <nav className="hidden items-center space-x-6 md:flex">
           {navLinks.map((link) => (
-            <NavLink key={link.name} href={link.href} name={link.name} id={link.href.substring(2)} />
+            <NavLink key={link.name} href={link.href} name={link.name} id={link.href.split('#')[1]} />
           ))}
         </nav>
         <div className="hidden items-center space-x-4 md:flex">
+          <LanguageSwitcher lang={lang} />
           <Button asChild>
-            <Link href="/#pricing">Start Free Trial</Link>
+            <Link href={`/${lang}/#pricing`}>{dictionary.cta.startTrial}</Link>
           </Button>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+           <LanguageSwitcher lang={lang} />
            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6 text-white" />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">{dictionary.nav.openMenu}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-background/90 border-l-border/50 backdrop-blur-lg">
               <div className="flex h-full flex-col p-6">
                 <div className="mb-8 flex items-center justify-between">
-                  <Link href="/" aria-label="FXVDS Home" className="shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href={`/${lang}`} aria-label="FXVDS Home" className="shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
                     <Logo className="h-8 w-32" />
                   </Link>
                 </div>
                 <nav className="flex flex-col space-y-6">
                   {navLinks.map((link) => (
-                    <NavLink key={link.name} href={link.href} name={link.name} id={link.href.substring(2)} />
+                    <NavLink key={link.name} href={link.href} name={link.name} id={link.href.split('#')[1]} />
                   ))}
                 </nav>
                 <div className="mt-auto">
                    <Button asChild className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Link href="/#pricing">Start Free Trial</Link>
+                      <Link href={`/${lang}/#pricing`}>{dictionary.cta.startTrial}</Link>
                     </Button>
                 </div>
               </div>

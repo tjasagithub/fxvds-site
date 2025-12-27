@@ -1,0 +1,361 @@
+
+{
+  "metadata": {
+    "title": "FXVDS: Power Trade",
+    "description": "Hochleistungsfähige virtuelle dedizierte Server für professionelle Händler."
+  },
+  "header": {
+    "nav": {
+      "home": "Start",
+      "pricing": "Pläne wählen",
+      "whyUs": "Warum wir",
+      "faq": "FAQ",
+      "contact": "Kontakt",
+      "openMenu": "Menü öffnen"
+    },
+    "cta": {
+      "startTrial": "Kostenlos testen"
+    }
+  },
+  "hero": {
+    "promo": {
+      "title": "Santas Trading-Boost",
+      "subtitle": "7 Tage kostenlose Testversion + 50% Rabatt im ersten Monat",
+      "code": "Gutscheincode",
+      "validity": "Gültig bis zum 3. Januar"
+    },
+    "title": "Handeln ohne Grenzen.<br />Leistung, die Ihnen gehört.",
+    "subtitle": "Erleben Sie unübertroffene Geschwindigkeit, Zuverlässigkeit und Stabilität mit virtuellen dedizierten Servern, die für Händler entwickelt wurden, die das Beste verlangen.",
+    "cta": {
+      "startTrial": "Kostenlos testen",
+      "viewPlans": "Pläne ansehen"
+    },
+    "highlights": {
+      "trial": {
+        "title": "7 Tage kostenlos testen",
+        "subtitle": "Keine Vorauszahlung"
+      },
+      "performance": {
+        "title": "Garantierte Leistung",
+        "subtitle": "Reservierte CPU & RAM"
+      },
+      "connection": {
+        "title": "Private Verbindung",
+        "subtitle": "Isolierte & sichere Umgebung"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Wählen Sie Ihre Leistung",
+    "subtitle": "Einfache, transparente Preise. Keine versteckten Gebühren. Jederzeit upgraden oder downgraden.",
+    "perMonth": "Monat",
+    "cta": "Feiertagsangebot sichern",
+    "customSetup": "Benötigen Sie mehr Leistung oder eine individuelle Einrichtung? Senden Sie uns einfach eine <a href=\"#contact\" class=\"text-primary hover:underline\">Nachricht</a>.",
+    "small": {
+      "features": [
+        { "text": "2-Kern CPU", "highlighted": true },
+        { "text": "4 GB RAM", "highlighted": true },
+        { "text": "3.6 GHz pro Kern", "highlighted": false },
+        { "text": "60 GB NVMe SSD", "highlighted": false },
+        { "text": "1 Gbit/s Hochgeschwindigkeitsverbindung", "highlighted": false }
+      ]
+    },
+    "medium": {
+      "features": [
+        { "text": "4-Kern CPU", "highlighted": true },
+        { "text": "8 GB RAM", "highlighted": true },
+        { "text": "3.6 GHz pro Kern", "highlighted": false },
+        { "text": "60 GB NVMe SSD", "highlighted": false },
+        { "text": "1 Gbit/s Hochgeschwindigkeitsverbindung", "highlighted": false }
+      ]
+    },
+    "large": {
+      "features": [
+        { "text": "8-Kern CPU", "highlighted": true },
+        { "text": "16 GB RAM", "highlighted": true },
+        { "text": "3.6 GHz pro Kern", "highlighted": false },
+        { "text": "60 GB NVMe SSD", "highlighted": false },
+        { "text": "1 Gbit/s Hochgeschwindigkeitsverbindung", "highlighted": false }
+      ]
+    },
+    "checkout": {
+      "title": "Schließen Sie Ihr Feiertagsangebot ab",
+      "close": "Schließen",
+      "plan": "Plan",
+      "perMonth": "Monat",
+      "specs": {
+        "storage": "Speicher",
+        "network": "Netzwerk",
+        "os": "Betriebssystem",
+        "security": "Zugang & Sicherheit"
+      },
+      "addOns": {
+        "title": "Optionale Add-ons",
+        "backups": {
+          "title": "Tägliche Backups",
+          "price": "+€{price}/Monat"
+        },
+        "ip": {
+          "title": "Dedizierte IP",
+          "price": "+€{price}/Monat"
+        }
+      },
+      "offer": {
+        "title": "Feiertags-Special angewendet",
+        "trial": "7-tägige kostenlose Testversion – heute keine Kosten",
+        "discount": "50% Rabatt auf Ihren ersten Monat",
+        "note": "Rabatt wird automatisch beim Stripe-Checkout angewendet."
+      },
+      "summary": {
+        "plan": "Plan",
+        "backups": "Backups",
+        "ip": "Dedizierte IP",
+        "setupFee": "Einrichtungsgebühr",
+        "discount": "Rabatt erster Monat",
+        "dueToday": "Heute fällig",
+        "firstMonth": "Gesamtpreis erster Monat",
+        "recurring": "Wiederkehrender Gesamtbetrag"
+      },
+      "cta": "Feiertagsangebot sichern",
+      "secureNote": "Sie schließen Ihr Abonnement sicher auf Stripe ab.",
+      "notConfiguredError": "Checkout-Link noch nicht konfiguriert."
+    }
+  },
+  "includedFeatures": {
+    "subtitle": "Jeder Plan ist mit Funktionen der Enterprise-Klasse ausgestattet, um Leistung und Sorgenfreiheit zu garantieren.",
+    "features": {
+      "os": "Windows Server 2025 OS",
+      "access": "Geschützter Fernzugriff",
+      "ip": "Statische IP-Adresse",
+      "autostart": "MT4 / MT5 Auto-Start-Tools",
+      "compatibility": "Jeder Broker, jeder Expert Advisor",
+      "location": "Serverstandort: Deutschland"
+    }
+  },
+  "whyFxvds": {
+    "title": "Warum FXVDS wählen?",
+    "subtitle": "Wir sind nicht nur ein weiterer Hosting-Anbieter. Wir sind Händler, die die Plattform gebaut haben, die wir uns immer gewünscht haben.",
+    "stats": [
+      { "icon": "Users", "text": "Optimiert für High-Volume Copy Trading" },
+      { "icon": "Server", "text": "Hardware der Enterprise-Klasse" },
+      { "icon": "CheckCircle", "text": "99,99% Uptime-SLA" }
+    ],
+    "features": [
+      { "icon": "Zap", "title": "Auf Geschwindigkeit ausgelegt", "description": "Unsere Infrastruktur ist optimiert und verwendet Hochfrequenz-CPUs für ultraschnelle Strategieberechnungen." },
+      { "icon": "ShieldCheck", "title": "Unübertroffene Zuverlässigkeit", "description": "Wir verwenden Hardware der Enterprise-Klasse, um sicherzustellen, dass Ihr Handel niemals unterbrochen wird." },
+      { "icon": "Trophy", "title": "Expertise, der Sie vertrauen können", "description": "Von Händlern für Händler gegründet. Wir verstehen Ihre Bedürfnisse." },
+      { "icon": "LockKeyhole", "title": "Sichere VPN-Tunnelverbindung", "description": "Jeder VDS ist in seinem eigenen verschlüsselten Netzwerk isoliert." },
+      { "icon": "Terminal", "title": "Optimiert für alle Handelsplattformen", "description": "MT4, MT5, cTrader und mehr. Bereit für jedes Setup." },
+      { "icon": "Rocket", "title": "Blitzschnelle Handelsausführung", "description": "NVMe SSD liefert die 5- bis 10-fache Geschwindigkeit herkömmlicher SATA-SSDs." }
+    ]
+  },
+  "aiRecommender": {
+    "title": "Nicht sicher, welcher Plan der richtige ist?",
+    "subtitle": "Lassen Sie sich von unserem KI-Assistenten den perfekten VDS-Plan basierend auf Ihrem Handelsstil empfehlen.",
+    "form": {
+      "title": "Erzählen Sie uns von Ihren Bedürfnissen",
+      "description": "Je mehr Details Sie angeben, desto besser die Empfehlung.",
+      "activity": {
+        "label": "Handelsmuster",
+        "placeholder": "z.B. Hochfrequenz-Scalping auf EUR/USD, Betrieb von 5 EAs gleichzeitig während der Londoner und NY-Sitzungen oder Verwaltung mehrerer Konten."
+      },
+      "platform": {
+        "label": "Handelsplattformen",
+        "placeholder": "z.B. MetaTrader 5, cTrader, Mirror Trading Manager"
+      },
+      "button": "Empfehlung erhalten",
+      "validation": {
+        "activity": "Bitte beschreiben Sie Ihre Handelsaktivität genauer.",
+        "platform": "Bitte geben Sie Ihre bevorzugte(n) Plattform(en) an."
+      }
+    },
+    "result": {
+      "loading": "Analysiere Ihre Bedürfnisse...",
+      "placeholder": "Ihre Empfehlung wird hier angezeigt.",
+      "title": "Unsere Empfehlung:"
+    },
+    "errors": {
+      "notConfigured": "Der KI-Empfehlungsgeber ist nicht konfiguriert. Bitte kontaktieren Sie den Support.",
+      "notAvailableTitle": "Funktion nicht verfügbar",
+      "failed": "Empfehlungen sind vorübergehend nicht verfügbar. Bitte vergleichen Sie die Pläne oben.",
+      "failedTitle": "KI-Empfehlung fehlgeschlagen",
+      "failedDescription": "Bitte versuchen Sie es später erneut oder wählen Sie manuell einen Plan."
+    }
+  },
+  "getStarted": {
+    "title": "In 3 einfachen Schritten loslegen",
+    "subtitle": "Starten Sie Ihre professionelle Handelsumgebung mit FXVDS – einfach, geführt und auf Zuverlässigkeit ausgelegt.",
+    "steps": [
+      { "title": "Wählen Sie Ihren Plan", "description": "Wählen Sie den VDS-Plan, der am besten zu Ihren Handelsanforderungen passt." },
+      { "title": "Wir bereiten alles vor", "description": "Wir bauen und konfigurieren Ihren Server und senden Ihnen Ihre sicheren Zugangsdaten innerhalb von 24–72 Stunden per E-Mail." },
+      { "title": "Beginnen Sie zu handeln", "description": "Verbinden Sie sich über eine sichere Verbindung mit Ihrem VDS, installieren Sie Ihre Handelsplattformen und handeln Sie mit Vertrauen – rund um die Uhr." }
+    ]
+  },
+  "cta": {
+    "title": "Bereit, Ihren Handel zu verbessern?",
+    "subtitle": "Erleben Sie den Unterschied einer professionellen Handelsumgebung. Starten Sie noch heute Ihre kostenlose Testversion und handeln Sie mit Zuversicht.",
+    "startTrial": "Kostenlos testen",
+    "comparePlans": "Pläne vergleichen"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "moreQuestions": "Haben Sie weitere Fragen? {link}Kontaktieren Sie uns einfach.</a>",
+    "questions": [
+      { "question": "Was ist ein Forex VDS?", "answer": "Ein Forex Virtual Dedicated Server (VDS) ist ein privater Server, der für den Handel optimiert ist. Er läuft rund um die Uhr, unabhängig von Ihrem eigenen Computer, und bietet eine stabile, Hochgeschwindigkeitsumgebung, um Ihre Handelsplattformen und automatisierten Strategien (Expert Advisors) ohne Unterbrechungen auszuführen." },
+      { "question": "Was ist der Unterschied zwischen einem VDS und einem VPS?", "answer": "Ein Virtual Dedicated Server (VDS) stellt dedizierte Ressourcen (CPU, RAM) von einem physischen Server bereit und bietet so eine stabilere Leistung als ein Virtual Private Server (VPS), der die Ressourcen unter mehreren Benutzern aufteilt. Für den Handel ist VDS überlegen, da Leistungseinbußen durch die Aktivitäten anderer Benutzer verhindert werden." },
+      { "question": "VDS und VPS machen Sinn – aber was genau ist ein VPN, und brauche ich einen?", "answer": "Ein VPN (Virtual Private Network) ist eine verschlüsselte Sicherheitsschicht, die eine private Verbindung zwischen Ihnen und Ihrem VDS herstellt. Es schützt Ihre Daten, Ihre Handelsaktivitäten und den Serverzugriff vor externen Bedrohungen – selbst in ungesicherten Netzwerken." },
+      { "question": "Schützt mich ein VPN wirklich, selbst wenn jemand meine Zugangsdaten erhält?", "answer": "<p>Ja – und hier kommt der sichere Zugang wirklich zum Tragen. Mit FXVDS wird der Zugang zu Ihrem Server durch eine starke Authentifizierung und eingeschränkte Netzwerkkontrollen geschützt. Dies reduziert das Risiko unbefugten Zugriffs erheblich, selbst wenn Anmeldeinformationen preisgegeben würden.</p>" },
+      { "question": "Kann ich FXVDS für automatisierten oder 24/7-Handel verwenden?", "answer": "<p class=\"mb-4\">Absolut. Unser VDS ist für den 24/7-Betrieb konzipiert und eignet sich daher ideal für die Ausführung automatisierter Handelsstrategien, Expert Advisors (EAs) und Trading-Bots ohne Unterbrechung, selbst wenn Ihr persönlicher Computer ausgeschaltet ist.</p><p>VDS gibt Ihnen Leistung,</p><p>VPN gibt Ihnen Privatsphäre,</p><p>und zusammen geben sie Ihnen Sicherheit beim Handeln.</p>" },
+      { "question": "Warum sind FXVDS-Server so erschwinglich?", "answer": "<p class=\"mb-4\">Wir betreiben eine Hochleistungsserverinfrastruktur, die speziell für den Forex-Handel optimiert ist. Indem wir uns auf die Leistung konzentrieren, die wirklich zählt, und unnötigen Overhead vermeiden, können wir zuverlässige Umgebungen auf institutionellem Niveau zu einem wettbewerbsfähigen Preis anbieten.</p><p>Alle FXVDS-Server befinden sich in Deutschland und profitieren von einer robusten Infrastruktur, starken Datenschutzstandards und latenzarmen Verbindungen für europäische Händler.</p>" },
+      { "question": "Spielt der Serverstandort eine Rolle?", "answer": "<p class=\"mb-4\">Ja – aber nicht so sehr, wie viele Anbieter behaupten. Die Serverleistung ist weitaus wichtiger als nur die „Nähe“ zu einem Broker. Wenn ein Server unterpowert oder instabil ist, wird die Handelsausführung langsam sein, unabhängig von seinem Standort. Hochfrequenz-CPUs, schneller Arbeitsspeicher und eine stabile Infrastruktur haben einen weitaus größeren Einfluss auf die Ausführungsgeschwindigkeit als die Entfernung allein.</p><p>Dennoch befinden sich die FXVDS-Server in Deutschland und bieten eine ausgezeichnete Balance aus Leistung, Zuverlässigkeit und latenzarmen Verbindungen zu wichtiger europäischer Handelsinfrastruktur – zu einigen der wettbewerbsfähigsten Preise, die für dedizierte Handelsserver verfügbar sind.</p>" },
+      { "question": "Was ist der Unterschied zwischen einer statischen IP und einer dedizierten IP-Adresse?", "answer": "Eine statische IP ist eine feste Adresse, die sich nicht ändert, was für Broker wichtig ist, die aus Sicherheitsgründen eine konsistente IP verlangen können. Alle unsere Pläne enthalten eine statische IP. Eine dedizierte IP ist eine Adresse, die ausschließlich von Ihnen verwendet wird, um sicherzustellen, dass sie nicht mit anderen Benutzern geteilt wird. Diese ist als optionales Add-on erhältlich." },
+      { "question": "Ist FXVDS für professionelle Copy-Trading- und Trade-Mirroring-Software geeignet?", "answer": "Ja. FXVDS wird dringend für Benutzer empfohlen, die professionelle Copy-Trading- und Trade-Mirroring-Lösungen betreiben, einschließlich der Anton Nel Mirror Trading Manager Software und ähnlicher Plattformen. Dedizierte CPU-Ressourcen, stabile Leistung und eine 24/7-Verfügbarkeit gewährleisten eine zuverlässige Handelsreplikation über Hunderte von verbundenen Follower-Konten." },
+      { "question": "Warum ist ein VDS für Mirror-Trading-Software wichtig?", "answer": "Mirror-Trading-Software erfordert kontinuierliche Konnektivität, geringe Ausführungsverzögerungen und eine konstante Systemleistung. Ein dedizierter VDS stellt sicher, dass der Trading-Manager jederzeit online bleibt und Handelssignale zuverlässig verarbeiten kann, ohne Unterbrechungen durch lokale System- oder Internetprobleme." }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Benötigen Sie mehr Leistung oder eine individuelle Einrichtung? Senden Sie uns eine Nachricht und wir werden die richtige Lösung für Ihren Handel zusammenstellen.",
+    "specialOffer": "Verwenden Sie Anton Nel Mirror Trading Manager? Senden Sie uns eine Nachricht für einen Sonderrabatt.",
+    "telegram": "Telegram",
+    "email": "E-Mail",
+    "form": {
+      "title": "Senden Sie uns eine Nachricht",
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "E-Mail",
+      "messagePlaceholder": "Nachricht",
+      "button": "Nachricht senden",
+      "validation": {
+        "name": "Der Name muss mindestens 2 Zeichen lang sein.",
+        "email": "Ungültige E-Mail-Adresse.",
+        "message": "Die Nachricht muss mindestens 10 Zeichen lang sein.",
+        "error": "Bitte korrigieren Sie die Fehler und versuchen Sie es erneut.",
+        "success": "Nachricht gesendet. Wir werden uns in Kürze bei Ihnen melden.",
+        "notConfigured": "E-Mail-Dienst ist nicht konfiguriert. Bitte kontaktieren Sie den Support.",
+        "failure": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder senden Sie eine E-Mail an info@fxvds.com."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Hochleistungs-Forex-VDS für Händler, die das Beste verlangen.",
+    "company": {
+      "title": "Unternehmen",
+      "about": "Über uns",
+      "plans": "Pläne & Preise",
+      "contact": "Kontakt"
+    },
+    "legal": {
+      "title": "Rechtliches",
+      "privacy": "Datenschutz",
+      "terms": "AGB",
+      "cookies": "Cookies",
+      "impressum": "Impressum"
+    },
+    "copyright": "Alle Rechte vorbehalten.",
+    "legalInfoTitle": "Rechtliche Informationen",
+    "brandInfo": "FXVDS ist eine Marke, die von der T.art UG (haftungsbeschränkt) betrieben wird",
+    "addressTitle": "Registrierte Adresse:",
+    "courtTitle": "Registergericht",
+    "registerNumberTitle": "Handelsregisternummer",
+    "contactTitle": "Kontakt"
+  },
+  "legal": {
+    "title": "Rechtliche Informationen",
+    "backToTop": "Nach oben",
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "intro": "Diese Datenschutzerklärung wurde zusammengestellt, um diejenigen besser zu bedienen, die sich Gedanken darüber machen, wie ihre ‚Persönlich Identifizierbaren Informationen‘ (PII) online verwendet werden. PII, wie im US-amerikanischen Datenschutzgesetz und der Informationssicherheit beschrieben, sind Informationen, die allein oder zusammen mit anderen Informationen zur Identifizierung, Kontaktaufnahme oder Lokalisierung einer einzelnen Person oder zur Identifizierung einer Person im Kontext verwendet werden können. Bitte lesen Sie unsere Datenschutzerklärung sorgfältig durch, um ein klares Verständnis dafür zu erhalten, wie wir Ihre persönlich identifizierbaren Informationen gemäß unserer Website sammeln, verwenden, schützen oder anderweitig handhaben.",
+      "whatWeCollectTitle": "Welche persönlichen Informationen sammeln wir von den Personen, die unseren Blog, unsere Website oder unsere App besuchen?",
+      "whatWeCollectText": "Wenn Sie auf unserer Website bestellen oder sich registrieren, werden Sie möglicherweise gebeten, Ihren Namen, Ihre E-Mail-Adresse, Ihre Postanschrift, Ihre Kreditkarteninformationen oder andere Details einzugeben, um Ihnen bei Ihrer Erfahrung zu helfen.",
+      "whenWeCollectTitle": "Wann sammeln wir Informationen?",
+      "whenWeCollectText": "Wir sammeln Informationen von Ihnen, wenn Sie eine Bestellung aufgeben, einen Newsletter abonnieren, ein Formular ausfüllen oder Informationen auf unserer Website eingeben.",
+      "howWeUseTitle": "Wie verwenden wir Ihre Informationen?",
+      "howWeUseText": "Wir können die Informationen, die wir von Ihnen sammeln, wenn Sie sich registrieren, einen Kauf tätigen, sich für unseren Newsletter anmelden, auf eine Umfrage oder Marketingkommunikation reagieren, auf der Website surfen oder bestimmte andere Website-Funktionen nutzen, auf folgende Weisen verwenden:",
+      "howWeUseList": [
+        "Um Ihre Erfahrung zu personalisieren und uns zu ermöglichen, die Art von Inhalten und Produktangeboten zu liefern, an denen Sie am meisten interessiert sind.",
+        "Um unsere Website zu verbessern, um Sie besser bedienen zu können.",
+        "Um uns zu ermöglichen, Sie bei der Beantwortung Ihrer Kundendienstanfragen besser zu bedienen.",
+        "Um Ihre Transaktionen schnell zu verarbeiten.",
+        "Um regelmäßige E-Mails bezüglich Ihrer Bestellung oder anderer Produkte und Dienstleistungen zu senden.",
+        "Um nach der Korrespondenz (Live-Chat, E-Mail oder Telefonanfragen) nachzufassen"
+      ],
+      "howWeProtectTitle": "Wie schützen wir Ihre Informationen?",
+      "howWeProtectText": "Unsere Website wird regelmäßig auf Sicherheitslücken und bekannte Schwachstellen überprüft, um Ihren Besuch auf unserer Website so sicher wie möglich zu machen. Wir verwenden regelmäßiges Malware-Scanning. Ihre persönlichen Informationen befinden sich hinter gesicherten Netzwerken und sind nur einer begrenzten Anzahl von Personen zugänglich, die besondere Zugriffsrechte auf solche Systeme haben und verpflichtet sind, die Informationen vertraulich zu behandeln. Darüber hinaus werden alle sensiblen/Kreditinformationen, die Sie bereitstellen, über die Secure Socket Layer (SSL)-Technologie verschlüsselt. Wir implementieren eine Vielzahl von Sicherheitsmaßnahmen, wenn ein Benutzer eine Bestellung aufgibt, seine Informationen eingibt, übermittelt oder darauf zugreift, um die Sicherheit Ihrer persönlichen Informationen zu wahren. Alle Transaktionen werden über einen Gateway-Anbieter abgewickelt und nicht auf unseren Servern gespeichert oder verarbeitet.",
+      "cookiesTitle": "Verwenden wir ‘Cookies’?",
+      "cookiesText": "Ja. Cookies sind kleine Dateien, die eine Website oder ihr Dienstanbieter über Ihren Webbrowser (sofern Sie dies zulassen) auf die Festplatte Ihres Computers überträgt und die es den Systemen der Website oder des Dienstanbieters ermöglichen, Ihren Browser zu erkennen und bestimmte Informationen zu erfassen und zu speichern. Wir verwenden Cookies beispielsweise, um uns die Artikel in Ihrem Warenkorb zu merken und zu verarbeiten. Sie werden auch verwendet, um uns zu helfen, Ihre Präferenzen basierend auf früheren oder aktuellen Website-Aktivitäten zu verstehen, was es uns ermöglicht, Ihnen verbesserte Dienstleistungen anzubieten. Wir verwenden Cookies auch, um uns zu helfen, aggregierte Daten über den Website-Verkehr und die Website-Interaktion zusammenzustellen, damit wir in Zukunft bessere Website-Erfahrungen und Tools anbieten können.",
+      "thirdPartyDisclosureTitle": "Weitergabe an Dritte",
+      "thirdPartyDisclosureText": "Wir verkaufen, handeln oder übertragen Ihre persönlich identifizierbaren Informationen nicht an Dritte.",
+      "thirdPartyLinksTitle": "Links von Drittanbietern",
+      "thirdPartyLinksText": "Wir bieten auf unserer Website keine Produkte или Dienstleistungen von Drittanbietern an.",
+      "gdprTitle": "DSGVO",
+      "gdprText": "Wenn Sie in der Europäischen Union ansässig sind, haben Sie das Recht, auf die von uns über Sie gespeicherten personenbezogenen Daten zuzugreifen, sie an einen neuen Dienst zu übertragen und zu verlangen, dass Ihre personenbezogenen Daten korrigiert, aktualisiert oder gelöscht werden. Wenn Sie diese Rechte ausüben möchten, kontaktieren Sie uns bitte."
+    },
+    "terms": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "intro": "Willkommen bei FXVDS. Diese Allgemeinen Geschäftsbedingungen („Bedingungen“) regeln Ihre Nutzung unserer Website, Produkte und Dienstleistungen (zusammenfassend die „Dienste“). Durch den Zugriff auf oder die Nutzung unserer Dienste erklären Sie sich damit einverstanden, an diese Bedingungen gebunden zu sein.",
+      "serviceDescriptionTitle": "Dienstleistungsbeschreibung",
+      "serviceDescriptionText": "FXVDS stellt virtuelle dedizierte Server (VDS) und die zugehörige Infrastruktur zum Hosten von Handelssoftware von Drittanbietern wie MetaTrader (MT4/MT5) bereit. FXVDS bietet keine Finanzdienstleistungen, Anlageberatung, Maklerdienste oder Handelssoftware an.",
+      "eligibilityTitle": "Teilnahmeberechtigung",
+      "eligibilityText": "Sie müssen mindestens 18 Jahre alt sein und die Geschäftsfähigkeit besitzen, um einen verbindlichen Vertrag zur Nutzung unserer Dienste abzuschließen.",
+      "accountRegistrationTitle": "Kontoregistrierung",
+      "accountRegistrationText": "Sie erklären sich damit einverstanden, bei der Erstellung eines Kontos genaue und vollständige Informationen anzugeben und Ihre Anmeldeinformationen sicher aufzubewahren. Sie sind allein verantwortlich für alle Aktivitäten, die unter Ihrem Konto stattfinden.",
+      "paymentsTitle": "Zahlungen und Abrechnung",
+      "paymentsText": "Zahlungen für unsere Dienste werden über unseren externen Zahlungsabwickler Stripe abgewickelt. Indem Sie eine Zahlungsmethode angeben, ermächtigen Sie uns, Sie für den ausgewählten Abonnementplan zu belasten. Abonnements verlängern sich am Ende jedes Abrechnungszyklus automatisch, es sei denn, Sie kündigen sie.",
+      "freeTrialTitle": "Kostenlose Testversion",
+      "freeTrialText": "Wenn eine kostenlose Testversion angeboten wird, wird sie am Ende des Testzeitraums automatisch in ein kostenpflichtiges Abonnement umgewandelt, es sei denn, Sie kündigen sie vorher. Sie sind dafür verantwortlich, Ihre Testversion zu kündigen, um Gebühren zu vermeiden.",
+      "cancellationsTitle": "Kündigungen",
+      "cancellationsText": "Sie können Ihr Abonnement jederzeit über Ihr Kontodashboard kündigen. Ihr Dienst bleibt bis zum Ende des aktuellen Abrechnungszeitraums aktiv. Wir bieten keine Rückerstattungen oder Gutschriften für Teilmonate oder ungenutzte Dienste an.",
+      "addOnsTitle": "Dedizierte IPs & Add-Ons",
+      "addOnsText": "Optionale Add-ons wie dedizierte IPs und tägliche Backups werden monatlich als Teil Ihres Abonnements abgerechnet. Backups werden auf Best-Effort-Basis bereitgestellt und nur, wenn das Add-on erworben wurde und aktiv ist.",
+      "availabilityTitle": "Dienstverfügbarkeit",
+      "availabilityText": "FXVDS strebt eine maximale Betriebszeit an, garantiert jedoch keinen ununterbrochenen oder fehlerfreien Dienst. Geplante Wartungsarbeiten, Netzwerkprobleme oder andere unvorhergesehene Ereignisse können zu vorübergehenden Ausfällen führen.",
+      "dataBackupsTitle": "Daten & Backups",
+      "dataBackupsText": "Sie sind allein für Ihre Daten verantwortlich. FXVDS sichert Benutzerdaten nicht automatisch, es sei denn, das Add-on für tägliche Backups wurde erworben. Selbst mit diesem Add-on empfehlen wir dringend, eigene separate Backups zu pflegen.",
+      "liabilityTitle": "Haftungsbeschränkung",
+      "liabilityText": "Im größtmöglichen gesetzlich zulässigen Umfang haftet FXVDS nicht für finanzielle Verluste, Handelsverluste, Datenverluste oder andere direkte oder Folgeschäden, die sich aus der Nutzung oder Unmöglichkeit der Nutzung unserer Dienste ergeben. Wir garantieren nicht die Leistung oder Zuverlässigkeit von auf dem VDS installierter Handelssoftware von Drittanbietern.",
+      "serviceChangesTitle": "Änderungen am Dienst",
+      "serviceChangesText": "Wir behalten uns das Recht vor, unsere Dienste jederzeit mit oder ohne Vorankündigung zu ändern, auszusetzen oder einzustellen. Die Preise für alle Dienste können sich mit einer Frist von 30 Tagen ändern.",
+      "termsChangesTitle": "Änderungen der Bedingungen",
+      "termsChangesText": "Wir können diese Bedingungen von Zeit zu Zeit aktualisieren. Ihre fortgesetzte Nutzung der Dienste nach Änderungen stellt Ihre Zustimmung zu den neuen Bedingungen dar. Es liegt in Ihrer Verantwortung, diese Bedingungen regelmäßig zu überprüfen.",
+      "contactTitle": "Kontakt",
+      "contactText": "Bei Fragen zu diesen Bedingungen kontaktieren Sie uns bitte unter {email}."
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "intro": "Damit diese Website ordnungsgemäß funktioniert, legen wir manchmal kleine Datendateien, sogenannte Cookies, auf Ihrem Gerät ab. Die meisten großen Websites tun dies ebenfalls. Diese Richtlinie erklärt, was Cookies sind und wie wir sie verwenden.",
+      "whatAreCookiesTitle": "Was sind Cookies?",
+      "whatAreCookiesText": "Ein Cookie ist eine kleine Textdatei, die eine Website auf Ihrem Computer oder Mobilgerät speichert, wenn Sie die Website besuchen. Es ermöglicht der Website, Ihre Aktionen und Präferenzen (wie Login, Sprache und andere Anzeigeeinstellungen) über einen bestimmten Zeitraum zu speichern, sodass Sie sie nicht jedes Mal neu eingeben müssen, wenn Sie zur Website zurückkehren oder von einer Seite zur anderen wechseln. Die cookie-bezogenen Informationen werden nicht verwendet, um Sie persönlich zu identifizieren, und die Daten unterliegen vollständig unserer Kontrolle. Diese Cookies werden für keine anderen als die hier beschriebenen Zwecke verwendet.",
+      "howWeUseTitle": "Wie wir Cookies verwenden",
+      "howWeUseIntro": "Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern, indem wir:",
+      "howWeUseList": [
+        { "title": "Notwendige Cookies", "text": "Diese sind unerlässlich, damit Sie die Website durchsuchen und ihre Funktionen nutzen können, z. B. den Zugriff auf sichere Bereiche der Website. Das Deaktivieren dieser Cookies kann die Funktionalität der Website beeinträchtigen." },
+        { "title": "Funktionalitäts-Cookies", "text": "Diese Cookies ermöglichen es der Website, sich an die von Ihnen in der Vergangenheit getroffenen Entscheidungen zu erinnern, z. B. welche Sprache Sie bevorzugen oder Ihren Benutzernamen für die automatische Anmeldung." },
+        { "title": "Leistungs-/Analyse-Cookies", "text": "Wir verwenden diese Cookies, um Informationen darüber zu sammeln, wie Sie unsere Website nutzen, z. B. welche Seiten Sie besucht und auf welche Links Sie geklickt haben. Diese Informationen werden aggregiert und anonymisiert und dienen zur Verbesserung der Funktionalität unserer Website." }
+      ],
+      "enablingText": "Das Aktivieren dieser Cookies ist für die Funktion der Website nicht unbedingt erforderlich, bietet Ihnen aber ein besseres Surferlebnis.",
+      "howToControlTitle": "So steuern Sie Cookies",
+      "howToControlText": "Sie können Cookies nach Belieben steuern und/oder löschen. Sie können alle Cookies löschen, die sich bereits auf Ihrem Computer befinden, und Sie können die meisten Browser so einstellen, dass sie das Setzen von Cookies verhindern. Wenn Sie dies tun, müssen Sie jedoch möglicherweise bei jedem Besuch einer Website einige Einstellungen manuell anpassen, und einige Dienste und Funktionen funktionieren möglicherweise nicht. Weitere Informationen finden Sie unter {link}.",
+      "changesToPolicyTitle": "Änderungen dieser Richtlinie",
+      "changesToPolicyText": "Wir können unsere Cookie-Richtlinie von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neue Cookie-Richtlinie auf dieser Seite veröffentlichen. Es wird empfohlen, diese Cookie-Richtlinie regelmäßig auf Änderungen zu überprüfen."
+    },
+    "impressum": {
+      "title": "Impressum / Rechtliche Hinweise",
+      "infoText": "Angaben gemäß § 5 TMG.",
+      "companyDescriptionTitle": "Firmenbeschreibung:",
+      "companyDescriptionText": "FXVDS bietet Hochleistungs-Virtual-Dedicated-Server (VDS) für Händler und Software-Hosting an.<br/>FXVDS bietet keine Finanzdienstleistungen, Anlageberatung oder Maklerdienste an.",
+      "responsibleTitle": "Verantwortlich für den Inhalt:",
+      "liabilityLinksTitle": "Haftung für Links",
+      "liabilityLinksText": "Unsere Website kann Links zu externen Websites Dritter enthalten. Wir haben keinen Einfluss auf den Inhalt dieser externen Websites und können daher keine Haftung für deren Inhalt übernehmen. Der jeweilige Anbieter oder Betreiber der verlinkten Seiten ist stets für deren Inhalt verantwortlich. Zum Zeitpunkt der Verlinkung wurden die verlinkten Seiten auf mögliche Rechtsverstöße überprüft. Werden uns Rechtsverletzungen bekannt, werden solche Links umgehend entfernt.",
+      "copyrightTitle": "Urheberrecht",
+      "copyrightText": "Alle auf dieser Website veröffentlichten Inhalte und Werke, einschließlich Texte, Grafiken und Layout, sind urheberrechtlich geschützt. Jede Vervielfältigung, Bearbeitung, Verbreitung oder Nutzung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen schriftlichen Zustimmung. Downloads und Kopien dieser Website sind nur für den privaten, nicht kommerziellen Gebrauch gestattet."
+    },
+    "footer": {
+      "legalInfoTitle": "Rechtliche Informationen",
+      "brandInfo": "FXVDS ist eine Marke, die von der T.art UG (haftungsbeschränkt) betrieben wird.",
+      "addressTitle": "Sitz der Gesellschaft:",
+      "courtTitle": "Registergericht",
+      "registerNumberTitle": "Handelsregisternummer",
+      "contactTitle": "Kontakt"
+    }
+  }
+}

@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -10,28 +11,9 @@ import { CalendarDays, Zap, Lock } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import Snowfall from '@/components/ui/snowfall';
+import { getDictionary } from '@/lib/get-dictionary';
 
-const highlights: {
-  icon: LucideIcon;
-  title: string;
-  subtitle: string;
-}[] = [
-  {
-    icon: CalendarDays,
-    title: '7 Day Free Trial',
-    subtitle: 'No payment upfront',
-  },
-  {
-    icon: Zap,
-    title: 'Guaranteed Performance',
-    subtitle: 'Reserved CPU & RAM',
-  },
-  {
-    icon: Lock,
-    title: 'Private Connection',
-    subtitle: 'Isolated & secure environment',
-  },
-];
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>['hero'];
 
 const SantaHatIcon = () => (
   <svg
@@ -58,13 +40,35 @@ const SantaHatIcon = () => (
 );
 
 
-const Hero = () => {
+const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
   const [scrollY, setScrollY] = useState(0);
   const isMobile = useIsMobile();
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isSnowVisible, setIsSnowVisible] = useState(false);
+
+  const highlights: {
+    icon: LucideIcon;
+    title: string;
+    subtitle: string;
+  }[] = [
+    {
+      icon: CalendarDays,
+      title: dictionary.highlights.trial.title,
+      subtitle: dictionary.highlights.trial.subtitle,
+    },
+    {
+      icon: Zap,
+      title: dictionary.highlights.performance.title,
+      subtitle: dictionary.highlights.performance.subtitle,
+    },
+    {
+      icon: Lock,
+      title: dictionary.highlights.connection.title,
+      subtitle: dictionary.highlights.connection.subtitle,
+    },
+  ];
 
   useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -146,29 +150,27 @@ const Hero = () => {
                 
                 <h2 className="text-xl font-bold text-white flex items-center">
                     <SantaHatIcon />
-                    Santa’s Trading Boost
+                    {dictionary.promo.title}
                 </h2>
-                <p className="text-primary font-semibold text-lg mt-2">7 days free trial + 50% off the first month</p>
+                <p className="text-primary font-semibold text-lg mt-2">{dictionary.promo.subtitle}</p>
                 <div className="text-xs text-gray-400 mt-2 space-y-1">
-                    <p>Use code: <code className="font-mono bg-white/10 px-1 py-0.5 rounded">HOLIDAY50</code></p>
-                    <p>Valid until January 3rd</p>
+                    <p>{dictionary.promo.code}: <code className="font-mono bg-white/10 px-1 py-0.5 rounded">HOLIDAY50</code></p>
+                    <p>{dictionary.promo.validity}</p>
                 </div>
             </div>
 
-            <h1 className="mb-6 font-headline text-5xl font-extrabold tracking-tight text-white md:text-7xl">
-              Trade without limits.
-              <br />
-              Power that’s yours.
-            </h1>
+            <h1 className="mb-6 font-headline text-5xl font-extrabold tracking-tight text-white md:text-7xl"
+              dangerouslySetInnerHTML={{ __html: dictionary.title }}
+            />
             <p className="mb-8 max-w-lg text-lg text-gray-300">
-              Experience unmatched speed, reliability, and stability with virtual dedicated servers built for traders who demand the best.
+              {dictionary.subtitle}
             </p>
             <div className="flex space-x-4">
               <Button asChild size="lg">
-                <Link href="#pricing">Start Free Trial</Link>
+                <Link href="#pricing">{dictionary.cta.startTrial}</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="#pricing">View Plans</Link>
+                <Link href="#pricing">{dictionary.cta.viewPlans}</Link>
               </Button>
             </div>
           </div>

@@ -17,6 +17,9 @@ import { Separator } from '@/components/ui/separator';
 import { stripeLinks } from '@/lib/stripe-links';
 import { cn } from '@/lib/utils';
 import { CheckCircle2, X, Gift } from 'lucide-react';
+import { getDictionary } from '@/lib/get-dictionary';
+
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>['checkout'];
 
 export type PlanName = 'Small' | 'Medium' | 'Large';
 
@@ -72,9 +75,10 @@ type CheckoutModalProps = {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   initialPlan: PlanName;
+  dictionary: Dictionary;
 };
 
-export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutModalProps) => {
+export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }: CheckoutModalProps) => {
   const [selectedPlan, setSelectedPlan] = useState<PlanName>(initialPlan);
   const [hasDailyBackups, setHasDailyBackups] = useState(false);
   const [hasDedicatedIp, setHasDedicatedIp] = useState(false);
@@ -105,7 +109,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
     const checkoutUrl = stripeLinks[planKey][urlKey];
 
     if (checkoutUrl.includes('_URL')) {
-      setErrorMessage('Checkout link not configured yet.');
+      setErrorMessage(dictionary.notConfiguredError);
     } else {
       window.location.href = checkoutUrl;
     }
@@ -133,12 +137,12 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
         
         <DialogClose className="absolute right-3 top-3 z-50 rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white h-11 w-11 flex items-center justify-center">
             <X className="h-5 w-5" />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">{dictionary.close}</span>
         </DialogClose>
         
         <DialogHeader className="p-6 pb-4 shrink-0">
           <DialogTitle className="text-2xl font-bold font-headline text-white text-center">
-            Finalize Your Holiday Offer
+            {dictionary.title}
           </DialogTitle>
         </DialogHeader>
 
@@ -164,10 +168,10 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
 
                <div>
                   <p className="font-semibold text-white">
-                    {selectedPlan} Plan
+                    {selectedPlan} {dictionary.plan}
                   </p>
                   <p className="text-lg font-bold text-primary">
-                    €{currentPlanData.price} <span className="text-sm font-normal text-gray-400">/ month</span>
+                    €{currentPlanData.price} <span className="text-sm font-normal text-gray-400">/ {dictionary.perMonth}</span>
                   </p>
               </div>
               
@@ -176,17 +180,17 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
               <ul className="space-y-3 text-sm">
                 <SpecItem label="CPU" value={currentPlanData.specs.cpu} />
                 <SpecItem label="RAM" value={currentPlanData.specs.ram} />
-                <SpecItem label="Storage" value={currentPlanData.specs.storage} />
-                <SpecItem label="Network" value={currentPlanData.specs.network} />
-                <SpecItem label="Operating System" value={currentPlanData.specs.os} />
-                <SpecItem label="Access & Security" value={currentPlanData.specs.security} />
+                <SpecItem label={dictionary.specs.storage} value={currentPlanData.specs.storage} />
+                <SpecItem label={dictionary.specs.network} value={currentPlanData.specs.network} />
+                <SpecItem label={dictionary.specs.os} value={currentPlanData.specs.os} />
+                <SpecItem label={dictionary.specs.security} value={currentPlanData.specs.security} />
               </ul>
             </div>
 
             {/* Right Side */}
             <div className="flex flex-col">
               <div className="space-y-4">
-                <h3 className="font-semibold text-white">Optional add-ons</h3>
+                <h3 className="font-semibold text-white">{dictionary.addOns.title}</h3>
                   <div className="flex items-start space-x-3 rounded-md border border-transparent p-3 hover:border-border/50 hover:bg-black/20 transition-all">
                     <Checkbox
                       id="dailyBackups"
@@ -195,8 +199,8 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
                       className="data-[state=checked]:bg-primary data-[state=checked]:border-primary mt-1"
                     />
                     <Label htmlFor="dailyBackups" className="flex-1 cursor-pointer">
-                      <span className="font-medium text-white">Daily Backups</span>
-                      <span className="text-sm text-gray-400 block">+€10/month</span>
+                      <span className="font-medium text-white">{dictionary.addOns.backups.title}</span>
+                      <span className="text-sm text-gray-400 block">{dictionary.addOns.backups.price.replace('{price}', '10')}</span>
                     </Label>
                   </div>
                   <div className="flex items-start space-x-3 rounded-md border border-transparent p-3 hover:border-border/50 hover:bg-black/20 transition-all">
@@ -207,37 +211,37 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
                       className="data-[state=checked]:bg-primary data-[state=checked]:border-primary mt-1"
                     />
                     <Label htmlFor="dedicatedIp" className="flex-1 cursor-pointer">
-                      <span className="font-medium text-white">Dedicated IP</span>
-                      <span className="text-sm text-gray-400 block">+€10/month</span>
+                      <span className="font-medium text-white">{dictionary.addOns.ip.title}</span>
+                      <span className="text-sm text-gray-400 block">{dictionary.addOns.ip.price.replace('{price}', '10')}</span>
                     </Label>
                   </div>
               </div>
 
               <div className="mt-4 p-4 rounded-lg bg-gradient-to-br from-yellow-400/10 via-red-500/10 to-yellow-400/10 border border-primary/20 shadow-inner">
-                <h3 className="font-bold text-white flex items-center gap-2"><Gift className="text-primary"/>Holiday Special Applied</h3>
+                <h3 className="font-bold text-white flex items-center gap-2"><Gift className="text-primary"/>{dictionary.offer.title}</h3>
                 <ul className="text-sm text-gray-300 mt-2 space-y-1 list-disc list-inside">
-                    <li>7-day free trial — no charge today</li>
-                    <li>50% off your first month</li>
-                    <li className="text-xs text-gray-400">Discount applied automatically at Stripe checkout.</li>
+                    <li>{dictionary.offer.trial}</li>
+                    <li>{dictionary.offer.discount}</li>
+                    <li className="text-xs text-gray-400">{dictionary.offer.note}</li>
                 </ul>
               </div>
 
               <Separator className="bg-border/50 my-4" />
 
               <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-gray-400">Plan: {selectedPlan} VDS</span> <span>€{currentPlanData.price.toFixed(2)}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">Backups:</span> <span>{hasDailyBackups ? '€10.00' : '—'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">Dedicated IP:</span> <span>{hasDedicatedIp ? '€10.00' : '—'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">Setup fee:</span> <span>€0.00</span></div>
-                  <div className="flex justify-between text-red-400"><span className="text-red-400">First Month Discount:</span> <span className='font-bold'>-€{(currentPlanData.price / 2).toFixed(2)}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.plan}: {selectedPlan} VDS</span> <span>€{currentPlanData.price.toFixed(2)}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.backups}:</span> <span>{hasDailyBackups ? '€10.00' : '—'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.ip}:</span> <span>{hasDedicatedIp ? '€10.00' : '—'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.setupFee}:</span> <span>€0.00</span></div>
+                  <div className="flex justify-between text-red-400"><span className="text-red-400">{dictionary.summary.discount}:</span> <span className='font-bold'>-€{(currentPlanData.price / 2).toFixed(2)}</span></div>
               </div>
 
               <Separator className="bg-border/50 my-3" />
 
               <div className="space-y-2">
-                  <div className="flex justify-between font-bold text-primary"><span className="text-primary">Due today:</span> <span className="text-primary">€0.00</span></div>
-                  <div className="flex justify-between font-bold"><span className="text-white">First month total:</span> <span className="text-white">€{firstMonthPrice.toFixed(2)}</span></div>
-                  <div className="flex justify-between text-sm"><span className="text-gray-400">Recurring total:</span> <span className="text-gray-400">€{totalPrice.toFixed(2)} / month</span></div>
+                  <div className="flex justify-between font-bold text-primary"><span className="text-primary">{dictionary.summary.dueToday}:</span> <span className="text-primary">€0.00</span></div>
+                  <div className="flex justify-between font-bold"><span className="text-white">{dictionary.summary.firstMonth}:</span> <span className="text-white">€{firstMonthPrice.toFixed(2)}</span></div>
+                  <div className="flex justify-between text-sm"><span className="text-gray-400">{dictionary.summary.recurring}:</span> <span className="text-gray-400">€{totalPrice.toFixed(2)} / {dictionary.perMonth}</span></div>
               </div>
 
             </div>
@@ -247,11 +251,11 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan }: CheckoutMod
         <DialogFooter className="flex flex-col sm:flex-col gap-4 p-6 pt-4 shrink-0 bg-card/80">
            <div className="flex flex-col w-full">
              <Button type="button" onClick={handleContinue} size="lg">
-                Claim Holiday Offer
+                {dictionary.cta}
               </Button>
             {errorMessage && <p className="text-sm text-destructive mt-2 text-center">{errorMessage}</p>}
           </div>
-           <p className="text-xs text-gray-500 text-center">You’ll complete your subscription securely on Stripe.</p>
+           <p className="text-xs text-gray-500 text-center">{dictionary.secureNote}</p>
         </DialogFooter>
       </DialogContent>
     </Dialog>

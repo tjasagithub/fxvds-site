@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -42,3 +43,20 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+async function createRedirects() {
+  return [
+    {
+      source: '/',
+      destination: '/en',
+      permanent: true,
+    },
+    {
+      source: '/legal',
+      destination: '/en/legal',
+      permanent: true,
+    },
+  ];
+}
+
+nextConfig.redirects = createRedirects;

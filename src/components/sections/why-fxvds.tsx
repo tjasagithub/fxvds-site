@@ -1,69 +1,41 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Zap, ShieldCheck, Trophy, LockKeyhole, Terminal, Rocket, Users, CheckCircle, Server } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { getDictionary } from '@/lib/get-dictionary';
 
-type FeatureCard = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-};
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>['whyFxvds'];
 
-const features: FeatureCard[] = [
-  {
-    icon: Zap,
-    title: 'Built for Speed',
-    description: 'Our infrastructure is optimized and uses high-frequency CPUs for ultra-fast strategy calculations.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Unmatched Reliability',
-    description: 'We use enterprise-grade hardware to ensure your trading is never interrupted.',
-  },
-  {
-    icon: Trophy,
-    title: 'Expertise You Can Trust',
-    description: 'Founded by traders, for traders. We understand your needs.',
-  },
-  {
-    icon: LockKeyhole,
-    title: 'Secure VPN Tunnel Connection',
-    description: 'Each VDS is isolated on its own encrypted network.',
-  },
-  {
-    icon: Terminal,
-    title: 'Optimized for All Trading Platforms',
-    description: 'MT4, MT5, cTrader, and more. Ready for any setup.',
-  },
-  {
-    icon: Rocket,
-    title: 'Blazing-Fast Trade Execution',
-    description: 'NVMe SSD delivers 5–10× the speed of traditional SATA SSDs.',
-  },
-];
-
-const stats = [
-    {
-        icon: Users,
-        text: "Optimised for High-Volume Copy Trading"
-    },
-    {
-        icon: Server,
-        text: "Enterprise-Grade Hardware"
-    },
-    {
-        icon: CheckCircle,
-        text: "99.99% Uptime SLA"
+const WhyFxvds = ({ dictionary }: { dictionary: Dictionary }) => {
+  const features: { icon: LucideIcon; title: string; description: string }[] = dictionary.features.map(f => {
+    let icon = Zap;
+    switch(f.icon) {
+      case 'ShieldCheck': icon = ShieldCheck; break;
+      case 'Trophy': icon = Trophy; break;
+      case 'LockKeyhole': icon = LockKeyhole; break;
+      case 'Terminal': icon = Terminal; break;
+      case 'Rocket': icon = Rocket; break;
     }
-];
+    return { ...f, icon };
+  });
 
-const WhyFxvds = () => {
+  const stats = dictionary.stats.map(s => {
+    let icon = Users;
+    switch(s.icon) {
+      case 'Server': icon = Server; break;
+      case 'CheckCircle': icon = CheckCircle; break;
+    }
+    return { ...s, icon };
+  });
+
+
   return (
     <section id="why-us" className="py-20 md:py-32 bg-gradient-to-b from-background to-blue-950/20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">Why Choose FXVDS?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">{dictionary.title}</h2>
           <p className="mt-4 text-lg text-gray-400">
-            We’re not just another hosting provider. We’re traders who built the platform we always wanted.
+            {dictionary.subtitle}
           </p>
         </div>
 

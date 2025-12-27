@@ -1,33 +1,17 @@
 
-import type { Metadata } from 'next';
-import './globals.css';
-import { Toaster } from '@/components/ui/toaster';
+import { ReactNode } from 'react';
+import { notFound } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'FXVDS: Power Trade',
-  description: 'High-performance Virtual Dedicated Servers for professional traders.',
+type Props = {
+  children: ReactNode;
+  params: { lang: string };
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.svg?v=1" type="image/svg+xml" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-body bg-background text-foreground antialiased" suppressHydrationWarning>
-        {children}
-        <Toaster />
-      </body>
-    </html>
-  );
+// This layout is a server component, it does not contain the root <html> and <body> tags
+// since those are defined in the /[lang]/layout.tsx file.
+export default function RootLayout({ children, params }: Props) {
+  if (!['en', 'de'].includes(params.lang)) {
+    notFound();
+  }
+  return children;
 }
