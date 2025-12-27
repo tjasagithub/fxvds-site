@@ -114,7 +114,7 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
   };
 
   return (
-    <section id="home" ref={heroRef} className="relative h-[100dvh] w-full overflow-hidden flex flex-col">
+    <section id="home" ref={heroRef} className="relative min-h-[100dvh] w-full overflow-hidden flex flex-col">
        {isSnowVisible && <Snowfall />}
       <div
         className="absolute inset-0 z-0"
