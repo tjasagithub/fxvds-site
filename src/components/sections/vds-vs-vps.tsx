@@ -1,7 +1,6 @@
 
-import { CheckCircle2 } from 'lucide-react';
 import type { getDictionary } from '@/lib/get-dictionary';
-import VdsVpsInfographic from '../vds-vps-infographic';
+import InlineVpsVdsSvg from '../InlineVpsVdsSvg';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['vdsVsVps'];
 
@@ -16,8 +15,8 @@ const VdsVsVps = ({ dictionary }: { dictionary: Dictionary }) => {
           </p>
         </div>
 
-        <div className="mt-16 max-w-5xl mx-auto">
-          <VdsVpsInfographic dictionary={dictionary.infographic} />
+        <div className="mt-8 max-w-5xl mx-auto">
+          <InlineVpsVdsSvg />
         </div>
 
         <div className="mt-16 text-center max-w-3xl mx-auto">
