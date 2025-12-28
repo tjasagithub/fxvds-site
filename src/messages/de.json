@@ -174,28 +174,23 @@
     ]
   },
   "vdsVsVps": {
-    "title": "Warum ein VDS besser ist als ein VPS für den Handel",
+    "title": "Warum ein VDS für den Handel besser ist als ein VPS",
     "intro": "Während VPS-Lösungen weit verbreitet sind, teilen sie oft CPU und RAM mit anderen Nutzern. Ein VDS ist die professionelle Wahl für Trader, die konsistente Stabilität und vorhersagbare Leistung benötigen.",
     "infographic": {
       "vpsLabel": "Geteilte Ressourcen",
-      "vdsLabel": "Dedizierte Ressourcen"
-    },
-    "vps": {
-      "title": "VPS (Geteilte Ressourcen)",
-      "points": [
-        "CPU und RAM werden mit anderen Nutzern geteilt",
-        "Leistung kann unter Last schwanken",
-        "Mögliche Latenzspitzen bei hoher Auslastung",
-        "Geeignet für leichte oder unkritische Workloads"
-      ]
-    },
-    "vds": {
-      "title": "VDS (Dedizierte Ressourcen)",
-      "points": [
-        "Dedizierte CPU-Kerne und RAM",
-        "Keine geteilten Ressourcen, kein Overselling",
-        "Stabile Latenz und konsistente Ausführung",
-        "Gebaut für professionellen Handel und Automatisierung"
+      "vdsLabel": "Dedizierte Ressourcen",
+      "vpsPoints": [
+        "CPU & RAM werden mit anderen Nutzern geteilt",
+        "Leistung schwankt unter Last",
+        "Latenzspitzen bei hoher Auslastung",
+        "Geeignet für nicht-kritische Workloads"
+      ],
+      "vdsPoints": [
+        "Dedizierte CPU-Kerne & RAM",
+        "Keine geteilten Ressourcen",
+        "Kein Overselling",
+        "Stabile Latenz & Ausführung",
+        "Gebaut für professionellen Handel"
       ]
     },
     "benefits": {
