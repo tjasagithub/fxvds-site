@@ -30,7 +30,7 @@ const VdsVpsInfographic = ({ dictionary }: { dictionary: Dictionary }) => {
 
             {/* Resource Bars */}
             <div className="absolute bottom-4 right-4 w-1/3">
-                <p className="text-xs text-gray-400 font-medium">CPU / RAM</p>
+                <p className="text-xs text-gray-400 font-medium">{dictionary.computingPower}</p>
                 <div className="w-full bg-gray-700/50 rounded-full h-3 mt-2 overflow-hidden">
                     <div className="bg-yellow-500/50 h-3 rounded-full animate-pulse" style={{ width: '60%', animation: 'pulse 3s infinite ease-in-out' }}></div>
                 </div>
@@ -65,7 +65,7 @@ const VdsVpsInfographic = ({ dictionary }: { dictionary: Dictionary }) => {
 
             {/* Resource Bars */}
             <div className="absolute bottom-4 right-4 w-1/3">
-                <p className="text-xs text-primary/80 font-medium">CPU / RAM</p>
+                <p className="text-xs text-primary/80 font-medium">{dictionary.computingPower}</p>
                 <div className="w-full bg-primary/10 rounded-full h-3 mt-2">
                     <div className="bg-primary h-3 rounded-full" style={{ width: '100%' }}></div>
                 </div>

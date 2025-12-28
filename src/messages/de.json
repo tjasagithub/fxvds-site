@@ -174,19 +174,20 @@
     ]
   },
   "vdsVsVps": {
-    "title": "Warum ein VDS für den Handel besser ist als ein VPS",
-    "intro": "Während VPS-Lösungen weit verbreitet sind, teilen sie oft CPU und RAM mit anderen Nutzern. Ein VDS ist die professionelle Wahl für Trader, die konsistente Stabilität und vorhersagbare Leistung benötigen.",
+    "title": "VDS vs. VPS: Der Unterschied, der für professionelle Trader zählt",
+    "intro": "Während VPS (Virtual Private Server) verbreitet sind, teilen sie sich Rechenleistung mit anderen Nutzern, was zu Leistungsschwankungen führen kann. Ein VDS (Virtual Dedicated Server) gibt Ihnen dedizierte Rechenleistung und sichert so konsistente Stabilität und verlässliche Performance — die professionelle Wahl für anspruchsvolle Trader.",
     "infographic": {
+      "computingPower": "Rechenleistung",
       "vpsLabel": "Geteilte Ressourcen",
       "vdsLabel": "Dedizierte Ressourcen",
       "vpsPoints": [
-        "CPU & RAM werden mit anderen Nutzern geteilt",
+        "Geteilte Rechenleistung mit anderen",
         "Leistung schwankt unter Last",
         "Latenzspitzen bei hoher Auslastung",
-        "Geeignet für nicht-kritische Workloads"
+        "Für nicht-kritische Workloads geeignet"
       ],
       "vdsPoints": [
-        "Dedizierte CPU-Kerne & RAM",
+        "Dedizierte Rechenleistung",
         "Keine geteilten Ressourcen",
         "Kein Overselling",
         "Stabile Latenz & Ausführung",
