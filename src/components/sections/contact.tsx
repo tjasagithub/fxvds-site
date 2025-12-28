@@ -18,7 +18,10 @@ const Contact = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale })
               <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">{dictionary.title}</h2>
               <div className="space-y-4">
                 <a href="#contact-form" className="text-lg text-gray-400 block cursor-pointer hover:underline">
-                  {dictionary.subtitle}
+                  {dictionary.subtitle_line1}
+                </a>
+                <a href="#contact-form" className="text-lg text-gray-400 block cursor-pointer hover:underline">
+                  {dictionary.subtitle_line2}
                 </a>
                 <a href="https://t.me/fxvds_support" target="_blank" rel="noopener noreferrer" className="block text-primary font-semibold hover:underline">
                   {dictionary.specialOffer}
