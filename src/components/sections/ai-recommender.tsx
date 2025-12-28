@@ -17,7 +17,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 import { Locale } from '@/i18n.config';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['aiRecommender'];
-type PlanName = 'Small' | 'Medium' | 'Large';
+type PlanName = 'Small' | 'Medium' | 'Large' | 'Extra Large';
 
 const AiRecommender = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) => {
   const [recommendation, setRecommendation] = useState<{ recommendedPlan: PlanName; reasoning: string } | null>(null);
@@ -87,7 +87,7 @@ const AiRecommender = ({ dictionary, lang }: { dictionary: Dictionary, lang: Loc
   
   const getPlanDisplayName = (planKey: PlanName | undefined) => {
     if (!planKey) return '';
-    const planName = planKey.toLowerCase() as 'small' | 'medium' | 'large';
+    const planName = planKey.replace(' ', '').toLowerCase() as 'small' | 'medium' | 'large' | 'extralarge';
     return dictionary.plans[planName] || planKey;
   }
 

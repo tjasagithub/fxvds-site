@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { cn } from '@/lib/utils';
 import { CheckoutModal, PlanName } from './checkout-modal';
 import { getDictionary } from '@/lib/get-dictionary';
+import Link from 'next/link';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['pricing'];
 
@@ -20,16 +21,25 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
       name: 'Small' as PlanName,
       price: '€30',
       features: dictionary.small.features,
+      isCustom: false,
     },
     {
       name: 'Medium' as PlanName,
       price: '€60',
       features: dictionary.medium.features,
+      isCustom: false,
     },
     {
       name: 'Large' as PlanName,
       price: '€90',
       features: dictionary.large.features,
+      isCustom: false,
+    },
+    {
+      name: 'Extra Large' as PlanName,
+      price: '€120',
+      features: dictionary.extraLarge.features,
+      isCustom: true,
     },
   ];
 
@@ -46,24 +56,25 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
           <p className="mt-4 text-lg text-gray-400">
             {dictionary.subtitle}
           </p>
-          <p className="text-lg text-gray-400">
+          <p className="mt-4 text-lg text-gray-400">
             {dictionary.subtitle2}
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {plans.map((plan) => {
             const isSelected = activePlan === plan.name;
             return (
               <Card
                 key={plan.name}
-                onClick={() => setActivePlan(plan.name)}
+                onClick={() => !plan.isCustom && setActivePlan(plan.name as PlanName)}
                 className={cn(
-                  'flex flex-col border-border/70 bg-card/50 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 cursor-pointer',
-                  isSelected && 'border-primary/50 shadow-2xl shadow-primary/20 relative ring-2 ring-primary/50'
+                  'flex flex-col border-border/70 bg-card/50 transition-all duration-300',
+                  !plan.isCustom && 'hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 cursor-pointer',
+                  isSelected && !plan.isCustom && 'border-primary/50 shadow-2xl shadow-primary/20 relative ring-2 ring-primary/50'
                 )}
               >
-                {isSelected && (
-                  <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary/50 via-primary/70 to-primary/80 opacity-50 blur-lg" />
+                {isSelected && !plan.isCustom && (
+                  <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary/50 via-primary/70 to-primary/80 opacity-75 blur-lg" />
                 )}
                 <CardHeader className="text-center relative">
                   <CardTitle className="text-3xl font-bold text-white">{plan.name}</CardTitle>
@@ -82,16 +93,22 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
                   </ul>
                 </CardContent>
                 <CardFooter className="relative">
-                  <Button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleGetStartedClick(plan.name)
-                    }}
-                    className="w-full" 
-                    variant={isSelected ? 'default' : 'outline'}
-                  >
-                    {dictionary.cta}
-                  </Button>
+                  {plan.isCustom ? (
+                     <Button asChild className="w-full" variant="outline">
+                        <Link href="#contact">{dictionary.contactCta}</Link>
+                     </Button>
+                  ) : (
+                    <Button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleGetStartedClick(plan.name as PlanName);
+                      }}
+                      className="w-full" 
+                      variant={isSelected ? 'default' : 'outline'}
+                    >
+                      {dictionary.cta}
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             );

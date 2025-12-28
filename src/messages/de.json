@@ -50,6 +50,7 @@
     "subtitle2": "Alle Pläne beinhalten eine 7-tägige kostenlose Testphase. Jederzeit kündbar.",
     "perMonth": "Monat",
     "cta": "Kostenlos testen",
+    "contactCta": "Kontakt",
     "customSetup": "Benötigen Sie mehr Leistung oder eine individuelle Einrichtung? Senden Sie uns einfach eine <a href=\"#contact\" class=\"text-primary hover:underline\">Nachricht</a>.",
     "small": {
       "features": [
@@ -73,6 +74,15 @@
       "features": [
         { "text": "8-Kern CPU", "highlighted": true },
         { "text": "16 GB RAM", "highlighted": true },
+        { "text": "3.6 GHz pro Kern", "highlighted": false },
+        { "text": "60 GB NVMe SSD", "highlighted": false },
+        { "text": "1 Gbit/s Hochgeschwindigkeitsverbindung", "highlighted": false }
+      ]
+    },
+    "extraLarge": {
+      "features": [
+        { "text": "16-Kern CPU", "highlighted": true },
+        { "text": "32 GB RAM", "highlighted": true },
         { "text": "3.6 GHz pro Kern", "highlighted": false },
         { "text": "60 GB NVMe SSD", "highlighted": false },
         { "text": "1 Gbit/s Hochgeschwindigkeitsverbindung", "highlighted": false }
@@ -182,7 +192,8 @@
     "plans": {
       "small": "Small-Plan",
       "medium": "Medium-Plan",
-      "large": "Large-Plan"
+      "large": "Large-Plan",
+      "extralarge": "Extra Large-Plan"
     }
   },
   "getStarted": {

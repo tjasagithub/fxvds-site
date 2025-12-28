@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -20,7 +21,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['checkout'];
 
-export type PlanName = 'Small' | 'Medium' | 'Large';
+export type PlanName = 'Small' | 'Medium' | 'Large' | 'Extra Large';
 
 type PlanDetails = {
   price: number;
@@ -68,6 +69,17 @@ const planData: Record<PlanName, PlanDetails> = {
         security: 'Protected remote access (VPN)',
     }
   },
+  'Extra Large': {
+    price: 120,
+    specs: {
+      cpu: '16-core CPU @ 3.6 GHz per core',
+      ram: '32 GB RAM',
+      storage: '60 GB NVMe SSD',
+      network: '1 Gbit/s',
+      os: 'Windows Server 2025',
+      security: 'Protected remote access (VPN)',
+    }
+  }
 };
 
 type CheckoutModalProps = {
@@ -150,7 +162,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
             {/* Left Side */}
             <div>
               <div className="flex justify-center space-x-2 mb-6 bg-black/20 p-1 rounded-md">
-                {(['Small', 'Medium', 'Large'] as PlanName[]).map((plan) => (
+                {(['Small', 'Medium', 'Large'] as Exclude<PlanName, 'Extra Large'>[]).map((plan) => (
                   <Button
                     key={plan}
                     variant={selectedPlan === plan ? 'default' : 'ghost'}

@@ -50,6 +50,7 @@
     "subtitle2": "All plans include a 7-day free trial. Cancel anytime.",
     "perMonth": "month",
     "cta": "Start Free Trial",
+    "contactCta": "Contact Us",
     "customSetup": "Need more power or a custom setup? Just {link}send us a message</a>.",
     "small": {
       "features": [
@@ -73,6 +74,15 @@
       "features": [
         { "text": "8-core CPU", "highlighted": true },
         { "text": "16 GB RAM", "highlighted": true },
+        { "text": "3.6 GHz per core", "highlighted": false },
+        { "text": "60 GB NVMe SSD", "highlighted": false },
+        { "text": "1-Gbit/s high-speed connection", "highlighted": false }
+      ]
+    },
+    "extraLarge": {
+      "features": [
+        { "text": "16-core CPU", "highlighted": true },
+        { "text": "32 GB RAM", "highlighted": true },
         { "text": "3.6 GHz per core", "highlighted": false },
         { "text": "60 GB NVMe SSD", "highlighted": false },
         { "text": "1-Gbit/s high-speed connection", "highlighted": false }
@@ -182,7 +192,8 @@
     "plans": {
       "small": "Small Plan",
       "medium": "Medium Plan",
-      "large": "Large Plan"
+      "large": "Large Plan",
+      "extralarge": "Extra Large Plan"
     }
   },
   "getStarted": {
