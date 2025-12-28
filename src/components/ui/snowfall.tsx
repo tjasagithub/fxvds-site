@@ -22,8 +22,8 @@ const Snowfall = ({
     return Array.from({ length: snowflakeCount }).map((_, i) => {
       const style = {
         left: `${Math.random() * 100}vw`,
-        animationDuration: `${Math.random() * 8 + 7}s`, // Slower animation
-        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${Math.random() * 13 + 12}s`, // Slower animation (12-25s)
+        animationDelay: `${Math.random() * 10}s`,
         opacity: Math.random() * 0.5 + 0.2,
         transform: `scale(${Math.random() * 0.5 + 0.5})`,
       };
