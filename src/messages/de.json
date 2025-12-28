@@ -7,14 +7,14 @@
   "header": {
     "nav": {
       "home": "Start",
-      "pricing": "Pläne wählen",
+      "pricing": "Pläne & Preise",
       "whyUs": "Warum wir",
       "faq": "FAQ",
       "contact": "Kontakt",
       "openMenu": "Menü öffnen"
     },
     "cta": {
-      "startTrial": "Kostenlos testen"
+      "startTrial": "Kostenfreie Testphase"
     }
   },
   "hero": {
@@ -24,9 +24,9 @@
       "note": "Neue Kapazitäten werden schubweise freigegeben."
     },
     "title": "Handeln ohne Grenzen.<br />Leistung, die Ihnen gehört.",
-    "subtitle": "Erleben Sie unübertroffene Geschwindigkeit, Zuverlässigkeit und Stabilität mit virtuellen dedizierten Servern, die für Händler entwickelt wurden, die das Beste verlangen.",
+    "subtitle": "Erleben Sie unübertroffene Geschwindigkeit, Zuverlässigkeit und Stabilität mit virtuellen dedizierten Servern, die für professionelle Händler entwickelt wurden, die das Beste verlangen.",
     "cta": {
-      "startTrial": "Kostenlos testen",
+      "startTrial": "Kostenfreie Testphase starten",
       "viewPlans": "Pläne ansehen"
     },
     "highlights": {
@@ -47,14 +47,14 @@
   "pricing": {
     "title": "Wählen Sie Ihre Leistung",
     "subtitle": "Einfache, transparente Preise. Keine versteckten Gebühren. Jederzeit upgraden oder downgraden.",
-    "subtitle2": "Alle Pläne beinhalten eine 7-tägige kostenlose Testphase. Jederzeit kündbar.",
+    "subtitle2": "Alle Pläne beinhalten eine 7-tägige kostenfreie Testphase. Jederzeit kündbar.",
     "perMonth": "Monat",
-    "cta": "Kostenlos testen",
-    "contactCta": "Kontakt",
-    "customSetup": "Benötigen Sie mehr Leistung oder eine individuelle Einrichtung? Senden Sie uns einfach eine <a href=\"#contact\" class=\"text-primary hover:underline\">Nachricht</a>.",
+    "cta": "Kostenfreie Testphase",
+    "contactCta": "Kontakt aufnehmen",
+    "customSetup": "Benötigen Sie mehr Leistung oder eine individuelle Konfiguration? {link}Senden Sie uns eine Anfrage.</a>",
     "earlyAccess": {
       "title": "Frühzugangspreise — Preis sichern",
-      "body": "FXVDS wird aktuell zu Frühzugangs-Konditionen angeboten, während wir unsere erste Gruppe an Tradern aufnehmen. Mit steigender Auslastung wird der Preis für neue Kunden angepasst — bestehende Kunden behalten ihren ursprünglichen Tarif.",
+      "body": "FXVDS wird aktuell zu Frühzugangskonditionen angeboten, während wir unsere erste Gruppe von Händlern aufnehmen. Mit steigender Auslastung werden die Preise für Neukunden angepasst – Bestandskunden behalten ihren ursprünglichen Tarif.",
       "bullets": [
         "Strikte Performance-Standards (keine geteilten Ressourcen)",
         "Skalierung der Infrastruktur mit Augenmaß",
@@ -128,7 +128,7 @@
       },
       "offer": {
         "title": "Begrenzte Verfügbarkeit",
-        "trial": "7-tägige kostenlose Testversion – heute keine Kosten",
+        "trial": "7-tägige kostenfreie Testphase – heute keine Kosten",
         "capacity": "Begrenzte Aufnahme aufgrund von Serverkapazitätsengpässen"
       },
       "summary": {
@@ -140,7 +140,7 @@
         "firstMonth": "Gesamtpreis erster Monat",
         "recurring": "Wiederkehrender Gesamtbetrag"
       },
-      "cta": "Kostenlos testen",
+      "cta": "Kostenfreie Testphase starten",
       "secureNote": "Sie schließen Ihr Abonnement sicher auf Stripe ab.",
       "notConfiguredError": "Checkout ist aktuell nicht verfügbar. Bitte <a href=\"/de#contact\" class=\"underline\">kontaktieren Sie uns</a>."
     }
@@ -157,7 +157,7 @@
     }
   },
   "whyFxvds": {
-    "title": "Warum FXVDS wählen?",
+    "title": "Warum FXVDS?",
     "subtitle": "Wir sind nicht nur ein weiterer Hosting-Anbieter. Wir sind Händler, die die Plattform gebaut haben, die wir uns immer gewünscht haben.",
     "stats": [
       { "icon": "Users", "text": "Optimiert für High-Volume Copy Trading" },
@@ -177,7 +177,7 @@
     "title": "Nicht sicher, welcher Plan der richtige ist?",
     "subtitle": "Lassen Sie sich von unserem KI-Assistenten den perfekten VDS-Plan basierend auf Ihrem Handelsstil empfehlen.",
     "form": {
-      "title": "Erzählen Sie uns von Ihren Bedürfnissen",
+      "title": "Beschreiben Sie Ihren Bedarf",
       "description": "Je mehr Details Sie angeben, desto besser die Empfehlung.",
       "activity": {
         "label": "Handelsmuster",
@@ -187,14 +187,14 @@
         "label": "Handelsplattformen",
         "placeholder": "z.B. MetaTrader 5, cTrader, Mirror Trading Manager"
       },
-      "button": "Empfehlung erhalten",
+      "button": "Empfehlung anfordern",
       "validation": {
         "activity": "Bitte beschreiben Sie Ihre Handelsaktivität genauer.",
         "platform": "Bitte geben Sie Ihre bevorzugte(n) Plattform(en) an."
       }
     },
     "result": {
-      "loading": "Analysiere Ihre Bedürfnisse...",
+      "loading": "Analysiere Ihren Bedarf...",
       "placeholder": "Ihre Empfehlung wird hier angezeigt.",
       "title": "Unsere Empfehlung:"
     },
@@ -212,7 +212,7 @@
       "extralarge": "Extra Large-Plan"
     },
     "humanFallback": {
-      "title": "Möchten Sie mit einem echten Menschen sprechen?",
+      "title": "Möchten Sie mit einem Experten sprechen?",
       "subtitle": "Senden Sie uns einfach eine {link}Nachricht</a> – wir helfen Ihnen gerne weiter."
     }
   },
@@ -222,13 +222,13 @@
     "steps": [
       { "title": "Wählen Sie Ihren Plan", "description": "Wählen Sie den VDS-Plan, der am besten zu Ihren Handelsanforderungen passt." },
       { "title": "Wir bereiten alles vor", "description": "Wir bauen und konfigurieren Ihren Server und senden Ihnen Ihre sicheren Zugangsdaten innerhalb von 24–72 Stunden per E-Mail." },
-      { "title": "Beginnen Sie zu handeln", "description": "Verbinden Sie sich über eine sichere Verbindung mit Ihrem VDS, installieren Sie Ihre Handelsplattformen und handeln Sie mit Vertrauen – rund um die Uhr." }
+      { "title": "Starten Sie den Handel", "description": "Verbinden Sie sich über eine sichere Verbindung mit Ihrem VDS, installieren Sie Ihre Handelsplattformen und handeln Sie mit Vertrauen – rund um die Uhr." }
     ]
   },
   "cta": {
-    "title": "Bereit, Ihren Handel zu verbessern?",
-    "subtitle": "Erleben Sie den Unterschied einer professionellen Handelsumgebung. Starten Sie noch heute Ihre kostenlose Testversion und handeln Sie mit Zuversicht.",
-    "startTrial": "Kostenlos testen",
+    "title": "Bereit, Ihren Handel zu professionalisieren?",
+    "subtitle": "Erleben Sie den Unterschied einer professionellen Handelsumgebung. Starten Sie noch heute Ihre kostenfreie Testphase und handeln Sie mit Zuversicht.",
+    "startTrial": "Kostenfreie Testphase starten",
     "comparePlans": "Pläne vergleichen"
   },
   "faq": {
@@ -248,8 +248,8 @@
     ]
   },
   "contact": {
-    "title": "Kontaktieren Sie uns",
-    "subtitle": "Haben Sie Fragen oder benötigen Sie eine individuelle Einrichtung? Senden Sie uns eine Nachricht — wir helfen Ihnen gerne weiter.",
+    "title": "Kontakt",
+    "subtitle": "Haben Sie Fragen oder benötigen Sie eine individuelle Konfiguration? Wir helfen Ihnen gerne weiter.",
     "specialOffer_line1": "Nutzen Sie den Anton Nel Mirror Trading Manager?",
     "specialOffer_line2": "Kontaktieren Sie uns — spezielle Konditionen sind möglich.",
     "telegram": "Telegram",
@@ -258,8 +258,8 @@
       "title": "Senden Sie uns eine Nachricht",
       "namePlaceholder": "Name",
       "emailPlaceholder": "E-Mail",
-      "messagePlaceholder": "Nachricht",
-      "button": "Nachricht senden",
+      "messagePlaceholder": "Ihre Nachricht",
+      "button": "Anfrage senden",
       "validation": {
         "name": "Der Name muss mindestens 2 Zeichen lang sein.",
         "email": "Ungültige E-Mail-Adresse.",
@@ -336,8 +336,8 @@
       "accountRegistrationText": "Sie erklären sich damit einverstanden, bei der Erstellung eines Kontos genaue und vollständige Informationen anzugeben und Ihre Anmeldeinformationen sicher aufzubewahren. Sie sind allein verantwortlich für alle Aktivitäten, die unter Ihrem Konto stattfinden.",
       "paymentsTitle": "Zahlungen und Abrechnung",
       "paymentsText": "Zahlungen für unsere Dienste werden über unseren externen Zahlungsabwickler Stripe abgewickelt. Indem Sie eine Zahlungsmethode angeben, ermächtigen Sie uns, Sie für den ausgewählten Abonnementplan zu belasten. Abonnements verlängern sich am Ende jedes Abrechnungszyklus automatisch, es sei denn, Sie kündigen sie.",
-      "freeTrialTitle": "Kostenlose Testversion",
-      "freeTrialText": "Wenn eine kostenlose Testversion angeboten wird, wird sie am Ende des Testzeitraums automatisch in ein kostenpflichtiges Abonnement umgewandelt, es sei denn, Sie kündigen sie vorher. Sie sind dafür verantwortlich, Ihre Testversion zu kündigen, um Gebühren zu vermeiden.",
+      "freeTrialTitle": "Kostenfreie Testphase",
+      "freeTrialText": "Wenn eine kostenfreie Testphase angeboten wird, wird sie am Ende des Testzeitraums automatisch in ein kostenpflichtiges Abonnement umgewandelt, es sei denn, Sie kündigen sie vorher. Sie sind dafür verantwortlich, Ihre Testversion zu kündigen, um Gebühren zu vermeiden.",
       "cancellationsTitle": "Kündigungen",
       "cancellationsText": "Sie können Ihr Abonnement jederzeit über Ihr Kontodashboard kündigen. Ihr Dienst bleibt bis zum Ende des aktuellen Abrechnungszeitraums aktiv. Wir bieten keine Rückerstattungen oder Gutschriften für Teilmonate oder ungenutzte Dienste an.",
       "addOnsTitle": "Dedizierte IPs & Add-Ons",
@@ -394,3 +394,5 @@
     }
   }
 }
+
+    
