@@ -60,27 +60,25 @@
 /* Snowfall styles */
 @keyframes snowfall {
   0% {
-    transform: translate3d(0, -10vh, 0);
+    transform: translate3d(var(--initial-x, 0), -10vh, 0);
   }
   100% {
-    transform: translate3d(1vw, 100vh, 0);
+    transform: translate3d(calc(var(--initial-x, 0) + var(--drift-x, 0)), 100vh, 0);
   }
 }
 
 .snowflake {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 5px;
-  height: 5px;
   background-color: white;
   border-radius: 50%;
   animation-name: snowfall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  opacity: 0;
   will-change: transform;
 }
+
 
 /* Marquee styles */
 @keyframes marquee {
