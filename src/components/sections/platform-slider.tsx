@@ -5,6 +5,7 @@ const platforms = [
   'MetaTrader 4',
   'MetaTrader 5',
   'cTrader',
+  'Mirror Trading Manager',
   'TradingView',
   'NinjaTrader',
   'Thinkorswim',
