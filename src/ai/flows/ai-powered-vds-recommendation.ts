@@ -57,14 +57,17 @@ const prompt = ai.definePrompt({
 
 - **Clarification**: If the EA count is unclear, provide a "best guess" recommendation based on other context, and then ask a short clarifying question in your reasoning.
 
-- **Required Text Addition**: If "Mirror Trading Manager" is detected in the input, you MUST append the following exact text to the end of your reasoning, on a new line: "If you are using Mirror Trading Manager tool: up to 10 accounts, you can use a SMALL account, up to 30 accounts (medium), up to 100 (Large), above 100: extra large."
+- **Conditional Text Addition for Mirror Trading Manager**:
+    - If "Mirror Trading Manager" is detected in the input AND the user has NOT mentioned the number of accounts or followers (e.g., "accounts", "followers", "Konten"), you MUST append the correct language-specific text below to the end of your reasoning on a new line.
+    - If the user *does* mention an account count, DO NOT append this text.
+    - **English Text**: "If you are using Mirror Trading Manager: up to 10 accounts fits Small, up to 30 accounts Medium, up to 100 accounts Large, above 100 accounts Extra Large."
+    - **German Text**: "Wenn Sie das Mirror Trading Manager-Tool nutzen: bis zu 10 Konten reicht Small, bis zu 30 Konten Medium, bis zu 100 Konten Large, über 100 Konten Extra Large."
 
 - **Priority**: The override rules take precedence. Your primary decision factor is the number of EAs.
 
 - **Output Language**: Your entire output, especially the "reasoning", MUST be in the requested language: {{{lang}}}.
 - **Output Plan Key**: The 'recommendedPlan' field must be ONLY one of 'Small', 'Medium', 'Large', or 'Extra Large'.
-
-- **Reasoning**: Your explanation should be concise (2-4 sentences) and professional, referencing the rule you used (e.g., number of EAs). Do not mention the internal rules themselves.
+- **Reasoning Style**: Your explanation should be concise (2-4 sentences) and professional. When you mention a plan name in the reasoning, use Title Case (e.g., "Small", "Medium"), NOT uppercase ("SMALL").
 
 User Input:
 Trading Activity: {{{tradingActivity}}}
@@ -84,3 +87,4 @@ const vdsRecommendationFlow = ai.defineFlow(
     return output!;
   }
 );
+
