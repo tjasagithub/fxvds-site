@@ -94,11 +94,12 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
           style={{
             background: `
               linear-gradient(
-                160deg,
-                rgba(255,255,255,0.18) 0%,
-                rgba(255,255,255,0.12) 25%,
-                rgba(255,255,255,0.06) 45%,
-                rgba(0,0,0,0) 70%
+                155deg,
+                rgba(255,255,255,0.28) 0%,
+                rgba(255,255,255,0.20) 18%,
+                rgba(255,255,255,0.12) 35%,
+                rgba(255,255,255,0.06) 55%,
+                rgba(0,0,0,0) 75%
               )
             `,
           }}
