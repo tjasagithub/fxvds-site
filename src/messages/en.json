@@ -93,6 +93,12 @@
       "close": "Close",
       "plan": "Plan",
       "perMonth": "month",
+      "plans": {
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large",
+        "extralarge": "Extra Large"
+      },
       "specs": {
         "storage": "Storage",
         "network": "Network",

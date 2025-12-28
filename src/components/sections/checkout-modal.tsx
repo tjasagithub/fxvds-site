@@ -70,7 +70,7 @@ const planData: Record<PlanName, PlanDetails> = {
     }
   },
   'Extra Large': {
-    price: 120,
+    price: 150,
     specs: {
       cpu: '16-core CPU @ 3.6 GHz per core',
       ram: '32 GB RAM',
@@ -107,7 +107,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
   const handleContinue = () => {
     setErrorMessage(null);
-    let urlKey: keyof typeof stripeLinks.Small = 'base';
+    let urlKey: keyof typeof stripeLinks.small = 'base';
     if (hasDailyBackups && hasDedicatedIp) {
       urlKey = 'backup_ip';
     } else if (hasDailyBackups) {
@@ -116,10 +116,10 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
       urlKey = 'ip';
     }
 
-    const planKey = selectedPlan.toLowerCase() as keyof typeof stripeLinks;
-    const checkoutUrl = stripeLinks[planKey][urlKey];
+    const planKey = selectedPlan.replace(' ', '').toLowerCase() as keyof typeof stripeLinks;
+    const checkoutUrl = stripeLinks[planKey]?.[urlKey];
 
-    if (checkoutUrl.includes('_URL')) {
+    if (!checkoutUrl || checkoutUrl.includes('_URL')) {
       setErrorMessage(dictionary.notConfiguredError);
     } else {
       window.location.href = checkoutUrl;
@@ -162,7 +162,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
             {/* Left Side */}
             <div>
               <div className="flex justify-center space-x-2 mb-6 bg-black/20 p-1 rounded-md">
-                {(['Small', 'Medium', 'Large'] as Exclude<PlanName, 'Extra Large'>[]).map((plan) => (
+                {(Object.keys(planData) as PlanName[]).map((plan) => (
                   <Button
                     key={plan}
                     variant={selectedPlan === plan ? 'default' : 'ghost'}
@@ -172,14 +172,14 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                       selectedPlan === plan ? 'bg-primary text-primary-foreground shadow-md' : 'text-gray-400 hover:bg-black/30 hover:text-white'
                     )}
                   >
-                    {plan}
+                    {dictionary.plans[plan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]}
                   </Button>
                 ))}
               </div>
 
                <div>
                   <p className="font-semibold text-white">
-                    {selectedPlan} {dictionary.plan}
+                    {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} {dictionary.plan}
                   </p>
                   <p className="text-lg font-bold text-primary">
                     €{currentPlanData.price} <span className="text-sm font-normal text-gray-400">/ {dictionary.perMonth}</span>
@@ -239,7 +239,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
               <Separator className="bg-border/50 my-4" />
 
               <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.plan}: {selectedPlan} VDS</span> <span>€{currentPlanData.price.toFixed(2)}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.plan}: {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} VDS</span> <span>€{currentPlanData.price.toFixed(2)}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.backups}:</span> <span>{hasDailyBackups ? '€10.00' : '—'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.ip}:</span> <span>{hasDedicatedIp ? '€10.00' : '—'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.setupFee}:</span> <span>€0.00</span></div>

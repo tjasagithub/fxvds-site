@@ -93,6 +93,12 @@
       "close": "Schließen",
       "plan": "Plan",
       "perMonth": "Monat",
+      "plans": {
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large",
+        "extralarge": "Extra Large"
+      },
       "specs": {
         "storage": "Speicher",
         "network": "Netzwerk",
