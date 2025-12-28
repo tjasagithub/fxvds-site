@@ -23,6 +23,7 @@ const Header = ({ lang, dictionary }: { lang: Locale, dictionary: Dictionary }) 
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === `/${lang}` || (lang === 'en' && pathname === '/');
 
@@ -33,6 +34,10 @@ const Header = ({ lang, dictionary }: { lang: Locale, dictionary: Dictionary }) 
     { name: dictionary.nav.faq, href: `/${lang}/#faq` },
     { name: dictionary.nav.contact, href: `/${lang}/#contact` },
   ];
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -121,33 +126,35 @@ const Header = ({ lang, dictionary }: { lang: Locale, dictionary: Dictionary }) 
         </div>
         <div className="md:hidden flex items-center gap-2">
            <LanguageSwitcher lang={lang} />
-           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-white" />
-                <span className="sr-only">{dictionary.nav.openMenu}</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-background/90 border-l-border/50 backdrop-blur-lg">
-              <div className="flex h-full flex-col p-6">
-                <div className="mb-8 flex items-center justify-between">
-                  <Link href={`/${lang}`} aria-label="FXVDS Home" className="shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Logo className="h-8 w-32" />
-                  </Link>
+           {isClient && (
+             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6 text-white" />
+                  <span className="sr-only">{dictionary.nav.openMenu}</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-background/90 border-l-border/50 backdrop-blur-lg">
+                <div className="flex h-full flex-col p-6">
+                  <div className="mb-8 flex items-center justify-between">
+                    <Link href={`/${lang}`} aria-label="FXVDS Home" className="shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Logo className="h-8 w-32" />
+                    </Link>
+                  </div>
+                  <nav className="flex flex-col space-y-6">
+                    {navLinks.map((link) => (
+                      <NavLink key={link.name} href={link.href} name={link.name} id={link.href.split('#')[1]} />
+                    ))}
+                  </nav>
+                  <div className="mt-auto">
+                     <Button asChild className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Link href={`/${lang}/#pricing`}>{dictionary.cta.startTrial}</Link>
+                      </Button>
+                  </div>
                 </div>
-                <nav className="flex flex-col space-y-6">
-                  {navLinks.map((link) => (
-                    <NavLink key={link.name} href={link.href} name={link.name} id={link.href.split('#')[1]} />
-                  ))}
-                </nav>
-                <div className="mt-auto">
-                   <Button asChild className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Link href={`/${lang}/#pricing`}>{dictionary.cta.startTrial}</Link>
-                    </Button>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+           )}
         </div>
       </div>
     </header>
