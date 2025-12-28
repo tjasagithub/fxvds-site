@@ -88,6 +88,7 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
 
   return (
     <section id="home" ref={heroRef} className="relative min-h-[100dvh] w-full overflow-hidden flex flex-col">
+       {isSnowVisible && !isMobile && <Snowfall />}
        <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10 md:hidden"
@@ -104,7 +105,6 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
             `,
           }}
         />
-       {isSnowVisible && !isMobile && <Snowfall />}
       
       {!isMobile ? (
         <div

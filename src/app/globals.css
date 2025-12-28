@@ -60,10 +60,10 @@
 /* Snowfall styles */
 @keyframes snowfall {
   0% {
-    transform: translateY(-10vh);
+    transform: translate3d(0, -10vh, 0);
   }
   100% {
-    transform: translateY(100vh);
+    transform: translate3d(1vw, 100vh, 0);
   }
 }
 
@@ -78,8 +78,8 @@
   animation-name: snowfall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  z-index: 40;
   opacity: 0;
+  will-change: transform;
 }
 
 /* Marquee styles */
