@@ -13,11 +13,6 @@ export default function InlineVpsVdsSvg() {
       }
     </style>
 
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#121212;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#121212;stop-opacity:1" />
-    </linearGradient>
-
     <linearGradient id="vpsBar" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#475569"/>
       <stop offset="100%" style="stop-color:#64748B"/>
@@ -43,7 +38,7 @@ export default function InlineVpsVdsSvg() {
     </symbol>
   </defs>
 
-  <rect x="0" y="0" width="800" height="500" fill="url(#bgGradient)"/>
+  <rect x="0" y="0" width="800" height="500" fill="#121212"/>
   <line x1="400" y1="50" x2="400" y2="450" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
 
   {/* VPS (Left) */}
