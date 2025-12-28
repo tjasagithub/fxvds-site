@@ -88,6 +88,14 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
 
   return (
     <section id="home" ref={heroRef} className="relative min-h-[100dvh] w-full overflow-hidden flex flex-col">
+       <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 35%, rgba(0,0,0,0.00) 70%)",
+          }}
+        />
        {isSnowVisible && !isMobile && <Snowfall />}
       
       {!isMobile ? (
