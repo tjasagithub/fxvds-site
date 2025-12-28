@@ -80,12 +80,32 @@
 }
 
 
-/* Marquee styles */
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+/* Infinite logo ticker */
+.fx-ticker {
+  will-change: transform;
 }
 
-.animate-marquee {
-  animation: marquee 60s linear infinite;
+.fx-ticker:hover .fx-ticker-track {
+  animation-play-state: paused;
+}
+
+.fx-ticker-track {
+  display: flex;
+  min-width: max-content;
+  animation: fxMarquee 60s linear infinite;
+}
+
+@keyframes fxMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-ticker-track {
+    animation: none !important;
+  }
+  .fx-ticker .group {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
