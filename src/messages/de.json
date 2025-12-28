@@ -218,8 +218,7 @@
   },
   "contact": {
     "title": "Kontaktieren Sie uns",
-    "subtitle_line1": "Haben Sie Fragen oder benötigen Sie eine individuelle Einrichtung?",
-    "subtitle_line2": "Senden Sie uns eine Nachricht — wir helfen Ihnen gerne weiter.",
+    "subtitle": "Haben Sie Fragen oder benötigen Sie eine individuelle Einrichtung? Senden Sie uns eine Nachricht — wir helfen Ihnen gerne weiter.",
     "specialOffer_line1": "Nutzen Sie den Anton Nel Mirror Trading Manager?",
     "specialOffer_line2": "Kontaktieren Sie uns — spezielle Konditionen sind möglich.",
     "telegram": "Telegram",
@@ -258,7 +257,7 @@
     },
     "copyright": "Alle Rechte vorbehalten.",
     "legalInfoTitle": "Rechtliche Informationen",
-    "brandInfo": "FXVDS ist eine Marke, die von der T.art UG (haftungsbeschränkt) betrieben wird",
+    "brandInfo": "FXVDS ist eine Marke, die von der T.art UG (haftungsbeschränkt) betrieben wird.",
     "addressTitle": "Sitz der Gesellschaft:",
     "courtTitle": "Registergericht",
     "registerNumberTitle": "Handelsregisternummer",

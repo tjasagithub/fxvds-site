@@ -218,8 +218,7 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle_line1": "Have questions or need a custom setup?",
-    "subtitle_line2": "Send us a message — we’re happy to help.",
+    "subtitle": "Have questions or need a custom setup? Send us a message — we’re happy to help.",
     "specialOffer_line1": "Using Anton Nel Mirror Trading Manager?",
     "specialOffer_line2": "Drop us a message — special conditions may apply.",
     "telegram": "Telegram",
