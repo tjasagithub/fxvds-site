@@ -52,6 +52,16 @@
     "cta": "Start Free Trial",
     "contactCta": "Contact Us",
     "customSetup": "Need more power or a custom setup? Just {link}send us a message</a>.",
+    "earlyAccess": {
+      "title": "Early Access Pricing — Lock It In",
+      "body": "FXVDS is currently offered at early-access pricing while we onboard our initial group of traders. As capacity fills and demand increases, pricing will be adjusted for future sign-ups — existing customers keep their original rate.",
+      "bullets": [
+        "Strict performance standards (no overselling)",
+        "Scale infrastructure responsibly",
+        "Reward early adopters with long-term value"
+      ],
+      "note": "Early access is limited due to server capacity."
+    },
     "small": {
       "features": [
         { "text": "2-core CPU", "highlighted": true },

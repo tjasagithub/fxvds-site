@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { CheckoutModal, PlanName } from './checkout-modal';
 import { getDictionary } from '@/lib/get-dictionary';
 import Link from 'next/link';
+import { ShieldCheck } from 'lucide-react';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['pricing'];
 
@@ -60,6 +61,25 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
             {dictionary.subtitle2}
           </p>
         </div>
+
+        <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-card/30 border border-primary/20 rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-primary flex items-center gap-3">
+                    <ShieldCheck className="h-6 w-6" />
+                    {dictionary.earlyAccess.title}
+                </h3>
+                <p className="text-gray-300 mt-3 text-sm">
+                    {dictionary.earlyAccess.body}
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-gray-400 list-disc list-inside">
+                    {dictionary.earlyAccess.bullets.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+                <p className="text-xs text-gray-500 mt-4">{dictionary.earlyAccess.note}</p>
+            </div>
+        </div>
+
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {plans.map((plan) => {
             const isSelected = activePlan === plan.name;
