@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export default function InlineVpsVdsSvg() {
@@ -38,7 +37,7 @@ export default function InlineVpsVdsSvg() {
     </symbol>
   </defs>
 
-  <rect x="0" y="0" width="800" height="500" fill="#121212"/>
+  
   <line x1="400" y1="50" x2="400" y2="450" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
 
   {/* VPS (Left) */}
@@ -136,5 +135,3 @@ export default function InlineVpsVdsSvg() {
     </div>
   );
 }
-
-    
