@@ -47,6 +47,7 @@
   "pricing": {
     "title": "Wählen Sie Ihre Leistung",
     "subtitle": "Einfache, transparente Preise. Keine versteckten Gebühren. Jederzeit upgraden oder downgraden.",
+    "trialcta": "Noch unsicher? Starte eine 7-tägige kostenlose Testphase.",
     "perMonth": "Monat",
     "cta": "Kostenlos testen",
     "customSetup": "Benötigen Sie mehr Leistung oder eine individuelle Einrichtung? Senden Sie uns einfach eine <a href=\"#contact\" class=\"text-primary hover:underline\">Nachricht</a>.",

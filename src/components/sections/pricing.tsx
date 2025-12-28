@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -45,6 +46,11 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
           <p className="mt-4 text-lg text-gray-400">
             {dictionary.subtitle}
           </p>
+          {dictionary.trialcta && (
+            <p className="mt-2 text-sm text-gray-500">
+              {dictionary.trialcta}
+            </p>
+          )}
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan) => {

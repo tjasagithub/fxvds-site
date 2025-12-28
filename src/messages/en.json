@@ -47,6 +47,7 @@
   "pricing": {
     "title": "Choose Your Power",
     "subtitle": "Simple, transparent pricing. No hidden fees. Upgrade or downgrade anytime.",
+    "trialcta": "Not sure yet? Start a 7-day free trial.",
     "perMonth": "month",
     "cta": "Start Free Trial",
     "customSetup": "Need more power or a custom setup? Just {link}send us a message</a>.",
