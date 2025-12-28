@@ -24,7 +24,8 @@ const Contact = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale })
                   {dictionary.subtitle_line2}
                 </a>
                 <a href="https://t.me/fxvds_support" target="_blank" rel="noopener noreferrer" className="block text-primary font-semibold hover:underline">
-                  {dictionary.specialOffer}
+                  <span className="block">{dictionary.specialOffer_line1}</span>
+                  <span className="block">{dictionary.specialOffer_line2}</span>
                 </a>
               </div>
             </div>
