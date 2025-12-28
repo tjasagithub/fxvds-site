@@ -26,7 +26,7 @@ const PlatformSlider = () => {
         </div>
       </div>
       <div className="mt-12 relative w-full overflow-hidden">
-        <div className="group flex w-max animate-marquee hover:[animation-play-state:paused] motion-safe:group-hover:paused motion-reduce:hidden">
+        <div className="group flex w-max animate-marquee hover:[animation-play-state:paused] motion-reduce:hidden">
           {[...platforms, ...platforms].map((platform, index) => (
             <div key={index} className="flex items-center shrink-0">
               <span className="px-8 py-2 text-lg font-medium text-gray-300 transition-colors hover:text-white cursor-default">
