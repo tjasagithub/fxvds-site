@@ -92,8 +92,15 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10 md:hidden"
           style={{
-            background:
-              "linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 35%, rgba(0,0,0,0) 70%)",
+            background: `
+              linear-gradient(
+                160deg,
+                rgba(255,255,255,0.18) 0%,
+                rgba(255,255,255,0.12) 25%,
+                rgba(255,255,255,0.06) 45%,
+                rgba(0,0,0,0) 70%
+              )
+            `,
           }}
         />
        {isSnowVisible && !isMobile && <Snowfall />}
