@@ -137,7 +137,7 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
             <p className="mb-8 max-w-lg text-lg text-gray-300">
               {dictionary.subtitle}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-8">
               <Button asChild size="lg">
                 <Link href="#pricing">{dictionary.cta.startTrial}</Link>
               </Button>
