@@ -1,4 +1,3 @@
-
 {
   "metadata": {
     "title": "FXVDS: Power Trade",
@@ -19,10 +18,9 @@
   },
   "hero": {
     "promo": {
-      "title": "Santas Trading-Boost",
-      "subtitle": "7 Tage kostenlose Testversion + 50% Rabatt im ersten Monat",
-      "code": "Gutscheincode",
-      "validity": "Gültig bis zum 3. Januar"
+      "title": "Begrenzte Verfügbarkeit",
+      "subtitle": "Aufgrund der Serverkapazität nehmen wir jeweils nur eine begrenzte Anzahl neuer Kunden auf.",
+      "note": "Neue Kapazitäten werden schubweise freigegeben."
     },
     "title": "Handeln ohne Grenzen.<br />Leistung, die Ihnen gehört.",
     "subtitle": "Erleben Sie unübertroffene Geschwindigkeit, Zuverlässigkeit und Stabilität mit virtuellen dedizierten Servern, die für Händler entwickelt wurden, die das Beste verlangen.",
@@ -49,7 +47,7 @@
     "title": "Wählen Sie Ihre Leistung",
     "subtitle": "Einfache, transparente Preise. Keine versteckten Gebühren. Jederzeit upgraden oder downgraden.",
     "perMonth": "Monat",
-    "cta": "Feiertagsangebot sichern",
+    "cta": "Kostenlos testen",
     "customSetup": "Benötigen Sie mehr Leistung oder eine individuelle Einrichtung? Senden Sie uns einfach eine <a href=\"#contact\" class=\"text-primary hover:underline\">Nachricht</a>.",
     "small": {
       "features": [
@@ -79,7 +77,7 @@
       ]
     },
     "checkout": {
-      "title": "Schließen Sie Ihr Feiertagsangebot ab",
+      "title": "Schließen Sie Ihren Plan ab",
       "close": "Schließen",
       "plan": "Plan",
       "perMonth": "Monat",
@@ -101,22 +99,20 @@
         }
       },
       "offer": {
-        "title": "Feiertags-Special angewendet",
+        "title": "Begrenzte Verfügbarkeit",
         "trial": "7-tägige kostenlose Testversion – heute keine Kosten",
-        "discount": "50% Rabatt auf Ihren ersten Monat",
-        "note": "Rabatt wird automatisch beim Stripe-Checkout angewendet."
+        "capacity": "Begrenzte Aufnahme aufgrund von Serverkapazität"
       },
       "summary": {
         "plan": "Plan",
         "backups": "Backups",
         "ip": "Dedizierte IP",
         "setupFee": "Einrichtungsgebühr",
-        "discount": "Rabatt erster Monat",
         "dueToday": "Heute fällig",
         "firstMonth": "Gesamtpreis erster Monat",
         "recurring": "Wiederkehrender Gesamtbetrag"
       },
-      "cta": "Feiertagsangebot sichern",
+      "cta": "Kostenlos testen",
       "secureNote": "Sie schließen Ihr Abonnement sicher auf Stripe ab.",
       "notConfiguredError": "Checkout-Link noch nicht konfiguriert."
     }

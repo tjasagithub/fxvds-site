@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState } from 'react';
@@ -6,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { CheckoutModal, PlanName } from './checkout-modal';
-import { Gift } from 'lucide-react';
 import { getDictionary } from '@/lib/get-dictionary';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['pricing'];
@@ -57,22 +55,13 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
                 onClick={() => setActivePlan(plan.name)}
                 className={cn(
                   'flex flex-col border-border/70 bg-card/50 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 cursor-pointer',
-                  isSelected && 'border-primary/50 shadow-2xl shadow-primary/20 relative ring-2 ring-red-500/50'
+                  isSelected && 'border-primary/50 shadow-2xl shadow-primary/20 relative ring-2 ring-primary/50'
                 )}
               >
                 {isSelected && (
                   <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary/50 via-red-500/30 to-primary/80 opacity-50 blur-lg" />
                 )}
                 <CardHeader className="text-center relative">
-                   {isSelected && (
-                    <div className="absolute top-0 right-0 m-4 p-2 bg-red-600/80 rounded-full text-white animate-in fade-in-0 zoom-in-50 duration-500">
-                      <Gift className="h-5 w-5" />
-                      <span className="absolute -top-1 -right-1 flex h-4 w-4">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-4 w-4 text-xs items-center justify-center bg-red-500 text-white font-bold text-[9px]">50%</span>
-                      </span>
-                    </div>
-                  )}
                   <CardTitle className="text-3xl font-bold text-white">{plan.name}</CardTitle>
                   <CardDescription className="text-3xl font-bold text-white/90 mt-2">
                     {plan.price}

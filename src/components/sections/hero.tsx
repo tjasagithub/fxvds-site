@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -7,38 +6,13 @@ import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { CalendarDays, Zap, Lock } from 'lucide-react';
+import { CalendarDays, Zap, Lock, Info } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import Snowfall from '@/components/ui/snowfall';
 import { getDictionary } from '@/lib/get-dictionary';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['hero'];
-
-const SantaHatIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 100"
-    className="h-8 w-8 inline-block mr-2"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="3"
-  >
-    <path
-      d="M32.9,64.8c0,0-19.4,3.2-19.4,19.4c0,10.6,8.7,19.3,19.4,19.3s19.4-8.7,19.4-19.3 C52.3,68,32.9,64.8,32.9,64.8z"
-      fill="#FFF"
-      stroke="#FFF"
-    />
-    <path
-      d="M 95,35 C 95,35 95,35.3 95,36 C 95,49.2 84,60 71,60 C 60,60 55,51 55,51 C 55,51 60,49 63,46 C 66,43 70,36 70,36 C 70,36 40,25 25,35 C 10,45 20,65 20,65 L 45,65"
-      stroke="#E53935"
-      fill="transparent"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
 
 const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
   const [scrollY, setScrollY] = useState(0);
@@ -147,15 +121,13 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
           <div className="max-w-xl text-left">
             
             <div className="relative mb-8 p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/20 shadow-lg max-w-md animate-in fade-in-50 duration-700">
-                
                 <h2 className="text-xl font-bold text-white flex items-center">
-                    <SantaHatIcon />
+                    <Info className="h-6 w-6 inline-block mr-3 text-primary" />
                     {dictionary.promo.title}
                 </h2>
-                <p className="text-primary font-semibold text-lg mt-2">{dictionary.promo.subtitle}</p>
+                <p className="text-gray-300 text-base mt-2">{dictionary.promo.subtitle}</p>
                 <div className="text-xs text-gray-400 mt-2 space-y-1">
-                    <p>{dictionary.promo.code}: <code className="font-mono bg-white/10 px-1 py-0.5 rounded">HOLIDAY50</code></p>
-                    <p>{dictionary.promo.validity}</p>
+                    <p>{dictionary.promo.note}</p>
                 </div>
             </div>
 

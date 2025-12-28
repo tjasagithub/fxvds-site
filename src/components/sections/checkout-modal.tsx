@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -16,7 +15,7 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { stripeLinks } from '@/lib/stripe-links';
 import { cn } from '@/lib/utils';
-import { CheckCircle2, X, Gift } from 'lucide-react';
+import { CheckCircle2, X, Info } from 'lucide-react';
 import { getDictionary } from '@/lib/get-dictionary';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['checkout'];
@@ -119,7 +118,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
   const backupsPrice = hasDailyBackups ? 10 : 0;
   const ipPrice = hasDedicatedIp ? 10 : 0;
   const totalPrice = currentPlanData.price + backupsPrice + ipPrice;
-  const firstMonthPrice = (currentPlanData.price / 2) + backupsPrice + ipPrice;
+  const firstMonthPrice = currentPlanData.price + backupsPrice + ipPrice;
   
   const SpecItem = ({ label, value }: { label: string; value: string }) => (
     <li className="flex items-start gap-3">
@@ -158,7 +157,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                     onClick={() => setSelectedPlan(plan)}
                     className={cn(
                       "flex-1 transition-all", 
-                      selectedPlan === plan ? 'bg-gradient-to-r from-red-600/80 via-primary to-yellow-400/80 text-primary-foreground shadow-md' : 'text-gray-400 hover:bg-black/30 hover:text-white'
+                      selectedPlan === plan ? 'bg-primary text-primary-foreground shadow-md' : 'text-gray-400 hover:bg-black/30 hover:text-white'
                     )}
                   >
                     {plan}
@@ -217,12 +216,11 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                   </div>
               </div>
 
-              <div className="mt-4 p-4 rounded-lg bg-gradient-to-br from-yellow-400/10 via-red-500/10 to-yellow-400/10 border border-primary/20 shadow-inner">
-                <h3 className="font-bold text-white flex items-center gap-2"><Gift className="text-primary"/>{dictionary.offer.title}</h3>
+              <div className="mt-4 p-4 rounded-lg bg-black/20 border border-border/50 shadow-inner">
+                <h3 className="font-bold text-white flex items-center gap-2"><Info className="text-primary"/>{dictionary.offer.title}</h3>
                 <ul className="text-sm text-gray-300 mt-2 space-y-1 list-disc list-inside">
                     <li>{dictionary.offer.trial}</li>
-                    <li>{dictionary.offer.discount}</li>
-                    <li className="text-xs text-gray-400">{dictionary.offer.note}</li>
+                    <li>{dictionary.offer.capacity}</li>
                 </ul>
               </div>
 
@@ -233,7 +231,6 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.backups}:</span> <span>{hasDailyBackups ? '€10.00' : '—'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.ip}:</span> <span>{hasDedicatedIp ? '€10.00' : '—'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.setupFee}:</span> <span>€0.00</span></div>
-                  <div className="flex justify-between text-red-400"><span className="text-red-400">{dictionary.summary.discount}:</span> <span className='font-bold'>-€{(currentPlanData.price / 2).toFixed(2)}</span></div>
               </div>
 
               <Separator className="bg-border/50 my-3" />
