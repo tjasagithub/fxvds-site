@@ -46,7 +46,8 @@
   },
   "pricing": {
     "title": "Choose Your Power",
-    "subtitle": "Simple, transparent pricing. No hidden fees. Upgrade or downgrade anytime. All plans include a 7-day free trial. Cancel anytime.",
+    "subtitle": "Simple, transparent pricing. No hidden fees. Upgrade or downgrade anytime.",
+    "subtitle2": "All plans include a 7-day free trial. Cancel anytime.",
     "perMonth": "month",
     "cta": "Start Free Trial",
     "customSetup": "Need more power or a custom setup? Just {link}send us a message</a>.",

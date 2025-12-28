@@ -46,7 +46,8 @@
   },
   "pricing": {
     "title": "Wählen Sie Ihre Leistung",
-    "subtitle": "Einfache, transparente Preise. Keine versteckten Gebühren. Jederzeit upgraden oder downgraden. Alle Pläne beinhalten eine 7-tägige kostenlose Testphase. Jederzeit kündbar.",
+    "subtitle": "Einfache, transparente Preise. Keine versteckten Gebühren. Jederzeit upgraden oder downgraden.",
+    "subtitle2": "Alle Pläne beinhalten eine 7-tägige kostenlose Testphase. Jederzeit kündbar.",
     "perMonth": "Monat",
     "cta": "Kostenlos testen",
     "customSetup": "Benötigen Sie mehr Leistung oder eine individuelle Einrichtung? Senden Sie uns einfach eine <a href=\"#contact\" class=\"text-primary hover:underline\">Nachricht</a>.",

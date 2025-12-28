@@ -46,6 +46,9 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
           <p className="mt-4 text-lg text-gray-400">
             {dictionary.subtitle}
           </p>
+          <p className="text-lg text-gray-400">
+            {dictionary.subtitle2}
+          </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan) => {
