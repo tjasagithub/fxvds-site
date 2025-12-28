@@ -32,8 +32,8 @@ const Footer = ({ lang, dictionary }: { lang: Locale, dictionary: Dictionary }) 
                 </h3>
             </Link>
             <ul className="space-y-2">
-              <li><Link href={`/${lang}/legal#privacy-policy`} className="text-sm text-gray-400 hover:text-white transition-colors">{dictionary.legal.privacy}</Link></li>
-              <li><Link href={`/${lang}/legal#terms-of-service`} className="text-sm text-gray-400 hover:text-white transition-colors">{dictionary.legal.terms}</Link></li>
+              <li><Link href={`/${lang}/privacy-policy`} className="text-sm text-gray-400 hover:text-white transition-colors">{dictionary.legal.privacy}</Link></li>
+              <li><Link href={`/${lang}/terms-of-service`} className="text-sm text-gray-400 hover:text-white transition-colors">{dictionary.legal.terms}</Link></li>
               <li><Link href={`/${lang}/legal#cookies`} className="text-sm text-gray-400 hover:text-white transition-colors">{dictionary.legal.cookies}</Link></li>
               <li><Link href={`/${lang}/legal#impressum`} className="text-sm text-gray-400 hover:text-white transition-colors">{dictionary.legal.impressum}</Link></li>
             </ul>

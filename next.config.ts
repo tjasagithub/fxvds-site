@@ -52,11 +52,6 @@ async function createRedirects() {
       permanent: true,
     },
     {
-      source: '/legal',
-      destination: '/en/legal',
-      permanent: true,
-    },
-    {
       source: '/plans-pricing',
       destination: '/en#pricing',
       permanent: true,
