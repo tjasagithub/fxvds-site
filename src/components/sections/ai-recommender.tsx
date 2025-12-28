@@ -15,6 +15,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Bot, Loader2, Sparkles } from 'lucide-react';
 import { getDictionary } from '@/lib/get-dictionary';
 import { Locale } from '@/i18n.config';
+import Link from 'next/link';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['aiRecommender'];
 type PlanName = 'Small' | 'Medium' | 'Large' | 'Extra Large';
@@ -152,25 +153,33 @@ const AiRecommender = ({ dictionary, lang }: { dictionary: Dictionary, lang: Loc
             </CardContent>
           </Card>
 
-          <div className="h-full flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-border/50 p-8 min-h-[300px] lg:min-h-full">
-            {isLoading && (
-              <div className="text-center text-gray-400">
-                <Loader2 className="mx-auto h-12 w-12 animate-spin text-primary" />
-                <p className="mt-4 font-semibold">{dictionary.result.loading}</p>
-              </div>
-            )}
-            {!isLoading && !recommendation && (
-               <div className="text-center text-gray-500">
-                <Bot className="mx-auto h-12 w-12" />
-                <p className="mt-4 font-semibold">{dictionary.result.placeholder}</p>
-                {error && <p className="mt-2 text-destructive">{error}</p>}
-              </div>
-            )}
-            {!isLoading && recommendation && (
-              <div className="text-left w-full animate-in fade-in duration-500">
-                <h3 className="text-lg font-semibold text-gray-300">{dictionary.result.title}</h3>
-                <p className="text-4xl font-bold text-primary my-2">{getPlanDisplayName(recommendation.recommendedPlan)}</p>
-                <p className="text-gray-400">{recommendation.reasoning}</p>
+          <div className="h-full flex flex-col items-center justify-start rounded-lg min-h-[300px] lg:min-h-full">
+            <div className="w-full flex-1 flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-border/50 p-8">
+              {isLoading && (
+                <div className="text-center text-gray-400">
+                  <Loader2 className="mx-auto h-12 w-12 animate-spin text-primary" />
+                  <p className="mt-4 font-semibold">{dictionary.result.loading}</p>
+                </div>
+              )}
+              {!isLoading && !recommendation && (
+                 <div className="text-center text-gray-500">
+                  <Bot className="mx-auto h-12 w-12" />
+                  <p className="mt-4 font-semibold">{dictionary.result.placeholder}</p>
+                  {error && <p className="mt-2 text-destructive">{error}</p>}
+                </div>
+              )}
+              {!isLoading && recommendation && (
+                <div className="text-left w-full animate-in fade-in duration-500">
+                  <h3 className="text-lg font-semibold text-gray-300">{dictionary.result.title}</h3>
+                  <p className="text-4xl font-bold text-primary my-2">{getPlanDisplayName(recommendation.recommendedPlan)}</p>
+                  <p className="text-gray-400">{recommendation.reasoning}</p>
+                </div>
+              )}
+            </div>
+             {!isLoading && recommendation && (
+              <div className="mt-6 text-center text-sm text-gray-500 animate-in fade-in duration-500">
+                <p className="font-semibold text-gray-400">{dictionary.humanFallback.title}</p>
+                <p dangerouslySetInnerHTML={{ __html: dictionary.humanFallback.subtitle.replace('{link}', `<a href="/${lang}/#contact" class="text-primary hover:underline">`) + '</a>' }} />
               </div>
             )}
           </div>

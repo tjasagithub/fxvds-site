@@ -200,6 +200,10 @@
       "medium": "Medium Plan",
       "large": "Large Plan",
       "extralarge": "Extra Large Plan"
+    },
+    "humanFallback": {
+      "title": "Want to talk to a human?",
+      "subtitle": "Just {link}drop us a message</a> and we’ll help you choose the right setup."
     }
   },
   "getStarted": {

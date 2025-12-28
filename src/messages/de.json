@@ -200,6 +200,10 @@
       "medium": "Medium-Plan",
       "large": "Large-Plan",
       "extralarge": "Extra Large-Plan"
+    },
+    "humanFallback": {
+      "title": "Möchten Sie mit einem echten Menschen sprechen?",
+      "subtitle": "Senden Sie uns einfach eine {link}Nachricht</a> – wir helfen Ihnen gerne weiter."
     }
   },
   "getStarted": {
