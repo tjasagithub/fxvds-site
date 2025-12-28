@@ -1,3 +1,4 @@
+
 {
   "metadata": {
     "title": "FXVDS: Power Trade",
@@ -30,16 +31,16 @@
     },
     "highlights": {
       "trial": {
-        "title": "7 Day Free Trial",
-        "subtitle": "No payment upfront"
+        "title": "Managing multiple accounts?",
+        "subtitle": "When others rely on you, infrastructure stability matters."
       },
       "performance": {
         "title": "Guaranteed Performance",
-        "subtitle": "Reserved CPU & RAM"
+        "subtitle": "No overselling. No lag during high volatility."
       },
       "connection": {
         "title": "Private Connection",
-        "subtitle": "Isolated & secure environment"
+        "subtitle": "EU-based infrastructure & GDPR compliance."
       }
     }
   },

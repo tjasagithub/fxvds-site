@@ -1,3 +1,4 @@
+
 {
   "metadata": {
     "title": "FXVDS: Power Trade",
@@ -30,16 +31,16 @@
     },
     "highlights": {
       "trial": {
-        "title": "7 Tage kostenlos testen",
-        "subtitle": "Keine Vorauszahlung"
+        "title": "Verwalten Sie mehrere Konten?",
+        "subtitle": "Wenn sich andere auf Sie verlassen, zählt die Stabilität der Infrastruktur."
       },
       "performance": {
         "title": "Garantierte Leistung",
-        "subtitle": "Reservierte CPU & RAM"
+        "subtitle": "Kein Overselling. Keine Verzögerung bei hoher Volatilität."
       },
       "connection": {
         "title": "Private Verbindung",
-        "subtitle": "Isolierte & sichere Umgebung"
+        "subtitle": "EU-basierte Infrastruktur & DSGVO-Konformität."
       }
     }
   },
@@ -255,7 +256,7 @@
     "copyright": "Alle Rechte vorbehalten.",
     "legalInfoTitle": "Rechtliche Informationen",
     "brandInfo": "FXVDS ist eine Marke, die von der T.art UG (haftungsbeschränkt) betrieben wird",
-    "addressTitle": "Registrierte Adresse:",
+    "addressTitle": "Sitz der Gesellschaft:",
     "courtTitle": "Registergericht",
     "registerNumberTitle": "Handelsregisternummer",
     "contactTitle": "Kontakt"
