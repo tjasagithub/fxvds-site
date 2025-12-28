@@ -173,6 +173,40 @@
       { "icon": "Rocket", "title": "Blazing-Fast Trade Execution", "description": "NVMe SSD delivers 5–10× the speed of traditional SATA SSDs." }
     ]
   },
+  "vdsVsVps": {
+    "title": "Why a VDS Is Better Than a VPS for Trading",
+    "intro": "While VPS solutions are common, they often share CPU and RAM with other users. A VDS is the professional choice for traders who require consistent stability and predictable performance.",
+    "infographic": {
+      "vpsLabel": "Shared Resources",
+      "vdsLabel": "Dedicated Resources"
+    },
+    "vps": {
+      "title": "VPS (Shared Resources)",
+      "points": [
+        "CPU and RAM are shared with other users",
+        "Performance can fluctuate under load",
+        "Potential for latency spikes during peak usage",
+        "Suitable for light or non-critical workloads"
+      ]
+    },
+    "vds": {
+      "title": "VDS (Dedicated Resources)",
+      "points": [
+        "Dedicated CPU cores and RAM",
+        "No resource sharing, no overselling",
+        "Stable latency and consistent execution",
+        "Built for professional trading and automation"
+      ]
+    },
+    "benefits": {
+      "title": "Trading-Focused Benefits",
+      "points": [
+        "No lag during high-volume market sessions",
+        "Reliable execution for EAs and copy trading",
+        "Predictable performance 24/7"
+      ]
+    }
+  },
   "aiRecommender": {
     "title": "Not Sure Which Plan Is Right?",
     "subtitle": "Let our AI assistant recommend the perfect VDS plan based on your trading style.",

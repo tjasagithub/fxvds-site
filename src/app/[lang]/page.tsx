@@ -11,6 +11,7 @@ import PlatformSlider from '@/components/sections/platform-slider';
 const Pricing = React.lazy(() => import('@/components/sections/pricing'));
 const IncludedFeatures = React.lazy(() => import('@/components/sections/included-features'));
 const WhyFxvds = React.lazy(() => import('@/components/sections/why-fxvds'));
+const VdsVsVps = React.lazy(() => import('@/components/sections/vds-vs-vps'));
 const AiRecommender = React.lazy(() => import('@/components/sections/ai-recommender'));
 const GetStarted = React.lazy(() => import('@/components/sections/get-started'));
 const Cta = React.lazy(() => import('@/components/sections/cta'));
@@ -36,6 +37,9 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
           <WhyFxvds dictionary={dictionary.whyFxvds} />
+        </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <VdsVsVps dictionary={dictionary.vdsVsVps} />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
           <AiRecommender dictionary={dictionary.aiRecommender} lang={lang} />
