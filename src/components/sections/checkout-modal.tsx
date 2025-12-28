@@ -122,7 +122,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
     if (!checkoutUrl) {
       setErrorMessage(dictionary.notConfiguredError);
     } else {
-      window.location.href = checkoutUrl;
+      window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
