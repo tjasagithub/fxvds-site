@@ -1,12 +1,21 @@
+
 import React from "react";
 
 export default function InlineVpsVdsSvg() {
   const svg = `
 <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;display:block;">
   <defs>
+    <style>
+      @media (max-width: 767px) {
+        .desktop-only {
+          display: none;
+        }
+      }
+    </style>
+
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1A1C2A;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0F111A;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#121212;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#121212;stop-opacity:1" />
     </linearGradient>
 
     <linearGradient id="vpsBar" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -15,7 +24,7 @@ export default function InlineVpsVdsSvg() {
     </linearGradient>
 
     <linearGradient id="vdsBar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#D97706"/>
+      <stop offset="0%" style="stop-color:#D4AF37"/>
       <stop offset="100%" style="stop-color:#FBBF24"/>
     </linearGradient>
 
@@ -37,7 +46,7 @@ export default function InlineVpsVdsSvg() {
   <rect x="0" y="0" width="800" height="500" fill="url(#bgGradient)"/>
   <line x1="400" y1="50" x2="400" y2="450" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
 
-  <!-- VPS (Left) -->
+  {/* VPS (Left) */}
   <g transform="translate(20, 50)" color="#94A3B8">
     <text x="190" y="30" font-family="sans-serif" font-size="24" font-weight="bold" fill="currentColor" text-anchor="middle">VPS</text>
     <text x="190" y="55" font-family="sans-serif" font-size="14" fill="#64748B" text-anchor="middle">(Virtual Private Server)</text>
@@ -45,22 +54,22 @@ export default function InlineVpsVdsSvg() {
     <g transform="translate(40, 90)">
       <g color="#64748B">
         <use href="#server-rack" x="180" y="0"></use>
-        <circle cx="385" cy="90" r="3" fill="#64748B"/>
-        <circle cx="395" cy="90" r="3" fill="#EF4444"/>
       </g>
-
+      
       <g color="#94A3B8">
         <use href="#user-icon" x="0" y="10"/>
-        <use href="#user-icon" x="0" y="60"/>
         <use href="#user-icon" x="0" y="110"/>
-        <use href="#user-icon" x="40" y="35"/>
+        <use href="#user-icon" x="40" y="60"/>
+        <use class="desktop-only" href="#user-icon" x="80" y="10" />
+        <use class="desktop-only" href="#user-icon" x="80" y="110" />
       </g>
 
       <path d="M35,30 C100,30 120,90 185,90" stroke="#334155" stroke-width="2" fill="none"/>
-      <path d="M35,80 C90,80 110,90 185,90" stroke="#334155" stroke-width="2" fill="none"/>
       <path d="M35,130 C100,130 120,90 185,90" stroke="#334155" stroke-width="2" fill="none"/>
-      <path d="M75,55 C110,55 130,90 185,90" stroke="#334155" stroke-width="2" fill="none"/>
-      <text x="130" y="70" font-family="sans-serif" font-size="12" fill="#64748B">SHARED</text>
+      <path d="M75,80 C110,80 130,90 185,90" stroke="#334155" stroke-width="2" fill="none"/>
+      <path class="desktop-only" d="M115,30 C140,30 150,90 185,90" stroke="#334155" stroke-width="2" fill="none"/>
+      <path class="desktop-only" d="M115,130 C140,130 150,90 185,90" stroke="#334155" stroke-width="2" fill="none"/>
+      <text x="130" y="70" font-family="sans-serif" font-size="12" fill="#64748B" font-weight="bold">SHARED</text>
     </g>
 
     <g transform="translate(40, 300)">
@@ -72,34 +81,32 @@ export default function InlineVpsVdsSvg() {
     </g>
 
     <g transform="translate(40, 370)" font-family="sans-serif" font-size="15" fill="#CBD5E1">
-      <text x="0" y="0">• You share computer power with other users</text>
-      <text x="0" y="30">• Performance can slow down when others are active</text>
-      <text x="0" y="60">• Suitable for non-critical tasks</text>
+      <text x="0" y="0">• CPU & RAM shared with other users</text>
+      <text x="0" y="30">• Performance can fluctuate under load</text>
+      <text x="0" y="60">• Suitable for light or non-critical workloads</text>
     </g>
   </g>
 
-  <!-- VDS (Right) -->
+  {/* VDS (Right) */}
   <g transform="translate(420, 50)" color="#FBBF24">
     <text x="190" y="30" font-family="sans-serif" font-size="24" font-weight="bold" fill="currentColor" text-anchor="middle">VDS</text>
-    <text x="190" y="55" font-family="sans-serif" font-size="14" fill="#F59E0B" text-anchor="middle">(Virtual Dedicated Server)</text>
+    <text x="190" y="55" font-family="sans-serif" font-size="14" fill="#D4AF37" text-anchor="middle">(Virtual Dedicated Server)</text>
 
     <g transform="translate(40, 90)">
-      <g color="#F59E0B">
+      <g color="#D4AF37">
         <use href="#server-rack" x="0" y="0"></use>
-        <circle cx="25" cy="90" r="3" fill="#FBBF24"/>
-        <circle cx="35" cy="90" r="3" fill="#FBBF24"/>
       </g>
 
       <g transform="translate(220, 60)" color="#FBBF24">
         <use href="#user-icon" x="0" y="0" transform="scale(1.2)"/>
-        <path d="M25,0 Q40,0 40,15 Q40,30 25,40 Q10,30 10,15 Q10,0 25,0 Z" fill="#F59E0B" transform="translate(15,15) scale(0.6)"/>
-        <rect x="33" y="25" width="6" height="8" rx="1" fill="#1A1C2A"/>
-        <path d="M33,25 C33,20 39,20 39,25" stroke="#1A1C2A" stroke-width="2" fill="none"/>
+        <path d="M5,15 A 15 15 0 0 1 35 15 L 35 25 A 15 15 0 0 0 20 40 A 15 15 0 0 0 5 25 Z" fill="#D4AF37" transform="translate(15,10) scale(0.7)"/>
+        <path d="M22,23 C22,18 30,18 30,23" stroke="#121212" stroke-width="2" fill="none" transform="translate(15,10) scale(0.7)"/>
       </g>
+      
+      <text x="240" y="130" font-family="sans-serif" font-size="14" fill="#FBBF24" font-weight="bold">You</text>
 
       <path d="M90,90 L220,90" stroke="url(#vdsBar)" stroke-width="6" fill="none" stroke-linecap="round"/>
       <path d="M90,90 L220,90" stroke="#FBBF24" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
-
       <text x="155" y="75" font-family="sans-serif" font-size="12" fill="#FBBF24" text-anchor="middle" font-weight="bold">DEDICATED TO YOU</text>
     </g>
 
@@ -112,9 +119,9 @@ export default function InlineVpsVdsSvg() {
     </g>
 
     <g transform="translate(40, 370)" font-family="sans-serif" font-size="15" fill="#FFFFFF">
-      <text x="0" y="0">• All computer power is reserved just for you</text>
-      <text x="0" y="30">• No sharing. No performance drops</text>
-      <text x="0" y="60">• Built for professional trading and automation</text>
+      <text x="0" y="0">• Dedicated CPU cores & RAM</text>
+      <text x="0" y="30">• No resource sharing, no overselling</text>
+      <text x="0" y="60">• Built for professional trading & automation</text>
     </g>
   </g>
 </svg>

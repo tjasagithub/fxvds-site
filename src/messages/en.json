@@ -177,21 +177,21 @@
     "title": "VDS vs VPS: The Difference Professional Traders Care About",
     "intro": "While VPS (Virtual Private Server) solutions are common, they share computing power with other users, which can lead to performance fluctuations. A VDS (Virtual Dedicated Server) gives you dedicated computing power, ensuring consistent stability and predictable performance — the professional choice for serious traders.",
     "infographic": {
-      "computingPower": "Computing Power",
-      "vpsLabel": "Shared Resources",
-      "vdsLabel": "Dedicated Resources",
+      "vpsTitle": "VPS (Virtual Private Server)",
+      "vpsSubtitle": "(Shared Resources)",
+      "vpsPower": "Computer Power (Fluctuating)",
       "vpsPoints": [
-        "Computing power shared with other users",
-        "Performance fluctuates under load",
-        "Latency spikes during peak usage",
-        "Suitable for non-critical workloads"
+        "CPU & RAM shared with other users",
+        "Performance can fluctuate under load",
+        "Suitable for light or non-critical workloads"
       ],
+      "vdsTitle": "VDS (Virtual Dedicated Server)",
+      "vdsSubtitle": "(Dedicated Resources)",
+      "vdsPower": "Computer Power (Stable)",
       "vdsPoints": [
-        "Dedicated computing power",
-        "No resource sharing",
-        "No overselling",
-        "Stable latency & execution",
-        "Built for professional trading"
+        "Dedicated CPU cores & RAM",
+        "No resource sharing, no overselling",
+        "Built for professional trading & automation"
       ]
     },
     "benefits": {
