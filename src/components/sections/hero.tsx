@@ -76,43 +76,48 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
     };
   }, [isVisible]);
 
-  const heroImageId = isMobile ? 'hero-bull-mobile' : 'hero-bull';
-  const heroImage = PlaceHolderImages.find((img) => img.id === heroImageId);
+  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-bull');
   
-  const parallaxStyle = prefersReducedMotion ? {} : {
+  const parallaxStyle = prefersReducedMotion || isMobile ? {} : {
     transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
   };
 
-  const imageScaleStyle = prefersReducedMotion ? {} : {
+  const imageScaleStyle = prefersReducedMotion || isMobile ? {} : {
     transform: `scale(${1 + scrollY * 0.0001}) translateZ(0)`,
   };
 
   return (
     <section id="home" ref={heroRef} className="relative min-h-[100dvh] w-full overflow-hidden flex flex-col">
-       {isSnowVisible && <Snowfall />}
-      <div
-        className="absolute inset-0 z-0"
-        style={parallaxStyle}
-      >
-        {heroImage && (
-          <div style={{ willChange: 'transform' }} className="h-full w-full">
-            <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
-              fill
-              className="object-cover object-[70%_50%]"
-              style={imageScaleStyle}
-              quality={90}
-              priority
-              data-ai-hint={heroImage.imageHint}
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-            />
-          </div>
-        )}
-         <div className="absolute inset-0 bg-black/30" />
-      </div>
+       {isSnowVisible && !isMobile && <Snowfall />}
+      
+      {!isMobile ? (
+        <div
+          className="absolute inset-0 z-0"
+          style={parallaxStyle}
+        >
+          {heroImage && (
+            <div style={{ willChange: 'transform' }} className="h-full w-full">
+              <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover object-[70%_50%]"
+                style={imageScaleStyle}
+                quality={90}
+                priority
+                data-ai-hint={heroImage.imageHint}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+              />
+            </div>
+          )}
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
+      ) : (
+         <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-background to-blue-950/20" />
+      )}
+
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent" />
 
