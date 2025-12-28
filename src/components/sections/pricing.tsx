@@ -63,7 +63,7 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
                 )}
               >
                 {isSelected && (
-                  <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary/50 via-red-500/30 to-primary/80 opacity-50 blur-lg" />
+                  <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary/50 via-primary/70 to-primary/80 opacity-50 blur-lg" />
                 )}
                 <CardHeader className="text-center relative">
                   <CardTitle className="text-3xl font-bold text-white">{plan.name}</CardTitle>
