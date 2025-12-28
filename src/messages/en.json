@@ -20,7 +20,7 @@
   "hero": {
     "promo": {
       "title": "Limited Availability",
-      "subtitle": "Due to server capacity, we onboard a limited number of new clients at a time.",
+      "subtitle": "Due to server capacity constraints, we onboard a limited number of new clients at a time.",
       "note": "New capacity is released in batches."
     },
     "title": "Trade without limits.<br />Power that’s yours.",
@@ -60,7 +60,7 @@
         "Scale infrastructure responsibly",
         "Reward early adopters with long-term value"
       ],
-      "note": "Early access is limited due to server capacity."
+      "note": "Early access is limited due to server capacity constraints."
     },
     "small": {
       "features": [
@@ -129,7 +129,7 @@
       "offer": {
         "title": "Limited Availability",
         "trial": "7-day free trial — no charge today",
-        "capacity": "Limited onboarding due to server capacity"
+        "capacity": "Limited onboarding due to server capacity constraints"
       },
       "summary": {
         "plan": "Plan",

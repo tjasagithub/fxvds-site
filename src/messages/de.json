@@ -20,7 +20,7 @@
   "hero": {
     "promo": {
       "title": "Begrenzte Verfügbarkeit",
-      "subtitle": "Aufgrund der Serverkapazität nehmen wir jeweils nur eine begrenzte Anzahl neuer Kunden auf.",
+      "subtitle": "Aufgrund von Serverkapazitätsengpässen nehmen wir jeweils nur eine begrenzte Anzahl neuer Kunden auf.",
       "note": "Neue Kapazitäten werden schubweise freigegeben."
     },
     "title": "Handeln ohne Grenzen.<br />Leistung, die Ihnen gehört.",
@@ -60,7 +60,7 @@
         "Skalierung der Infrastruktur mit Augenmaß",
         "Vorteile für Early Adopters langfristig sichern"
       ],
-      "note": "Early Access ist aufgrund der Serverkapazität begrenzt."
+      "note": "Early Access ist aufgrund von Serverkapazitätsengpässen begrenzt."
     },
     "small": {
       "features": [
@@ -129,7 +129,7 @@
       "offer": {
         "title": "Begrenzte Verfügbarkeit",
         "trial": "7-tägige kostenlose Testversion – heute keine Kosten",
-        "capacity": "Begrenzte Aufnahme aufgrund von Serverkapazität"
+        "capacity": "Begrenzte Aufnahme aufgrund von Serverkapazitätsengpässen"
       },
       "summary": {
         "plan": "Plan",
