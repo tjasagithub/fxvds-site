@@ -67,8 +67,18 @@ async function createRedirects() {
       permanent: true,
     },
     {
+      source: '/impressum',
+      destination: '/de/legal#impressum',
+      permanent: true,
+    },
+    {
       source: '/de/impressum',
       destination: '/de/legal#impressum',
+      permanent: true,
+    },
+    {
+      source: '/en/impressum',
+      destination: '/en/legal#impressum',
       permanent: true,
     },
   ];
