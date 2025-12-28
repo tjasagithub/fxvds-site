@@ -119,7 +119,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
     const planKey = selectedPlan.replace(' ', '').toLowerCase() as keyof typeof stripeLinks;
     const checkoutUrl = stripeLinks[planKey]?.[urlKey];
 
-    if (!checkoutUrl || checkoutUrl.includes('_URL')) {
+    if (!checkoutUrl) {
       setErrorMessage(dictionary.notConfiguredError);
     } else {
       window.location.href = checkoutUrl;
@@ -262,7 +262,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
              <Button type="button" onClick={handleContinue} size="lg">
                 {dictionary.cta}
               </Button>
-            {errorMessage && <p className="text-sm text-destructive mt-2 text-center">{errorMessage}</p>}
+            {errorMessage && <p className="text-sm text-destructive mt-2 text-center" dangerouslySetInnerHTML={{ __html: errorMessage }} />}
           </div>
            <p className="text-xs text-gray-500 text-center">{dictionary.secureNote}</p>
         </DialogFooter>

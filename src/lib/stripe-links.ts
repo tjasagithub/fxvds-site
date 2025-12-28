@@ -1,27 +1,32 @@
 
+/**
+ * Paste LIVE Stripe Payment Links here.
+ * Test-mode links will NOT work on the production deployment.
+ * If a link is an empty string, the checkout will show a "temporarily unavailable" message.
+ */
 export const stripeLinks = {
   small: {
-    base: 'https://buy.stripe.com/14A6oG8bM4j7epX2jj',
-    backup: 'https://buy.stripe.com/5kQcN4gIi2aZdlT1ff',
-    ip: 'https://buy.stripe.com/dRm00iajU7vjdlTf65',
-    backup_ip: 'https://buy.stripe.com/14A00ibnY7vj4Pnga9',
+    base: '',
+    backup: '',
+    ip: '',
+    backup_ip: '',
   },
   medium: {
-    base: 'https://buy.stripe.com/9B6fZg1NocPD81zgaa',
-    backup: 'https://buy.stripe.com/9B6fZgajU5nb4Pnf66',
-    ip: 'https://buy.stripe.com/dRm14mdw65nb0z72jk',
-    backup_ip: 'https://buy.stripe.com/5kQcN4dw66rf81z2jl',
+    base: '',
+    backup: '',
+    ip: '',
+    backup_ip: '',
   },
   large: {
-    base: 'https://buy.stripe.com/5kQdR89fQ4j71Db1fg',
-    backup: 'https://buy.stripe.com/14AdR8dw6cPD95D7DH',
-    ip: 'https://buy.stripe.com/6oU6oG77I6rf1Db1fi',
-    backup_ip: 'https://buy.stripe.com/fZufZg63EdTH95D4rs',
+    base: '',
+    backup: '',
+    ip: '',
+    backup_ip: '',
   },
   extralarge: {
-    base: 'https://buy.stripe.com/fZuaEW0Jk7vj1Dbga9',
-    backup: 'https://buy.stripe.com/5kQeVc0Jk6rffu11ff',
-    ip: 'https://buy.stripe.com/bJe14m1No4j72Hf8HH',
-    backup_ip: 'https://buy.stripe.com/bJe4gy9fQ8zn0z70bb',
+    base: '',
+    backup: '',
+    ip: '',
+    backup_ip: '',
   }
 };

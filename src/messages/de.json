@@ -132,7 +132,7 @@
       },
       "cta": "Kostenlos testen",
       "secureNote": "Sie schließen Ihr Abonnement sicher auf Stripe ab.",
-      "notConfiguredError": "Checkout-Link noch nicht konfiguriert."
+      "notConfiguredError": "Checkout ist aktuell nicht verfügbar. Bitte <a href=\"/de#contact\" class=\"underline\">kontaktieren Sie uns</a>."
     }
   },
   "includedFeatures": {
@@ -234,7 +234,7 @@
       { "question": "Spielt der Serverstandort eine Rolle?", "answer": "<p class=\"mb-4\">Ja – aber nicht so sehr, wie viele Anbieter behaupten. Die Serverleistung ist weitaus wichtiger als nur die „Nähe“ zu einem Broker. Wenn ein Server unterpowert oder instabil ist, wird die Handelsausführung langsam sein, unabhängig von seinem Standort. Hochfrequenz-CPUs, schneller Arbeitsspeicher und eine stabile Infrastruktur haben einen weitaus größeren Einfluss auf die Ausführungsgeschwindigkeit als die Entfernung allein.</p><p>Dennoch befinden sich die FXVDS-Server in Deutschland und bieten eine ausgezeichnete Balance aus Leistung, Zuverlässigkeit und latenzarmen Verbindungen zu wichtiger europäischer Handelsinfrastruktur – zu einigen der wettbewerbsfähigsten Preise, die für dedizierte Handelsserver verfügbar sind.</p>" },
       { "question": "Was ist der Unterschied zwischen einer statischen IP und einer dedizierten IP-Adresse?", "answer": "Eine statische IP ist eine feste Adresse, die sich nicht ändert, was für Broker wichtig ist, die aus Sicherheitsgründen eine konsistente IP verlangen können. Alle unsere Pläne enthalten eine statische IP. Eine dedizierte IP ist eine Adresse, die ausschließlich von Ihnen verwendet wird, um sicherzustellen, dass sie nicht mit anderen Benutzern geteilt wird. Diese ist als optionales Add-on erhältlich." },
       { "question": "Ist FXVDS für professionelle Copy-Trading- und Trade-Mirroring-Software geeignet?", "answer": "Ja. FXVDS wird dringend für Benutzer empfohlen, die professionelle Copy-Trading- und Trade-Mirroring-Lösungen betreiben, einschließlich der Anton Nel Mirror Trading Manager Software und ähnlicher Plattformen. Dedizierte CPU-Ressourcen, stabile Leistung und eine 24/7-Verfügbarkeit gewährleisten eine zuverlässige Handelsreplikation über Hunderte von verbundenen Follower-Konten." },
-      { "question": "Warum ist ein VDS für Mirror-Trading-Software wichtig?", "answer": "Mirror-Trading-Software erfordert kontinuierliche Konnektivität, geringe Ausführungsverzögerungen und eine konstante Systemleistung. Ein dedizierter VDS stellt sicher, dass der Trading-Manager jederzeit online bleibt und Handelssignale zuverlässig verarbeiten kann, ohne Unterbrechungen durch lokale System- oder Internetprobleme." }
+      { "question": "Warum ist ein VDS für Mirror-trading-Software wichtig?", "answer": "Mirror-trading-Software erfordert kontinuierliche Konnektivität, geringe Ausführungsverzögerungen und eine konstante Systemleistung. Ein dedizierter VDS stellt sicher, dass der Trading-Manager jederzeit online bleibt und Handelssignale zuverlässig verarbeiten kann, ohne Unterbrechungen durch lokale System- oder Internetprobleme." }
     ]
   },
   "contact": {

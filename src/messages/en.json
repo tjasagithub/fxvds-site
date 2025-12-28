@@ -132,7 +132,7 @@
       },
       "cta": "Start Free Trial",
       "secureNote": "You’ll complete your subscription securely on Stripe.",
-      "notConfiguredError": "Checkout link not configured yet."
+      "notConfiguredError": "Checkout temporarily unavailable. Please <a href=\"/en#contact\" class=\"underline\">contact us</a>."
     }
   },
   "includedFeatures": {
