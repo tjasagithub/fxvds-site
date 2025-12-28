@@ -58,7 +58,7 @@
         { "text": "4 GB RAM", "highlighted": true },
         { "text": "3.6 GHz per core", "highlighted": false },
         { "text": "60 GB NVMe SSD", "highlighted": false },
-        { "text": "1 Gbit/s high-speed connection", "highlighted": false }
+        { "text": "1 Gbit/s", "highlighted": false }
       ]
     },
     "medium": {
@@ -67,7 +67,7 @@
         { "text": "8 GB RAM", "highlighted": true },
         { "text": "3.6 GHz per core", "highlighted": false },
         { "text": "60 GB NVMe SSD", "highlighted": false },
-        { "text": "1Gbit/s high-speed connection", "highlighted": false }
+        { "text": "1 Gbit/s", "highlighted": false }
       ]
     },
     "large": {
@@ -76,7 +76,7 @@
         { "text": "16 GB RAM", "highlighted": true },
         { "text": "3.6 GHz per core", "highlighted": false },
         { "text": "60 GB NVMe SSD", "highlighted": false },
-        { "text": "1-Gbit/s high-speed connection", "highlighted": false }
+        { "text": "1 Gbit/s", "highlighted": false }
       ]
     },
     "extraLarge": {
@@ -85,7 +85,7 @@
         { "text": "32 GB RAM", "highlighted": true },
         { "text": "3.6 GHz per core", "highlighted": false },
         { "text": "60 GB NVMe SSD", "highlighted": false },
-        { "text": "1-Gbit/s high-speed connection", "highlighted": false }
+        { "text": "1 Gbit/s", "highlighted": false }
       ]
     },
     "checkout": {
