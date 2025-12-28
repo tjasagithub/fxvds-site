@@ -115,7 +115,7 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
           <div className="absolute inset-0 bg-black/30" />
         </div>
       ) : (
-         <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-background to-blue-950/20" />
+         <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/10 to-background" />
       )}
 
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
@@ -142,7 +142,7 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
             <p className="mb-8 max-w-lg text-lg text-gray-300">
               {dictionary.subtitle}
             </p>
-            <div className="flex space-x-4 mb-8">
+            <div className="flex space-x-4 mb-16">
               <Button asChild size="lg">
                 <Link href="#pricing">{dictionary.cta.startTrial}</Link>
               </Button>
