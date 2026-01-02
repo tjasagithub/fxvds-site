@@ -76,7 +76,7 @@ const VdsVsVps = ({ dictionary }: { dictionary: Dictionary }) => {
                 100% { width: 65%; }
             }
             .animate-vps-power-fluctuation {
-                animation: vps-power-fluctuation 4s ease-in-out infinite;
+                animation: vps-power-fluctuation 6s ease-in-out infinite;
             }
         `}</style>
 
