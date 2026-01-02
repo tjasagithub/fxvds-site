@@ -1,4 +1,3 @@
-
 'use client';
 
 import type { getDictionary } from '@/lib/get-dictionary';
@@ -27,7 +26,7 @@ const VdsVsVps = ({ dictionary }: { dictionary: Dictionary }) => {
                 <p className="text-sm text-gray-500">{dictionary.infographic.vpsSubtitle}</p>
               </div>
               <div className="relative my-8 flex items-center justify-center min-h-[200px]">
-                 <Image src="https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/1_vps.webp" alt="VPS server illustration" width={400} height={200} className="max-w-full h-auto" />
+                 <Image src="https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/1_VPS.webp" alt="VPS server illustration" width={400} height={200} className="max-w-full h-auto" />
               </div>
               <div className="mt-6">
                 <div className="space-y-2">
