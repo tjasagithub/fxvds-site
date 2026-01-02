@@ -86,7 +86,7 @@
         { "text": "16 GB RAM", "highlighted": true },
         { "text": "3.6 GHz pro Kern", "highlighted": false },
         { "text": "60 GB NVMe SSD", "highlighted": false },
-        { "text": "1 Gbit/s", "highlighted": false }
+        { "text": "1Gbit/s", "highlighted": false }
       ]
     },
     "extraLarge": {
@@ -174,24 +174,24 @@
     ]
   },
   "vdsVsVps": {
-    "title": "VDS vs VPS: The Difference Professional Traders Care About",
-    "intro": "While VPS (Virtual Private Server) solutions are common, they share computing power with other users, which can lead to performance fluctuations. A VDS (Virtual Dedicated Server) gives you dedicated computing power, ensuring consistent stability and predictable performance — the professional choice for serious traders.",
+    "title": "VDS vs. VPS: Der Unterschied, der für professionelle Trader zählt",
+    "intro": "Während VPS-Lösungen (Virtual Private Server) weit verbreitet sind, teilen sie sich Rechenleistung mit anderen Nutzern, was zu Leistungsschwankungen führen kann. Ein VDS (Virtual Dedicated Server) gibt Ihnen dedizierte Rechenleistung und sorgt so für konsistente Stabilität und vorhersehbare Leistung – die professionelle Wahl für ernsthafte Händler.",
     "infographic": {
       "vpsTitle": "VPS",
       "vpsSubtitle": "(Virtual Private Server)",
-      "vpsPower": "Computer Power (Fluctuating)",
+      "vpsPower": "Rechenleistung (Schwankend)",
       "vpsPoints": [
-        "CPU & RAM shared with other users",
-        "Performance can fluctuate under load",
-        "Suitable for light or non-critical workloads"
+        "CPU & RAM werden mit anderen Nutzern geteilt",
+        "Leistung kann unter Last schwanken",
+        "Geeignet für leichte oder unkritische Aufgaben"
       ],
       "vdsTitle": "VDS",
       "vdsSubtitle": "(Virtual Dedicated Server)",
-      "vdsPower": "Computer Power (Stable)",
+      "vdsPower": "Rechenleistung (Stabil)",
       "vdsPoints": [
-        "Dedicated CPU cores & RAM",
-        "No resource sharing, no overselling",
-        "Built for professional trading & automation"
+        "Dedizierte CPU-Kerne & RAM",
+        "Keine gemeinsame Nutzung von Ressourcen, kein Overselling",
+        "Gebaut für professionellen Handel & Automatisierung"
       ]
     }
   },
