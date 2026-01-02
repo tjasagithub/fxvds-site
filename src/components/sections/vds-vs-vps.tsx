@@ -1,3 +1,4 @@
+
 'use client';
 
 import type { getDictionary } from '@/lib/get-dictionary';
@@ -25,18 +26,20 @@ const VdsVsVps = ({ dictionary }: { dictionary: Dictionary }) => {
                 <h3 className="text-2xl font-bold text-gray-400">VPS</h3>
                 <p className="text-sm text-gray-500">{dictionary.infographic.vpsSubtitle}</p>
               </div>
-              <div className="relative my-8 h-48 flex items-center justify-center">
+              <div className="relative my-8 flex items-center justify-center min-h-[200px]">
                  <Image src="https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/1_vps.webp" alt="VPS server illustration" width={400} height={200} className="max-w-full h-auto" />
               </div>
-               <div className="space-y-2">
-                <p className="text-sm text-gray-400">{dictionary.infographic.vpsPower}</p>
-                <div className="w-full h-5 rounded-full bg-gray-800 overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-slate-500 to-slate-400 animate-vps-power-fluctuation" />
+              <div className="mt-6">
+                <div className="space-y-2">
+                  <p className="text-sm text-gray-400">{dictionary.infographic.vpsPower}</p>
+                  <div className="w-full h-5 rounded-full bg-gray-800 overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-slate-500 to-slate-400 animate-vps-power-fluctuation" />
+                  </div>
                 </div>
+                <ul className="mt-6 space-y-3 text-gray-300 list-disc list-inside">
+                  {dictionary.infographic.vpsPoints.map((point, i) => <li key={i}>{point}</li>)}
+                </ul>
               </div>
-              <ul className="mt-6 space-y-3 text-gray-300 list-disc list-inside">
-                {dictionary.infographic.vpsPoints.map((point, i) => <li key={i}>{point}</li>)}
-              </ul>
             </div>
 
             {/* VDS Column - with a divider for medium screens and up */}
@@ -45,18 +48,20 @@ const VdsVsVps = ({ dictionary }: { dictionary: Dictionary }) => {
                 <h3 className="text-2xl font-bold text-primary">VDS</h3>
                 <p className="text-sm text-yellow-600">{dictionary.infographic.vdsSubtitle}</p>
               </div>
-               <div className="relative my-8 h-48 flex items-center justify-center">
+               <div className="relative my-8 flex items-center justify-center min-h-[200px]">
                  <Image src="https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/2_VDS.webp" alt="VDS server illustration" width={400} height={200} className="max-w-full h-auto" />
               </div>
-              <div className="space-y-2">
-                <p className="text-sm text-primary">{dictionary.infographic.vdsPower}</p>
-                <div className="w-full h-5 rounded-full bg-gray-800">
-                  <div className="h-full w-full bg-gradient-to-r from-primary to-yellow-400" />
+              <div className="mt-6">
+                <div className="space-y-2">
+                  <p className="text-sm text-primary">{dictionary.infographic.vdsPower}</p>
+                  <div className="w-full h-5 rounded-full bg-gray-800">
+                    <div className="h-full w-full bg-gradient-to-r from-primary to-yellow-400" />
+                  </div>
                 </div>
+                 <ul className="mt-6 space-y-3 text-gray-200 list-disc list-inside">
+                   {dictionary.infographic.vdsPoints.map((point, i) => <li key={i}>{point}</li>)}
+                </ul>
               </div>
-               <ul className="mt-6 space-y-3 text-gray-200 list-disc list-inside">
-                 {dictionary.infographic.vdsPoints.map((point, i) => <li key={i}>{point}</li>)}
-              </ul>
             </div>
             
           </div>
