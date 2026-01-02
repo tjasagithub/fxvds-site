@@ -144,7 +144,7 @@
       "secureNote": "Sie schließen Ihr Abonnement sicher auf Stripe ab.",
       "notConfiguredError": "Checkout ist aktuell nicht verfügbar. Bitte <a href=\"/de#contact\" class=\"underline\">kontaktieren Sie uns</a>."
     }
-  },
+},
   "includedFeatures": {
     "subtitle": "Jeder Plan ist mit Funktionen der Enterprise-Klasse ausgestattet, um Leistung und Sorgenfreiheit zu garantieren.",
     "features": {
@@ -174,32 +174,24 @@
     ]
   },
   "vdsVsVps": {
-    "title": "VDS vs. VPS: Der Unterschied, der für professionelle Trader zählt",
-    "intro": "Während VPS (Virtual Private Server) verbreitet sind, teilen sie sich Rechenleistung mit anderen Nutzern, was zu Leistungsschwankungen führen kann. Ein VDS (Virtual Dedicated Server) gibt Ihnen dedizierte Rechenleistung und sichert so konsistente Stabilität und verlässliche Performance — die professionelle Wahl für anspruchsvolle Trader.",
+    "title": "VDS vs VPS: The Difference Professional Traders Care About",
+    "intro": "While VPS (Virtual Private Server) solutions are common, they share computing power with other users, which can lead to performance fluctuations. A VDS (Virtual Dedicated Server) gives you dedicated computing power, ensuring consistent stability and predictable performance — the professional choice for serious traders.",
     "infographic": {
-      "vpsTitle": "VPS (Virtual Private Server)",
-      "vpsSubtitle": "(Geteilte Ressourcen)",
-      "vpsPower": "Rechenleistung (Schwankend)",
+      "vpsTitle": "VPS",
+      "vpsSubtitle": "(Virtual Private Server)",
+      "vpsPower": "Computer Power (Fluctuating)",
       "vpsPoints": [
-        "Sie teilen sich Rechenleistung mit anderen",
-        "Leistung kann bei Aktivität anderer nachlassen",
-        "Für nicht-kritische Aufgaben geeignet"
+        "CPU & RAM shared with other users",
+        "Performance can fluctuate under load",
+        "Suitable for light or non-critical workloads"
       ],
-      "vdsTitle": "VDS (Virtual Dedicated Server)",
-      "vdsSubtitle": "(Dedizierte Ressourcen)",
-      "vdsPower": "Rechenleistung (Stabil)",
+      "vdsTitle": "VDS",
+      "vdsSubtitle": "(Virtual Dedicated Server)",
+      "vdsPower": "Computer Power (Stable)",
       "vdsPoints": [
-        "Alle Rechenleistung ist nur für Sie reserviert",
-        "Kein Teilen. Keine Leistungseinbußen",
-        "Gebaut für professionellen Handel & Automatisierung"
-      ]
-    },
-    "benefits": {
-      "title": "Vorteile für den Handel",
-      "points": [
-        "Keine Verzögerungen während volumenstarker Marktsitzungen",
-        "Zuverlässige Ausführung für EAs und Copy Trading",
-        "Vorhersagbare Leistung rund um die Uhr"
+        "Dedicated CPU cores & RAM",
+        "No resource sharing, no overselling",
+        "Built for professional trading & automation"
       ]
     }
   },

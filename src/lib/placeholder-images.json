@@ -17,6 +17,18 @@
       "description": "FXVDS company logo.",
       "imageUrl": "https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/logo_1.webp",
       "imageHint": "logo abstract"
+    },
+    {
+      "id": "vps-comparison-new",
+      "description": "VPS server illustration showing shared resources.",
+      "imageUrl": "https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/1_vps.webp",
+      "imageHint": "server vps"
+    },
+    {
+      "id": "vds-comparison-new",
+      "description": "VDS server illustration showing dedicated resources.",
+      "imageUrl": "https://lmhnfvimfkytxnocjkgk.supabase.co/storage/v1/object/public/FXVDS/2_VDS.webp",
+      "imageHint": "server vds"
     }
   ]
 }
