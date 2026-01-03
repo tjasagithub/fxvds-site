@@ -64,6 +64,7 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
 
         <div className="mt-12 max-w-4xl mx-auto">
             <div className="bg-card/30 border border-primary/20 rounded-xl p-6 shadow-lg">
+                <p className="text-sm text-primary mb-4" dangerouslySetInnerHTML={{ __html: dictionary.earlyAccess.specialOffer.replace('{link}', '<a href="#contact" class="font-semibold hover:underline">') + '</a>' }} />
                 <h3 className="text-xl font-bold text-primary flex items-center gap-3">
                     <ShieldCheck className="h-6 w-6" />
                     {dictionary.earlyAccess.title}
