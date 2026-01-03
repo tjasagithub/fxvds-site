@@ -134,8 +134,9 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
             );
           })}
         </div>
-        <div className="mt-12 text-center text-gray-400">
+        <div className="mt-12 text-center text-gray-400 space-y-2">
            <p dangerouslySetInnerHTML={{ __html: dictionary.customSetup.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
+           <p className="text-xs" dangerouslySetInnerHTML={{ __html: dictionary.cryptoPayments.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
         </div>
       </div>
       

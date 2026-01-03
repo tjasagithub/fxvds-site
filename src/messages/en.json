@@ -52,6 +52,7 @@
     "cta": "Start Free Trial",
     "contactCta": "Contact Us",
     "customSetup": "Need more power or a custom setup? Just {link}send us a message</a>.",
+    "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us</a> to arrange payment.",
     "earlyAccess": {
       "title": "Early Access Pricing — Lock It In",
       "body": "FXVDS is currently offered at early-access pricing while we onboard our initial group of traders. As capacity fills and demand increases, pricing will be adjusted for future sign-ups — existing customers keep their original rate.",
@@ -416,5 +417,3 @@
     }
   }
 }
-
-    
