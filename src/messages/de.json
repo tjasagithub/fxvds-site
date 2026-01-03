@@ -44,6 +44,10 @@
       }
     }
   },
+  "securityHighlight": {
+    "headline": "Sorgen wegen Hacks oder Sicherheitsrisiken?",
+    "subtext": "FXVDS ist die erste Forex-Hosting-Plattform mit verschlüsselten Verbindungen."
+  },
   "pricing": {
     "title": "Wählen Sie Ihre Leistung",
     "subtitle": "Einfache, transparente Preise. Keine versteckten Gebühren. Jederzeit upgraden oder downgraden.",
@@ -51,8 +55,8 @@
     "perMonth": "Monat",
     "cta": "Kostenfreie Testphase",
     "contactCta": "Kontakt aufnehmen",
-    "customSetup": "<strong>Benötigen Sie mehr Leistung oder eine individuelle Konfiguration? {link}Senden Sie uns eine Anfrage.</a></strong>",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns</a> zur Abwicklung.",
+    "customSetup": "<strong>Benötigen Sie mehr Leistung oder eine individuelle Konfiguration? {link}Senden Sie uns eine Anfrage.</a></strong>",
     "earlyAccess": {
       "specialOffer": "Nutzen Sie den Anton Nel Mirror Trading Manager? {link}Schreiben Sie uns</a> — möglicherweise erhalten Sie einen Rabatt.",
       "title": "Frühzugangspreise — Preis sichern",

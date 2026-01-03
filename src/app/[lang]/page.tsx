@@ -7,6 +7,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/get-dictionary';
 import PlatformSlider from '@/components/sections/platform-slider';
+import SecurityHighlight from '@/components/sections/security-highlight';
 
 const Pricing = React.lazy(() => import('@/components/sections/pricing'));
 const IncludedFeatures = React.lazy(() => import('@/components/sections/included-features'));
@@ -28,6 +29,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       <Header lang={lang} dictionary={dictionary.header} />
       <main className="flex-1">
         <Hero dictionary={dictionary.hero} />
+        <SecurityHighlight dictionary={dictionary.securityHighlight} />
         <PlatformSlider />
         <Suspense fallback={<SectionSkeleton />}>
           <Pricing dictionary={dictionary.pricing} />
