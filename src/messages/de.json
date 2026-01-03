@@ -51,7 +51,7 @@
     "perMonth": "Monat",
     "cta": "Kostenfreie Testphase",
     "contactCta": "Kontakt aufnehmen",
-    "customSetup": "Benötigen Sie mehr Leistung oder eine individuelle Konfiguration? {link}Senden Sie uns eine Anfrage.</a>",
+    "customSetup": "<strong>Benötigen Sie mehr Leistung oder eine individuelle Konfiguration?</strong> {link}Senden Sie uns eine Anfrage.</a>",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns</a> zur Abwicklung.",
     "earlyAccess": {
       "title": "Frühzugangspreise — Preis sichern",
