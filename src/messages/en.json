@@ -51,7 +51,7 @@
     "perMonth": "month",
     "cta": "Start Free Trial",
     "contactCta": "Contact Us",
-    "customSetup": "<strong>Need more power or a custom setup?</strong> Just {link}send us a message</a>.",
+    "customSetup": "<strong>Need more power or a custom setup? {link}send us a message</a>.</strong>",
     "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us</a> to arrange payment.",
     "earlyAccess": {
       "title": "Early Access Pricing — Lock It In",
