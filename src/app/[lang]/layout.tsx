@@ -3,13 +3,27 @@ import type { Metadata } from 'next';
 import '../globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { getDictionary } from '@/lib/get-dictionary';
-import { Locale } from '@/i18n.config';
+import { i18n, Locale } from '@/i18n.config';
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://fxvds.com';
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
   const dictionary = await getDictionary(lang);
+  const currentPath = ''; // Root layout
+
+  const alternates: { [key: string]: string } = {};
+  i18n.locales.forEach(l => {
+    alternates[l] = `${siteUrl}/${l}${currentPath}`;
+  });
+
   return {
+    metadataBase: new URL(siteUrl),
     title: dictionary.metadata.title,
     description: dictionary.metadata.description,
+    alternates: {
+      canonical: `${siteUrl}/${lang}${currentPath}`,
+      languages: alternates,
+    },
   };
 }
 
