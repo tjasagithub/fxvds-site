@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { CalendarDays, Zap, Lock, Info } from 'lucide-react';
+import { CalendarDays, Zap, Lock, Info, X } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { getDictionary } from '@/lib/get-dictionary';
@@ -19,6 +19,8 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isPromoVisible, setIsPromoVisible] = useState(true);
+  const promoRef = useRef<HTMLDivElement>(null);
 
   const highlights: {
     icon: LucideIcon;
@@ -67,6 +69,21 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [isVisible]);
+  
+  useEffect(() => {
+    if (!isPromoVisible) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (promoRef.current && !promoRef.current.contains(event.target as Node)) {
+        setIsPromoVisible(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isPromoVisible]);
 
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-bull');
   
@@ -132,15 +149,30 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-xl text-left">
             
-            <div className="relative mb-8 p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/20 shadow-lg max-w-md animate-in fade-in-50 duration-700">
-                <h2 className="text-xl font-bold text-white flex items-center">
-                    <Info className="h-6 w-6 inline-block mr-3 text-primary" />
-                    {dictionary.promo.title}
-                </h2>
-                <p className="text-gray-300 text-base mt-2">{dictionary.promo.subtitle}</p>
-                <div className="text-xs text-gray-400 mt-2 space-y-1">
-                    <p>{dictionary.promo.note}</p>
+            <div className="mb-8 min-h-[140px] flex flex-col justify-center">
+              {isPromoVisible ? (
+                <div ref={promoRef} className="relative p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/20 shadow-lg max-w-md animate-in fade-in-50 duration-700">
+                    <button onClick={() => setIsPromoVisible(false)} className="absolute top-2 right-2 p-1 text-gray-400 hover:text-white rounded-full transition-colors hover:bg-white/10 z-10">
+                        <X className="h-4 w-4" />
+                        <span className="sr-only">Close notice</span>
+                    </button>
+                    <h2 className="text-xl font-bold text-white flex items-center">
+                        <Info className="h-6 w-6 inline-block mr-3 text-primary" />
+                        {dictionary.promo.title}
+                    </h2>
+                    <p className="text-gray-300 text-base mt-2">{dictionary.promo.subtitle}</p>
+                    <div className="text-xs text-gray-400 mt-2 space-y-1">
+                        <p>{dictionary.promo.note}</p>
+                    </div>
                 </div>
+                ) : (
+                <div className="flex items-center justify-start animate-in fade-in-50 duration-700">
+                    <Button variant="outline" size="sm" onClick={() => setIsPromoVisible(true)} className="bg-transparent border-primary/30 text-gray-300 hover:bg-primary/10 hover:text-white hover:border-primary/50">
+                        <Info className="h-4 w-4 mr-2 text-primary/80" />
+                        {dictionary.promo.title}
+                    </Button>
+                </div>
+              )}
             </div>
 
             <h1 className="mb-6 font-headline text-5xl font-extrabold tracking-tight text-white md:text-7xl"
