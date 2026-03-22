@@ -165,12 +165,6 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
                     <div className="text-xs text-gray-400 mt-2 space-y-1">
                         <p>{dictionary.promo.note}</p>
                     </div>
-                    {dictionary.promo.antonNelOffer && (
-                        <p 
-                            className="text-sm text-primary mt-3"
-                            dangerouslySetInnerHTML={{ __html: dictionary.promo.antonNelOffer.replace('{link}', `<a href="/${lang}/#contact" class="font-semibold hover:underline">`) }} 
-                        />
-                    )}
                 </div>
                 ) : (
                 <div className="flex items-center justify-start animate-in fade-in-50 duration-700">
