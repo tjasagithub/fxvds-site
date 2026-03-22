@@ -56,17 +56,17 @@
     "perMonth": "month",
     "cta": "Start Free Trial",
     "contactCta": "Contact Us",
-    "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us</a> to arrange payment.",
-    "customSetup": "<strong>Need more power or a custom setup? {link}send us a message</a>.</strong>",
+    "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us to arrange payment.</a>",
+    "customSetup": "<strong>Need more power or a custom setup? {link}send us a message.</a></strong>",
     "earlyAccess": {
-      "title": "Early Access Pricing — Lock It In",
-      "body": "FXVDS is currently offered at early-access pricing while we onboard our initial group of traders. As capacity fills and demand increases, pricing will be adjusted for future sign-ups — existing customers keep their original rate.",
+      "title": "Early Access Pricing",
+      "antonNelOffer": "Using Anton Nel Mirror Trading Manager? {link}Drop us a message</a> — you might be eligible for a discount.",
+      "body": "Prices will increase for new customers as capacity fills.",
       "bullets": [
-        "Strict performance standards (no shared resources)",
-        "Scale infrastructure responsibly",
-        "Reward early adopters with long-term value"
-      ],
-      "note": "Early access is limited due to server capacity constraints."
+        "Lock in your lower rate for life",
+        "Strict performance standards guaranteed",
+        "Limited spots available"
+      ]
     },
     "small": {
       "features": [
