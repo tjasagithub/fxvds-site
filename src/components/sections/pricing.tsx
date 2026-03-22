@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -16,6 +16,22 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalPlan, setModalPlan] = useState<PlanName>('Medium');
   const [isEarlyAccessVisible, setIsEarlyAccessVisible] = useState(true);
+  const earlyAccessRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isEarlyAccessVisible) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (earlyAccessRef.current && !earlyAccessRef.current.contains(event.target as Node)) {
+        setIsEarlyAccessVisible(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isEarlyAccessVisible]);
 
   const plans = [
     {
@@ -64,7 +80,7 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
 
         <div className="mt-12 max-w-4xl mx-auto min-h-[250px] flex flex-col justify-center">
           {isEarlyAccessVisible ? (
-            <div className="relative bg-card/30 border border-primary/20 rounded-xl p-6 shadow-lg animate-in fade-in duration-500">
+            <div ref={earlyAccessRef} className="relative bg-card/30 border border-primary/20 rounded-xl p-6 shadow-lg animate-in fade-in duration-500">
               <button
                 onClick={() => setIsEarlyAccessVisible(false)}
                 className="absolute top-3 right-3 p-1 text-gray-400 hover:text-white rounded-full transition-colors hover:bg-white/10 z-10"
