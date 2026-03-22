@@ -14,7 +14,7 @@
       "openMenu": "Menü öffnen"
     },
     "cta": {
-      "startTrial": "Kostenfreie Testphase"
+      "startTrial": "Kostenlos starten"
     }
   },
   "hero": {
@@ -26,8 +26,8 @@
     "title": "Handeln ohne Grenzen.<br />Leistung, die Ihnen gehört.",
     "subtitle": "Erleben Sie unübertroffene Geschwindigkeit, Zuverlässigkeit und Stabilität mit virtuellen dedizierten Servern, die für professionelle Händler entwickelt wurden, die das Beste verlangen.",
     "cta": {
-      "startTrial": "Kostenfreie Testphase starten",
-      "viewPlans": "Pläne ansehen"
+      "startTrial": "Kostenlos starten",
+      "viewPlans": "Mehr erfahren"
     },
     "highlights": {
       "trial": {
@@ -53,7 +53,7 @@
     "subtitle": "Einfache, transparente Preise. Keine versteckten Gebühren. Jederzeit upgraden oder downgraden.",
     "subtitle2": "Alle Pläne beinhalten eine 7-tägige kostenfreie Testphase. Jederzeit kündbar.",
     "perMonth": "Monat",
-    "cta": "Kostenfreie Testphase",
+    "cta": "Kostenlos starten",
     "contactCta": "Kontakt aufnehmen",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns zur Abwicklung.</a>",
     "customSetup": "<strong>Benötigen Sie mehr Leistung oder eine individuelle Konfiguration? {link}Senden Sie uns eine Anfrage.</a></strong>",
@@ -145,7 +145,7 @@
         "firstMonth": "Gesamtpreis erster Monat",
         "recurring": "Wiederkehrender Gesamtbetrag"
       },
-      "cta": "Kostenfreie Testphase starten",
+      "cta": "Kostenlos starten",
       "secureNote": "Sie schließen Ihr Abonnement sicher auf Stripe ab.",
       "notConfiguredError": "Checkout ist aktuell nicht verfügbar. Bitte <a href=\"/de#contact\" class=\"underline\">kontaktieren Sie uns</a>."
     }
@@ -255,7 +255,7 @@
   "cta": {
     "title": "Bereit, Ihren Handel zu professionalisieren?",
     "subtitle": "Erleben Sie den Unterschied einer professionellen Handelsumgebung. Starten Sie noch heute Ihre kostenfreie Testphase und handeln Sie mit Zuversicht.",
-    "startTrial": "Kostenfreie Testphase starten",
+    "startTrial": "Kostenlos starten",
     "comparePlans": "Pläne vergleichen"
   },
   "faq": {

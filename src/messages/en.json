@@ -14,7 +14,7 @@
       "openMenu": "Open menu"
     },
     "cta": {
-      "startTrial": "Start Free Trial"
+      "startTrial": "Start free"
     }
   },
   "hero": {
@@ -26,8 +26,8 @@
     "title": "Trade without limits.<br />Power that’s yours.",
     "subtitle": "Experience unmatched speed, reliability, and stability with virtual dedicated servers built for traders who demand the best.",
     "cta": {
-      "startTrial": "Start Free Trial",
-      "viewPlans": "View Plans"
+      "startTrial": "Start free",
+      "viewPlans": "Learn more"
     },
     "highlights": {
       "trial": {
@@ -53,7 +53,7 @@
     "subtitle": "Simple, transparent pricing. No hidden fees. Upgrade or downgrade anytime.",
     "subtitle2": "All plans include a 7-day free trial. Cancel anytime.",
     "perMonth": "month",
-    "cta": "Start Free Trial",
+    "cta": "Start free",
     "contactCta": "Contact Us",
     "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us to arrange payment.</a>",
     "customSetup": "<strong>Need more power or a custom setup? {link}send us a message.</a></strong>",
@@ -145,7 +145,7 @@
         "firstMonth": "First month total",
         "recurring": "Recurring total"
       },
-      "cta": "Start Free Trial",
+      "cta": "Start free",
       "secureNote": "You’ll complete your subscription securely on Stripe.",
       "notConfiguredError": "Checkout temporarily unavailable. Please <a href=\"/en#contact\" class=\"underline\">contact us</a>."
     }
@@ -255,7 +255,7 @@
   "cta": {
     "title": "Ready to Elevate Your Trading?",
     "subtitle": "Experience the difference of a professional trading environment. Start your free trial today and trade with confidence.",
-    "startTrial": "Start Free Trial",
+    "startTrial": "Start free",
     "comparePlans": "Compare Plans"
   },
   "faq": {

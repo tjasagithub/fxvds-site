@@ -194,7 +194,7 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
                 <Link href="#pricing">{dictionary.cta.startTrial}</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="#pricing">{dictionary.cta.viewPlans}</Link>
+                <Link href="#why-us">{dictionary.cta.viewPlans}</Link>
               </Button>
             </div>
           </div>
