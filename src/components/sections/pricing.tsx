@@ -16,20 +16,28 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalPlan, setModalPlan] = useState<PlanName>('Medium');
   const [isEarlyAccessVisible, setIsEarlyAccessVisible] = useState(true);
+  const pricingSectionRef = useRef<HTMLDivElement>(null);
   const earlyAccessRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isEarlyAccessVisible) return;
+    
+    const sectionEl = pricingSectionRef.current;
 
     const handleClickOutside = (event: MouseEvent) => {
       if (earlyAccessRef.current && !earlyAccessRef.current.contains(event.target as Node)) {
         setIsEarlyAccessVisible(false);
       }
     };
+    
+    if (sectionEl) {
+      sectionEl.addEventListener('mousedown', handleClickOutside);
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      if (sectionEl) {
+        sectionEl.removeEventListener('mousedown', handleClickOutside);
+      }
     };
   }, [isEarlyAccessVisible]);
 
@@ -66,7 +74,7 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
   };
 
   return (
-    <section id="pricing" className="py-20 md:py-32 bg-background">
+    <section id="pricing" ref={pricingSectionRef} className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">{dictionary.title}</h2>

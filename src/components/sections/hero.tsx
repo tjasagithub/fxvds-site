@@ -73,6 +73,8 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
   
   useEffect(() => {
     if (!isPromoVisible) return;
+    
+    const sectionEl = heroRef.current;
 
     const handleClickOutside = (event: MouseEvent) => {
       if (promoRef.current && !promoRef.current.contains(event.target as Node)) {
@@ -80,9 +82,14 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    if (sectionEl) {
+      sectionEl.addEventListener('mousedown', handleClickOutside);
+    }
+    
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      if (sectionEl) {
+        sectionEl.removeEventListener('mousedown', handleClickOutside);
+      }
     };
   }, [isPromoVisible]);
 
