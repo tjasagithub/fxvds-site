@@ -21,7 +21,8 @@
     "promo": {
       "title": "Limited Availability",
       "subtitle": "Due to server capacity constraints, we onboard a limited number of new clients at a time.",
-      "note": "New capacity is released in batches."
+      "note": "New capacity is released in batches.",
+      "antonNelOffer": "Using Anton Nel Mirror Trading Manager? {link}Get a discount</a>."
     },
     "title": "Trade without limits.<br />Power that’s yours.",
     "subtitle": "Experience unmatched speed, reliability, and stability with virtual dedicated servers built for traders who demand the best.",
@@ -58,7 +59,6 @@
     "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us</a> to arrange payment.",
     "customSetup": "<strong>Need more power or a custom setup? {link}send us a message</a>.</strong>",
     "earlyAccess": {
-      "specialOffer": "Using Anton Nel Mirror Trading Manager? {link}Drop us a message</a> — you might be eligible for a discount.",
       "title": "Early Access Pricing — Lock It In",
       "body": "FXVDS is currently offered at early-access pricing while we onboard our initial group of traders. As capacity fills and demand increases, pricing will be adjusted for future sign-ups — existing customers keep their original rate.",
       "bullets": [
@@ -278,8 +278,6 @@
   "contact": {
     "title": "Get in Touch",
     "subtitle": "Have questions or need a custom setup? Send us a message — we’re happy to help.",
-    "specialOffer_line1": "Using Anton Nel Mirror Trading Manager?",
-    "specialOffer_line2": "Drop us a message — special conditions may apply.",
     "telegram": "Telegram",
     "email": "Email",
     "form": {

@@ -28,7 +28,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
     <div className="flex flex-col min-h-dvh">
       <Header lang={lang} dictionary={dictionary.header} />
       <main className="flex-1">
-        <Hero dictionary={dictionary.hero} />
+        <Hero dictionary={dictionary.hero} lang={lang} />
         <SecurityHighlight dictionary={dictionary.securityHighlight} />
         <PlatformSlider />
         <Suspense fallback={<SectionSkeleton />}>

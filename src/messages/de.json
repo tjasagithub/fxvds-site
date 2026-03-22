@@ -21,7 +21,8 @@
     "promo": {
       "title": "Begrenzte Verfügbarkeit",
       "subtitle": "Aufgrund von Serverkapazitätsengpässen nehmen wir jeweils nur eine begrenzte Anzahl neuer Kunden auf.",
-      "note": "Neue Kapazitäten werden schubweise freigegeben."
+      "note": "Neue Kapazitäten werden schubweise freigegeben.",
+      "antonNelOffer": "Nutzen Sie den Anton Nel Mirror Trading Manager? {link}Sichern Sie sich einen Rabatt</a>."
     },
     "title": "Handeln ohne Grenzen.<br />Leistung, die Ihnen gehört.",
     "subtitle": "Erleben Sie unübertroffene Geschwindigkeit, Zuverlässigkeit und Stabilität mit virtuellen dedizierten Servern, die für professionelle Händler entwickelt wurden, die das Beste verlangen.",
@@ -58,7 +59,6 @@
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns</a> zur Abwicklung.",
     "customSetup": "<strong>Benötigen Sie mehr Leistung oder eine individuelle Konfiguration? {link}Senden Sie uns eine Anfrage.</a></strong>",
     "earlyAccess": {
-      "specialOffer": "Nutzen Sie den Anton Nel Mirror Trading Manager? {link}Schreiben Sie uns</a> — möglicherweise erhalten Sie einen Rabatt.",
       "title": "Frühzugangspreise — Preis sichern",
       "body": "FXVDS wird aktuell zu Frühzugangskonditionen angeboten, während wir unsere erste Gruppe von Händlern aufnehmen. Mit steigender Auslastung werden die Preise für Neukunden angepasst – Bestandskunden behalten ihren ursprünglichen Tarif.",
       "bullets": [
@@ -278,8 +278,6 @@
   "contact": {
     "title": "Kontakt",
     "subtitle": "Haben Sie Fragen oder benötigen Sie eine individuelle Konfiguration? Wir helfen Ihnen gerne weiter.",
-    "specialOffer_line1": "Nutzen Sie den Anton Nel Mirror Trading Manager?",
-    "specialOffer_line2": "Kontaktieren Sie uns — spezielle Konditionen sind möglich.",
     "telegram": "Telegram",
     "email": "E-Mail",
     "form": {
