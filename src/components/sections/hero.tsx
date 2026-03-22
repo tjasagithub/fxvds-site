@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
 import { CalendarDays, Zap, Lock, Info } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import Snowfall from '@/components/ui/snowfall';
 import { getDictionary } from '@/lib/get-dictionary';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['hero'];
@@ -20,7 +19,6 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [isSnowVisible, setIsSnowVisible] = useState(false);
 
   const highlights: {
     icon: LucideIcon;
@@ -59,12 +57,6 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
 
     const handleScroll = () => {
       if (isVisible) setScrollY(window.scrollY);
-
-      const pricingSection = document.getElementById('pricing');
-      if (pricingSection) {
-        const rect = pricingSection.getBoundingClientRect();
-        setIsSnowVisible(rect.bottom > 0);
-      }
     };
     
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -88,7 +80,6 @@ const Hero = ({ dictionary }: { dictionary: Dictionary }) => {
 
   return (
     <section id="home" ref={heroRef} className="relative min-h-[100dvh] w-full overflow-hidden flex flex-col">
-       {isSnowVisible && !isMobile && <Snowfall />}
        <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10 md:hidden"

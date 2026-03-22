@@ -57,29 +57,6 @@
   }
 }
 
-/* Snowfall styles */
-@keyframes snowfall {
-  0% {
-    transform: translate3d(var(--initial-x, 0), -10vh, 0);
-  }
-  100% {
-    transform: translate3d(calc(var(--initial-x, 0) + var(--drift-x, 0)), 100vh, 0);
-  }
-}
-
-.snowflake {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: white;
-  border-radius: 50%;
-  animation-name: snowfall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  will-change: transform;
-}
-
-
 /* Infinite logo ticker */
 .fx-ticker {
   will-change: transform;
