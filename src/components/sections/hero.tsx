@@ -204,7 +204,6 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
                     {parts[0]}
                     <span
                       className="font-bold text-primary"
-                      style={{ fontSize: '1.3em', display: 'inline-block', transform: 'translateY(0.05em)' }}
                     >
                       {highlightPhrase}
                     </span>
