@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -262,10 +261,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
               <div className="mt-4 p-4 rounded-lg bg-black/20 border border-border/50 shadow-inner">
                 <h3 className="font-bold text-white flex items-center gap-2"><Info className="text-primary"/>{dictionary.offer.title}</h3>
-                <ul className="text-sm text-gray-300 mt-2 space-y-1 list-disc list-inside">
-                    <li>{dictionary.offer.trial}</li>
-                    <li>{dictionary.offer.capacity}</li>
-                </ul>
+                <p className="text-sm text-gray-300 mt-2">{dictionary.offer.body}</p>
               </div>
 
               <Separator className="bg-border/50 my-4" />
@@ -302,5 +298,3 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
     </Dialog>
   );
 };
-
-    

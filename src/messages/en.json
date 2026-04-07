@@ -147,8 +147,7 @@
       },
       "offer": {
         "title": "Limited Availability",
-        "trial": "7-day free trial — no charge today",
-        "capacity": "Limited onboarding due to server capacity constraints"
+        "body": "Limited spots available — start your 7-day free trial today."
       },
       "summary": {
         "accessType": {

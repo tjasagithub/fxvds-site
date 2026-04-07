@@ -147,8 +147,7 @@
       },
       "offer": {
         "title": "Begrenzte Verfügbarkeit",
-        "trial": "7-tägige kostenfreie Testphase – heute keine Kosten",
-        "capacity": "Begrenzte Aufnahme aufgrund von Serverkapazitätsengpässen"
+        "body": "Begrenzte Plätze verfügbar – starten Sie Ihre 7-tägige kostenlose Testphase noch heute."
       },
       "summary": {
         "accessType": {
