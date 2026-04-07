@@ -187,7 +187,31 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
               dangerouslySetInnerHTML={{ __html: dictionary.title }}
             />
             <p className="mb-8 max-w-lg text-lg text-gray-300">
-              {dictionary.subtitle}
+              {(() => {
+                const subtitleText = dictionary.subtitle;
+                const highlightEn = "virtual dedicated servers";
+                const highlightDe = "virtuellen dedizierten Servern";
+                const highlightPhrase = lang === 'de' ? highlightDe : highlightEn;
+
+                if (!subtitleText.includes(highlightPhrase)) {
+                  return subtitleText;
+                }
+
+                const parts = subtitleText.split(highlightPhrase);
+
+                return (
+                  <>
+                    {parts[0]}
+                    <span
+                      className="font-bold text-primary"
+                      style={{ fontSize: '1.3em', display: 'inline-block', transform: 'translateY(0.05em)' }}
+                    >
+                      {highlightPhrase}
+                    </span>
+                    {parts[1]}
+                  </>
+                );
+              })()}
             </p>
             <div className="flex space-x-4 mb-16">
               <Button asChild size="lg">
