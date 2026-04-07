@@ -266,15 +266,6 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
               <Separator className="bg-border/50 my-4" />
 
-              <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.accessType.label}:</span> <span>{accessType === 'vpn' ? dictionary.summary.accessType.vpn : dictionary.summary.accessType.rdp}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.plan}: {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} VDS</span> <span>€{planDisplayPrice.toFixed(2)}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.backups}:</span> <span>{hasDailyBackups ? '€10.00' : '—'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.setupFee}:</span> <span>€0.00</span></div>
-              </div>
-
-              <Separator className="bg-border/50 my-3" />
-
               <div className="space-y-2">
                   <div className="flex justify-between font-bold text-primary"><span className="text-primary">{dictionary.summary.dueToday}:</span> <span className="text-primary">€0.00</span></div>
                   <div className="flex justify-between font-bold"><span className="text-white">{dictionary.summary.firstMonth}:</span> <span className="text-white">€{firstMonthPrice.toFixed(2)}</span></div>
