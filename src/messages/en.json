@@ -108,6 +108,21 @@
       "close": "Close",
       "plan": "Plan",
       "perMonth": "month",
+      "accessType": {
+        "title": "Choose Your Access Type",
+        "recommended": "Recommended",
+        "vpn": {
+          "title": "Secure Encrypted Access (VPN)",
+          "description": "Your connection is protected by an encrypted tunnel. Best for traders who prioritize security.",
+          "spec": "Protected remote access (VPN)"
+        },
+        "rdp": {
+          "title": "Direct Access (RDP)",
+          "description": "Connect directly to your server via Remote Desktop. Quick and simple setup, no extra software needed.",
+          "note": "This option does not include the additional encryption layer that VPN provides.",
+          "spec": "Direct remote access (RDP)"
+        }
+      },
       "plans": {
         "small": "Small",
         "medium": "Medium",
@@ -128,7 +143,8 @@
         },
         "ip": {
           "title": "Dedicated IP",
-          "price": "+€{price}/month"
+          "price": "+€{price}/month",
+          "includedWithVpn": "Fixed IP included with VPN access."
         }
       },
       "offer": {
@@ -137,6 +153,11 @@
         "capacity": "Limited onboarding due to server capacity constraints"
       },
       "summary": {
+        "accessType": {
+          "label": "Access type",
+          "vpn": "VPN (included)",
+          "rdp": "RDP (included)"
+        },
         "plan": "Plan",
         "backups": "Backups",
         "ip": "Dedicated IP",
@@ -419,3 +440,5 @@
     }
   }
 }
+
+    

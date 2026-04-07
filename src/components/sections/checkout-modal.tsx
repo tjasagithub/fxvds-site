@@ -22,6 +22,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['checkout'];
 
 export type PlanName = 'Small' | 'Medium' | 'Large' | 'Extra Large';
+type AccessType = 'vpn' | 'rdp';
 
 type PlanDetails = {
   price: number;
@@ -31,7 +32,6 @@ type PlanDetails = {
     storage: string;
     network: string;
     os: string;
-    security: string;
   };
 };
 
@@ -44,7 +44,6 @@ const planData: Record<PlanName, PlanDetails> = {
         storage: '60 GB NVMe SSD',
         network: '1 Gbit/s',
         os: 'Windows Server 2025',
-        security: 'Protected remote access (VPN)',
     }
   },
   Medium: {
@@ -55,7 +54,6 @@ const planData: Record<PlanName, PlanDetails> = {
         storage: '60 GB NVMe SSD',
         network: '1 Gbit/s',
         os: 'Windows Server 2025',
-        security: 'Protected remote access (VPN)',
     }
   },
   Large: {
@@ -66,7 +64,6 @@ const planData: Record<PlanName, PlanDetails> = {
         storage: '60 GB NVMe SSD',
         network: '1 Gbit/s',
         os: 'Windows Server 2025',
-        security: 'Protected remote access (VPN)',
     }
   },
   'Extra Large': {
@@ -77,7 +74,6 @@ const planData: Record<PlanName, PlanDetails> = {
       storage: '60 GB NVMe SSD',
       network: '1 Gbit/s',
       os: 'Windows Server 2025',
-      security: 'Protected remote access (VPN)',
     }
   }
 };
@@ -91,6 +87,7 @@ type CheckoutModalProps = {
 
 export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }: CheckoutModalProps) => {
   const [selectedPlan, setSelectedPlan] = useState<PlanName>(initialPlan);
+  const [accessType, setAccessType] = useState<AccessType>('vpn');
   const [hasDailyBackups, setHasDailyBackups] = useState(false);
   const [hasDedicatedIp, setHasDedicatedIp] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -98,22 +95,36 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
   useEffect(() => {
     if (isOpen) {
       setSelectedPlan(initialPlan);
+      setAccessType('vpn');
       setHasDailyBackups(false);
       setHasDedicatedIp(false);
       setErrorMessage(null);
     }
   }, [isOpen, initialPlan]);
 
+  const handleAccessTypeChange = (type: AccessType) => {
+    if (type === 'vpn' && hasDedicatedIp) {
+      setHasDedicatedIp(false);
+    }
+    setAccessType(type);
+  };
 
   const handleContinue = () => {
     setErrorMessage(null);
     let urlKey: keyof typeof stripeLinks.small = 'base';
-    if (hasDailyBackups && hasDedicatedIp) {
-      urlKey = 'backup_ip';
-    } else if (hasDailyBackups) {
-      urlKey = 'backup';
-    } else if (hasDedicatedIp) {
-      urlKey = 'ip';
+
+    if (accessType === 'rdp') {
+      if (hasDailyBackups && hasDedicatedIp) {
+        urlKey = 'backup_ip';
+      } else if (hasDailyBackups) {
+        urlKey = 'backup';
+      } else if (hasDedicatedIp) {
+        urlKey = 'ip';
+      }
+    } else { // VPN access
+      if (hasDailyBackups) {
+        urlKey = 'backup';
+      }
     }
 
     const planKey = selectedPlan.replace(' ', '').toLowerCase() as keyof typeof stripeLinks;
@@ -128,7 +139,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
   const currentPlanData = planData[selectedPlan];
   const backupsPrice = hasDailyBackups ? 10 : 0;
-  const ipPrice = hasDedicatedIp ? 10 : 0;
+  const ipPrice = hasDedicatedIp && accessType === 'rdp' ? 10 : 0;
   const totalPrice = currentPlanData.price + backupsPrice + ipPrice;
   const firstMonthPrice = currentPlanData.price + backupsPrice + ipPrice;
   
@@ -144,7 +155,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-3xl p-0 flex flex-col max-h-[90dvh] overflow-hidden">
+      <DialogContent className="bg-card/80 border-border/70 backdrop-blur-xl text-white sm:max-w-4xl p-0 flex flex-col max-h-[90dvh] overflow-hidden">
         
         <DialogClose className="absolute right-3 top-3 z-50 rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white h-11 w-11 flex items-center justify-center">
             <X className="h-5 w-5" />
@@ -157,8 +168,38 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
           </DialogTitle>
         </DialogHeader>
 
-        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 pt-2">
+        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch] px-6">
+           <div className="mb-6">
+            <h3 className="font-semibold text-white text-center mb-3">{dictionary.accessType.title}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div
+                onClick={() => handleAccessTypeChange('vpn')}
+                className={cn(
+                  'p-4 rounded-lg border-2 cursor-pointer transition-all',
+                  accessType === 'vpn' ? 'border-primary bg-primary/10 shadow-lg' : 'border-border/50 bg-black/20 hover:border-primary/50'
+                )}
+              >
+                <div className="flex justify-between items-center mb-1">
+                  <h4 className="font-semibold text-white">{dictionary.accessType.vpn.title}</h4>
+                  <span className="text-xs font-bold bg-primary text-primary-foreground px-2 py-0.5 rounded-full">{dictionary.accessType.recommended}</span>
+                </div>
+                <p className="text-xs text-gray-400">{dictionary.accessType.vpn.description}</p>
+              </div>
+              <div
+                onClick={() => handleAccessTypeChange('rdp')}
+                className={cn(
+                  'p-4 rounded-lg border-2 cursor-pointer transition-all',
+                  accessType === 'rdp' ? 'border-primary bg-primary/10 shadow-lg' : 'border-border/50 bg-black/20 hover:border-primary/50'
+                )}
+              >
+                <h4 className="font-semibold text-white mb-1">{dictionary.accessType.rdp.title}</h4>
+                <p className="text-xs text-gray-400">{dictionary.accessType.rdp.description}</p>
+                <p className="text-xs text-amber-500/80 mt-2">{dictionary.accessType.rdp.note}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
             {/* Left Side */}
             <div>
               <div className="flex justify-center space-x-2 mb-6 bg-black/20 p-1 rounded-md">
@@ -194,7 +235,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                 <SpecItem label={dictionary.specs.storage} value={currentPlanData.specs.storage} />
                 <SpecItem label={dictionary.specs.network} value={currentPlanData.specs.network} />
                 <SpecItem label={dictionary.specs.os} value={currentPlanData.specs.os} />
-                <SpecItem label={dictionary.specs.security} value={currentPlanData.specs.security} />
+                <SpecItem label={dictionary.specs.security} value={accessType === 'vpn' ? dictionary.accessType.vpn.spec : dictionary.accessType.rdp.spec} />
               </ul>
             </div>
 
@@ -214,18 +255,28 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                       <span className="text-sm text-gray-400 block">{dictionary.addOns.backups.price.replace('{price}', '10')}</span>
                     </Label>
                   </div>
-                  <div className="flex items-start space-x-3 rounded-md border border-transparent p-3 hover:border-border/50 hover:bg-black/20 transition-all">
-                    <Checkbox
-                      id="dedicatedIp"
-                      checked={hasDedicatedIp}
-                      onCheckedChange={(checked) => setHasDedicatedIp(!!checked)}
-                      className="data-[state=checked]:bg-primary data-[state=checked]:border-primary mt-1"
-                    />
-                    <Label htmlFor="dedicatedIp" className="flex-1 cursor-pointer">
-                      <span className="font-medium text-white">{dictionary.addOns.ip.title}</span>
-                      <span className="text-sm text-gray-400 block">{dictionary.addOns.ip.price.replace('{price}', '10')}</span>
-                    </Label>
-                  </div>
+                  {accessType === 'rdp' ? (
+                    <div className="flex items-start space-x-3 rounded-md border border-transparent p-3 hover:border-border/50 hover:bg-black/20 transition-all">
+                      <Checkbox
+                        id="dedicatedIp"
+                        checked={hasDedicatedIp}
+                        onCheckedChange={(checked) => setHasDedicatedIp(!!checked)}
+                        className="data-[state=checked]:bg-primary data-[state=checked]:border-primary mt-1"
+                      />
+                      <Label htmlFor="dedicatedIp" className="flex-1 cursor-pointer">
+                        <span className="font-medium text-white">{dictionary.addOns.ip.title}</span>
+                        <span className="text-sm text-gray-400 block">{dictionary.addOns.ip.price.replace('{price}', '10')}</span>
+                      </Label>
+                    </div>
+                  ) : (
+                    <div className="flex items-start space-x-3 rounded-md p-3 transition-all">
+                      <CheckCircle2 className="h-5 w-5 text-primary/80 mt-0.5 shrink-0" />
+                      <div className="flex-1">
+                          <span className="font-medium text-white">{dictionary.addOns.ip.title}</span>
+                          <span className="text-sm text-gray-400 block">{dictionary.addOns.ip.includedWithVpn}</span>
+                      </div>
+                    </div>
+                  )}
               </div>
 
               <div className="mt-4 p-4 rounded-lg bg-black/20 border border-border/50 shadow-inner">
@@ -239,9 +290,10 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
               <Separator className="bg-border/50 my-4" />
 
               <div className="space-y-2 text-sm">
+                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.accessType.label}:</span> <span>{accessType === 'vpn' ? dictionary.summary.accessType.vpn : dictionary.summary.accessType.rdp}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.plan}: {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} VDS</span> <span>€{currentPlanData.price.toFixed(2)}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.backups}:</span> <span>{hasDailyBackups ? '€10.00' : '—'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.ip}:</span> <span>{hasDedicatedIp ? '€10.00' : '—'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.ip}:</span> <span>{hasDedicatedIp && accessType === 'rdp' ? '€10.00' : '—'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.setupFee}:</span> <span>€0.00</span></div>
               </div>
 
@@ -270,3 +322,5 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
     </Dialog>
   );
 };
+
+    

@@ -108,6 +108,21 @@
       "close": "Schließen",
       "plan": "Plan",
       "perMonth": "Monat",
+      "accessType": {
+        "title": "Wählen Sie Ihre Zugangsart",
+        "recommended": "Empfohlen",
+        "vpn": {
+          "title": "Sicherer verschlüsselter Zugang (VPN)",
+          "description": "Ihre Verbindung ist durch einen verschlüsselten Tunnel geschützt. Ideal für Händler, die Sicherheit priorisieren.",
+          "spec": "Geschützter Fernzugriff (VPN)"
+        },
+        "rdp": {
+          "title": "Direkter Zugang (RDP)",
+          "description": "Verbinden Sie sich direkt über Remote Desktop mit Ihrem Server. Schnelle und einfache Einrichtung, keine zusätzliche Software erforderlich.",
+          "note": "Diese Option beinhaltet nicht die zusätzliche Verschlüsselungsschicht, die VPN bietet.",
+          "spec": "Direkter Fernzugriff (RDP)"
+        }
+      },
       "plans": {
         "small": "Small",
         "medium": "Medium",
@@ -128,7 +143,8 @@
         },
         "ip": {
           "title": "Dedizierte IP",
-          "price": "+€{price}/Monat"
+          "price": "+€{price}/Monat",
+          "includedWithVpn": "Feste IP im VPN-Zugang enthalten."
         }
       },
       "offer": {
@@ -137,6 +153,11 @@
         "capacity": "Begrenzte Aufnahme aufgrund von Serverkapazitätsengpässen"
       },
       "summary": {
+        "accessType": {
+          "label": "Zugangsart",
+          "vpn": "VPN (inklusive)",
+          "rdp": "RDP (inklusive)"
+        },
         "plan": "Plan",
         "backups": "Backups",
         "ip": "Dedizierte IP",
@@ -149,7 +170,7 @@
       "secureNote": "Sie schließen Ihr Abonnement sicher auf Stripe ab.",
       "notConfiguredError": "Checkout ist aktuell nicht verfügbar. Bitte <a href=\"/de#contact\" class=\"underline\">kontaktieren Sie uns</a>."
     }
-},
+  },
   "includedFeatures": {
     "subtitle": "Jeder Plan ist mit Funktionen der Enterprise-Klasse ausgestattet, um Leistung und Sorgenfreiheit zu garantieren.",
     "features": {
@@ -419,3 +440,5 @@
     }
   }
 }
+
+    
