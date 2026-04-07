@@ -89,7 +89,6 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
   const [selectedPlan, setSelectedPlan] = useState<PlanName>(initialPlan);
   const [accessType, setAccessType] = useState<AccessType>('vpn');
   const [hasDailyBackups, setHasDailyBackups] = useState(false);
-  const [hasDedicatedIp, setHasDedicatedIp] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -97,34 +96,20 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
       setSelectedPlan(initialPlan);
       setAccessType('vpn');
       setHasDailyBackups(false);
-      setHasDedicatedIp(false);
       setErrorMessage(null);
     }
   }, [isOpen, initialPlan]);
 
-  const handleAccessTypeChange = (type: AccessType) => {
-    if (type === 'vpn' && hasDedicatedIp) {
-      setHasDedicatedIp(false);
-    }
-    setAccessType(type);
-  };
-
   const handleContinue = () => {
     setErrorMessage(null);
-    let urlKey: keyof typeof stripeLinks.small = 'base';
+    let urlKey: keyof typeof stripeLinks.small;
 
     if (accessType === 'rdp') {
-      if (hasDailyBackups && hasDedicatedIp) {
-        urlKey = 'backup_ip';
-      } else if (hasDailyBackups) {
-        urlKey = 'backup';
-      } else if (hasDedicatedIp) {
-        urlKey = 'ip';
-      }
+      // RDP includes dedicated IP, so we use the 'ip' and 'backup_ip' links
+      urlKey = hasDailyBackups ? 'backup_ip' : 'ip';
     } else { // VPN access
-      if (hasDailyBackups) {
-        urlKey = 'backup';
-      }
+      // VPN has its own base price, uses 'base' and 'backup' links
+      urlKey = hasDailyBackups ? 'backup' : 'base';
     }
 
     const planKey = selectedPlan.replace(' ', '').toLowerCase() as keyof typeof stripeLinks;
@@ -138,10 +123,11 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
   };
 
   const currentPlanData = planData[selectedPlan];
+  const rdpExtraCost = accessType === 'rdp' ? 10 : 0;
+  const planDisplayPrice = currentPlanData.price + rdpExtraCost;
   const backupsPrice = hasDailyBackups ? 10 : 0;
-  const ipPrice = hasDedicatedIp && accessType === 'rdp' ? 10 : 0;
-  const totalPrice = currentPlanData.price + backupsPrice + ipPrice;
-  const firstMonthPrice = currentPlanData.price + backupsPrice + ipPrice;
+  const totalPrice = planDisplayPrice + backupsPrice;
+  const firstMonthPrice = planDisplayPrice + backupsPrice;
   
   const SpecItem = ({ label, value }: { label: string; value: string }) => (
     <li className="flex items-start gap-3">
@@ -173,7 +159,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
             <h3 className="font-semibold text-white text-center mb-3">{dictionary.accessType.title}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div
-                onClick={() => handleAccessTypeChange('vpn')}
+                onClick={() => setAccessType('vpn')}
                 className={cn(
                   'p-4 rounded-lg border-2 cursor-pointer transition-all',
                   accessType === 'vpn' ? 'border-primary bg-primary/10 shadow-lg' : 'border-border/50 bg-black/20 hover:border-primary/50'
@@ -186,7 +172,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                 <p className="text-xs text-gray-400">{dictionary.accessType.vpn.description}</p>
               </div>
               <div
-                onClick={() => handleAccessTypeChange('rdp')}
+                onClick={() => setAccessType('rdp')}
                 className={cn(
                   'p-4 rounded-lg border-2 cursor-pointer transition-all',
                   accessType === 'rdp' ? 'border-primary bg-primary/10 shadow-lg' : 'border-border/50 bg-black/20 hover:border-primary/50'
@@ -223,7 +209,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                     {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} {dictionary.plan}
                   </p>
                   <p className="text-lg font-bold text-primary">
-                    €{currentPlanData.price} <span className="text-sm font-normal text-gray-400">/ {dictionary.perMonth}</span>
+                    €{planDisplayPrice} <span className="text-sm font-normal text-gray-400">/ {dictionary.perMonth}</span>
                   </p>
               </div>
               
@@ -255,26 +241,21 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                       <span className="text-sm text-gray-400 block">{dictionary.addOns.backups.price.replace('{price}', '10')}</span>
                     </Label>
                   </div>
-                  {accessType === 'rdp' ? (
-                    <div className="flex items-start space-x-3 rounded-md border border-transparent p-3 hover:border-border/50 hover:bg-black/20 transition-all">
-                      <Checkbox
-                        id="dedicatedIp"
-                        checked={hasDedicatedIp}
-                        onCheckedChange={(checked) => setHasDedicatedIp(!!checked)}
-                        className="data-[state=checked]:bg-primary data-[state=checked]:border-primary mt-1"
-                      />
-                      <Label htmlFor="dedicatedIp" className="flex-1 cursor-pointer">
-                        <span className="font-medium text-white">{dictionary.addOns.ip.title}</span>
-                        <span className="text-sm text-gray-400 block">{dictionary.addOns.ip.price.replace('{price}', '10')}</span>
-                      </Label>
+                  {accessType === 'vpn' ? (
+                    <div className="flex items-start space-x-3 rounded-md p-3 transition-all">
+                        <CheckCircle2 className="h-5 w-5 text-primary/80 mt-0.5 shrink-0" />
+                        <div className="flex-1">
+                            <span className="font-medium text-white">{dictionary.addOns.fixedIpVpn.title}</span>
+                            <span className="text-sm text-gray-400 block">{dictionary.addOns.fixedIpVpn.description}</span>
+                        </div>
                     </div>
                   ) : (
                     <div className="flex items-start space-x-3 rounded-md p-3 transition-all">
-                      <CheckCircle2 className="h-5 w-5 text-primary/80 mt-0.5 shrink-0" />
-                      <div className="flex-1">
-                          <span className="font-medium text-white">{dictionary.addOns.ip.title}</span>
-                          <span className="text-sm text-gray-400 block">{dictionary.addOns.ip.includedWithVpn}</span>
-                      </div>
+                        <CheckCircle2 className="h-5 w-5 text-primary/80 mt-0.5 shrink-0" />
+                        <div className="flex-1">
+                            <span className="font-medium text-white">{dictionary.addOns.dedicatedIpRdp.title}</span>
+                            <span className="text-sm text-gray-400 block">{dictionary.addOns.dedicatedIpRdp.description}</span>
+                        </div>
                     </div>
                   )}
               </div>
@@ -291,9 +272,8 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
               <div className="space-y-2 text-sm">
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.accessType.label}:</span> <span>{accessType === 'vpn' ? dictionary.summary.accessType.vpn : dictionary.summary.accessType.rdp}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.plan}: {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} VDS</span> <span>€{currentPlanData.price.toFixed(2)}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.plan}: {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} VDS</span> <span>€{planDisplayPrice.toFixed(2)}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.backups}:</span> <span>{hasDailyBackups ? '€10.00' : '—'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.ip}:</span> <span>{hasDedicatedIp && accessType === 'rdp' ? '€10.00' : '—'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">{dictionary.summary.setupFee}:</span> <span>€0.00</span></div>
               </div>
 

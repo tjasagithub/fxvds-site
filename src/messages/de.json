@@ -141,10 +141,13 @@
           "title": "Tägliche Backups",
           "price": "+€{price}/Monat"
         },
-        "ip": {
+        "fixedIpVpn": {
+          "title": "Feste IP-Adresse",
+          "description": "Im VPN-Zugang enthalten"
+        },
+        "dedicatedIpRdp": {
           "title": "Dedizierte IP",
-          "price": "+€{price}/Monat",
-          "includedWithVpn": "Feste IP im VPN-Zugang enthalten."
+          "description": "Im Direktzugang enthalten"
         }
       },
       "offer": {
