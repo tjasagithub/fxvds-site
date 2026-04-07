@@ -60,12 +60,7 @@
     "earlyAccess": {
       "title": "Early Access Pricing",
       "antonNelOffer": "Using Anton Nel Mirror Trading Manager? {link}Drop us a message</a> — you might be eligible for a discount.",
-      "body": "Prices will increase for new customers as capacity fills.",
-      "bullets": [
-        "Lock in your lower rate for life",
-        "Strict performance standards guaranteed",
-        "Limited spots available"
-      ]
+      "body": "Limited spots available — start your 7-day free trial today."
     },
     "small": {
       "features": [
@@ -166,7 +161,7 @@
         "ip": "Dedicated IP",
         "setupFee": "Setup fee",
         "dueToday": "Due today",
-        "firstMonth": "First month total",
+        "firstMonth": "After 7-day trial",
         "recurring": "Recurring total"
       },
       "cta": "Start free",
@@ -179,7 +174,7 @@
     "features": {
       "os": "Windows Server 2025 OS",
       "access": "Protected remote access",
-      "ip": "Static IP address",
+      "ip": "Fixed IP address",
       "autostart": "MT4 / MT5 auto-startup tools",
       "compatibility": "Any broker, any Expert Advisor",
       "location": "Server location: Germany"
@@ -293,7 +288,7 @@
       { "question": "Can I use FXVDS for automated or 24/7 trading?", "answer": "<p class=\"mb-4\">Absolutely. Our VDS is designed for 24/7 operation, making it ideal for running automated trading strategies, Expert Advisors (EAs), and trading bots without interruption, even when your personal computer is off.</p><p>VDS gives you power,</p><p>VPN gives you privacy,</p><p>and together they give you peace of mind while trading.</p>" },
       { "question": "Why are FXVDS servers so affordable?", "answer": "<p>FXVDS is designed specifically for Forex trading workloads. By optimizing our infrastructure for trading use-cases and eliminating unnecessary overhead, we can offer fully dedicated CPU and RAM at a lower cost than traditional dedicated Forex servers — without overselling or sharing resources.</p><p>All FXVDS servers are located in Germany, benefiting from robust infrastructure, strong privacy standards, and low-latency connections for European traders.</p>" },
       { "question": "Does server location matter?", "answer": "<p class=\"mb-4\">Yes — but not as much as many providers claim. Server performance is far more important than just ‘proximity’ to a broker. If a server is underpowered or unstable, trade execution will be slow, regardless of its location. High-frequency CPUs, fast RAM, and stable infrastructure have a far greater impact on execution speed than distance alone.</p><p>That said, FXVDS servers are located in Germany, offering an excellent balance of performance, reliability, and low-latency connections to key European trading infrastructure — at some of the most competitive prices available for dedicated trading servers.</p>" },
-      { "question": "What’s the difference between a Static IP and a Dedicated IP address?", "answer": "A Static IP is a fixed address that does not change, which is important for brokers who may require a consistent IP for security. All our plans include a static IP. A Dedicated IP is an address used exclusively by you, ensuring it is not shared with any other users. This is available as an optional add-on." },
+      { "question": "What's the difference between a Fixed IP and a Dedicated IP address?", "answer": "A Fixed IP (also known as a Static IP) is an address that does not change, which is important for brokers who may require a consistent IP for security. All our plans include a Fixed IP. A Dedicated IP is an address used exclusively by you, ensuring it is not shared with any other users. This is available as an optional add-on." },
       { "question": "Is FXVDS suitable for professional copy trading and trade mirroring software?", "answer": "Yes. FXVDS is highly recommended for users running professional copy trading and trade mirroring solutions, including Anton Nel Mirror Trading Manager software and similar platforms. Dedicated CPU resources, stable performance, and 24/7 uptime ensure reliable trade replication across hundreds of connected follower accounts." },
       { "question": "Why is a VDS important for mirror trading software?", "answer": "Mirror trading software requires continuous connectivity, low execution delays, and consistent system performance. A dedicated VDS ensures the trading manager remains online at all times and can process trade signals reliably without interruptions caused by local system or internet issues." }
     ]
@@ -443,5 +438,3 @@
     }
   }
 }
-
-    

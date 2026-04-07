@@ -60,12 +60,7 @@
     "earlyAccess": {
       "title": "Frühzugangspreise",
       "antonNelOffer": "Nutzen Sie den Anton Nel Mirror Trading Manager? {link}Schreiben Sie uns</a> — möglicherweise erhalten Sie einen Rabatt.",
-      "body": "Die Preise für Neukunden werden mit steigender Auslastung angepasst.",
-      "bullets": [
-        "Sichern Sie sich Ihren günstigeren Preis auf Lebenszeit",
-        "Strikte Leistungsstandards garantiert",
-        "Begrenzte Plätze verfügbar"
-      ]
+      "body": "Begrenzte Plätze verfügbar – starten Sie Ihre 7-tägige kostenlose Testphase noch heute."
     },
     "small": {
       "features": [
@@ -166,7 +161,7 @@
         "ip": "Dedizierte IP",
         "setupFee": "Einrichtungsgebühr",
         "dueToday": "Heute fällig",
-        "firstMonth": "Gesamtpreis erster Monat",
+        "firstMonth": "Nach 7-tägiger Testphase",
         "recurring": "Wiederkehrender Gesamtbetrag"
       },
       "cta": "Kostenlos starten",
@@ -179,7 +174,7 @@
     "features": {
       "os": "Windows Server 2025 OS",
       "access": "Geschützter Fernzugriff",
-      "ip": "Statische IP-Adresse",
+      "ip": "Feste IP-Adresse",
       "autostart": "MT4 / MT5 Auto-Start-Tools",
       "compatibility": "Jeder Broker, jeder Expert Advisor",
       "location": "Serverstandort: Deutschland"
@@ -293,7 +288,7 @@
       { "question": "Kann ich FXVDS für automatisierten oder 24/7-Handel verwenden?", "answer": "<p class=\"mb-4\">Absolut. Unser VDS ist für den 24/7-Betrieb konzipiert und eignet sich daher ideal für die Ausführung automatisierter Handelsstrategien, Expert Advisors (EAs) und Trading-Bots ohne Unterbrechung, selbst wenn Ihr persönlicher Computer ausgeschaltet ist.</p><p>VDS gibt Ihnen Leistung,</p><p>VPN gibt Ihnen Privatsphäre,</p><p>und zusammen geben sie Ihnen Sicherheit beim Handeln.</p>" },
       { "question": "Warum sind FXVDS-Server so erschwinglich?", "answer": "<p>FXVDS ist speziell für Forex-Handels-Workloads konzipiert. Durch die Optimierung unserer Infrastruktur für Handelsanwendungsfälle und die Vermeidung unnötigen Overheads können wir vollständig dedizierte CPU und RAM zu geringeren Kosten als herkömmliche dedizierte Forex-Server anbieten – ohne Überbuchung oder gemeinsam genutzte Ressourcen.</p><p>Alle FXVDS-Server befinden sich in Deutschland und profitieren von einer robusten Infrastruktur, starken Datenschutzstandards und latenzarmen Verbindungen für europäische Händler.</p>" },
       { "question": "Spielt der Serverstandort eine Rolle?", "answer": "<p class=\"mb-4\">Ja – aber nicht so sehr, wie viele Anbieter behaupten. Die Serverleistung ist weitaus wichtiger als nur die „Nähe“ zu einem Broker. Wenn ein Server unterpowert oder instabil ist, wird die Handelsausführung langsam sein, unabhängig von seinem Standort. Hochfrequenz-CPUs, schneller Arbeitsspeicher und eine stabile Infrastruktur haben einen weitaus größeren Einfluss auf die Ausführungsgeschwindigkeit als die Entfernung allein.</p><p>Dennoch befinden sich die FXVDS-Server in Deutschland und bieten eine ausgezeichnete Balance aus Leistung, Zuverlässigkeit und latenzarmen Verbindungen zu wichtiger europäischer Handelsinfrastruktur – zu einigen der wettbewerbsfähigsten Preise, die für dedizierte Handelsserver verfügbar sind.</p>" },
-      { "question": "Was ist der Unterschied zwischen einer statischen IP und einer dedizierten IP-Adresse?", "answer": "Eine statische IP ist eine feste Adresse, die sich nicht ändert, was für Broker wichtig ist, die aus Sicherheitsgründen eine konsistente IP verlangen können. Alle unsere Pläne enthalten eine statische IP. Eine dedizierte IP ist eine Adresse, die ausschließlich von Ihnen verwendet wird, um sicherzustellen, dass sie nicht mit anderen Benutzern geteilt wird. Diese ist als optionales Add-on erhältlich." },
+      { "question": "Was ist der Unterschied zwischen einer festen IP und einer dedizierten IP-Adresse?", "answer": "Eine feste IP (auch als statische IP bekannt) ist eine Adresse, die sich nicht ändert, was für Broker wichtig ist, die aus Sicherheitsgründen eine konsistente IP verlangen können. Alle unsere Pläne beinhalten eine feste IP. Eine dedizierte IP ist eine Adresse, die ausschließlich von Ihnen verwendet wird, um sicherzustellen, dass sie nicht mit anderen Benutzern geteilt wird. Diese ist als optionales Add-on erhältlich." },
       { "question": "Ist FXVDS für professionelle Copy-Trading- und Trade-Mirroring-Software geeignet?", "answer": "Ja. FXVDS wird dringend für Benutzer empfohlen, die professionelle Copy-Trading- und Trade-Mirroring-Lösungen betreiben, einschließlich der Anton Nel Mirror Trading Manager Software und ähnlicher Plattformen. Dedizierte CPU-Ressourcen, stabile Leistung und eine 24/7-Verfügbarkeit gewährleisten eine zuverlässige Handelsreplikation über Hunderte von verbundenen Follower-Konten." },
       { "question": "Warum ist ein VDS für Mirror-trading-Software wichtig?", "answer": "Mirror-trading-Software erfordert kontinuierliche Konnektivität, geringe Ausführungsverzögerungen und eine konstante Systemleistung. Ein dedizierter VDS stellt sicher, dass der Trading-Manager jederzeit online bleibt und Handelssignale zuverlässig verarbeiten kann, ohne Unterbrechungen durch lokale System- oder Internetprobleme." }
     ]
@@ -443,5 +438,3 @@
     }
   }
 }
-
-    

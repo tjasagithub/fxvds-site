@@ -107,11 +107,6 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
               <p className="text-gray-300 mt-3 text-sm">
                   {dictionary.earlyAccess.body}
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-gray-400 list-disc list-inside">
-                  {dictionary.earlyAccess.bullets.map((item, index) => (
-                      <li key={index}>{item}</li>
-                  ))}
-              </ul>
             </div>
           ) : (
             <div className="flex items-center justify-center animate-in fade-in duration-500">
