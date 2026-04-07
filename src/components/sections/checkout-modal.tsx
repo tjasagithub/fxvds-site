@@ -123,10 +123,10 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
   const currentPlanData = planData[selectedPlan];
   const rdpExtraCost = accessType === 'rdp' ? 10 : 0;
-  const planDisplayPrice = currentPlanData.price + rdpExtraCost;
+  const basePlanPrice = currentPlanData.price + rdpExtraCost;
   const backupsPrice = hasDailyBackups ? 10 : 0;
-  const totalPrice = planDisplayPrice + backupsPrice;
-  const firstMonthPrice = planDisplayPrice + backupsPrice;
+  const totalPrice = basePlanPrice + backupsPrice;
+  const firstMonthPrice = basePlanPrice + backupsPrice;
   
   const SpecItem = ({ label, value }: { label: string; value: string }) => (
     <li className="flex items-start gap-3">
@@ -208,7 +208,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                     {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} {dictionary.plan}
                   </p>
                   <p className="text-lg font-bold text-primary">
-                    €{planDisplayPrice} <span className="text-sm font-normal text-gray-400">/ {dictionary.perMonth}</span>
+                    €{totalPrice} <span className="text-sm font-normal text-gray-400">/ {dictionary.perMonth}</span>
                   </p>
               </div>
               
