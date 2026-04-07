@@ -123,10 +123,9 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
   const currentPlanData = planData[selectedPlan];
   const rdpExtraCost = accessType === 'rdp' ? 10 : 0;
-  const basePlanPrice = currentPlanData.price + rdpExtraCost;
   const backupsPrice = hasDailyBackups ? 10 : 0;
-  const totalPrice = basePlanPrice + backupsPrice;
-  const firstMonthPrice = basePlanPrice + backupsPrice;
+  const totalPrice = currentPlanData.price + rdpExtraCost + backupsPrice;
+  const firstMonthPrice = totalPrice; // 7-day trial means first payment is after trial
   
   const SpecItem = ({ label, value }: { label: string; value: string }) => (
     <li className="flex items-start gap-3">
@@ -257,11 +256,6 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                         </div>
                     </div>
                   )}
-              </div>
-
-              <div className="mt-4 p-4 rounded-lg bg-black/20 border border-border/50 shadow-inner">
-                <h3 className="font-bold text-white flex items-center gap-2"><Info className="text-primary"/>{dictionary.offer.title}</h3>
-                <p className="text-sm text-gray-300 mt-2">{dictionary.offer.body}</p>
               </div>
 
               <Separator className="bg-border/50 my-4" />
