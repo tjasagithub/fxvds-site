@@ -172,9 +172,19 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
             );
           })}
         </div>
-        <div className="mt-12 text-center text-gray-400 space-y-2">
-           <p dangerouslySetInnerHTML={{ __html: dictionary.cryptoPayments.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
-           <p dangerouslySetInnerHTML={{ __html: dictionary.customSetup.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
+        <div className="mt-12 text-center text-gray-400">
+          <div className="space-y-2">
+            <p dangerouslySetInnerHTML={{ __html: dictionary.cryptoPayments.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
+            <p dangerouslySetInnerHTML={{ __html: dictionary.customSetup.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
+          </div>
+
+          <div className="pt-8">
+            <h3 className="font-semibold text-white text-lg">{dictionary.serverLocations.title}</h3>
+            <div className="mt-2 text-gray-400 max-w-3xl mx-auto space-y-4 text-sm">
+                <p>{dictionary.serverLocations.body1}</p>
+                <p>{dictionary.serverLocations.body2}</p>
+            </div>
+          </div>
         </div>
       </div>
       

@@ -57,6 +57,11 @@
     "contactCta": "Kontakt aufnehmen",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns zur Abwicklung.</a>",
     "customSetup": "<strong>Benötigen Sie mehr Leistung oder eine individuelle Konfiguration? {link}Senden Sie uns eine Anfrage.</a></strong>",
+    "serverLocations": {
+      "title": "Serverstandorte & Preise",
+      "body1": "Alle Server zu unseren unschlagbaren Preisen werden in Deutschland gehostet. Wenn Sie an einem Server in New York oder London interessiert sind, senden Sie uns einfach eine Nachricht – wir richten ihn gerne für Sie ein.",
+      "body2": "Unsere Preise bleiben niedrig, weil wir jeden Server auf Anfrage bauen. Das bedeutet, die Lieferung dauert einige Tage statt Minuten – aber sobald Sie sich einen niedrigen Preis gesichert haben, gehört er für immer Ihnen."
+    },
     "earlyAccess": {
       "title": "Frühzugangspreise",
       "antonNelOffer": "Nutzen Sie den Anton Nel Mirror Trading Manager? {link}Schreiben Sie uns</a> — möglicherweise erhalten Sie einen Rabatt.",
@@ -176,7 +181,7 @@
       "ip": "Feste IP-Adresse",
       "autostart": "MT4 / MT5 Auto-Start-Tools",
       "compatibility": "Jeder Broker, jeder Expert Advisor",
-      "location": "Serverstandort: Deutschland"
+      "location": "Serverstandort: Deutschland, USA (New York) und UK (London)"
     }
   },
   "whyFxvds": {
