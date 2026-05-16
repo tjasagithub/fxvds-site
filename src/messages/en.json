@@ -120,7 +120,8 @@
           "title": "Direct Access (RDP)",
           "description": "Connect directly to your server via Remote Desktop. Quick and simple setup, no extra software needed.",
           "note": "This option does not include the additional encryption layer that VPN provides.",
-          "spec": "Direct remote access (RDP)"
+          "spec": "Direct remote access (RDP)",
+          "surcharge": "+€{price}/month"
         }
       },
       "plans": {

@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -66,7 +67,7 @@ const planData: Record<PlanName, PlanDetails> = {
     }
   },
   'Extra Large': {
-    price: 150,
+    price: 240,
     specs: {
       cpu: '16-core CPU @ 3.6 GHz per core',
       ram: '32 GB RAM',
@@ -122,7 +123,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
   };
 
   const currentPlanData = planData[selectedPlan];
-  const rdpExtraCost = accessType === 'rdp' ? 10 : 0;
+  const rdpExtraCost = accessType === 'rdp' ? (['Large', 'Extra Large'].includes(selectedPlan) ? 20 : 10) : 0;
   const backupsPrice = hasDailyBackups ? 10 : 0;
   const totalPrice = currentPlanData.price + rdpExtraCost + backupsPrice;
   const firstMonthPrice = totalPrice; // 7-day trial means first payment is after trial
@@ -179,6 +180,9 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                 <h4 className="font-semibold text-white mb-1">{dictionary.accessType.rdp.title}</h4>
                 <p className="text-xs text-gray-400">{dictionary.accessType.rdp.description}</p>
                 <p className="text-xs text-amber-500/80 mt-2">{dictionary.accessType.rdp.note}</p>
+                <p className="text-xs font-semibold text-primary mt-1">
+                   {dictionary.accessType.rdp.surcharge.replace('{price}', (['Large', 'Extra Large'].includes(selectedPlan) ? '20' : '10'))}
+                </p>
               </div>
             </div>
           </div>

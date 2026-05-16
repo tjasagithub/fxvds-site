@@ -1,3 +1,4 @@
+
 /**
  * Paste LIVE Stripe Payment Links here.
  * Test-mode links will NOT work on the production deployment.
@@ -19,13 +20,13 @@ export const stripeLinks = {
   large: {
     base: 'https://buy.stripe.com/5kQdR89fQ4j71Db1ff04809',
     backup: 'https://buy.stripe.com/14AdR8dw6cPD95D7DD0480a',
-    ip: 'https://buy.stripe.com/6oU6oG77I6rf1Db1ff0480b',
-    backup_ip: 'https://buy.stripe.com/fZufZg63EdTH95D4rr0480c',
+    ip: 'https://buy.stripe.com/4gMcN48bM6rf4Pn4rr0480m',
+    backup_ip: 'https://buy.stripe.com/14AbJ0gIi8zn1Db7DD0480n',
   },
   extralarge: {
-    base: 'https://buy.stripe.com/dRmdR8bnYbLzbdLe210480i',
-    backup: 'https://buy.stripe.com/eVq14mbnY6rfepXaPP0480j',
-    ip: 'https://buy.stripe.com/8x26oGfEebLza9H0bb0480k',
-    backup_ip: 'https://buy.stripe.com/9B6aEW8bM4j795D4rr0480l',
+    base: 'https://buy.stripe.com/dRm7sKbnY7vj6Xv6zz0480o',
+    backup: 'https://buy.stripe.com/dRmaEWcs202R6Xvf650480p',
+    ip: 'https://buy.stripe.com/9B600i1No7vjdlTga90480s',
+    backup_ip: 'https://buy.stripe.com/4gMcN41NoaHvfu15vv0480r',
   },
 };

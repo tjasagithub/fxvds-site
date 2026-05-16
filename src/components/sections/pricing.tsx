@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -62,7 +63,7 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
     },
     {
       name: 'Extra Large' as PlanName,
-      price: '€150',
+      price: '€240',
       features: dictionary.extraLarge.features,
       isCustom: false,
     },
