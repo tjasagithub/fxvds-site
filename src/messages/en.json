@@ -109,7 +109,7 @@
       "perMonth": "month",
       "serverLocation": {
         "title": "Choose Server Location",
-        "germany": "Germany (Frankfurt)",
+        "germany": "Germany",
         "usa": "USA (New York)",
         "uk": "UK (London)",
         "helper": "Servers are hosted in Germany by default. USA and UK locations carry a surcharge due to higher datacenter costs."
@@ -411,14 +411,6 @@
       "intro": "To make this site work properly, we sometimes place small data files called cookies on your device. Most big websites do this too. This policy explains what cookies are and how we use them.",
       "whatAreCookiesTitle": "What are cookies?",
       "whatAreCookiesText": "A cookie is a small text file that a website saves on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another. The cookie-related information is not used to personally identify you, and the data is fully under our control. These cookies are not used for any purpose other than those described here.",
-      "howWeUseTitle": "How we use cookies",
-      "howWeUseIntro": "We use cookies to enhance your browsing experience by:",
-      "howWeUseList": [
-        { "title": "Necessary Cookies", "text": "These are essential for you to browse the website and use its features, such as accessing secure areas of the site. Disabling these cookies may affect site functionality." },
-        { "title": "Functionality Cookies", "text": "These cookies allow the website to remember choices you have made in the past, like what language you prefer or your user name for automatic login." },
-        { "title": "Performance/Analytics Cookies", "text": "We use these cookies to collect information about how you use our website, such as which pages you visited and which links you clicked on. This information is aggregated and anonymized and is used to improve our website's functionality." }
-      ],
-      "enablingText": "Enabling these cookies is not strictly necessary for the website to work but it will provide you with a better browsing experience.",
       "howToControlTitle": "How to control cookies",
       "howToControlText": "You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work. For more details, see {link}.",
       "changesToPolicyTitle": "Changes to this policy",
