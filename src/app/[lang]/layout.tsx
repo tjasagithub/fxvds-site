@@ -7,7 +7,8 @@ import { i18n, Locale } from '@/i18n.config';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://fxvds.com';
 
-export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
   const currentPath = ''; // Root layout
 
@@ -27,15 +28,17 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }>) {
+  const { lang } = await params;
+  
   return (
-    <html lang={params.lang} suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg?v=1" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

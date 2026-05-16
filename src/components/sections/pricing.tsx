@@ -198,3 +198,5 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
     </section>
   );
 };
+
+export default Pricing;

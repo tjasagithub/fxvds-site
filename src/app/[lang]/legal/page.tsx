@@ -5,7 +5,8 @@ import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/get-dictionary';
 import LegalPageContent from '@/components/sections/legal-page-content';
 
-const LegalPage = async ({ params: { lang } }: { params: { lang: Locale } }) => {
+const LegalPage = async ({ params }: { params: Promise<{ lang: Locale }> }) => {
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   return (
