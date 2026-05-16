@@ -182,8 +182,7 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
           <div className="pt-8">
             <h3 className="font-semibold text-white text-lg">{dictionary.serverLocations.title}</h3>
             <div className="mt-2 text-gray-400 max-w-3xl mx-auto space-y-4 text-sm">
-                <p>{dictionary.serverLocations.body1}</p>
-                <p>{dictionary.serverLocations.body2}</p>
+                <p>{dictionary.serverLocations.body}</p>
             </div>
           </div>
         </div>
@@ -199,5 +198,3 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
     </section>
   );
 };
-
-export default Pricing;

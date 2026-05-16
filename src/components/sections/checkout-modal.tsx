@@ -16,13 +16,14 @@ import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { stripeLinks } from '@/lib/stripe-links';
 import { cn } from '@/lib/utils';
-import { CheckCircle2, X, Info } from 'lucide-react';
+import { CheckCircle2, X, Info, MapPin } from 'lucide-react';
 import { getDictionary } from '@/lib/get-dictionary';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['checkout'];
 
 export type PlanName = 'Small' | 'Medium' | 'Large' | 'Extra Large';
 type AccessType = 'vpn' | 'rdp';
+type Location = 'germany' | 'usa' | 'uk';
 
 type PlanDetails = {
   price: number;
@@ -88,6 +89,7 @@ type CheckoutModalProps = {
 export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }: CheckoutModalProps) => {
   const [selectedPlan, setSelectedPlan] = useState<PlanName>(initialPlan);
   const [accessType, setAccessType] = useState<AccessType>('vpn');
+  const [selectedLocation, setSelectedLocation] = useState<Location>('germany');
   const [hasDailyBackups, setHasDailyBackups] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -95,6 +97,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
     if (isOpen) {
       setSelectedPlan(initialPlan);
       setAccessType('vpn');
+      setSelectedLocation('germany');
       setHasDailyBackups(false);
       setErrorMessage(null);
     }
@@ -102,18 +105,19 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
 
   const handleContinue = () => {
     setErrorMessage(null);
-    let urlKey: keyof typeof stripeLinks.small;
+    let urlKey: 'base' | 'backup' | 'ip' | 'backup_ip';
 
     if (accessType === 'rdp') {
-      // RDP includes dedicated IP, so we use the 'ip' and 'backup_ip' links
       urlKey = hasDailyBackups ? 'backup_ip' : 'ip';
     } else { // VPN access
-      // VPN has its own base price, uses 'base' and 'backup' links
       urlKey = hasDailyBackups ? 'backup' : 'base';
     }
 
     const planKey = selectedPlan.replace(' ', '').toLowerCase() as keyof typeof stripeLinks;
-    const checkoutUrl = stripeLinks[planKey]?.[urlKey];
+    const locationKey = selectedLocation === 'germany' ? 'germany' : 'global';
+    
+    // @ts-ignore
+    const checkoutUrl = stripeLinks[planKey]?.[locationKey]?.[urlKey];
 
     if (!checkoutUrl) {
       setErrorMessage(dictionary.notConfiguredError);
@@ -123,11 +127,21 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
   };
 
   const currentPlanData = planData[selectedPlan];
-  const rdpExtraCost = accessType === 'rdp' ? (['Large', 'Extra Large'].includes(selectedPlan) ? 20 : 10) : 0;
-  const backupsPrice = hasDailyBackups ? 10 : 0;
-  const totalPrice = currentPlanData.price + rdpExtraCost + backupsPrice;
-  const firstMonthPrice = totalPrice; // 7-day trial means first payment is after trial
   
+  // Surcharge logic
+  const locationSurcharge = selectedLocation !== 'germany' 
+    ? (['Large', 'Extra Large'].includes(selectedPlan) ? 30 : 10) 
+    : 0;
+    
+  const rdpExtraCost = accessType === 'rdp' 
+    ? (['Large', 'Extra Large'].includes(selectedPlan) ? 20 : 10) 
+    : 0;
+    
+  const backupsPrice = hasDailyBackups ? 10 : 0;
+  
+  const totalPrice = currentPlanData.price + locationSurcharge + rdpExtraCost + backupsPrice;
+  const firstMonthPrice = totalPrice;
+
   const SpecItem = ({ label, value }: { label: string; value: string }) => (
     <li className="flex items-start gap-3">
         <CheckCircle2 className="h-4 w-4 text-primary/80 mt-0.5 shrink-0" />
@@ -154,7 +168,41 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
         </DialogHeader>
 
         <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch] px-6">
-           <div className="mb-6">
+          
+          {/* Location Selector */}
+          <div className="mb-6">
+            <h3 className="font-semibold text-white text-center mb-3 flex items-center justify-center gap-2">
+              <MapPin className="h-4 w-4 text-primary" />
+              {dictionary.serverLocation.title}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {(['germany', 'usa', 'uk'] as Location[]).map((loc) => (
+                <div
+                  key={loc}
+                  onClick={() => setSelectedLocation(loc)}
+                  className={cn(
+                    'p-3 rounded-lg border-2 cursor-pointer transition-all text-center flex flex-col items-center gap-1',
+                    selectedLocation === loc ? 'border-primary bg-primary/10 shadow-lg' : 'border-border/50 bg-black/20 hover:border-primary/50'
+                  )}
+                >
+                  <span className="text-xl">
+                    {loc === 'germany' ? '🇩🇪' : loc === 'usa' ? '🇺🇸' : '🇬🇧'}
+                  </span>
+                  <span className="font-semibold text-sm">
+                    {dictionary.serverLocation[loc]}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-gray-400 mt-3 text-center px-4">
+              {dictionary.serverLocation.helper}
+            </p>
+          </div>
+
+          <Separator className="bg-border/50 my-6" />
+
+          {/* Access Type Selector */}
+          <div className="mb-6">
             <h3 className="font-semibold text-white text-center mb-3">{dictionary.accessType.title}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div

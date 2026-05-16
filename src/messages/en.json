@@ -59,8 +59,7 @@
     "customSetup": "<strong>Need more power or a custom setup? {link}send us a message.</a></strong>",
     "serverLocations": {
       "title": "Server Locations & Pricing",
-      "body1": "All servers at our unbeatable prices are hosted in Germany. If you'd prefer a server in New York or London, just send us a message — we'll be happy to set one up for you (+10 EUR/month for US or UK locations).",
-      "body2": "Our prices stay low because we build each server on request. Delivery takes a few days rather than a few minutes — but once you lock in a low price, it's yours forever."
+      "body": "Choose your preferred server location directly when configuring your plan. Germany is our default location with the most competitive pricing. USA (New York) and UK (London) are available with a location surcharge."
     },
     "earlyAccess": {
       "title": "Early Access Pricing",
@@ -108,6 +107,13 @@
       "close": "Close",
       "plan": "Plan",
       "perMonth": "month",
+      "serverLocation": {
+        "title": "Choose Server Location",
+        "germany": "Germany (Frankfurt)",
+        "usa": "USA (New York)",
+        "uk": "UK (London)",
+        "helper": "Servers are hosted in Germany by default. USA and UK locations carry a surcharge due to higher datacenter costs."
+      },
       "accessType": {
         "title": "Choose Your Access Type",
         "recommended": "Recommended",
@@ -150,10 +156,6 @@
           "title": "Dedicated IP",
           "description": "Included with Direct Access"
         }
-      },
-      "offer": {
-        "title": "Limited Availability",
-        "body": "Limited spots available — start your 7-day free trial today."
       },
       "summary": {
         "accessType": {
