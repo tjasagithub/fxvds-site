@@ -145,17 +145,12 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
                 <CardContent className="flex-grow text-center relative">
                   <ul className="space-y-3 text-gray-300">
                     {plan.features.map((feature) => (
-                      <React.Fragment key={feature.text}>
-                        <li className={cn(feature.highlighted ? "font-bold text-white" : "text-gray-400")}>
-                          {feature.text}
-                        </li>
-                        {/* CPU clock speed note for USA/UK */}
-                        {(feature.text.includes("3.6 GHz")) && (
-                          <li className="text-[10px] text-primary/80 -mt-2 font-medium italic">
-                            {dictionary.cpuNote}
-                          </li>
-                        )}
-                      </React.Fragment>
+                      <li 
+                        key={feature.text} 
+                        className={cn(feature.highlighted ? "font-bold text-white" : "text-gray-400")}
+                      >
+                        {feature.text}
+                      </li>
                     ))}
                   </ul>
                 </CardContent>
