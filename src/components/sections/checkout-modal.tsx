@@ -19,7 +19,7 @@ import { cn } from '@/lib/utils';
 import { CheckCircle2, X, Info, MapPin } from 'lucide-react';
 import { getDictionary } from '@/lib/get-dictionary';
 
-type Dictionary = Awaited<ReturnType<typeof getDictionary>>['checkout'];
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>['pricing']['checkout'];
 
 export type PlanName = 'Small' | 'Medium' | 'Large' | 'Extra Large';
 type AccessType = 'vpn' | 'rdp';
@@ -72,7 +72,7 @@ const planData: Record<PlanName, PlanDetails> = {
     specs: {
       cpu: '16-core CPU @ 3.6 GHz per core',
       ram: '32 GB RAM',
-      storage: '60 GB NVMe SSD',
+      storage: '300 GB NVMe SSD',
       network: '1 Gbit/s',
       os: 'Windows Server 2025',
     }
@@ -141,6 +141,10 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
   
   const totalPrice = currentPlanData.price + locationSurcharge + rdpExtraCost + backupsPrice;
   const firstMonthPrice = totalPrice;
+
+  // Dynamic CPU speed display
+  const cpuSpeed = selectedLocation === 'germany' ? '3.6' : '3.7';
+  const displayCpu = currentPlanData.specs.cpu.replace('3.6', cpuSpeed);
 
   const SpecItem = ({ label, value }: { label: string; value: string }) => (
     <li className="flex items-start gap-3">
@@ -259,14 +263,14 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                     {dictionary.plans[selectedPlan.replace(' ', '').toLowerCase() as keyof typeof dictionary.plans]} {dictionary.plan}
                   </p>
                   <p className="text-lg font-bold text-primary">
-                    €{totalPrice} <span className="text-sm font-normal text-gray-400">/ {dictionary.perMonth}</span>
+                    €{totalPrice.toFixed(2)} <span className="text-sm font-normal text-gray-400">/ {dictionary.perMonth}</span>
                   </p>
               </div>
               
               <Separator className="bg-border/50 my-4" />
               
               <ul className="space-y-3 text-sm">
-                <SpecItem label="CPU" value={currentPlanData.specs.cpu} />
+                <SpecItem label="CPU" value={displayCpu} />
                 <SpecItem label="RAM" value={currentPlanData.specs.ram} />
                 <SpecItem label={dictionary.specs.storage} value={currentPlanData.specs.storage} />
                 <SpecItem label={dictionary.specs.network} value={currentPlanData.specs.network} />

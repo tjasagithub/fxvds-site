@@ -55,6 +55,7 @@
     "perMonth": "Monat",
     "cta": "Kostenlos starten",
     "contactCta": "Kontakt aufnehmen",
+    "cpuNote": "USA / Großbritannien: 3,7 GHz pro Kern",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns zur Abwicklung.</a>",
     "customSetup": "<strong>Benötigen Sie mehr Leistung oder eine individuelle Konfiguration? {link}Senden Sie uns eine Anfrage.</a></strong>",
     "serverLocations": {
@@ -98,7 +99,7 @@
         { "text": "16-Kern CPU", "highlighted": true },
         { "text": "32 GB RAM", "highlighted": true },
         { "text": "3.6 GHz pro Kern", "highlighted": false },
-        { "text": "60 GB NVMe SSD", "highlighted": false },
+        { "text": "300 GB NVMe SSD", "highlighted": false },
         { "text": "1 Gbit/s", "highlighted": false }
       ]
     },
@@ -290,7 +291,7 @@
     "questions": [
       { "question": "Was ist ein Forex VDS?", "answer": "Ein Forex Virtual Dedicated Server (VDS) ist ein privater Server, der für den Handel optimiert ist. Er läuft rund um die Uhr, unabhängig von Ihrem eigenen Computer, und bietet eine stabile, Hochgeschwindigkeitsumgebung, um Ihre Handelsplattformen und automatisierten Strategien (Expert Advisors) ohne Unterbrechungen auszuführen." },
       { "question": "Was ist der Unterschied zwischen einem VDS und einem VPS?", "answer": "Ein Virtual Dedicated Server (VDS) stellt dedizierte Ressourcen (CPU, RAM) von einem physischen Server bereit und bietet so eine stabilere Leistung als ein Virtual Private Server (VPS), der die Ressourcen unter mehreren Benutzern aufteilt. Für den Handel ist VDS überlegen, da Leistungseinbußen durch die Aktivitäten anderer Benutzer verhindert werden." },
-      { "question": "VDS and VPS machen Sinn – aber was genau ist ein VPN, und brauche ich einen?", "answer": "Ein VPN (Virtual Private Network) ist eine verschlüsselte Sicherheitsschicht, die eine private Verbindung zwischen Ihnen und Ihrem VDS herstellt. Es schützt Ihre Daten, Ihre Handelsaktivitäten und den Serverzugriff vor externen Bedrohungen – selbst in ungesicherten Netzwerken." },
+      { "question": "VDS and VPS make sense – but what genau ist ein VPN, und brauche ich einen?", "answer": "Ein VPN (Virtual Private Network) ist eine verschlüsselte Sicherheitsschicht, die eine private Verbindung zwischen Ihnen und Ihrem VDS herstellt. Es schützt Ihre Daten, Ihre Handelsaktivitäten und den Serverzugriff vor externen Bedrohungen – selbst in ungesicherten Netzwerken." },
       { "question": "Schützt mich ein VPN wirklich, selbst wenn jemand meine Zugangsdaten erhält?", "answer": "<p>Ja – und hier kommt der sichere Zugang wirklich zum Tragen. Mit FXVDS wird der Zugang zu Ihrem Server durch eine starke Authentifizierung und eingeschränkte Netzwerkkontrollen geschützt. Dies reduziert das Risiko unbefugten Zugriffs erheblich, selbst wenn Anmeldeinformationen preisgegeben würden.</p>" },
       { "question": "Kann ich FXVDS für automatisierten oder 24/7-Handel verwenden?", "answer": "<p class=\"mb-4\">Absolut. Unser VDS ist für den 24/7-Betrieb konzipiert und eignet sich daher ideal für die Ausführung automatisierter Handelsstrategien, Expert Advisors (EAs) und Trading-Bots ohne Unterbrechung, selbst wenn Ihr persönlicher Computer ausgeschaltet ist.</p><p>VDS gibt Ihnen Leistung,</p><p>VPN gibt Ihnen Privatsphäre,</p><p>und zusammen geben sie Ihnen Sicherheit beim Handeln.</p>" },
       { "question": "Warum sind FXVDS-Server so erschwinglich?", "answer": "<p>FXVDS ist speziell für Forex-Handels-Workloads konzipiert. Durch die Optimierung unserer Infrastruktur für Handelsanwendungsfälle und die Vermeidung unnötigen Overheads können wir vollständig dedizierte CPU und RAM zu geringeren Kosten als herkömmliche dedizierte Forex-Server anbieten – ohne Überbuchung oder gemeinsam genutzte Ressourcen.</p><p>Alle FXVDS-Server befinden sich in Deutschland und profitieren von einer robusten Infrastruktur, starken Datenschutzstandards und latenzarmen Verbindungen für europäische Händler.</p>" },
@@ -402,7 +403,7 @@
       "liabilityTitle": "Haftungsbeschränkung",
       "liabilityText": "Im größtmöglichen gesetzlich zulässigen Umfang haftet FXVDS nicht für finanzielle Verluste, Handelsverluste, Datenverluste oder andere direkte oder Folgeschäden, die sich aus der Nutzung oder Unmöglichkeit der Nutzung unserer Dienste ergeben. Wir garantieren nicht die Leistung oder Zuverlässigkeit von auf dem VDS installierter Handelssoftware von Drittanbietern.",
       "serviceChangesTitle": "Änderungen am Dienst",
-      "serviceChangesText": "Wir behalten uns das Recht vor, unsere Dienste jederzeit mit oder ohne Vorankündigung zu ändern, auszusetzen oder einzustellen. Die Preise für alle Dienste können sich mit einer Frist von 30 Tagen ändern.",
+      "serviceChangesText": "Wir behalten uns das Recht vor unsere Dienste jederzeit mit oder ohne Vorankündigung zu ändern, auszusetzen oder einzustellen. Die Preise für alle Dienste können sich mit einer Frist von 30 Tagen ändern.",
       "termsChangesTitle": "Änderungen der Bedingungen",
       "termsChangesText": "Wir können diese Bedingungen von Zeit zu Zeit aktualisieren. Ihre fortgesetzte Nutzung der Dienste nach Änderungen stellt Ihre Zustimmung zu den neuen Bedingungen dar. Es liegt in Ihrer Verantwortung, diese Bedingungen regelmäßig zu überprüfen.",
       "contactTitle": "Kontakt",
@@ -425,7 +426,7 @@
       "companyDescriptionText": "FXVDS bietet Hochleistungs-Virtual-Dedicated-Server (VDS) für Händler und Software-Hosting an.<br/>FXVDS bietet keine Finanzdienstleistungen, Anlageberatung oder Maklerdienste an.",
       "responsibleTitle": "Verantwortlich für den Inhalt:",
       "liabilityLinksTitle": "Haftung für Links",
-      "liabilityLinksText": "Unsere Website kann Links zu externen Websites Dritter enthalten. Wir haben keinen Einfluss auf den Inhalt dieser externen Websites und können daher keine Haftung für deren Inhalt übernehmen. Der jeweilige Anbieter oder Betreiber der verlinkten Seiten ist stets für deren Inhalt verantwortlich. Zum Zeitpunkt der Verlinkung wurden die verlinkten Seiten auf mögliche Rechtsverstöße überprüft. Werden uns Rechtsverletzungen bekannt, werden solche Links umgehend entfernt.",
+      "liabilityLinksText": "Unsere Website kann Links zu externen Websites Dritter enthalten. Wir haben keinen Einfluss auf den Inhalt dieser externen Websites und können daher keine Haftung für deren Inhalt übernehmen. Der jeweilige Anbieter oder Betreiber der verlinkedten Seiten ist stets für deren Inhalt verantwortlich. Zum Zeitpunkt der Verlinkung wurden die verlinkten Seiten auf mögliche Rechtsverstöße überprüft. Werden uns Rechtsverletzungen bekannt, werden solche Links umgehend entfernt.",
       "copyrightTitle": "Urheberrecht",
       "copyrightText": "Alle auf dieser Website veröffentlichten Inhalte und Werke, einschließlich Texte, Grafiken und Layout, sind urheberrechtlich geschützt. Jede Vervielfältigung, Bearbeitung, Verbreitung oder Nutzung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen schriftlichen Zustimmung. Downloads und Kopien dieser Website sind nur für den privaten, nicht kommerziellen Gebrauch gestattet."
     },

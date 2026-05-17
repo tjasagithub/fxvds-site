@@ -55,6 +55,7 @@
     "perMonth": "month",
     "cta": "Start free",
     "contactCta": "Contact Us",
+    "cpuNote": "USA / UK locations: 3.7 GHz per core",
     "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us to arrange payment.</a>",
     "customSetup": "<strong>Need more power or a custom setup? {link}send us a message.</a></strong>",
     "serverLocations": {
@@ -98,7 +99,7 @@
         { "text": "16-core CPU", "highlighted": true },
         { "text": "32 GB RAM", "highlighted": true },
         { "text": "3.6 GHz per core", "highlighted": false },
-        { "text": "60 GB NVMe SSD", "highlighted": false },
+        { "text": "300 GB NVMe SSD", "highlighted": false },
         { "text": "1 Gbit/s", "highlighted": false }
       ]
     },

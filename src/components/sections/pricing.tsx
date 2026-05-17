@@ -10,9 +10,9 @@ import { getDictionary } from '@/lib/get-dictionary';
 import Link from 'next/link';
 import { ShieldCheck, Info, X } from 'lucide-react';
 
-type Dictionary = Awaited<ReturnType<typeof getDictionary>>['pricing'];
+type PricingDictionary = Awaited<ReturnType<typeof getDictionary>>['pricing'];
 
-const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
+const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
   const [activePlan, setActivePlan] = useState<PlanName>('Medium');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalPlan, setModalPlan] = useState<PlanName>('Medium');
@@ -145,9 +145,17 @@ const Pricing = ({ dictionary }: { dictionary: Dictionary }) => {
                 <CardContent className="flex-grow text-center relative">
                   <ul className="space-y-3 text-gray-300">
                     {plan.features.map((feature) => (
-                      <li key={feature.text} className={cn(feature.highlighted ? "font-bold text-white" : "text-gray-400")}>
-                        {feature.text}
-                      </li>
+                      <React.Fragment key={feature.text}>
+                        <li className={cn(feature.highlighted ? "font-bold text-white" : "text-gray-400")}>
+                          {feature.text}
+                        </li>
+                        {/* CPU clock speed note for USA/UK */}
+                        {(feature.text.includes("3.6 GHz")) && (
+                          <li className="text-[10px] text-primary/80 -mt-2 font-medium italic">
+                            {dictionary.cpuNote}
+                          </li>
+                        )}
+                      </React.Fragment>
                     ))}
                   </ul>
                 </CardContent>
