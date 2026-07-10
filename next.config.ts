@@ -36,6 +36,10 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       }
     ],
+    // Once set, any quality outside this list is rejected with a 400. 75 is the
+    // default for <Image> without an explicit quality, so it must stay listed;
+    // 90 is the hero image. Required from Next.js 16 on.
+    qualities: [75, 90],
   },
   env: {
     NEXT_PUBLIC_GEMINI_API_KEY_SET: !!process.env.GEMINI_API_KEY ? 'true' : 'false',

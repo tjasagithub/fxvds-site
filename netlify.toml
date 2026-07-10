@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  # No `publish` here on purpose. The Next.js runtime (v5) sets the publish
+  # directory itself so it can wire up the SSR/middleware functions. Setting
+  # publish = ".next" overrides that and serves the raw build output as static
+  # files — which 404s every dynamic route and skips middleware.
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# `npm run dev` serves on 9002, not Netlify's assumed 3000.
+[dev]
+  command = "npm run dev"
+  targetPort = 9002
+  framework = "#custom"
