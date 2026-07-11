@@ -1,9 +1,7 @@
+# Publish directory is set explicitly to `.next`.
 [build]
   command = "npm run build"
-  # No `publish` here on purpose. The Next.js runtime (v5) sets the publish
-  # directory itself so it can wire up the SSR/middleware functions. Setting
-  # publish = ".next" overrides that and serves the raw build output as static
-  # files — which 404s every dynamic route and skips middleware.
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
