@@ -98,7 +98,7 @@
         { "text": "16-core CPU", "highlighted": true },
         { "text": "32 GB RAM", "highlighted": true },
         { "text": "3.6 GHz per core", "highlighted": false },
-        { "text": "300 GB NVMe SSD", "highlighted": false },
+        { "text": "60 GB NVMe SSD", "highlighted": false },
         { "text": "1 Gbit/s", "highlighted": false }
       ]
     },
@@ -112,6 +112,8 @@
         "germany": "Germany",
         "usa": "USA (New York)",
         "uk": "UK (London)",
+        "surcharge": "+€{price}/month",
+        "included": "Included",
         "helper": "Servers are hosted in Germany by default. USA and UK locations carry a surcharge due to higher datacenter costs."
       },
       "accessType": {

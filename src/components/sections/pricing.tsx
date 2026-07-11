@@ -63,7 +63,7 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
     },
     {
       name: 'Extra Large' as PlanName,
-      price: '€240',
+      price: '€150',
       features: dictionary.extraLarge.features,
       isCustom: false,
     },

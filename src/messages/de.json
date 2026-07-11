@@ -98,7 +98,7 @@
         { "text": "16-Kern CPU", "highlighted": true },
         { "text": "32 GB RAM", "highlighted": true },
         { "text": "3.6 GHz pro Kern", "highlighted": false },
-        { "text": "300 GB NVMe SSD", "highlighted": false },
+        { "text": "60 GB NVMe SSD", "highlighted": false },
         { "text": "1 Gbit/s", "highlighted": false }
       ]
     },
@@ -112,6 +112,8 @@
         "germany": "Deutschland",
         "usa": "USA (New York)",
         "uk": "Großbritannien (London)",
+        "surcharge": "+€{price}/Monat",
+        "included": "Inklusive",
         "helper": "Server werden standardmäßig in Deutschland gehostet. Für Standorte in den USA und Großbritannien fällt aufgrund höherer Rechenzentrumskosten ein Aufpreis an."
       },
       "accessType": {

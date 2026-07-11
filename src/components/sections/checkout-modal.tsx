@@ -68,15 +68,22 @@ const planData: Record<PlanName, PlanDetails> = {
     }
   },
   'Extra Large': {
-    price: 240,
+    price: 150,
     specs: {
       cpu: '16-core CPU @ 3.6 GHz per core',
       ram: '32 GB RAM',
-      storage: '300 GB NVMe SSD',
+      storage: '60 GB NVMe SSD',
       network: '1 Gbit/s',
       os: 'Windows Server 2025',
     }
   }
+};
+
+// Add-on surcharges — single source of truth, flat across all plans (€/month).
+const SURCHARGES = {
+  location: 10, // USA (New York) / UK (London); Germany is free
+  ip: 10,       // Direct Access (RDP) / dedicated IP
+  backup: 10,   // Daily backups
 };
 
 type CheckoutModalProps = {
@@ -114,8 +121,8 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
     }
 
     const planKey = selectedPlan.replace(' ', '').toLowerCase() as keyof typeof stripeLinks;
-    const locationKey = selectedLocation === 'germany' ? 'germany' : 'global';
-    
+    const locationKey = selectedLocation === 'germany' ? 'germany' : selectedLocation === 'usa' ? 'newyork' : 'london';
+
     // @ts-ignore
     const checkoutUrl = stripeLinks[planKey]?.[locationKey]?.[urlKey];
 
@@ -129,15 +136,15 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
   const currentPlanData = planData[selectedPlan];
   
   // Surcharge logic
-  const locationSurcharge = selectedLocation !== 'germany' 
-    ? (['Large', 'Extra Large'].includes(selectedPlan) ? 30 : 10) 
-    : 0;
-    
-  const rdpExtraCost = accessType === 'rdp' 
-    ? (['Large', 'Extra Large'].includes(selectedPlan) ? 20 : 10) 
-    : 0;
-    
-  const backupsPrice = hasDailyBackups ? 10 : 0;
+  // USA/UK carry a flat location surcharge for every plan; Germany is free.
+  const getLocationSurcharge = (_plan: PlanName, loc: Location) =>
+    loc === 'germany' ? 0 : SURCHARGES.location;
+
+  const locationSurcharge = getLocationSurcharge(selectedPlan, selectedLocation);
+
+  const rdpExtraCost = accessType === 'rdp' ? SURCHARGES.ip : 0;
+
+  const backupsPrice = hasDailyBackups ? SURCHARGES.backup : 0;
   
   const totalPrice = currentPlanData.price + locationSurcharge + rdpExtraCost + backupsPrice;
   const firstMonthPrice = totalPrice;
@@ -195,6 +202,11 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                   <span className="font-semibold text-sm">
                     {dictionary.serverLocation[loc]}
                   </span>
+                  <span className="text-xs font-semibold text-primary min-h-4">
+                    {getLocationSurcharge(selectedPlan, loc) > 0
+                      ? dictionary.serverLocation.surcharge.replace('{price}', String(getLocationSurcharge(selectedPlan, loc)))
+                      : dictionary.serverLocation.included}
+                  </span>
                 </div>
               ))}
             </div>
@@ -233,7 +245,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                 <p className="text-xs text-gray-400">{dictionary.accessType.rdp.description}</p>
                 <p className="text-xs text-amber-500/80 mt-2">{dictionary.accessType.rdp.note}</p>
                 <p className="text-xs font-semibold text-primary mt-1">
-                   {dictionary.accessType.rdp.surcharge.replace('{price}', (['Large', 'Extra Large'].includes(selectedPlan) ? '20' : '10'))}
+                   {dictionary.accessType.rdp.surcharge.replace('{price}', String(SURCHARGES.ip))}
                 </p>
               </div>
             </div>
@@ -292,7 +304,7 @@ export const CheckoutModal = ({ isOpen, onOpenChange, initialPlan, dictionary }:
                     />
                     <Label htmlFor="dailyBackups" className="flex-1 cursor-pointer">
                       <span className="font-medium text-white">{dictionary.addOns.backups.title}</span>
-                      <span className="text-sm text-gray-400 block">{dictionary.addOns.backups.price.replace('{price}', '10')}</span>
+                      <span className="text-sm text-gray-400 block">{dictionary.addOns.backups.price.replace('{price}', String(SURCHARGES.backup))}</span>
                     </Label>
                   </div>
                   {accessType === 'vpn' ? (
