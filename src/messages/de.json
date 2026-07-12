@@ -369,6 +369,8 @@
       ],
       "howWeProtectTitle": "Wie schützen wir Ihre Informationen?",
       "howWeProtectText": "Unsere Website wird regelmäßig auf Sicherheitslücken und bekannte Schwachstellen überprüft, um Ihren Besuch auf unserer Website so sicher wie möglich zu machen. Wir verwenden regelmäßiges Malware-Scanning. Ihre persönlichen Informationen befinden sich hinter gesicherten Netzwerken und sind nur einer begrenzten Anzahl von Personen zugänglich, die besondere Zugriffsrechte auf solche Systeme haben und verpflichtet sind, die Informationen vertraulich zu behandeln. Darüber hinaus werden alle sensiblen/Kreditinformationen, die Sie bereitstellen, über die Secure Socket Layer (SSL)-Technologie verschlüsselt. Wir implementieren eine Vielzahl von Sicherheitsmaßnahmen, wenn ein Benutzer eine Bestellung aufgibt, seine Informationen eingibt, übermittelt oder darauf zugreift, um die Sicherheit Ihrer persönlichen Informationen zu wahren. Alle Transaktionen werden über einen Gateway-Anbieter abgewickelt und nicht auf unseren Servern gespeichert oder verarbeitet.",
+      "cookiesTitle": "Verwenden wir „Cookies\"?",
+      "cookiesText": "Ja. Cookies sind kleine Dateien, die eine Website oder ihr Dienstanbieter über Ihren Webbrowser (sofern Sie dies zulassen) auf die Festplatte Ihres Computers überträgt und die es den Systemen der Website ermöglichen, Ihren Browser wiederzuerkennen sowie bestimmte Informationen zu erfassen und zu speichern. Wir verwenden Cookies unter anderem, um Ihre Spracheinstellung zu speichern und um anonyme Gesamtdaten über den Website-Verkehr zu erfassen, damit wir die Website künftig verbessern können.",
       "thirdPartyDisclosureTitle": "Weitergabe an Dritte",
       "thirdPartyDisclosureText": "Wir verkaufen, handeln oder übertragen Ihre persönlich identifizierbaren Informationen nicht an Dritte.",
       "thirdPartyLinksTitle": "Links von Drittanbietern",
@@ -413,6 +415,13 @@
       "intro": "Damit diese Website ordnungsgemäß funktioniert, legen wir manchmal kleine Datendateien, sogenannte Cookies, auf Ihrem Gerät ab. Die meisten großen Websites tun dies ebenfalls. Diese Richtlinie erklärt, was Cookies sind und wie wir sie verwenden.",
       "whatAreCookiesTitle": "Was sind Cookies?",
       "whatAreCookiesText": "Ein Cookie ist eine kleine Textdatei, die eine Website auf Ihrem Computer oder Mobilgerät speichert, wenn Sie die Website besuchen. Es ermöglicht der Website, Ihre Aktionen und Präferenzen (wie Login, Sprache und andere Anzeigeeinstellungen) über einen bestimmten Zeitraum zu speichern, sodass Sie sie nicht jedes Mal neu eingeben müssen, wenn Sie zur Website zurückkehren oder von einer Seite zur anderen wechseln. Die cookie-bezogenen Informationen werden nicht verwendet, um Sie persönlich zu identifizieren, und die Daten unterliegen vollständig unserer Kontrolle. Diese Cookies werden für keine anderen als die hier beschriebenen Zwecke verwendet.",
+      "howWeUseTitle": "Wie verwenden wir Cookies?",
+      "howWeUseIntro": "Wir verwenden Cookies, damit diese Website ordnungsgemäß funktioniert und um Ihre Einstellungen zu speichern. Und zwar:",
+      "howWeUseList": [
+        { "title": "Notwendig", "text": "Erforderlich für den Betrieb der Website – zum Beispiel um die Website sicher zu halten und Ihre gewählte Sprache zu speichern." },
+        { "title": "Präferenzen", "text": "Ermöglichen es der Website, sich Ihre Auswahl zu merken, etwa Ihre Sprache (EN/DE), für ein persönlicheres Erlebnis." }
+      ],
+      "enablingText": "Wir verwenden keine Cookies für Werbung und verkaufen keine cookie-bezogenen Daten. Die von uns gesetzten Cookies werden ausschließlich für die oben beschriebenen Zwecke verwendet.",
       "howToControlTitle": "So steuern Sie Cookies",
       "howToControlText": "Sie können Cookies nach Belieben steuern und/oder löschen. Sie können alle Cookies löschen, die sich bereits auf Ihrem Computer befinden, und Sie können die meisten Browser so einstellen, dass sie das Setzen von Cookies verhindern. Wenn Sie dies tun, jedoch, müssen Sie möglicherweise bei jedem Besuch einer Website einige Einstellungen manuell anpassen, und einige Dienste und Funktionen funktionieren möglicherweise nicht. Weitere Informationen finden Sie unter {link}.",
       "changesToPolicyTitle": "Änderungen dieser Richtlinie",

@@ -413,6 +413,13 @@
       "intro": "To make this site work properly, we sometimes place small data files called cookies on your device. Most big websites do this too. This policy explains what cookies are and how we use them.",
       "whatAreCookiesTitle": "What are cookies?",
       "whatAreCookiesText": "A cookie is a small text file that a website saves on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another. The cookie-related information is not used to personally identify you, and the data is fully under our control. These cookies are not used for any purpose other than those described here.",
+      "howWeUseTitle": "How do we use cookies?",
+      "howWeUseIntro": "We use cookies to keep this site working properly and to remember your preferences. Specifically:",
+      "howWeUseList": [
+        { "title": "Essential", "text": "Required for the website to function — for example keeping the site secure and remembering your selected language." },
+        { "title": "Preferences", "text": "Let the website remember choices you make, such as your language (EN/DE), for a more personal experience." }
+      ],
+      "enablingText": "We do not use cookies for advertising and we do not sell any cookie-related data. The cookies we set are used only for the purposes described above.",
       "howToControlTitle": "How to control cookies",
       "howToControlText": "You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work. For more details, see {link}.",
       "changesToPolicyTitle": "Changes to this policy",
