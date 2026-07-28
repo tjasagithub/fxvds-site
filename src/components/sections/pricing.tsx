@@ -46,24 +46,28 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
     {
       name: 'Small' as PlanName,
       price: '€30',
+      regularPrice: '€60', // display only — doubled "regular" price, never charged
       features: dictionary.small.features,
       isCustom: false,
     },
     {
       name: 'Medium' as PlanName,
       price: '€60',
+      regularPrice: '€120', // display only — doubled "regular" price, never charged
       features: dictionary.medium.features,
       isCustom: false,
     },
     {
       name: 'Large' as PlanName,
       price: '€90',
+      regularPrice: '€180', // display only — doubled "regular" price, never charged
       features: dictionary.large.features,
       isCustom: false,
     },
     {
       name: 'Extra Large' as PlanName,
       price: '€150',
+      regularPrice: '€300', // display only — doubled "regular" price, never charged
       features: dictionary.extraLarge.features,
       isCustom: false,
     },
@@ -97,23 +101,19 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
                 <X className="h-4 w-4" />
                 <span className="sr-only">Close notice</span>
               </button>
-              <p
-                  className="text-sm text-primary"
-                  dangerouslySetInnerHTML={{ __html: dictionary.earlyAccess.antonNelOffer.replace('{link}', '<a href="#contact" class="font-semibold hover:underline">')}}
-              />
               <h3 className="text-xl font-bold text-primary flex items-center gap-3 mt-2">
                   <ShieldCheck className="h-6 w-6" />
-                  {dictionary.earlyAccess.title}
+                  {dictionary.earlyAccess.bannerTitle}
               </h3>
               <p className="text-gray-300 mt-3 text-sm">
-                  {dictionary.earlyAccess.body}
+                  {dictionary.earlyAccess.bannerBody}
               </p>
             </div>
           ) : (
             <div className="flex items-center justify-center animate-in fade-in duration-500">
               <Button variant="outline" size="sm" onClick={() => setIsEarlyAccessVisible(true)} className="bg-transparent border-primary/30 text-gray-300 hover:bg-primary/10 hover:text-white hover:border-primary/50">
                   <Info className="h-4 w-4 mr-2 text-primary/80" />
-                  {dictionary.earlyAccess.title}
+                  {dictionary.earlyAccess.bannerTitle}
               </Button>
             </div>
           )}
@@ -137,9 +137,16 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
                 )}
                 <CardHeader className="text-center relative">
                   <CardTitle className="text-3xl font-bold text-white">{plan.name}</CardTitle>
-                  <CardDescription className="text-3xl font-bold text-white/90 mt-2">
-                    {plan.price}
-                    <span className="text-sm font-medium text-gray-400"> / {dictionary.perMonth}</span>
+                  <CardDescription className="mt-2">
+                    <span className="flex items-baseline justify-center gap-2 flex-wrap">
+                      <s className="text-lg font-bold text-gray-400/60">
+                        <span className="sr-only">{dictionary.regularPriceLabel} </span>
+                        {plan.regularPrice}
+                      </s>
+                      <span className="text-3xl font-bold text-white/90">{plan.price}</span>
+                      <span className="text-sm font-medium text-gray-400"> / {dictionary.perMonth}</span>
+                    </span>
+                    <span className="mt-1 block text-xs font-medium text-primary">{dictionary.earlyBirdBadge}</span>
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow text-center relative">
@@ -176,17 +183,28 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
             );
           })}
         </div>
-        <div className="mt-12 text-center text-gray-400">
-          <div className="space-y-2">
+        <div className="mt-16 max-w-3xl mx-auto text-left text-gray-300 space-y-8">
+          <div>
+            <h3 className="text-xl font-bold text-white">{dictionary.earlyBirdExplainer.changingTitle}</h3>
+            <p className="mt-3 text-sm text-gray-400">{dictionary.earlyBirdExplainer.changingBody}</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">{dictionary.earlyBirdExplainer.lockTitle}</h3>
+            <p className="mt-3 text-sm text-gray-400" dangerouslySetInnerHTML={{ __html: dictionary.earlyBirdExplainer.lockBody1 }} />
+            <p className="my-4 text-base md:text-lg font-semibold text-white" dangerouslySetInnerHTML={{ __html: dictionary.earlyBirdExplainer.lockBody2 }} />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">{dictionary.earlyBirdExplainer.howTitle}</h3>
+            <p className="mt-3 text-sm text-gray-400">{dictionary.earlyBirdExplainer.howBody1}</p>
+            <p className="mt-3 text-sm text-gray-400" dangerouslySetInnerHTML={{ __html: dictionary.earlyBirdExplainer.howBody2.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">{dictionary.serverLocations.title}</h3>
+            <p className="mt-3 text-sm text-gray-400">{dictionary.serverLocations.body}</p>
+          </div>
+          <div className="space-y-2 text-sm text-gray-400">
             <p dangerouslySetInnerHTML={{ __html: dictionary.cryptoPayments.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
             <p dangerouslySetInnerHTML={{ __html: dictionary.customSetup.replace('{link}', '<a href="#contact" class="text-primary hover:underline">') + '</a>' }} />
-          </div>
-
-          <div className="pt-8">
-            <h3 className="font-semibold text-white text-lg">{dictionary.serverLocations.title}</h3>
-            <div className="mt-2 text-gray-400 max-w-3xl mx-auto space-y-4 text-sm">
-                <p>{dictionary.serverLocations.body}</p>
-            </div>
           </div>
         </div>
       </div>

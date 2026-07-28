@@ -21,7 +21,10 @@
     "promo": {
       "title": "Limited Availability",
       "subtitle": "Due to server capacity constraints, we onboard a limited number of new clients at a time.",
-      "note": "New capacity is released in batches."
+      "note": "New capacity is released in batches.",
+      "earlyBirdTitle": "Early Bird Pricing — until 8 August 2026",
+      "earlyBirdBody": "Lock in current pricing now and keep it for as long as your subscription runs.",
+      "earlyBirdNote": "Limited availability — we onboard a limited number of new clients at a time."
     },
     "title": "Trade without limits.<br />Power that’s yours.",
     "subtitle": "Experience unmatched speed, reliability, and stability with virtual dedicated servers built for traders who demand the best.",
@@ -53,6 +56,8 @@
     "subtitle": "Simple, transparent pricing. No hidden fees. Upgrade or downgrade anytime.",
     "subtitle2": "All plans include a 7-day free trial. Cancel anytime.",
     "perMonth": "month",
+    "regularPriceLabel": "Regular price",
+    "earlyBirdBadge": "Early bird price — until 8 Aug 2026",
     "cta": "Start free",
     "contactCta": "Contact Us",
     "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us to arrange payment.</a>",
@@ -64,7 +69,19 @@
     "earlyAccess": {
       "title": "Early Access Pricing",
       "antonNelOffer": "Using Anton Nel Mirror Trading Manager? {link}Drop us a message</a> — you might be eligible for a discount.",
-      "body": "Limited spots available — start your 7-day free trial today."
+      "body": "Limited spots available — start your 7-day free trial today.",
+      "bannerTitle": "Early Bird Pricing — last round",
+      "bannerBody": "Lock in current pricing until 8 August 2026. From 9 August our prices double to match the market."
+    },
+    "earlyBirdExplainer": {
+      "changingTitle": "Why prices are changing",
+      "changingBody": "Server hardware has doubled in price over the past year — some components have tripled — driven by AI demand, and electricity costs have risen alongside it. Comparable servers from other providers already cost two to three times what we charge. From 9 August 2026 our prices move to match the market.",
+      "lockTitle": "Lock in the early bird price",
+      "lockBody1": "Subscribe before <strong>8 August 2026</strong> and you keep the early bird price for as long as your subscription runs. This is the last round of servers we build at this price.",
+      "lockBody2": "Servers from this round go live on <strong>1 September 2026</strong> — with your free trial first, of course.",
+      "howTitle": "How it works",
+      "howBody1": "After you subscribe you'll get a confirmation email the same day. Just reply with the date you'd like your free trial to start, and we'll set it up for you.",
+      "howBody2": "Already paying for a server somewhere else? You don't have to pay twice. Subscribe now to lock in the early bird price, then {link}send us a message</a> — we'll start your server later, whenever your current subscription ends."
     },
     "small": {
       "features": [

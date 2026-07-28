@@ -166,18 +166,18 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
                     </button>
                     <h2 className="text-xl font-bold text-white flex items-center">
                         <Info className="h-6 w-6 inline-block mr-3 text-primary" />
-                        {dictionary.promo.title}
+                        {dictionary.promo.earlyBirdTitle}
                     </h2>
-                    <p className="text-gray-300 text-base mt-2">{dictionary.promo.subtitle}</p>
+                    <p className="text-gray-300 text-base mt-2">{dictionary.promo.earlyBirdBody}</p>
                     <div className="text-xs text-gray-400 mt-2 space-y-1">
-                        <p>{dictionary.promo.note}</p>
+                        <p>{dictionary.promo.earlyBirdNote}</p>
                     </div>
                 </div>
                 ) : (
                 <div className="flex items-center justify-start animate-in fade-in-50 duration-700">
                     <Button variant="outline" size="sm" onClick={() => setIsPromoVisible(true)} className="bg-transparent border-primary/30 text-gray-300 hover:bg-primary/10 hover:text-white hover:border-primary/50">
                         <Info className="h-4 w-4 mr-2 text-primary/80" />
-                        {dictionary.promo.title}
+                        {dictionary.promo.earlyBirdTitle}
                     </Button>
                 </div>
               )}
