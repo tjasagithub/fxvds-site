@@ -191,7 +191,6 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
           <div>
             <h3 className="text-xl font-bold text-white">{dictionary.earlyBirdExplainer.lockTitle}</h3>
             <p className="mt-3 text-sm text-gray-400" dangerouslySetInnerHTML={{ __html: dictionary.earlyBirdExplainer.lockBody1 }} />
-            <p className="my-4 text-base md:text-lg font-semibold text-white" dangerouslySetInnerHTML={{ __html: dictionary.earlyBirdExplainer.lockBody2 }} />
           </div>
           <div>
             <h3 className="text-xl font-bold text-white">{dictionary.earlyBirdExplainer.howTitle}</h3>

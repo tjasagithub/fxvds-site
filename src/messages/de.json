@@ -22,7 +22,7 @@
       "title": "Begrenzte Verfügbarkeit",
       "subtitle": "Aufgrund von Serverkapazitätsengpässen nehmen wir jeweils nur eine begrenzte Anzahl neuer Kunden auf.",
       "note": "Neue Kapazitäten werden schubweise freigegeben.",
-      "earlyBirdTitle": "Frühbucherpreis — nur bis 12. August 2026",
+      "earlyBirdTitle": "Frühbucherpreis — nur bis 31. August 2026",
       "earlyBirdBody": "Sichern Sie sich jetzt den aktuellen Preis — für die gesamte Laufzeit Ihres Abonnements.",
       "earlyBirdNote": "Begrenzte Verfügbarkeit — wir nehmen immer nur eine begrenzte Anzahl neuer Kunden auf."
     },
@@ -57,7 +57,7 @@
     "subtitle2": "Alle Pläne beinhalten eine 7-tägige kostenfreie Testphase. Jederzeit kündbar.",
     "perMonth": "Monat",
     "regularPriceLabel": "Regulärer Preis",
-    "earlyBirdBadge": "Frühbucherpreis — nur bis 12.8.2026",
+    "earlyBirdBadge": "Frühbucherpreis — nur bis 31.8.2026",
     "cta": "Kostenlos starten",
     "contactCta": "Kontakt aufnehmen",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns zur Abwicklung.</a>",
@@ -71,14 +71,13 @@
       "antonNelOffer": "Nutzen Sie den Anton Nel Mirror Trading Manager? {link}Schreiben Sie uns</a> — möglicherweise erhalten Sie einen Rabatt.",
       "body": "Begrenzte Plätze verfügbar – starten Sie Ihre 7-tägige kostenlose Testphase noch heute.",
       "bannerTitle": "Frühbucherpreis — letzte Runde",
-      "bannerBody": "Sichern Sie sich den aktuellen Preis bis zum 12. August 2026. Ab dem 13. August verdoppeln sich unsere Preise."
+      "bannerBody": "Sichern Sie sich den aktuellen Preis bis zum 31. August 2026. Ab dem 1. September verdoppeln sich unsere Preise."
     },
     "earlyBirdExplainer": {
       "changingTitle": "Warum sich die Preise ändern",
-      "changingBody": "Serverhardware hat sich im letzten Jahr im Preis verdoppelt — einzelne Komponenten sogar verdreifacht — getrieben durch die Nachfrage nach KI-Infrastruktur. Dazu kommen gestiegene Stromkosten. Vergleichbare Server anderer Anbieter kosten bereits zwei- bis dreimal so viel wie unsere. Ab dem 13. August 2026 passen wir unsere Preise an den Markt an.",
+      "changingBody": "Serverhardware hat sich im letzten Jahr im Preis verdoppelt — einzelne Komponenten sogar verdreifacht — getrieben durch die Nachfrage nach KI-Infrastruktur. Dazu kommen gestiegene Stromkosten. Vergleichbare Server anderer Anbieter kosten bereits zwei- bis dreimal so viel wie unsere. Ab dem 1. September 2026 passen wir unsere Preise an den Markt an.",
       "lockTitle": "Frühbucherpreis sichern",
-      "lockBody1": "Wer bis zum <strong>12. August 2026</strong> abschließt, behält den Frühbucherpreis für die gesamte Laufzeit des Abonnements. Dies ist die letzte Serverrunde zu diesem Preis.",
-      "lockBody2": "Die Server dieser Runde gehen am <strong>1. September 2026</strong> in Betrieb — mit vorgeschalteter kostenloser Testphase.",
+      "lockBody1": "Wer bis zum <strong>31. August 2026</strong> abschließt, behält den Frühbucherpreis für die gesamte Laufzeit des Abonnements. Dies ist die letzte Serverrunde zu diesem Preis.",
       "howTitle": "So funktioniert's",
       "howBody1": "Nach dem Abschluss erhalten Sie noch am selben Tag eine Bestätigungs-E-Mail. Antworten Sie einfach mit dem gewünschten Startdatum Ihrer Testphase, und wir richten alles entsprechend ein.",
       "howBody2": "Zahlen Sie bereits für einen Server bei einem anderen Anbieter? Sie müssen nicht doppelt zahlen. Schließen Sie jetzt ab, um sich den Frühbucherpreis zu sichern, und {link}schreiben Sie uns</a> anschließend — wir starten Ihren Server später, sobald Ihr laufendes Abo endet."
