@@ -22,9 +22,9 @@
       "title": "Begrenzte Verfügbarkeit",
       "subtitle": "Aufgrund von Serverkapazitätsengpässen nehmen wir jeweils nur eine begrenzte Anzahl neuer Kunden auf.",
       "note": "Neue Kapazitäten werden schubweise freigegeben.",
-      "earlyBirdTitle": "Startpreis — 50 % Rabatt, solange Plätze verfügbar sind",
+      "earlyBirdTitle": "Letzte Server zum aktuellen Preis",
       "earlyBirdBody": "Sichern Sie sich jetzt den aktuellen Preis — für die gesamte Laufzeit Ihres Abonnements.",
-      "earlyBirdNote": "Begrenzte Verfügbarkeit — wir nehmen immer nur eine begrenzte Anzahl neuer Kunden auf."
+      "earlyBirdNote": "Sobald diese Server belegt sind, gelten für neue Pläne die regulären Preise."
     },
     "title": "Handeln ohne Grenzen.<br />Leistung, die Ihnen gehört.",
     "subtitle": "Erleben Sie unübertroffene Geschwindigkeit, Zuverlässigkeit und Stabilität mit virtuellen dedizierten Servern, die für professionelle Händler entwickelt wurden, die das Beste verlangen.",
@@ -57,7 +57,7 @@
     "subtitle2": "Alle Pläne beinhalten eine 7-tägige kostenfreie Testphase. Jederzeit kündbar.",
     "perMonth": "Monat",
     "regularPriceLabel": "Regulärer Preis",
-    "earlyBirdBadge": "50 % Rabatt — begrenzte Serverplätze",
+    "earlyBirdBadge": "Aktueller Preis — begrenzte Server zu diesem Tarif",
     "cta": "Kostenlos starten",
     "contactCta": "Kontakt aufnehmen",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns zur Abwicklung.</a>",
@@ -70,17 +70,17 @@
       "title": "Frühzugangspreise",
       "antonNelOffer": "Nutzen Sie den Anton Nel Mirror Trading Manager? {link}Schreiben Sie uns</a> — möglicherweise erhalten Sie einen Rabatt.",
       "body": "Begrenzte Plätze verfügbar – starten Sie Ihre 7-tägige kostenlose Testphase noch heute.",
-      "bannerTitle": "Startpreis — begrenzte Plätze",
-      "bannerBody": "Sichern Sie sich jetzt den aktuellen Preis und behalten Sie ihn, solange Ihr Abo läuft. Die Serverkapazität ist begrenzt — sobald die Plätze belegt sind, steigen die Preise."
+      "bannerTitle": "Letzte Server zum aktuellen Preis",
+      "bannerBody": "Die Kosten für Serverhardware sind stark gestiegen — die Nachfrage durch KI hat die Komponentenpreise im letzten Jahr verdoppelt. Diese Server wurden noch zum alten Preis beschafft, daher können wir sie weiterhin zum aktuellen Tarif anbieten. Neue Kapazität ist teurer."
     },
     "earlyBirdExplainer": {
       "changingTitle": "Warum sich die Preise ändern",
-      "changingBody": "Serverhardware hat sich im letzten Jahr im Preis verdoppelt — einzelne Komponenten sogar verdreifacht. Solange die Kapazität reicht, geben wir den aktuellen Preis weiter. Sobald diese Server ausgelastet sind, gelten für neue Pläne die regulären Preise.",
-      "lockTitle": "Startpreis sichern",
-      "lockBody1": "Solange noch Plätze frei sind: Ihr Preis bleibt unverändert, solange Ihr Abo läuft.",
+      "changingBody": "Serverhardware hat sich im letzten Jahr im Preis verdoppelt — einzelne Komponenten sogar verdreifacht, vor allem wegen der KI-bedingten Nachfrage nach Komponenten. Diese Server wurden noch zum alten Preis beschafft, daher können wir sie weiterhin zum aktuellen Tarif anbieten. Sobald diese Server belegt sind, gelten für neue Pläne die regulären Preise.",
+      "lockTitle": "Aktuellen Preis sichern",
+      "lockBody1": "Abonnieren Sie, solange diese Server verfügbar sind — Ihr Preis bleibt unverändert, solange Ihr Abo läuft.",
       "howTitle": "So funktioniert's",
       "howBody1": "Nach dem Abschluss erhalten Sie noch am selben Tag eine Bestätigungs-E-Mail. Antworten Sie einfach mit dem gewünschten Startdatum Ihrer Testphase, und wir richten alles entsprechend ein.",
-      "howBody2": "Abonnieren Sie, solange noch Plätze frei sind — der Startpreis bleibt Ihnen erhalten, solange Ihr Abo läuft. Zahlen Sie bereits für einen Server bei einem anderen Anbieter? {link}Schreiben Sie uns</a> — wir starten Ihren Server, sobald Ihr laufendes Abo endet."
+      "howBody2": "Abonnieren Sie, solange diese Server verfügbar sind — der aktuelle Preis bleibt Ihnen erhalten, solange Ihr Abo läuft."
     },
     "small": {
       "features": [

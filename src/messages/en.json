@@ -22,9 +22,9 @@
       "title": "Limited Availability",
       "subtitle": "Due to server capacity constraints, we onboard a limited number of new clients at a time.",
       "note": "New capacity is released in batches.",
-      "earlyBirdTitle": "Launch pricing — 50% off while slots last",
+      "earlyBirdTitle": "Last servers at current pricing",
       "earlyBirdBody": "Lock in current pricing now and keep it for as long as your subscription runs.",
-      "earlyBirdNote": "Limited availability — we onboard a limited number of new clients at a time."
+      "earlyBirdNote": "Once this batch is full, new plans are priced at the standard rate."
     },
     "title": "Trade without limits.<br />Power that’s yours.",
     "subtitle": "Experience unmatched speed, reliability, and stability with virtual dedicated servers built for traders who demand the best.",
@@ -57,7 +57,7 @@
     "subtitle2": "All plans include a 7-day free trial. Cancel anytime.",
     "perMonth": "month",
     "regularPriceLabel": "Regular price",
-    "earlyBirdBadge": "50% off — limited servers available",
+    "earlyBirdBadge": "Current pricing — limited servers at this rate",
     "cta": "Start free",
     "contactCta": "Contact Us",
     "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us to arrange payment.</a>",
@@ -70,17 +70,17 @@
       "title": "Early Access Pricing",
       "antonNelOffer": "Using Anton Nel Mirror Trading Manager? {link}Drop us a message</a> — you might be eligible for a discount.",
       "body": "Limited spots available — start your 7-day free trial today.",
-      "bannerTitle": "Launch pricing — limited slots",
-      "bannerBody": "Lock in current pricing now and keep it for as long as your subscription runs. Server capacity is limited — prices rise as slots fill."
+      "bannerTitle": "Last servers at current pricing",
+      "bannerBody": "Server hardware costs have risen sharply — AI demand has doubled component prices over the past year. These servers were bought at the old cost, so we can still offer them at the current rate. New capacity is priced higher."
     },
     "earlyBirdExplainer": {
       "changingTitle": "Why prices are changing",
-      "changingBody": "Server hardware has doubled in price over the past year — some components have tripled. We're passing on the current rate for as long as capacity allows. Once these servers are full, new plans are priced at the standard rate.",
-      "lockTitle": "Lock in the launch price",
-      "lockBody1": "Subscribe while slots are still available and your rate stays the same for as long as your subscription runs.",
+      "changingBody": "Server hardware has doubled in price over the past year — some components have tripled, driven largely by AI demand on component supply. These servers were bought at the old cost, so we can still offer them at the current rate. Once this batch is full, new plans are priced at the standard rate.",
+      "lockTitle": "Lock in the current price",
+      "lockBody1": "Subscribe while these servers are still available and your rate stays the same for as long as your subscription runs.",
       "howTitle": "How it works",
       "howBody1": "After you subscribe you'll get a confirmation email the same day. Just reply with the date you'd like your free trial to start, and we'll set it up for you.",
-      "howBody2": "Subscribe while slots are still open and the launch price stays with you for as long as your subscription runs. Already paying for a server elsewhere? {link}Send us a message</a> — we'll start yours whenever your current subscription ends."
+      "howBody2": "Subscribe while these servers are still available and the current price stays with you for as long as your subscription runs."
     },
     "small": {
       "features": [
