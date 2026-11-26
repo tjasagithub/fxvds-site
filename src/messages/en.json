@@ -33,9 +33,7 @@
       "title": "Limited Availability",
       "subtitle": "Due to server capacity constraints, we onboard a limited number of new clients at a time.",
       "note": "New capacity is released in batches.",
-      "earlyBirdTitle": "Last servers at current pricing",
-      "earlyBirdBody": "Lock in current pricing now and keep it for as long as your subscription runs.",
-      "earlyBirdNote": "Once this batch is full, new plans are priced at the standard rate."
+      "earlyBirdTitle": "Last servers at current pricing"
     },
     "title": "Trade without limits.<br />Power that’s yours.",
     "subtitle": "Experience unmatched speed, reliability, and stability with virtual dedicated servers built for traders who demand the best.",

@@ -170,10 +170,6 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
                         <Info className="h-6 w-6 inline-block mr-3 text-primary" />
                         {dictionary.promo.earlyBirdTitle}
                     </h2>
-                    <p className="text-gray-300 text-base mt-2">{dictionary.promo.earlyBirdBody}</p>
-                    <div className="text-xs text-gray-400 mt-2 space-y-1">
-                        <p>{dictionary.promo.earlyBirdNote}</p>
-                    </div>
                 </div>
                 ) : (
                 <div className="flex items-center justify-start animate-in fade-in-50 duration-700">
