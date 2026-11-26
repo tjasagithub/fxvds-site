@@ -17,7 +17,18 @@
       "startTrial": "Kostenlos starten"
     }
   },
+  "campaign": {
+    "dismiss": "Schließen",
+    "banner": {
+      "blackFriday": "🔥 BLACK FRIDAY bei FXVDS — Preis für immer sichern. Endet Sonntag, 29. November, 23:59 Uhr.",
+      "cyberMonday": "⚡ CYBER MONDAY bei FXVDS — Letzte Chance: Preis für immer sichern. Endet heute um 23:59 Uhr."
+    }
+  },
   "hero": {
+    "campaign": {
+      "blackFriday": "Black-Friday-Wochenende — jetzt abonnieren und Preis für immer behalten.",
+      "cyberMonday": "Cyber Monday — letzter Tag, um deinen Preis für immer zu sichern."
+    },
     "promo": {
       "title": "Begrenzte Verfügbarkeit",
       "subtitle": "Aufgrund von Serverkapazitätsengpässen nehmen wir jeweils nur eine begrenzte Anzahl neuer Kunden auf.",
@@ -58,6 +69,7 @@
     "perMonth": "Monat",
     "regularPriceLabel": "Regulärer Preis",
     "earlyBirdBadge": "Aktueller Preis — begrenzte Server zu diesem Tarif",
+    "campaignBadge": "🔒 Preis für immer gesichert — keine Erhöhung",
     "cta": "Kostenlos starten",
     "contactCta": "Kontakt aufnehmen",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns zur Abwicklung.</a>",

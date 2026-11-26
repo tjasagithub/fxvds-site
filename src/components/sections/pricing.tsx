@@ -9,10 +9,12 @@ import { CheckoutModal, PlanName } from './checkout-modal';
 import { getDictionary } from '@/lib/get-dictionary';
 import Link from 'next/link';
 import { ShieldCheck, Info, X } from 'lucide-react';
+import { useCampaign } from '@/hooks/use-campaign';
 
 type PricingDictionary = Awaited<ReturnType<typeof getDictionary>>['pricing'];
 
 const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
+  const campaign = useCampaign();
   const [activePlan, setActivePlan] = useState<PlanName>('Medium');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalPlan, setModalPlan] = useState<PlanName>('Medium');
@@ -147,6 +149,11 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
                       <span className="text-sm font-medium text-gray-400"> / {dictionary.perMonth}</span>
                     </span>
                     <span className="mt-1 block text-xs font-medium text-primary">{dictionary.earlyBirdBadge}</span>
+                    {campaign !== 'none' && (
+                      <span className="mt-2 block rounded-md border border-primary/30 bg-primary/10 px-2 py-1.5 text-xs font-bold text-primary">
+                        {dictionary.campaignBadge}
+                      </span>
+                    )}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow text-center relative">

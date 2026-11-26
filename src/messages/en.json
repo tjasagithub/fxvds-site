@@ -17,7 +17,18 @@
       "startTrial": "Start free"
     }
   },
+  "campaign": {
+    "dismiss": "Dismiss",
+    "banner": {
+      "blackFriday": "🔥 BLACK FRIDAY at FXVDS — Lock in your price for life. Ends Sunday 29 Nov, 23:59.",
+      "cyberMonday": "⚡ CYBER MONDAY at FXVDS — Last chance to lock in your price for life. Ends tonight, 23:59."
+    }
+  },
   "hero": {
+    "campaign": {
+      "blackFriday": "Black Friday weekend — subscribe now, keep your price forever.",
+      "cyberMonday": "Cyber Monday — last day to lock in your price for life."
+    },
     "promo": {
       "title": "Limited Availability",
       "subtitle": "Due to server capacity constraints, we onboard a limited number of new clients at a time.",
@@ -58,6 +69,7 @@
     "perMonth": "month",
     "regularPriceLabel": "Regular price",
     "earlyBirdBadge": "Current pricing — limited servers at this rate",
+    "campaignBadge": "🔒 Lifetime price lock — your price never increases",
     "cta": "Start free",
     "contactCta": "Contact Us",
     "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us to arrange payment.</a>",

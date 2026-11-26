@@ -16,10 +16,12 @@ import {
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/get-dictionary';
 import LanguageSwitcher from './language-switcher';
+import CampaignBanner from './campaign-banner';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['header'];
+type CampaignDictionary = Awaited<ReturnType<typeof getDictionary>>['campaign'];
 
-const Header = ({ lang, dictionary }: { lang: Locale, dictionary: Dictionary }) => {
+const Header = ({ lang, dictionary, campaignDictionary }: { lang: Locale, dictionary: Dictionary, campaignDictionary: CampaignDictionary }) => {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -109,6 +111,7 @@ const Header = ({ lang, dictionary }: { lang: Locale, dictionary: Dictionary }) 
       'sticky top-0 z-50 w-full transition-all duration-300',
       isScrolled ? 'bg-black/60 backdrop-blur-md shadow-lg' : 'bg-transparent'
     )}>
+      <CampaignBanner dictionary={campaignDictionary} />
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href={`/${lang}`} aria-label="FXVDS Home" className="shrink-0">
           <Logo className="h-8 w-32" />

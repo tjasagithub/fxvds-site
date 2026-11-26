@@ -11,10 +11,12 @@ import type { LucideIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { getDictionary } from '@/lib/get-dictionary';
 import { Locale } from '@/i18n.config';
+import { useCampaign } from '@/hooks/use-campaign';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>['hero'];
 
 const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) => {
+  const campaign = useCampaign();
   const [scrollY, setScrollY] = useState(0);
   const isMobile = useIsMobile();
   const heroRef = useRef<HTMLDivElement>(null);
@@ -186,6 +188,13 @@ const Hero = ({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) =>
             <h1 className="mb-6 font-headline text-5xl font-extrabold tracking-tight text-white md:text-7xl"
               dangerouslySetInnerHTML={{ __html: dictionary.title }}
             />
+            {campaign !== 'none' && (
+              <p className="-mt-3 mb-6 text-sm font-bold text-primary md:text-base">
+                {campaign === 'black-friday'
+                  ? dictionary.campaign.blackFriday
+                  : dictionary.campaign.cyberMonday}
+              </p>
+            )}
             <p className="mb-8 max-w-lg text-lg text-gray-300">
               {(() => {
                 const subtitleText = dictionary.subtitle;

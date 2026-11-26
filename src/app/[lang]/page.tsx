@@ -24,7 +24,7 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
 
   return (
     <div className="flex flex-col min-h-dvh">
-      <Header lang={lang} dictionary={dictionary.header} />
+      <Header lang={lang} dictionary={dictionary.header} campaignDictionary={dictionary.campaign} />
       <main className="flex-1">
         <Hero dictionary={dictionary.hero} lang={lang} />
         <SecurityHighlight dictionary={dictionary.securityHighlight} />
