@@ -66,8 +66,7 @@
     "subtitle2": "All plans include a 7-day free trial. Cancel anytime.",
     "perMonth": "month",
     "regularPriceLabel": "Regular price",
-    "earlyBirdBadge": "Current pricing — limited servers at this rate",
-    "campaignBadge": "🔒 Lifetime price lock — your price never increases",
+    "campaignBadge": "🔒 Lifetime price lock",
     "cta": "Start free",
     "contactCta": "Contact Us",
     "cryptoPayments": "Cryptocurrency payments are available on request. Please {link}contact us to arrange payment.</a>",
@@ -80,8 +79,7 @@
       "title": "Early Access Pricing",
       "antonNelOffer": "Using Anton Nel Mirror Trading Manager? {link}Drop us a message</a> — you might be eligible for a discount.",
       "body": "Limited spots available — start your 7-day free trial today.",
-      "bannerTitle": "Last servers at current pricing",
-      "bannerBody": "Server hardware costs have risen sharply — AI demand has doubled component prices over the past year. These servers were bought at the old cost, so we can still offer them at the current rate. New capacity is priced higher."
+      "bannerTitle": "Last servers at current pricing"
     },
     "earlyBirdExplainer": {
       "changingTitle": "Why prices are changing",

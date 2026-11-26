@@ -66,8 +66,7 @@
     "subtitle2": "Alle Pläne beinhalten eine 7-tägige kostenfreie Testphase. Jederzeit kündbar.",
     "perMonth": "Monat",
     "regularPriceLabel": "Regulärer Preis",
-    "earlyBirdBadge": "Aktueller Preis — begrenzte Server zu diesem Tarif",
-    "campaignBadge": "🔒 Preis für immer gesichert — keine Erhöhung",
+    "campaignBadge": "🔒 Lebenslanger Preis gesichert",
     "cta": "Kostenlos starten",
     "contactCta": "Kontakt aufnehmen",
     "cryptoPayments": "Zahlungen mit Kryptowährungen sind auf Anfrage möglich. Bitte {link}kontaktieren Sie uns zur Abwicklung.</a>",
@@ -80,8 +79,7 @@
       "title": "Frühzugangspreise",
       "antonNelOffer": "Nutzen Sie den Anton Nel Mirror Trading Manager? {link}Schreiben Sie uns</a> — möglicherweise erhalten Sie einen Rabatt.",
       "body": "Begrenzte Plätze verfügbar – starten Sie Ihre 7-tägige kostenlose Testphase noch heute.",
-      "bannerTitle": "Letzte Server zum aktuellen Preis",
-      "bannerBody": "Die Kosten für Serverhardware sind stark gestiegen — die Nachfrage durch KI hat die Komponentenpreise im letzten Jahr verdoppelt. Diese Server wurden noch zum alten Preis beschafft, daher können wir sie weiterhin zum aktuellen Tarif anbieten. Neue Kapazität ist teurer."
+      "bannerTitle": "Letzte Server zum aktuellen Preis"
     },
     "earlyBirdExplainer": {
       "changingTitle": "Warum sich die Preise ändern",

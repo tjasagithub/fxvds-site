@@ -1,14 +1,14 @@
 
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { CheckoutModal, PlanName } from './checkout-modal';
 import { getDictionary } from '@/lib/get-dictionary';
 import Link from 'next/link';
-import { ShieldCheck, Info, X } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { useCampaign } from '@/hooks/use-campaign';
 
 type PricingDictionary = Awaited<ReturnType<typeof getDictionary>>['pricing'];
@@ -18,31 +18,6 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
   const [activePlan, setActivePlan] = useState<PlanName>('Medium');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalPlan, setModalPlan] = useState<PlanName>('Medium');
-  const [isEarlyAccessVisible, setIsEarlyAccessVisible] = useState(true);
-  const pricingSectionRef = useRef<HTMLDivElement>(null);
-  const earlyAccessRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!isEarlyAccessVisible) return;
-    
-    const sectionEl = pricingSectionRef.current;
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (earlyAccessRef.current && !earlyAccessRef.current.contains(event.target as Node)) {
-        setIsEarlyAccessVisible(false);
-      }
-    };
-    
-    if (sectionEl) {
-      sectionEl.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      if (sectionEl) {
-        sectionEl.removeEventListener('mousedown', handleClickOutside);
-      }
-    };
-  }, [isEarlyAccessVisible]);
 
   const plans = [
     {
@@ -81,7 +56,7 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
   };
 
   return (
-    <section id="pricing" ref={pricingSectionRef} className="py-20 md:py-32 bg-background">
+    <section id="pricing" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">{dictionary.title}</h2>
@@ -93,32 +68,13 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
           </p>
         </div>
 
-        <div className="mt-12 max-w-4xl mx-auto min-h-[250px] flex flex-col justify-center">
-          {isEarlyAccessVisible ? (
-            <div ref={earlyAccessRef} className="relative bg-card/30 border border-primary/20 rounded-xl p-6 shadow-lg animate-in fade-in duration-500">
-              <button
-                onClick={() => setIsEarlyAccessVisible(false)}
-                className="absolute top-3 right-3 p-1 text-gray-400 hover:text-white rounded-full transition-colors hover:bg-white/10 z-10"
-              >
-                <X className="h-4 w-4" />
-                <span className="sr-only">Close notice</span>
-              </button>
-              <h3 className="text-xl font-bold text-primary flex items-center gap-3 mt-2">
-                  <ShieldCheck className="h-6 w-6" />
-                  {dictionary.earlyAccess.bannerTitle}
-              </h3>
-              <p className="text-gray-300 mt-3 text-sm">
-                  {dictionary.earlyAccess.bannerBody}
-              </p>
-            </div>
-          ) : (
-            <div className="flex items-center justify-center animate-in fade-in duration-500">
-              <Button variant="outline" size="sm" onClick={() => setIsEarlyAccessVisible(true)} className="bg-transparent border-primary/30 text-gray-300 hover:bg-primary/10 hover:text-white hover:border-primary/50">
-                  <Info className="h-4 w-4 mr-2 text-primary/80" />
-                  {dictionary.earlyAccess.bannerTitle}
-              </Button>
-            </div>
-          )}
+        <div className="mt-12 max-w-4xl mx-auto">
+          <div className="bg-card/30 border border-primary/20 rounded-xl px-6 py-5 shadow-lg">
+            <h3 className="text-xl font-bold text-primary flex items-center gap-3">
+                <ShieldCheck className="h-6 w-6 shrink-0" />
+                {dictionary.earlyAccess.bannerTitle}
+            </h3>
+          </div>
         </div>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -148,9 +104,8 @@ const Pricing = ({ dictionary }: { dictionary: PricingDictionary }) => {
                       <span className="text-3xl font-bold text-white/90">{plan.price}</span>
                       <span className="text-sm font-medium text-gray-400"> / {dictionary.perMonth}</span>
                     </span>
-                    <span className="mt-1 block text-xs font-medium text-primary">{dictionary.earlyBirdBadge}</span>
                     {campaign !== 'none' && (
-                      <span className="mt-2 block rounded-md border border-primary/30 bg-primary/10 px-2 py-1.5 text-xs font-bold text-primary">
+                      <span className="mt-3 inline-block rounded-md border border-primary/30 bg-primary/10 px-2 py-1.5 text-xs font-bold text-primary">
                         {dictionary.campaignBadge}
                       </span>
                     )}
